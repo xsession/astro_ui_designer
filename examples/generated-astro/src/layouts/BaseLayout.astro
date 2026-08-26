@@ -1,0 +1,16 @@
+---
+interface Props{title:string;description?:string;canonical?:string;ogImage?:string;}
+const{title,description='',canonical='',ogImage=''}=Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <title>{title}</title>
+  </head>
+  <body><slot /></body>
+</html>

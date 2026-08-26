@@ -1,0 +1,13 @@
+{
+  "name": "astro-ui-designer-pro",
+  "version": "2.3.0-ux",
+  "private": true,
+  "type": "module",
+  "description": "Astro-native Qt Creator-style visual IDE with source-aware workspace and CSS/WAAPI animation editor",
+  "scripts": {
+    "start": "node launch-designer.mjs",
+    "test": "node tests/run-all.mjs",
+    "test:visual": "node tests/visual-smoke.mjs",
+    "generate:example": "node tests/generate-example.mjs"
+  }
+}

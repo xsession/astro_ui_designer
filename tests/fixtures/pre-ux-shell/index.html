@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Astro UI Designer Pro</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div class="app" id="app">
+  <div class="menubar">
+    <button data-menu="file">File</button><button data-menu="edit">Edit</button><button data-menu="form">Form</button><button data-menu="layout">Layout</button><button data-menu="view">View</button><button data-menu="project">Project</button><button data-menu="build">Build</button><button data-menu="help">Help</button>
+    <span class="menu-spacer"></span><span class="product-title">Astro UI Designer Pro</span>
+  </div>
+  <div class="toolbar">
+    <div class="tool-group"><button id="new-btn" title="New project">New</button><button id="open-btn">Open</button><button id="save-btn">Save JSON</button></div>
+    <div class="tool-group"><button id="undo-btn">Undo</button><button id="redo-btn">Redo</button></div>
+    <div class="tool-group"><button id="cut-btn">Cut</button><button id="copy-btn">Copy</button><button id="paste-btn">Paste</button><button id="duplicate-btn">Duplicate</button><button id="delete-btn">Delete</button></div>
+    <div class="tool-group layout-tools"><button id="wrap-row-btn">Wrap Row</button><button id="wrap-col-btn">Wrap Column</button><button id="move-up-btn">↑</button><button id="move-down-btn">↓</button></div>
+    <div class="tool-group align-tools"><button id="align-left-btn" title="Align left">L</button><button id="align-hcenter-btn" title="Align horizontal centers">HC</button><button id="align-right-btn" title="Align right">R</button><button id="align-top-btn" title="Align top">T</button><button id="align-vcenter-btn" title="Align vertical centers">VC</button><button id="align-bottom-btn" title="Align bottom">B</button><button id="dist-h-btn" title="Distribute horizontally">DH</button><button id="dist-v-btn" title="Distribute vertically">DV</button></div>
+    <div class="spacer"></div>
+    <select id="breakpoint-select" title="Responsive breakpoint"></select>
+    <button id="breakpoints-btn" title="Manage breakpoints">…</button>
+    <div class="tool-group"><button id="design-mode-btn" class="active">Design</button><button id="split-mode-btn">Split</button><button id="code-mode-btn">Code</button><button id="preview-mode-btn">Preview</button></div><div class="tool-group"><button id="zoom-out-btn" title="Zoom out">−</button><button id="fit-btn" title="Fit artboard">Fit</button><button id="zoom-in-btn" title="Zoom in">+</button></div>
+    <button id="workspace-btn" title="Open existing Astro workspace">Workspace</button><button id="live-preview-btn" title="Start/stop real Astro dev preview">Live</button><button id="command-btn" title="Command palette (Ctrl+Shift+P)">⌘</button>
+    <button class="primary" id="export-btn">Export Astro ZIP</button>
+    <input class="file-hidden" id="file-open" type="file" accept=".json,.astro-ui.json" />
+    <input class="file-hidden" id="asset-open" type="file" multiple />
+  </div>
+
+  <div class="workspace">
+    <aside class="left-dock">
+      <div class="dock-tabs" id="left-tabs"><button class="active" data-left-tab="palette">Palette</button><button data-left-tab="project">Project</button><button data-left-tab="components">Components</button><button data-left-tab="assets">Assets</button><button data-left-tab="sources">Sources</button></div>
+      <div id="left-content" class="dock-content"></div>
+    </aside>
+    <div class="dock-splitter vertical" id="left-splitter" title="Resize left dock"></div>
+
+    <main class="canvas-area">
+      <div class="canvas-head">
+        <div class="doc-tabs" id="doc-tabs"></div>
+        <div class="canvas-head-right"><span id="viewport-label"></span><span id="zoom-label">100%</span></div>
+      </div>
+      <div class="editor-stage" id="editor-stage"><div class="artboard-shell" id="artboard-shell"><div class="artboard" id="artboard"></div></div><section class="source-pane" id="source-pane"><div class="source-pane-toolbar"><select id="source-file-select"></select><span id="source-ownership-badge">HYBRID</span><button id="source-reload-btn">Reload</button><button id="source-sync-btn" title="Patch the mapped data-ui-id element from the selected designer node">Sync Selection</button><button id="source-apply-btn">Save Source</button></div><textarea id="source-editor" spellcheck="false"></textarea></section><section class="live-preview-pane" id="live-preview-pane"><div class="source-pane-toolbar"><span>Real Astro/Vite preview</span><button id="live-open-external">Open browser</button></div><iframe id="live-preview-frame" title="Astro live preview"></iframe></section></div>
+    </main>
+    <div class="dock-splitter vertical" id="right-splitter" title="Resize right dock"></div>
+
+    <aside class="right-dock">
+      <div class="dock-tabs" id="right-tabs"><button class="active" data-right-tab="properties">Properties</button><button data-right-tab="layout">Layout</button><button data-right-tab="actions">Actions</button><button data-right-tab="bindings">Bindings</button><button data-right-tab="code">Code</button><button data-right-tab="variants">Variants</button><button data-right-tab="data">Data</button></div>
+      <div id="right-content" class="dock-content inspector-content"></div>
+    </aside>
+  </div>
+  <div class="dock-splitter horizontal" id="bottom-splitter" title="Resize bottom dock"></div>
+
+  <section class="bottom-dock">
+    <div class="bottom-tabs" id="bottom-tabs"><button class="active" data-bottom-tab="problems">Problems <span id="problem-count"></span></button><button data-bottom-tab="objects">Object Tree</button><button data-bottom-tab="state">State</button><button data-bottom-tab="animation">Animation</button><button data-bottom-tab="tokens">Design Tokens</button><button data-bottom-tab="actions">Connections</button><button data-bottom-tab="content">Content</button><button data-bottom-tab="locales">Locales</button><button data-bottom-tab="tests">Tests</button><button data-bottom-tab="audit">Audit</button><button data-bottom-tab="git">Git</button><button data-bottom-tab="integrations">Integrations</button><button data-bottom-tab="console">Console</button></div>
+    <div id="bottom-content" class="bottom-content"></div>
+  </section>
+
+  <div class="statusbar"><span id="status-selection"></span><span id="status-middle"></span><span id="status-doc"></span></div>
+</div>
+<div id="popover-layer"></div>
+<div id="modal-layer"></div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

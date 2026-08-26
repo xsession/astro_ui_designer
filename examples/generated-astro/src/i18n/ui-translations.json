@@ -1,0 +1,10 @@
+{
+  "default": "en",
+  "available": [
+    {
+      "id": "en",
+      "label": "EN"
+    }
+  ],
+  "translations": {}
+}

@@ -1,0 +1,3565 @@
+{
+  "schemaVersion": 4,
+  "id": "project-t8srmqd-2",
+  "name": "astro-ui-project",
+  "settings": {
+    "astroVersion": "^7.2.0",
+    "site": "",
+    "base": "/",
+    "output": "static",
+    "language": "en",
+    "breakpoints": [
+      {
+        "id": "base",
+        "label": "Desktop",
+        "width": 1280
+      },
+      {
+        "id": "tablet",
+        "label": "Tablet",
+        "width": 820
+      },
+      {
+        "id": "mobile",
+        "label": "Mobile",
+        "width": 390
+      }
+    ],
+    "gridSize": 8,
+    "dependencies": {},
+    "integrations": []
+  },
+  "theme": {
+    "active": "default",
+    "themes": {
+      "default": {
+        "label": "Default",
+        "tokens": {
+          "color-bg": "#f6f8fb",
+          "color-surface": "#ffffff",
+          "color-text": "#17202a",
+          "color-muted": "#e8edf3",
+          "color-border": "#d7dce2",
+          "color-primary": "#2f6fa7",
+          "color-accent": "#7c3aed",
+          "radius-sm": "6px",
+          "radius-md": "10px",
+          "shadow-sm": "0 2px 8px rgba(16,24,40,.06)",
+          "space-1": "4px",
+          "space-2": "8px",
+          "space-3": "12px",
+          "space-4": "16px",
+          "space-6": "24px",
+          "space-8": "32px"
+        }
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "page-doc-t8srmqd-3",
+      "route": "/",
+      "filename": "index.astro",
+      "name": "Home",
+      "seo": {
+        "title": "Home",
+        "description": "Generated with Astro UI Designer Pro",
+        "canonical": "",
+        "ogImage": ""
+      },
+      "root": {
+        "id": "page-t8srmqd-1",
+        "type": "page",
+        "name": "HomePage",
+        "props": {
+          "title": "Home",
+          "description": "Generated with Astro UI Designer Pro",
+          "lang": ""
+        },
+        "style": {
+          "base": {
+            "minHeight": "100vh",
+            "background": "var(--color-bg)",
+            "color": "var(--color-text)"
+          }
+        },
+        "actions": [],
+        "bindings": {},
+        "meta": {
+          "domId": "",
+          "className": "",
+          "slot": "",
+          "role": "",
+          "ariaLabel": "",
+          "title": "",
+          "tabIndex": "",
+          "locked": false,
+          "hidden": false,
+          "sourceOwnership": "designer",
+          "exposed": {
+            "content": true,
+            "style": false,
+            "structure": false,
+            "actions": false
+          }
+        },
+        "variant": "",
+        "componentState": "default",
+        "states": [],
+        "containerRules": [],
+        "timeline": {
+          "duration": 500,
+          "delay": 0,
+          "easing": "ease",
+          "iterations": 1,
+          "direction": "normal",
+          "fill": "both",
+          "playbackRate": 1,
+          "reducedMotion": "disable",
+          "engine": "auto",
+          "trigger": "manual",
+          "scroll": {
+            "timeline": "view",
+            "source": "nearest",
+            "axis": "block",
+            "rangeStart": "entry 0%",
+            "rangeEnd": "cover 100%"
+          },
+          "tracks": []
+        },
+        "visibilityCondition": "",
+        "dataContext": {},
+        "children": [
+          {
+            "id": "header-t8srmqd-6",
+            "type": "header",
+            "name": "SiteHeader",
+            "props": {},
+            "style": {
+              "base": {
+                "width": "100%",
+                "padding": "14px 24px",
+                "borderBottom": "1px solid var(--color-border)",
+                "background": "var(--color-surface)"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "duration": 500,
+              "delay": 0,
+              "easing": "ease",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "engine": "auto",
+              "trigger": "manual",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": []
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": [
+              {
+                "id": "nav-t8srmqd-7",
+                "type": "nav",
+                "name": "MainNav",
+                "props": {
+                  "ariaLabel": "Main navigation"
+                },
+                "style": {
+                  "base": {
+                    "display": "flex",
+                    "gap": "12px",
+                    "alignItems": "center",
+                    "maxWidth": "1120px",
+                    "margin": "0 auto",
+                    "justifyContent": "space-between"
+                  }
+                },
+                "actions": [],
+                "bindings": {},
+                "meta": {
+                  "domId": "",
+                  "className": "",
+                  "slot": "",
+                  "role": "",
+                  "ariaLabel": "",
+                  "title": "",
+                  "tabIndex": "",
+                  "locked": false,
+                  "hidden": false,
+                  "sourceOwnership": "designer",
+                  "exposed": {
+                    "content": true,
+                    "style": false,
+                    "structure": false,
+                    "actions": false
+                  }
+                },
+                "variant": "",
+                "componentState": "default",
+                "states": [],
+                "containerRules": [],
+                "timeline": {
+                  "duration": 500,
+                  "delay": 0,
+                  "easing": "ease",
+                  "iterations": 1,
+                  "direction": "normal",
+                  "fill": "both",
+                  "playbackRate": 1,
+                  "reducedMotion": "disable",
+                  "engine": "auto",
+                  "trigger": "manual",
+                  "scroll": {
+                    "timeline": "view",
+                    "source": "nearest",
+                    "axis": "block",
+                    "rangeStart": "entry 0%",
+                    "rangeEnd": "cover 100%"
+                  },
+                  "tracks": []
+                },
+                "visibilityCondition": "",
+                "dataContext": {},
+                "children": [
+                  {
+                    "id": "heading-t8srmqe-8",
+                    "type": "heading",
+                    "name": "Brand",
+                    "props": {
+                      "text": "Astro UI Designer",
+                      "level": "3"
+                    },
+                    "style": {
+                      "base": {
+                        "margin": "0",
+                        "fontSize": "18px",
+                        "lineHeight": "1.15",
+                        "fontWeight": "700"
+                      },
+                      "tablet": {
+                        "fontSize": "28px"
+                      },
+                      "mobile": {
+                        "fontSize": "24px"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": []
+                  },
+                  {
+                    "id": "row-t8srmqe-9",
+                    "type": "row",
+                    "name": "NavLinks",
+                    "props": {},
+                    "style": {
+                      "base": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "gap": "14px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start",
+                        "flexWrap": "wrap"
+                      },
+                      "mobile": {
+                        "flexDirection": "column",
+                        "alignItems": "stretch",
+                        "display": "none"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": [
+                      {
+                        "id": "link-t8srmqe-a",
+                        "type": "link",
+                        "name": "Link11",
+                        "props": {
+                          "text": "Features",
+                          "href": "#features",
+                          "target": ""
+                        },
+                        "style": {
+                          "base": {
+                            "color": "var(--color-primary)",
+                            "textDecoration": "none",
+                            "fontWeight": "600"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      },
+                      {
+                        "id": "link-t8srmqe-b",
+                        "type": "link",
+                        "name": "Link12",
+                        "props": {
+                          "text": "Contact",
+                          "href": "/contact",
+                          "target": ""
+                        },
+                        "style": {
+                          "base": {
+                            "color": "var(--color-primary)",
+                            "textDecoration": "none",
+                            "fontWeight": "600"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "section-t8srmqe-c",
+            "type": "section",
+            "name": "Hero",
+            "props": {
+              "ariaLabel": ""
+            },
+            "style": {
+              "base": {
+                "width": "100%",
+                "padding": "48px 24px",
+                "background": "linear-gradient(135deg,#eef5fb 0%,#fff 68%)"
+              },
+              "tablet": {
+                "padding": "36px 20px"
+              },
+              "mobile": {
+                "padding": "28px 16px"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "duration": 500,
+              "delay": 0,
+              "easing": "ease",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "engine": "auto",
+              "trigger": "manual",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": []
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": [
+              {
+                "id": "container-t8srmqe-d",
+                "type": "container",
+                "name": "Container14",
+                "props": {},
+                "style": {
+                  "base": {
+                    "width": "100%",
+                    "maxWidth": "1120px",
+                    "margin": "0 auto"
+                  }
+                },
+                "actions": [],
+                "bindings": {},
+                "meta": {
+                  "domId": "",
+                  "className": "",
+                  "slot": "",
+                  "role": "",
+                  "ariaLabel": "",
+                  "title": "",
+                  "tabIndex": "",
+                  "locked": false,
+                  "hidden": false,
+                  "sourceOwnership": "designer",
+                  "exposed": {
+                    "content": true,
+                    "style": false,
+                    "structure": false,
+                    "actions": false
+                  }
+                },
+                "variant": "",
+                "componentState": "default",
+                "states": [],
+                "containerRules": [],
+                "timeline": {
+                  "duration": 500,
+                  "delay": 0,
+                  "easing": "ease",
+                  "iterations": 1,
+                  "direction": "normal",
+                  "fill": "both",
+                  "playbackRate": 1,
+                  "reducedMotion": "disable",
+                  "engine": "auto",
+                  "trigger": "manual",
+                  "scroll": {
+                    "timeline": "view",
+                    "source": "nearest",
+                    "axis": "block",
+                    "rangeStart": "entry 0%",
+                    "rangeEnd": "cover 100%"
+                  },
+                  "tracks": []
+                },
+                "visibilityCondition": "",
+                "dataContext": {},
+                "children": [
+                  {
+                    "id": "row-t8srmqe-e",
+                    "type": "row",
+                    "name": "Row15",
+                    "props": {},
+                    "style": {
+                      "base": {
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "gap": "36px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start",
+                        "flexWrap": "nowrap"
+                      },
+                      "mobile": {
+                        "flexDirection": "column",
+                        "alignItems": "stretch"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": [
+                      {
+                        "id": "column-t8srmqe-f",
+                        "type": "column",
+                        "name": "Column16",
+                        "props": {},
+                        "style": {
+                          "base": {
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "gap": "18px",
+                            "alignItems": "stretch",
+                            "flex": "1 1 560px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": [
+                          {
+                            "id": "badge-t8srmqe-g",
+                            "type": "badge",
+                            "name": "Badge17",
+                            "props": {
+                              "text": "Visual Astro IDE"
+                            },
+                            "style": {
+                              "base": {
+                                "display": "inline-flex",
+                                "padding": "4px 8px",
+                                "borderRadius": "999px",
+                                "background": "var(--color-muted)",
+                                "fontSize": "12px",
+                                "fontWeight": "600"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "heading-t8srmqe-h",
+                            "type": "heading",
+                            "name": "Heading18",
+                            "props": {
+                              "text": "Build responsive Astro interfaces visually.",
+                              "level": "1"
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "52px",
+                                "lineHeight": "1.15",
+                                "fontWeight": "700",
+                                "maxWidth": "780px"
+                              },
+                              "tablet": {
+                                "fontSize": "42px"
+                              },
+                              "mobile": {
+                                "fontSize": "34px"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "text-t8srmqe-i",
+                            "type": "text",
+                            "name": "Text19",
+                            "props": {
+                              "text": "Qt Creator-style workflow, web-native layout rules, reusable components, responsive states, actions, assets and clean Astro output."
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "18px",
+                                "lineHeight": "1.55",
+                                "maxWidth": "720px",
+                                "color": "#4b5563"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "row-t8srmqe-j",
+                            "type": "row",
+                            "name": "Row20",
+                            "props": {},
+                            "style": {
+                              "base": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "gap": "10px",
+                                "alignItems": "center",
+                                "justifyContent": "flex-start",
+                                "flexWrap": "wrap"
+                              },
+                              "mobile": {
+                                "flexDirection": "column",
+                                "alignItems": "stretch"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": [
+                              {
+                                "id": "button-t8srmqe-l",
+                                "type": "button",
+                                "name": "DocsButton",
+                                "props": {
+                                  "text": "Open docs",
+                                  "buttonType": "button",
+                                  "disabled": false
+                                },
+                                "style": {
+                                  "base": {
+                                    "display": "inline-flex",
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                    "padding": "10px 16px",
+                                    "border": "1px solid var(--color-primary)",
+                                    "borderRadius": "var(--radius-sm)",
+                                    "background": "var(--color-primary)",
+                                    "color": "#fff",
+                                    "fontWeight": "600",
+                                    "cursor": "pointer"
+                                  },
+                                  "mobile": {
+                                    "width": "100%"
+                                  }
+                                },
+                                "actions": [
+                                  {
+                                    "id": "act-t8srmqe-k",
+                                    "event": "click",
+                                    "type": "navigate",
+                                    "value": "/docs",
+                                    "target": "",
+                                    "condition": ""
+                                  }
+                                ],
+                                "bindings": {},
+                                "meta": {
+                                  "domId": "",
+                                  "className": "",
+                                  "slot": "",
+                                  "role": "",
+                                  "ariaLabel": "",
+                                  "title": "",
+                                  "tabIndex": "",
+                                  "locked": false,
+                                  "hidden": false,
+                                  "sourceOwnership": "designer",
+                                  "exposed": {
+                                    "content": true,
+                                    "style": false,
+                                    "structure": false,
+                                    "actions": false
+                                  }
+                                },
+                                "variant": "",
+                                "componentState": "default",
+                                "states": [],
+                                "containerRules": [],
+                                "timeline": {
+                                  "duration": 500,
+                                  "delay": 0,
+                                  "easing": "ease",
+                                  "iterations": 1,
+                                  "direction": "normal",
+                                  "fill": "both",
+                                  "playbackRate": 1,
+                                  "reducedMotion": "disable",
+                                  "engine": "auto",
+                                  "trigger": "manual",
+                                  "scroll": {
+                                    "timeline": "view",
+                                    "source": "nearest",
+                                    "axis": "block",
+                                    "rangeStart": "entry 0%",
+                                    "rangeEnd": "cover 100%"
+                                  },
+                                  "tracks": []
+                                },
+                                "visibilityCondition": "",
+                                "dataContext": {},
+                                "children": []
+                              },
+                              {
+                                "id": "link-t8srmqe-m",
+                                "type": "link",
+                                "name": "Link23",
+                                "props": {
+                                  "text": "See features",
+                                  "href": "#features",
+                                  "target": ""
+                                },
+                                "style": {
+                                  "base": {
+                                    "color": "var(--color-primary)",
+                                    "textDecoration": "none",
+                                    "fontWeight": "600",
+                                    "padding": "10px 12px"
+                                  }
+                                },
+                                "actions": [],
+                                "bindings": {},
+                                "meta": {
+                                  "domId": "",
+                                  "className": "",
+                                  "slot": "",
+                                  "role": "",
+                                  "ariaLabel": "",
+                                  "title": "",
+                                  "tabIndex": "",
+                                  "locked": false,
+                                  "hidden": false,
+                                  "sourceOwnership": "designer",
+                                  "exposed": {
+                                    "content": true,
+                                    "style": false,
+                                    "structure": false,
+                                    "actions": false
+                                  }
+                                },
+                                "variant": "",
+                                "componentState": "default",
+                                "states": [],
+                                "containerRules": [],
+                                "timeline": {
+                                  "duration": 500,
+                                  "delay": 0,
+                                  "easing": "ease",
+                                  "iterations": 1,
+                                  "direction": "normal",
+                                  "fill": "both",
+                                  "playbackRate": 1,
+                                  "reducedMotion": "disable",
+                                  "engine": "auto",
+                                  "trigger": "manual",
+                                  "scroll": {
+                                    "timeline": "view",
+                                    "source": "nearest",
+                                    "axis": "block",
+                                    "rangeStart": "entry 0%",
+                                    "rangeEnd": "cover 100%"
+                                  },
+                                  "tracks": []
+                                },
+                                "visibilityCondition": "",
+                                "dataContext": {},
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "card-t8srmqe-n",
+                        "type": "card",
+                        "name": "PreviewCard",
+                        "props": {},
+                        "style": {
+                          "base": {
+                            "padding": "24px",
+                            "border": "1px solid var(--color-border)",
+                            "borderRadius": "var(--radius-md)",
+                            "background": "#17202a",
+                            "boxShadow": "var(--shadow-sm)",
+                            "flex": "1 1 360px",
+                            "minHeight": "280px",
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "justifyContent": "center",
+                            "gap": "12px",
+                            "color": "#fff"
+                          },
+                          "mobile": {
+                            "padding": "18px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": [
+                          {
+                            "id": "heading-t8srmqe-o",
+                            "type": "heading",
+                            "name": "Heading25",
+                            "props": {
+                              "text": "Source-first output",
+                              "level": "3"
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "22px",
+                                "lineHeight": "1.15",
+                                "fontWeight": "700"
+                              },
+                              "tablet": {
+                                "fontSize": "28px"
+                              },
+                              "mobile": {
+                                "fontSize": "24px"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "text-t8srmqe-p",
+                            "type": "text",
+                            "name": "Text26",
+                            "props": {
+                              "text": "Generated pages, components, layouts, CSS, assets and client actions stay readable and editable."
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "16px",
+                                "lineHeight": "1.55",
+                                "color": "#cfd8e3"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "section-t8srmqe-q",
+            "type": "section",
+            "name": "Features",
+            "props": {
+              "ariaLabel": "Features"
+            },
+            "style": {
+              "base": {
+                "width": "100%",
+                "padding": "48px 24px"
+              },
+              "tablet": {
+                "padding": "36px 20px"
+              },
+              "mobile": {
+                "padding": "28px 16px"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "duration": 500,
+              "delay": 0,
+              "easing": "ease",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "engine": "auto",
+              "trigger": "manual",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": []
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": [
+              {
+                "id": "container-t8srmqe-r",
+                "type": "container",
+                "name": "Container28",
+                "props": {},
+                "style": {
+                  "base": {
+                    "width": "100%",
+                    "maxWidth": "1120px",
+                    "margin": "0 auto"
+                  }
+                },
+                "actions": [],
+                "bindings": {},
+                "meta": {
+                  "domId": "",
+                  "className": "",
+                  "slot": "",
+                  "role": "",
+                  "ariaLabel": "",
+                  "title": "",
+                  "tabIndex": "",
+                  "locked": false,
+                  "hidden": false,
+                  "sourceOwnership": "designer",
+                  "exposed": {
+                    "content": true,
+                    "style": false,
+                    "structure": false,
+                    "actions": false
+                  }
+                },
+                "variant": "",
+                "componentState": "default",
+                "states": [],
+                "containerRules": [],
+                "timeline": {
+                  "duration": 500,
+                  "delay": 0,
+                  "easing": "ease",
+                  "iterations": 1,
+                  "direction": "normal",
+                  "fill": "both",
+                  "playbackRate": 1,
+                  "reducedMotion": "disable",
+                  "engine": "auto",
+                  "trigger": "manual",
+                  "scroll": {
+                    "timeline": "view",
+                    "source": "nearest",
+                    "axis": "block",
+                    "rangeStart": "entry 0%",
+                    "rangeEnd": "cover 100%"
+                  },
+                  "tracks": []
+                },
+                "visibilityCondition": "",
+                "dataContext": {},
+                "children": [
+                  {
+                    "id": "heading-t8srmqe-s",
+                    "type": "heading",
+                    "name": "Heading29",
+                    "props": {
+                      "text": "A full visual frontend IDE",
+                      "level": "2"
+                    },
+                    "style": {
+                      "base": {
+                        "margin": "0",
+                        "fontSize": "32px",
+                        "lineHeight": "1.15",
+                        "fontWeight": "700"
+                      },
+                      "tablet": {
+                        "fontSize": "28px"
+                      },
+                      "mobile": {
+                        "fontSize": "24px"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": []
+                  },
+                  {
+                    "id": "spacer-t8srmqe-13",
+                    "type": "spacer",
+                    "name": "Spacer40",
+                    "props": {},
+                    "style": {
+                      "base": {
+                        "height": "24px",
+                        "width": "100%"
+                      },
+                      "mobile": {
+                        "height": "16px"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": []
+                  },
+                  {
+                    "id": "grid-t8srmqe-t",
+                    "type": "grid",
+                    "name": "FeatureGrid",
+                    "props": {},
+                    "style": {
+                      "base": {
+                        "display": "grid",
+                        "gridTemplateColumns": "repeat(3,minmax(0,1fr))",
+                        "gap": "20px"
+                      },
+                      "tablet": {
+                        "gridTemplateColumns": "repeat(2,minmax(0,1fr))"
+                      },
+                      "mobile": {
+                        "gridTemplateColumns": "1fr"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": [
+                      {
+                        "id": "card-t8srmqe-u",
+                        "type": "card",
+                        "name": "Card31",
+                        "props": {},
+                        "style": {
+                          "base": {
+                            "padding": "24px",
+                            "border": "1px solid var(--color-border)",
+                            "borderRadius": "var(--radius-md)",
+                            "background": "var(--color-surface)",
+                            "boxShadow": "var(--shadow-sm)"
+                          },
+                          "mobile": {
+                            "padding": "18px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": [
+                          {
+                            "id": "heading-t8srmqe-v",
+                            "type": "heading",
+                            "name": "Heading32",
+                            "props": {
+                              "text": "Responsive layout",
+                              "level": "3"
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "20px",
+                                "lineHeight": "1.15",
+                                "fontWeight": "700"
+                              },
+                              "tablet": {
+                                "fontSize": "28px"
+                              },
+                              "mobile": {
+                                "fontSize": "24px"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "text-t8srmqe-w",
+                            "type": "text",
+                            "name": "Text33",
+                            "props": {
+                              "text": "Flex, Grid, breakpoints and freeform HMI layers."
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "16px",
+                                "lineHeight": "1.55"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "card-t8srmqe-x",
+                        "type": "card",
+                        "name": "Card34",
+                        "props": {},
+                        "style": {
+                          "base": {
+                            "padding": "24px",
+                            "border": "1px solid var(--color-border)",
+                            "borderRadius": "var(--radius-md)",
+                            "background": "var(--color-surface)",
+                            "boxShadow": "var(--shadow-sm)"
+                          },
+                          "mobile": {
+                            "padding": "18px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": [
+                          {
+                            "id": "heading-t8srmqe-y",
+                            "type": "heading",
+                            "name": "Heading35",
+                            "props": {
+                              "text": "Reusable components",
+                              "level": "3"
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "20px",
+                                "lineHeight": "1.15",
+                                "fontWeight": "700"
+                              },
+                              "tablet": {
+                                "fontSize": "28px"
+                              },
+                              "mobile": {
+                                "fontSize": "24px"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "text-t8srmqe-z",
+                            "type": "text",
+                            "name": "Text36",
+                            "props": {
+                              "text": "Create project components with slots and instance overrides."
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "16px",
+                                "lineHeight": "1.55"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "card-t8srmqe-10",
+                        "type": "card",
+                        "name": "Card37",
+                        "props": {},
+                        "style": {
+                          "base": {
+                            "padding": "24px",
+                            "border": "1px solid var(--color-border)",
+                            "borderRadius": "var(--radius-md)",
+                            "background": "var(--color-surface)",
+                            "boxShadow": "var(--shadow-sm)"
+                          },
+                          "mobile": {
+                            "padding": "18px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": [
+                          {
+                            "id": "heading-t8srmqe-11",
+                            "type": "heading",
+                            "name": "Heading38",
+                            "props": {
+                              "text": "Behavior",
+                              "level": "3"
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "20px",
+                                "lineHeight": "1.15",
+                                "fontWeight": "700"
+                              },
+                              "tablet": {
+                                "fontSize": "28px"
+                              },
+                              "mobile": {
+                                "fontSize": "24px"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          },
+                          {
+                            "id": "text-t8srmqe-12",
+                            "type": "text",
+                            "name": "Text39",
+                            "props": {
+                              "text": "State variables, bindings and web-native signal/action connections."
+                            },
+                            "style": {
+                              "base": {
+                                "margin": "0",
+                                "fontSize": "16px",
+                                "lineHeight": "1.55"
+                              }
+                            },
+                            "actions": [],
+                            "bindings": {},
+                            "meta": {
+                              "domId": "",
+                              "className": "",
+                              "slot": "",
+                              "role": "",
+                              "ariaLabel": "",
+                              "title": "",
+                              "tabIndex": "",
+                              "locked": false,
+                              "hidden": false,
+                              "sourceOwnership": "designer",
+                              "exposed": {
+                                "content": true,
+                                "style": false,
+                                "structure": false,
+                                "actions": false
+                              }
+                            },
+                            "variant": "",
+                            "componentState": "default",
+                            "states": [],
+                            "containerRules": [],
+                            "timeline": {
+                              "duration": 500,
+                              "delay": 0,
+                              "easing": "ease",
+                              "iterations": 1,
+                              "direction": "normal",
+                              "fill": "both",
+                              "playbackRate": 1,
+                              "reducedMotion": "disable",
+                              "engine": "auto",
+                              "trigger": "manual",
+                              "scroll": {
+                                "timeline": "view",
+                                "source": "nearest",
+                                "axis": "block",
+                                "rangeStart": "entry 0%",
+                                "rangeEnd": "cover 100%"
+                              },
+                              "tracks": []
+                            },
+                            "visibilityCondition": "",
+                            "dataContext": {},
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "componentInstance-t8srmqf-1i",
+            "type": "componentInstance",
+            "name": "InfoPanelInstance",
+            "props": {
+              "definitionId": "demo-info-panel",
+              "propValues": {
+                "title": "Reusable component"
+              }
+            },
+            "style": {
+              "base": {
+                "display": "contents"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "engine": "css",
+              "trigger": "hover",
+              "duration": 520,
+              "delay": 0,
+              "easing": "cubic-bezier(.2,.8,.2,1)",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": [
+                {
+                  "id": "track-t8srmqf-1m",
+                  "property": "opacity",
+                  "keyframes": [
+                    {
+                      "id": "kf-t8srmqf-1k",
+                      "at": 0,
+                      "value": "0",
+                      "easing": ""
+                    },
+                    {
+                      "id": "kf-t8srmqf-1l",
+                      "at": 1,
+                      "value": "1",
+                      "easing": ""
+                    }
+                  ]
+                },
+                {
+                  "id": "track-t8srmqf-1p",
+                  "property": "transform",
+                  "keyframes": [
+                    {
+                      "id": "kf-t8srmqf-1n",
+                      "at": 0,
+                      "value": "translateY(24px)",
+                      "easing": ""
+                    },
+                    {
+                      "id": "kf-t8srmqf-1o",
+                      "at": 1,
+                      "value": "translateY(0px)",
+                      "easing": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": [
+              {
+                "id": "text-t8srmqf-1j",
+                "type": "text",
+                "name": "Text56",
+                "props": {
+                  "text": "This content is passed through the default Astro slot."
+                },
+                "style": {
+                  "base": {
+                    "margin": "0",
+                    "fontSize": "16px",
+                    "lineHeight": "1.55"
+                  }
+                },
+                "actions": [],
+                "bindings": {},
+                "meta": {
+                  "domId": "",
+                  "className": "",
+                  "slot": "",
+                  "role": "",
+                  "ariaLabel": "",
+                  "title": "",
+                  "tabIndex": "",
+                  "locked": false,
+                  "hidden": false,
+                  "sourceOwnership": "designer",
+                  "exposed": {
+                    "content": true,
+                    "style": false,
+                    "structure": false,
+                    "actions": false
+                  }
+                },
+                "variant": "",
+                "componentState": "default",
+                "states": [],
+                "containerRules": [],
+                "timeline": {
+                  "duration": 500,
+                  "delay": 0,
+                  "easing": "ease",
+                  "iterations": 1,
+                  "direction": "normal",
+                  "fill": "both",
+                  "playbackRate": 1,
+                  "reducedMotion": "disable",
+                  "engine": "auto",
+                  "trigger": "manual",
+                  "scroll": {
+                    "timeline": "view",
+                    "source": "nearest",
+                    "axis": "block",
+                    "rangeStart": "entry 0%",
+                    "rangeEnd": "cover 100%"
+                  },
+                  "tracks": []
+                },
+                "visibilityCondition": "",
+                "dataContext": {},
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "button-t8srmqf-1q",
+            "type": "button",
+            "name": "WaapiDemoButton",
+            "props": {
+              "text": "Animate with JavaScript",
+              "buttonType": "button",
+              "disabled": false
+            },
+            "style": {
+              "base": {
+                "display": "inline-flex",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "padding": "10px 16px",
+                "border": "1px solid var(--color-primary)",
+                "borderRadius": "var(--radius-sm)",
+                "background": "var(--color-primary)",
+                "color": "#fff",
+                "fontWeight": "600",
+                "cursor": "pointer"
+              },
+              "mobile": {
+                "width": "100%"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "engine": "waapi",
+              "trigger": "click",
+              "duration": 420,
+              "delay": 0,
+              "easing": "cubic-bezier(.2,.8,.2,1)",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "shorten",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": [
+                {
+                  "id": "track-t8srmqf-1t",
+                  "property": "opacity",
+                  "keyframes": [
+                    {
+                      "id": "kf-t8srmqf-1r",
+                      "at": 0,
+                      "value": "0",
+                      "easing": ""
+                    },
+                    {
+                      "id": "kf-t8srmqf-1s",
+                      "at": 1,
+                      "value": "1",
+                      "easing": ""
+                    }
+                  ]
+                },
+                {
+                  "id": "track-t8srmqf-1w",
+                  "property": "transform",
+                  "keyframes": [
+                    {
+                      "id": "kf-t8srmqf-1u",
+                      "at": 0,
+                      "value": "scale(.92)",
+                      "easing": ""
+                    },
+                    {
+                      "id": "kf-t8srmqf-1v",
+                      "at": 1,
+                      "value": "scale(1)",
+                      "easing": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-doc-t8srmqf-1e",
+      "route": "/contact",
+      "filename": "contact.astro",
+      "name": "Contact",
+      "seo": {
+        "title": "Contact",
+        "description": "Contact form",
+        "canonical": "",
+        "ogImage": ""
+      },
+      "root": {
+        "id": "page-t8srmqe-14",
+        "type": "page",
+        "name": "ContactPage",
+        "props": {
+          "title": "Contact",
+          "description": "Contact form",
+          "lang": ""
+        },
+        "style": {
+          "base": {
+            "minHeight": "100vh",
+            "background": "var(--color-bg)",
+            "color": "var(--color-text)"
+          }
+        },
+        "actions": [],
+        "bindings": {},
+        "meta": {
+          "domId": "",
+          "className": "",
+          "slot": "",
+          "role": "",
+          "ariaLabel": "",
+          "title": "",
+          "tabIndex": "",
+          "locked": false,
+          "hidden": false,
+          "sourceOwnership": "designer",
+          "exposed": {
+            "content": true,
+            "style": false,
+            "structure": false,
+            "actions": false
+          }
+        },
+        "variant": "",
+        "componentState": "default",
+        "states": [],
+        "containerRules": [],
+        "timeline": {
+          "duration": 500,
+          "delay": 0,
+          "easing": "ease",
+          "iterations": 1,
+          "direction": "normal",
+          "fill": "both",
+          "playbackRate": 1,
+          "reducedMotion": "disable",
+          "engine": "auto",
+          "trigger": "manual",
+          "scroll": {
+            "timeline": "view",
+            "source": "nearest",
+            "axis": "block",
+            "rangeStart": "entry 0%",
+            "rangeEnd": "cover 100%"
+          },
+          "tracks": []
+        },
+        "visibilityCondition": "",
+        "dataContext": {},
+        "children": [
+          {
+            "id": "section-t8srmqe-15",
+            "type": "section",
+            "name": "Section42",
+            "props": {
+              "ariaLabel": ""
+            },
+            "style": {
+              "base": {
+                "width": "100%",
+                "padding": "48px 24px"
+              },
+              "tablet": {
+                "padding": "36px 20px"
+              },
+              "mobile": {
+                "padding": "28px 16px"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "duration": 500,
+              "delay": 0,
+              "easing": "ease",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "engine": "auto",
+              "trigger": "manual",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": []
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": [
+              {
+                "id": "container-t8srmqe-16",
+                "type": "container",
+                "name": "Container43",
+                "props": {},
+                "style": {
+                  "base": {
+                    "width": "100%",
+                    "maxWidth": "1120px",
+                    "margin": "0 auto"
+                  }
+                },
+                "actions": [],
+                "bindings": {},
+                "meta": {
+                  "domId": "",
+                  "className": "",
+                  "slot": "",
+                  "role": "",
+                  "ariaLabel": "",
+                  "title": "",
+                  "tabIndex": "",
+                  "locked": false,
+                  "hidden": false,
+                  "sourceOwnership": "designer",
+                  "exposed": {
+                    "content": true,
+                    "style": false,
+                    "structure": false,
+                    "actions": false
+                  }
+                },
+                "variant": "",
+                "componentState": "default",
+                "states": [],
+                "containerRules": [],
+                "timeline": {
+                  "duration": 500,
+                  "delay": 0,
+                  "easing": "ease",
+                  "iterations": 1,
+                  "direction": "normal",
+                  "fill": "both",
+                  "playbackRate": 1,
+                  "reducedMotion": "disable",
+                  "engine": "auto",
+                  "trigger": "manual",
+                  "scroll": {
+                    "timeline": "view",
+                    "source": "nearest",
+                    "axis": "block",
+                    "rangeStart": "entry 0%",
+                    "rangeEnd": "cover 100%"
+                  },
+                  "tracks": []
+                },
+                "visibilityCondition": "",
+                "dataContext": {},
+                "children": [
+                  {
+                    "id": "form-t8srmqf-17",
+                    "type": "form",
+                    "name": "ContactForm",
+                    "props": {
+                      "method": "post",
+                      "action": "",
+                      "noValidate": false
+                    },
+                    "style": {
+                      "base": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "gap": "14px"
+                      }
+                    },
+                    "actions": [],
+                    "bindings": {},
+                    "meta": {
+                      "domId": "",
+                      "className": "",
+                      "slot": "",
+                      "role": "",
+                      "ariaLabel": "",
+                      "title": "",
+                      "tabIndex": "",
+                      "locked": false,
+                      "hidden": false,
+                      "sourceOwnership": "designer",
+                      "exposed": {
+                        "content": true,
+                        "style": false,
+                        "structure": false,
+                        "actions": false
+                      }
+                    },
+                    "variant": "",
+                    "componentState": "default",
+                    "states": [],
+                    "containerRules": [],
+                    "timeline": {
+                      "duration": 500,
+                      "delay": 0,
+                      "easing": "ease",
+                      "iterations": 1,
+                      "direction": "normal",
+                      "fill": "both",
+                      "playbackRate": 1,
+                      "reducedMotion": "disable",
+                      "engine": "auto",
+                      "trigger": "manual",
+                      "scroll": {
+                        "timeline": "view",
+                        "source": "nearest",
+                        "axis": "block",
+                        "rangeStart": "entry 0%",
+                        "rangeEnd": "cover 100%"
+                      },
+                      "tracks": []
+                    },
+                    "visibilityCondition": "",
+                    "dataContext": {},
+                    "children": [
+                      {
+                        "id": "heading-t8srmqf-18",
+                        "type": "heading",
+                        "name": "Heading45",
+                        "props": {
+                          "text": "Contact",
+                          "level": "1"
+                        },
+                        "style": {
+                          "base": {
+                            "margin": "0",
+                            "fontSize": "32px",
+                            "lineHeight": "1.15",
+                            "fontWeight": "700"
+                          },
+                          "tablet": {
+                            "fontSize": "28px"
+                          },
+                          "mobile": {
+                            "fontSize": "24px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      },
+                      {
+                        "id": "label-t8srmqf-19",
+                        "type": "label",
+                        "name": "Label46",
+                        "props": {
+                          "text": "Email",
+                          "htmlFor": "email"
+                        },
+                        "style": {
+                          "base": {
+                            "display": "block",
+                            "fontWeight": "600",
+                            "marginBottom": "4px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      },
+                      {
+                        "id": "input-t8srmqf-1a",
+                        "type": "input",
+                        "name": "Input47",
+                        "props": {
+                          "inputType": "email",
+                          "placeholder": "you@example.com",
+                          "name": "email",
+                          "value": "",
+                          "required": true,
+                          "disabled": false,
+                          "min": "",
+                          "max": "",
+                          "minLength": "",
+                          "maxLength": "",
+                          "pattern": "",
+                          "autocomplete": ""
+                        },
+                        "style": {
+                          "base": {
+                            "width": "100%",
+                            "padding": "10px 12px",
+                            "border": "1px solid var(--color-border)",
+                            "borderRadius": "var(--radius-sm)",
+                            "background": "var(--color-surface)",
+                            "color": "var(--color-text)"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      },
+                      {
+                        "id": "label-t8srmqf-1b",
+                        "type": "label",
+                        "name": "Label48",
+                        "props": {
+                          "text": "Message",
+                          "htmlFor": "message"
+                        },
+                        "style": {
+                          "base": {
+                            "display": "block",
+                            "fontWeight": "600",
+                            "marginBottom": "4px"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      },
+                      {
+                        "id": "textarea-t8srmqf-1c",
+                        "type": "textarea",
+                        "name": "Textarea49",
+                        "props": {
+                          "placeholder": "How can we help?",
+                          "name": "message",
+                          "rows": "5",
+                          "required": true,
+                          "disabled": false,
+                          "minLength": "",
+                          "maxLength": ""
+                        },
+                        "style": {
+                          "base": {
+                            "width": "100%",
+                            "padding": "10px 12px",
+                            "border": "1px solid var(--color-border)",
+                            "borderRadius": "var(--radius-sm)",
+                            "resize": "vertical"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      },
+                      {
+                        "id": "button-t8srmqf-1d",
+                        "type": "button",
+                        "name": "Button50",
+                        "props": {
+                          "text": "Send",
+                          "buttonType": "submit",
+                          "disabled": false
+                        },
+                        "style": {
+                          "base": {
+                            "display": "inline-flex",
+                            "alignItems": "center",
+                            "justifyContent": "center",
+                            "padding": "10px 16px",
+                            "border": "1px solid var(--color-primary)",
+                            "borderRadius": "var(--radius-sm)",
+                            "background": "var(--color-primary)",
+                            "color": "#fff",
+                            "fontWeight": "600",
+                            "cursor": "pointer"
+                          },
+                          "mobile": {
+                            "width": "100%"
+                          }
+                        },
+                        "actions": [],
+                        "bindings": {},
+                        "meta": {
+                          "domId": "",
+                          "className": "",
+                          "slot": "",
+                          "role": "",
+                          "ariaLabel": "",
+                          "title": "",
+                          "tabIndex": "",
+                          "locked": false,
+                          "hidden": false,
+                          "sourceOwnership": "designer",
+                          "exposed": {
+                            "content": true,
+                            "style": false,
+                            "structure": false,
+                            "actions": false
+                          }
+                        },
+                        "variant": "",
+                        "componentState": "default",
+                        "states": [],
+                        "containerRules": [],
+                        "timeline": {
+                          "duration": 500,
+                          "delay": 0,
+                          "easing": "ease",
+                          "iterations": 1,
+                          "direction": "normal",
+                          "fill": "both",
+                          "playbackRate": 1,
+                          "reducedMotion": "disable",
+                          "engine": "auto",
+                          "trigger": "manual",
+                          "scroll": {
+                            "timeline": "view",
+                            "source": "nearest",
+                            "axis": "block",
+                            "rangeStart": "entry 0%",
+                            "rangeEnd": "cover 100%"
+                          },
+                          "tracks": []
+                        },
+                        "visibilityCondition": "",
+                        "dataContext": {},
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "components": [
+    {
+      "id": "demo-info-panel",
+      "name": "InfoPanel",
+      "filename": "InfoPanel.astro",
+      "description": "Demo reusable component",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Information"
+        }
+      ],
+      "root": {
+        "id": "card-t8srmqf-1f",
+        "type": "card",
+        "name": "InfoPanelRoot",
+        "props": {},
+        "style": {
+          "base": {
+            "padding": "24px",
+            "border": "1px solid var(--color-border)",
+            "borderRadius": "var(--radius-md)",
+            "background": "var(--color-surface)",
+            "boxShadow": "var(--shadow-sm)"
+          },
+          "mobile": {
+            "padding": "18px"
+          }
+        },
+        "actions": [],
+        "bindings": {},
+        "meta": {
+          "domId": "",
+          "className": "",
+          "slot": "",
+          "role": "",
+          "ariaLabel": "",
+          "title": "",
+          "tabIndex": "",
+          "locked": false,
+          "hidden": false,
+          "sourceOwnership": "designer",
+          "exposed": {
+            "content": true,
+            "style": false,
+            "structure": false,
+            "actions": false
+          }
+        },
+        "variant": "",
+        "componentState": "default",
+        "states": [],
+        "containerRules": [],
+        "timeline": {
+          "duration": 500,
+          "delay": 0,
+          "easing": "ease",
+          "iterations": 1,
+          "direction": "normal",
+          "fill": "both",
+          "playbackRate": 1,
+          "reducedMotion": "disable",
+          "engine": "auto",
+          "trigger": "manual",
+          "scroll": {
+            "timeline": "view",
+            "source": "nearest",
+            "axis": "block",
+            "rangeStart": "entry 0%",
+            "rangeEnd": "cover 100%"
+          },
+          "tracks": []
+        },
+        "visibilityCondition": "",
+        "dataContext": {},
+        "children": [
+          {
+            "id": "heading-t8srmqf-1g",
+            "type": "heading",
+            "name": "Heading53",
+            "props": {
+              "text": "Title",
+              "level": "3"
+            },
+            "style": {
+              "base": {
+                "margin": "0",
+                "fontSize": "32px",
+                "lineHeight": "1.15",
+                "fontWeight": "700"
+              },
+              "tablet": {
+                "fontSize": "28px"
+              },
+              "mobile": {
+                "fontSize": "24px"
+              }
+            },
+            "actions": [],
+            "bindings": {
+              "text": "props.title"
+            },
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "duration": 500,
+              "delay": 0,
+              "easing": "ease",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "engine": "auto",
+              "trigger": "manual",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": []
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": []
+          },
+          {
+            "id": "slot-t8srmqf-1h",
+            "type": "slot",
+            "name": "Slot54",
+            "props": {
+              "name": ""
+            },
+            "style": {
+              "base": {
+                "minHeight": "36px",
+                "border": "1px dashed #94a3b8",
+                "padding": "8px"
+              }
+            },
+            "actions": [],
+            "bindings": {},
+            "meta": {
+              "domId": "",
+              "className": "",
+              "slot": "",
+              "role": "",
+              "ariaLabel": "",
+              "title": "",
+              "tabIndex": "",
+              "locked": false,
+              "hidden": false,
+              "sourceOwnership": "designer",
+              "exposed": {
+                "content": true,
+                "style": false,
+                "structure": false,
+                "actions": false
+              }
+            },
+            "variant": "",
+            "componentState": "default",
+            "states": [],
+            "containerRules": [],
+            "timeline": {
+              "duration": 500,
+              "delay": 0,
+              "easing": "ease",
+              "iterations": 1,
+              "direction": "normal",
+              "fill": "both",
+              "playbackRate": 1,
+              "reducedMotion": "disable",
+              "engine": "auto",
+              "trigger": "manual",
+              "scroll": {
+                "timeline": "view",
+                "source": "nearest",
+                "axis": "block",
+                "rangeStart": "entry 0%",
+                "rangeEnd": "cover 100%"
+              },
+              "tracks": []
+            },
+            "visibilityCondition": "",
+            "dataContext": {},
+            "children": []
+          }
+        ]
+      }
+    }
+  ],
+  "assets": [],
+  "variables": [
+    {
+      "id": "state-t8srmqd-4",
+      "name": "menuOpen",
+      "type": "boolean",
+      "initial": false
+    },
+    {
+      "id": "state-t8srmqd-5",
+      "name": "message",
+      "type": "string",
+      "initial": "Hello from state"
+    }
+  ],
+  "plugins": [],
+  "workspace": {
+    "rootPath": "",
+    "files": [],
+    "sourceMappings": [],
+    "externalComponents": [],
+    "preview": {
+      "url": "",
+      "running": false
+    },
+    "lastScan": ""
+  },
+  "content": {
+    "collections": [],
+    "dataSources": []
+  },
+  "locales": {
+    "default": "en",
+    "available": [
+      {
+        "id": "en",
+        "label": "EN"
+      }
+    ],
+    "translations": {}
+  },
+  "componentTests": [],
+  "recordedTests": [],
+  "editor": {
+    "permissionMode": "designer",
+    "activeLocale": "en",
+    "sourceOwnershipDefault": "hybrid"
+  },
+  "tokenFormat": {
+    "type": "dtcg",
+    "version": "2025.10"
+  }
+}

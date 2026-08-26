@@ -1,0 +1,9 @@
+---
+interface Props { title?: string }
+const props = { ...{"title":"Information"}, ...Astro.props } as Required<Props>;
+---
+
+<article class="ui-card-t8srmqf-1f" data-ui-id="card-t8srmqf-1f" data-ui-state="default">
+  <h3 class="ui-heading-t8srmqf-1g" data-ui-id="heading-t8srmqf-1g" data-ui-state="default">{props.title}</h3>
+  <slot />
+</article>

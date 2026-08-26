@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import { DesignerBrowser } from './cdp-harness.mjs';
+const b=new DesignerBrowser(path.resolve('.'));
+try{
+  await b.start({width:1600,height:900});
+  assert.equal(await b.evaluate(`Boolean(document.querySelector('#split-mode-btn')&&document.querySelector('#code-mode-btn')&&document.querySelector('[data-left-tab="sources"]'))`),true);
+  await b.click('#split-mode-btn');
+  assert.equal(await b.evaluate(`document.querySelector('.canvas-area').classList.contains('view-split')`),true);
+  await b.click('#code-mode-btn');
+  assert.equal(await b.evaluate(`document.querySelector('.canvas-area').classList.contains('view-code')`),true);
+  await b.click('#design-mode-btn');
+  const card=await b.evaluate(`AstroUIDesigner.insert('card')`);
+  await b.click('[data-right-tab="variants"]');
+  await b.click('#add-node-state'); await b.click('#add-container-rule'); await b.click('[data-bottom-tab="animation"]'); await b.click('#anim-add-track');
+  const node=await b.evaluate(`AstroUIDesigner.getNode(${JSON.stringify(card)})`);
+  assert.equal(node.states.length,1);assert.equal(node.containerRules.length,1);assert.equal(node.timeline.tracks.length,1);
+  await b.click('[data-right-tab="data"]');
+  assert.equal(await b.evaluate(`Boolean(document.querySelector('#source-ownership'))`),true);
+  await b.click('[data-bottom-tab="content"]'); await b.click('#add-collection'); await b.click('#add-rest-source');
+  let project=await b.evaluate('AstroUIDesigner.getProject()');
+  assert.equal(project.content.collections.length,1);assert.equal(project.content.dataSources.length,1);
+  await b.click('[data-bottom-tab="tests"]'); await b.click('#new-test');
+  project=await b.evaluate('AstroUIDesigner.getProject()');assert.equal(project.recordedTests.length,1);
+  await b.click('[data-bottom-tab="audit"]');assert.equal(await b.evaluate(`Boolean(document.querySelector('#refresh-audit'))`),true);
+  await b.click('[data-bottom-tab="tokens"]');assert.equal(await b.evaluate(`Boolean(document.querySelector('#import-dtcg')&&document.querySelector('#export-dtcg'))`),true);
+  await b.click('[data-bottom-tab="integrations"]');assert.equal(await b.evaluate(`document.querySelectorAll('[data-run-contrib]').length>=1`),true,'integration providers rendered');
+  assert.deepEqual(await b.runtimeErrors(),[]);
+  console.log('research-browser.test: OK');
+} finally { await b.close(); }
