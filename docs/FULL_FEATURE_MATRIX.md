@@ -1,4 +1,4 @@
-# Full Feature Matrix — Research + Animation + UX Edition
+# Full Feature Matrix — Storybook + Penpot Clean-Room Edition
 
 Legend: **Implemented** = usable in this build. **Controlled** = intentionally guarded rather than arbitrary. **Provider hook** = core integration API exists; vendor-specific service is external.
 
@@ -29,7 +29,7 @@ Legend: **Implemented** = usable in this build. **Controlled** = intentionally g
 | Freeform → responsive inference | Implemented | Deterministic Row/Grid/layout advisor |
 | Design tokens | Implemented | CSS variables + token picker |
 | DTCG token interchange | Implemented | DTCG import/export adapter |
-| Penpot token interoperability | Implemented | DTCG boundary; richer design import through provider |
+| Penpot token interoperability | Implemented | DTCG token boundary plus Penpot v3 document adapter |
 | Multiple themes | Implemented | Active theme + duplication workflow |
 | Reusable components | Implemented | Definitions, instances, extract-from-selection |
 | Astro slots | Implemented | Default and named slot assignment |
@@ -55,7 +55,22 @@ Legend: **Implemented** = usable in this build. **Controlled** = intentionally g
 | Localization | Implemented | locales/translations model + export artifact |
 | Designer/Content/Client modes | Implemented | per-node exposure policy |
 | Git UI | Implemented | status/diff/stage/commit through workspace API |
-| Component stories/tests | Implemented foundation | stories + recorded test model/export + browser test adapter |
+| Component stories/tests | Implemented | Dedicated Component Lab with hierarchy, tags and status |
+| Args / Controls | Implemented | Typed controls inferred from component props |
+| Story globals | Implemented | Viewport, theme, locale, background, direction and layout |
+| Story viewport matrix | Implemented | Generate theme/viewport/locale combinations |
+| Interaction play steps | Implemented | click/type/select/toggle/hover/focus/key/wait |
+| Story assertions | Implemented | visibility/text/value/attribute/count/enabled state |
+| Per-story a11y policy | Implemented | off/todo/error with local structural checker |
+| axe-core parity | Adapter boundary | local zero-dependency checks are intentionally narrower |
+| Local visual baselines | Implemented | relative DOM geometry + computed-style fingerprint |
+| Pixel/cross-browser visual service | Adapter boundary | provider hook; no hosted service bundled |
+| Story test selection/watch | Implemented | render/interaction/a11y/visual/coverage, watch-aware |
+| Instrumented source coverage | Provider boundary | built-in result is component-node/interaction reachability |
+| Autodocs | Implemented | Markdown docs generated per component |
+| Portable stories | Implemented | generated JSON artifact |
+| CSF bridge export | Implemented | React/Vue/Svelte with args/tags/globals/play/expect |
+| Component manifest | Implemented | agent/tool-readable component metadata |
 | Visual test recording | Implemented | recorded interaction metadata/artifact |
 | Responsive audit | Implemented | multi-width diagnostics |
 | Accessibility audit | Implemented | semantics + explicit color contrast checks |
@@ -72,13 +87,89 @@ Legend: **Implemented** = usable in this build. **Controlled** = intentionally g
 | Integration contribution API | Implemented | assistants/importers/deployers/data/test/source/token adapters |
 | Offline AI-style layout advisor | Implemented | deterministic geometry-based assistant |
 | Remote AI provider | Provider hook | no bundled credentials/vendor dependency |
-| Figma/Penpot full canvas import | Provider hook | token interchange works now; full document import is adapter-specific |
+| Penpot v3 document import/export | Implemented clean-room | ZIP+JSON adapter based on public v3 format; self round-trip tested |
+| Figma document bridge | Implemented | REST-style JSON import/export; not closed native `.fig` |
+| HTML/SVG/Neutral JSON interchange | Implemented | Bidirectional, loss-aware adapters |
+| React/Vue/Svelte code export | Implemented | Readable framework source exporters |
+| Structured fills/strokes/shadows/blur/blend | Implemented | Dedicated Effects inspector and semantic design model |
+| Stroke dash/gap controls | Implemented | Preserved in vector/Penpot interchange; HTML border is closest approximation |
+| Constraints/fixed-scroll/clip | Implemented | Design metadata + CSS/Astro projection |
+| Guides | Implemented | Horizontal/vertical model + canvas overlay |
+| Prototype flows/overlays | Implemented | searchable destinations, navigation/overlay/back/URL actions |
+| Comments/review | Implemented | Anchored comments, replies, resolve/reopen |
+| Inspect handoff | Implemented | geometry + generated CSS/HTML |
+| Local shared design libraries | Implemented | publish/import/apply/export snapshot workflow |
+| Exact Penpot server collaboration / CRDT | Not bundled | independent future collaboration layer |
+| Exact vector boolean geometry | Not bundled | requires dedicated robust geometry kernel |
+| Layer PNG/JPEG/WebP/PDF renderer | Foundation | export presets modeled; dedicated renderer still required |
 | Deployment preview providers | Provider hook | deployment credentials remain external |
 | Astro code browser | Implemented | generated/workspace source viewing/editing |
 | Astro ZIP export | Implemented | zero-dependency ZIP writer |
 | Astro folder export | Implemented | File System Access API when available |
 | Framework islands | Implemented foundation | imports + Astro hydration directives/dependency metadata |
 | Rendered browser regression tests | Implemented | CDP harness + component/shell/panel/research/UX regression tests |
-| Visual checkpoints | Implemented | nine views: desktop, compact, freeform, preview, split/source, research, desktop/compact animation and Focus mode |
+| Visual checkpoints | Implemented | fourteen views including Penpot/interchange, desktop/compact Component Lab and Composition/Usages |
 | Desktop-style launcher | Implemented | zero-dependency Node server, workspace/Git/dev-process APIs |
 | Collaboration/CRDT | Not bundled | stable IDs/operations preserve a future integration path |
+
+## VS Code integration
+
+| Capability | Status |
+|---|---|
+| Full designer embedded in VS Code webview | Implemented |
+| Optional `.astro` custom editor (`Reopen With`) | Implemented |
+| `.astro-ui.json` / `designer-project.json` custom editor | Implemented |
+| Activity Bar page/component explorer | Implemented |
+| Astro/React/Vue/Svelte discovery | Implemented |
+| Active `.astro` synchronization | Implemented |
+| VS Code native file edit/save bridge | Implemented |
+| Git bridge | Implemented |
+| Astro dev-server lifecycle | Implemented |
+| Live preview inside designer webview | Implemented |
+| Diagnostics / Problems integration | Implemented |
+| Test Explorer discovery | Implemented |
+| VS Code Task Provider | Implemented |
+| Status bar integration | Implemented |
+| Native folder export from Astro generator | Implemented |
+| Untrusted-workspace lockout | Implemented |
+| Local VSIX packaging | Implemented |
+| VS Code Extension Host E2E in this build environment | Not executed; environment has no VS Code executable and package download is blocked |
+
+## Codebase composition / Plasmic clean-room additions
+
+| Capability | Status | Notes |
+|---|---|---|
+| Rich code-component contracts | Implemented | typed props/slots/states/events/provided data/global actions/style scope |
+| Global variants | Implemented | project-level groups, active values, node style overrides |
+| Reusable style mixins | Implemented | shared style references participate in canvas/export effective style |
+| Global contexts/actions | Implemented | generic descriptors, bindings and action invocation |
+| App-local data queries | Implemented | collection/static/HTTP/GraphQL/expression descriptors |
+| Generated query source | Implemented | `src/data/ui-queries.ts`; application owns execution |
+| Query/context node bindings | Implemented | stored by stable IDs and validated |
+| Insertable section/templates | Implemented | cloned subtrees receive fresh IDs |
+| Project-wide find usages | Implemented | components/assets/mixins/tokens/global variants/queries/contexts |
+| Global component replace | Implemented | preserves compatible instance prop values |
+| Composition refactor history | Implemented | replacement operations are recorded |
+| Legacy builder-server query proxy | Intentionally not implemented | source-first application execution is preferred |
+| Plasmic proprietary project/runtime parity | Not claimed | independent clean-room schema and exporter |
+
+## Hermes Agent integration
+
+| Capability | Status |
+| --- | --- |
+| Project-scoped stdio MCP server | Implemented |
+| MCP 2026-07-28 discovery | Implemented |
+| 2025 initialize compatibility | Implemented |
+| Semantic project read/search tools | Implemented |
+| Validation + responsive/a11y/SEO/performance audits | Implemented |
+| Guarded page/node/action/animation/story/query mutation | Implemented |
+| Project-wide usage lookup | Implemented |
+| Native Astro + interchange export | Implemented |
+| Atomic writes + optimistic revision conflicts | Implemented |
+| Read-only mode | Implemented |
+| Workspace export path containment | Implemented |
+| MCP resources/prompts | Implemented |
+| Hermes-compatible progressive skill | Implemented |
+| Skill validator/package (`skill.zip`) | Implemented |
+| Cross-platform Hermes setup helper | Implemented |
+| Generic shell/filesystem tool exposure | Intentionally not implemented |

@@ -102,6 +102,14 @@ export class DesignerBrowser {
 
     const registry = await this.blobModule(this.source('standalone/js/registry.js'));
     const model = await this.blobModule(this.source('standalone/js/model.js').replace("'./registry.js'", JSON.stringify(registry)));
+    const zip = await this.blobModule(this.source('standalone/js/zip.js'));
+    const penpotCleanroom = await this.blobModule(this.source('standalone/js/penpot-cleanroom.js').replace("'./model.js'", JSON.stringify(model)));
+    const platformIo = await this.blobModule(
+      this.source('standalone/js/platform-io.js')
+        .replace("'./model.js'", JSON.stringify(model))
+        .replace("'./zip.js'", JSON.stringify(zip))
+        .replace("'./penpot-cleanroom.js'", JSON.stringify(penpotCleanroom)),
+    );
     const animation = await this.blobModule(this.source('standalone/js/animation.js').replace("'./model.js'", JSON.stringify(model)));
     const pluginApi = await this.blobModule(this.source('standalone/js/plugin-api.js').replace("'./registry.js'", JSON.stringify(registry)));
     const research = await this.blobModule(
@@ -119,25 +127,29 @@ export class DesignerBrowser {
         .replace("'./research-integrations.js'", JSON.stringify(researchPlugin)),
     );
     const workspaceClient = await this.blobModule(this.source('standalone/js/workspace-client.js'));
+    const storybookCleanroom = await this.blobModule(this.source('standalone/js/storybook-cleanroom.js').replace("'./model.js'", JSON.stringify(model)));
+    const plasmicCleanroom = await this.blobModule(this.source('standalone/js/plasmic-cleanroom.js').replace("'./model.js'", JSON.stringify(model)));
     const astro = await this.blobModule(
       this.source('standalone/js/astro-exporter.js')
         .replace("'./registry.js'", JSON.stringify(registry))
         .replace("'./model.js'", JSON.stringify(model))
         .replace("'./plugin-api.js'", JSON.stringify(pluginApi))
-        .replace("'./animation.js'", JSON.stringify(animation)),
+        .replace("'./animation.js'", JSON.stringify(animation))
+        .replace("'./storybook-cleanroom.js'", JSON.stringify(storybookCleanroom))
+        .replace("'./plasmic-cleanroom.js'", JSON.stringify(plasmicCleanroom)),
     );
-    const zip = await this.blobModule(this.source('standalone/js/zip.js'));
     const validator = await this.blobModule(
       this.source('standalone/js/validator.js')
         .replace("'./registry.js'", JSON.stringify(registry))
         .replace("'./model.js'", JSON.stringify(model))
         .replace("'./plugin-api.js'", JSON.stringify(pluginApi))
-        .replace("'./animation.js'", JSON.stringify(animation)),
+        .replace("'./animation.js'", JSON.stringify(animation))
+        .replace("'./storybook-cleanroom.js'", JSON.stringify(storybookCleanroom)),
     );
     let app = this.source('standalone/js/app.js');
     const replacements = [
       ["'../plugins/bootstrap.js'", bootstrap], ["'./registry.js'", registry], ["'./model.js'", model],
-      ["'./astro-exporter.js'", astro], ["'./zip.js'", zip], ["'./validator.js'", validator], ["'./plugin-api.js'", pluginApi], ["'./research-features.js'", research], ["'./workspace-client.js'", workspaceClient], ["'./animation.js'", animation],
+      ["'./astro-exporter.js'", astro], ["'./zip.js'", zip], ["'./validator.js'", validator], ["'./plugin-api.js'", pluginApi], ["'./research-features.js'", research], ["'./workspace-client.js'", workspaceClient], ["'./animation.js'", animation], ["'./penpot-cleanroom.js'", penpotCleanroom], ["'./platform-io.js'", platformIo], ["'./storybook-cleanroom.js'", storybookCleanroom], ["'./plasmic-cleanroom.js'", plasmicCleanroom],
     ];
     for (const [from, url] of replacements) app = app.replace(from, JSON.stringify(url));
     const appUrl = await this.blobModule(app);

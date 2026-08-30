@@ -29,4 +29,8 @@ assert.ok(files['tokens/design-tokens.json'].includes('$schema'));
 assert.ok(files['tests/ui-designer.tests.json'].includes('Home smoke'));
 assert.ok(files['tests/ui-designer.tests.json'].includes('Desktop'));
 assert.ok(files['designer-source-map.json']);
+assert.ok(files['component-lab/portable-stories.json'].includes('Card'));
+assert.ok(files['component-lab/component-manifest.json'].includes('astro-ui-component-manifest'));
+assert.ok(files['component-lab/docs/Card.md'].includes('# Card'));
+assert.ok(files['component-lab/test-results.json']);
 console.log('export-research.test: OK');

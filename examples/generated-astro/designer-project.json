@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 4,
-  "id": "project-t8srmqd-2",
+  "schemaVersion": 7,
+  "id": "project-tg29bz7-2",
   "name": "astro-ui-project",
   "settings": {
     "astroVersion": "^7.2.0",
@@ -57,7 +57,7 @@
   },
   "pages": [
     {
-      "id": "page-doc-t8srmqd-3",
+      "id": "page-doc-tg29bz7-3",
       "route": "/",
       "filename": "index.astro",
       "name": "Home",
@@ -68,7 +68,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-t8srmqd-1",
+        "id": "page-tg29bz6-1",
         "type": "page",
         "name": "HomePage",
         "props": {
@@ -129,9 +129,33 @@
         },
         "visibilityCondition": "",
         "dataContext": {},
+        "design": {
+          "constraints": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "effects": {
+            "fills": [],
+            "strokes": [],
+            "shadows": [],
+            "blurs": [],
+            "blendMode": "normal"
+          },
+          "exportPresets": [],
+          "interactions": [],
+          "fixedOnScroll": false,
+          "clipContent": false,
+          "aspectLocked": false,
+          "vector": {
+            "kind": "none",
+            "path": "",
+            "booleanOperation": "none"
+          },
+          "libraryRef": ""
+        },
         "children": [
           {
-            "id": "header-t8srmqd-6",
+            "id": "header-tg29bz7-6",
             "type": "header",
             "name": "SiteHeader",
             "props": {},
@@ -189,9 +213,33 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
             "children": [
               {
-                "id": "nav-t8srmqd-7",
+                "id": "nav-tg29bz7-7",
                 "type": "nav",
                 "name": "MainNav",
                 "props": {
@@ -253,9 +301,33 @@
                 },
                 "visibilityCondition": "",
                 "dataContext": {},
+                "design": {
+                  "constraints": {
+                    "horizontal": "left",
+                    "vertical": "top"
+                  },
+                  "effects": {
+                    "fills": [],
+                    "strokes": [],
+                    "shadows": [],
+                    "blurs": [],
+                    "blendMode": "normal"
+                  },
+                  "exportPresets": [],
+                  "interactions": [],
+                  "fixedOnScroll": false,
+                  "clipContent": false,
+                  "aspectLocked": false,
+                  "vector": {
+                    "kind": "none",
+                    "path": "",
+                    "booleanOperation": "none"
+                  },
+                  "libraryRef": ""
+                },
                 "children": [
                   {
-                    "id": "heading-t8srmqe-8",
+                    "id": "heading-tg29bz7-8",
                     "type": "heading",
                     "name": "Brand",
                     "props": {
@@ -322,10 +394,40 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
-                    "children": []
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
+                    "children": [],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   },
                   {
-                    "id": "row-t8srmqe-9",
+                    "id": "row-tg29bz7-9",
                     "type": "row",
                     "name": "NavLinks",
                     "props": {},
@@ -390,9 +492,33 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
                     "children": [
                       {
-                        "id": "link-t8srmqe-a",
+                        "id": "link-tg29bz7-a",
                         "type": "link",
                         "name": "Link11",
                         "props": {
@@ -453,10 +579,40 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "link-t8srmqe-b",
+                        "id": "link-tg29bz7-b",
                         "type": "link",
                         "name": "Link12",
                         "props": {
@@ -517,16 +673,64 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       }
-                    ]
+                    ],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   }
-                ]
+                ],
+                "composition": {
+                  "mixins": [],
+                  "globalVariantStyles": [],
+                  "queryBindings": {},
+                  "contextBindings": {}
+                }
               }
-            ]
+            ],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           },
           {
-            "id": "section-t8srmqe-c",
+            "id": "section-tg29bz7-c",
             "type": "section",
             "name": "Hero",
             "props": {
@@ -591,9 +795,33 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
             "children": [
               {
-                "id": "container-t8srmqe-d",
+                "id": "container-tg29bz7-d",
                 "type": "container",
                 "name": "Container14",
                 "props": {},
@@ -650,9 +878,33 @@
                 },
                 "visibilityCondition": "",
                 "dataContext": {},
+                "design": {
+                  "constraints": {
+                    "horizontal": "left",
+                    "vertical": "top"
+                  },
+                  "effects": {
+                    "fills": [],
+                    "strokes": [],
+                    "shadows": [],
+                    "blurs": [],
+                    "blendMode": "normal"
+                  },
+                  "exportPresets": [],
+                  "interactions": [],
+                  "fixedOnScroll": false,
+                  "clipContent": false,
+                  "aspectLocked": false,
+                  "vector": {
+                    "kind": "none",
+                    "path": "",
+                    "booleanOperation": "none"
+                  },
+                  "libraryRef": ""
+                },
                 "children": [
                   {
-                    "id": "row-t8srmqe-e",
+                    "id": "row-tg29bz7-e",
                     "type": "row",
                     "name": "Row15",
                     "props": {},
@@ -716,9 +968,33 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
                     "children": [
                       {
-                        "id": "column-t8srmqe-f",
+                        "id": "column-tg29bz7-f",
                         "type": "column",
                         "name": "Column16",
                         "props": {},
@@ -777,9 +1053,33 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
                         "children": [
                           {
-                            "id": "badge-t8srmqe-g",
+                            "id": "badge-tg29bz7-g",
                             "type": "badge",
                             "name": "Badge17",
                             "props": {
@@ -841,10 +1141,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "heading-t8srmqe-h",
+                            "id": "heading-tg29bz7-h",
                             "type": "heading",
                             "name": "Heading18",
                             "props": {
@@ -912,10 +1242,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "text-t8srmqe-i",
+                            "id": "text-tg29bz7-i",
                             "type": "text",
                             "name": "Text19",
                             "props": {
@@ -976,10 +1336,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "row-t8srmqe-j",
+                            "id": "row-tg29bz7-j",
                             "type": "row",
                             "name": "Row20",
                             "props": {},
@@ -1043,9 +1433,33 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
                             "children": [
                               {
-                                "id": "button-t8srmqe-l",
+                                "id": "button-tg29bz7-l",
                                 "type": "button",
                                 "name": "DocsButton",
                                 "props": {
@@ -1072,7 +1486,7 @@
                                 },
                                 "actions": [
                                   {
-                                    "id": "act-t8srmqe-k",
+                                    "id": "act-tg29bz7-k",
                                     "event": "click",
                                     "type": "navigate",
                                     "value": "/docs",
@@ -1125,10 +1539,40 @@
                                 },
                                 "visibilityCondition": "",
                                 "dataContext": {},
-                                "children": []
+                                "design": {
+                                  "constraints": {
+                                    "horizontal": "left",
+                                    "vertical": "top"
+                                  },
+                                  "effects": {
+                                    "fills": [],
+                                    "strokes": [],
+                                    "shadows": [],
+                                    "blurs": [],
+                                    "blendMode": "normal"
+                                  },
+                                  "exportPresets": [],
+                                  "interactions": [],
+                                  "fixedOnScroll": false,
+                                  "clipContent": false,
+                                  "aspectLocked": false,
+                                  "vector": {
+                                    "kind": "none",
+                                    "path": "",
+                                    "booleanOperation": "none"
+                                  },
+                                  "libraryRef": ""
+                                },
+                                "children": [],
+                                "composition": {
+                                  "mixins": [],
+                                  "globalVariantStyles": [],
+                                  "queryBindings": {},
+                                  "contextBindings": {}
+                                }
                               },
                               {
-                                "id": "link-t8srmqe-m",
+                                "id": "link-tg29bz7-m",
                                 "type": "link",
                                 "name": "Link23",
                                 "props": {
@@ -1190,14 +1634,56 @@
                                 },
                                 "visibilityCondition": "",
                                 "dataContext": {},
-                                "children": []
+                                "design": {
+                                  "constraints": {
+                                    "horizontal": "left",
+                                    "vertical": "top"
+                                  },
+                                  "effects": {
+                                    "fills": [],
+                                    "strokes": [],
+                                    "shadows": [],
+                                    "blurs": [],
+                                    "blendMode": "normal"
+                                  },
+                                  "exportPresets": [],
+                                  "interactions": [],
+                                  "fixedOnScroll": false,
+                                  "clipContent": false,
+                                  "aspectLocked": false,
+                                  "vector": {
+                                    "kind": "none",
+                                    "path": "",
+                                    "booleanOperation": "none"
+                                  },
+                                  "libraryRef": ""
+                                },
+                                "children": [],
+                                "composition": {
+                                  "mixins": [],
+                                  "globalVariantStyles": [],
+                                  "queryBindings": {},
+                                  "contextBindings": {}
+                                }
                               }
-                            ]
+                            ],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           }
-                        ]
+                        ],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "card-t8srmqe-n",
+                        "id": "card-tg29bz7-n",
                         "type": "card",
                         "name": "PreviewCard",
                         "props": {},
@@ -1266,9 +1752,33 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
                         "children": [
                           {
-                            "id": "heading-t8srmqe-o",
+                            "id": "heading-tg29bz7-o",
                             "type": "heading",
                             "name": "Heading25",
                             "props": {
@@ -1335,10 +1845,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "text-t8srmqe-p",
+                            "id": "text-tg29bz7-p",
                             "type": "text",
                             "name": "Text26",
                             "props": {
@@ -1398,18 +1938,72 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           }
-                        ]
+                        ],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       }
-                    ]
+                    ],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   }
-                ]
+                ],
+                "composition": {
+                  "mixins": [],
+                  "globalVariantStyles": [],
+                  "queryBindings": {},
+                  "contextBindings": {}
+                }
               }
-            ]
+            ],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           },
           {
-            "id": "section-t8srmqe-q",
+            "id": "section-tg29bz7-q",
             "type": "section",
             "name": "Features",
             "props": {
@@ -1473,9 +2067,33 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
             "children": [
               {
-                "id": "container-t8srmqe-r",
+                "id": "container-tg29bz7-r",
                 "type": "container",
                 "name": "Container28",
                 "props": {},
@@ -1532,9 +2150,33 @@
                 },
                 "visibilityCondition": "",
                 "dataContext": {},
+                "design": {
+                  "constraints": {
+                    "horizontal": "left",
+                    "vertical": "top"
+                  },
+                  "effects": {
+                    "fills": [],
+                    "strokes": [],
+                    "shadows": [],
+                    "blurs": [],
+                    "blendMode": "normal"
+                  },
+                  "exportPresets": [],
+                  "interactions": [],
+                  "fixedOnScroll": false,
+                  "clipContent": false,
+                  "aspectLocked": false,
+                  "vector": {
+                    "kind": "none",
+                    "path": "",
+                    "booleanOperation": "none"
+                  },
+                  "libraryRef": ""
+                },
                 "children": [
                   {
-                    "id": "heading-t8srmqe-s",
+                    "id": "heading-tg29bz7-s",
                     "type": "heading",
                     "name": "Heading29",
                     "props": {
@@ -1601,10 +2243,40 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
-                    "children": []
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
+                    "children": [],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   },
                   {
-                    "id": "spacer-t8srmqe-13",
+                    "id": "spacer-tg29bz7-13",
                     "type": "spacer",
                     "name": "Spacer40",
                     "props": {},
@@ -1663,10 +2335,40 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
-                    "children": []
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
+                    "children": [],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   },
                   {
-                    "id": "grid-t8srmqe-t",
+                    "id": "grid-tg29bz7-t",
                     "type": "grid",
                     "name": "FeatureGrid",
                     "props": {},
@@ -1729,9 +2431,33 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
                     "children": [
                       {
-                        "id": "card-t8srmqe-u",
+                        "id": "card-tg29bz7-u",
                         "type": "card",
                         "name": "Card31",
                         "props": {},
@@ -1793,9 +2519,33 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
                         "children": [
                           {
-                            "id": "heading-t8srmqe-v",
+                            "id": "heading-tg29bz7-v",
                             "type": "heading",
                             "name": "Heading32",
                             "props": {
@@ -1862,10 +2612,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "text-t8srmqe-w",
+                            "id": "text-tg29bz7-w",
                             "type": "text",
                             "name": "Text33",
                             "props": {
@@ -1924,12 +2704,48 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           }
-                        ]
+                        ],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "card-t8srmqe-x",
+                        "id": "card-tg29bz7-x",
                         "type": "card",
                         "name": "Card34",
                         "props": {},
@@ -1991,9 +2807,33 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
                         "children": [
                           {
-                            "id": "heading-t8srmqe-y",
+                            "id": "heading-tg29bz7-y",
                             "type": "heading",
                             "name": "Heading35",
                             "props": {
@@ -2060,10 +2900,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "text-t8srmqe-z",
+                            "id": "text-tg29bz7-z",
                             "type": "text",
                             "name": "Text36",
                             "props": {
@@ -2122,12 +2992,48 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           }
-                        ]
+                        ],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "card-t8srmqe-10",
+                        "id": "card-tg29bz7-10",
                         "type": "card",
                         "name": "Card37",
                         "props": {},
@@ -2189,9 +3095,33 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
                         "children": [
                           {
-                            "id": "heading-t8srmqe-11",
+                            "id": "heading-tg29bz7-11",
                             "type": "heading",
                             "name": "Heading38",
                             "props": {
@@ -2258,10 +3188,40 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           },
                           {
-                            "id": "text-t8srmqe-12",
+                            "id": "text-tg29bz7-12",
                             "type": "text",
                             "name": "Text39",
                             "props": {
@@ -2320,18 +3280,72 @@
                             },
                             "visibilityCondition": "",
                             "dataContext": {},
-                            "children": []
+                            "design": {
+                              "constraints": {
+                                "horizontal": "left",
+                                "vertical": "top"
+                              },
+                              "effects": {
+                                "fills": [],
+                                "strokes": [],
+                                "shadows": [],
+                                "blurs": [],
+                                "blendMode": "normal"
+                              },
+                              "exportPresets": [],
+                              "interactions": [],
+                              "fixedOnScroll": false,
+                              "clipContent": false,
+                              "aspectLocked": false,
+                              "vector": {
+                                "kind": "none",
+                                "path": "",
+                                "booleanOperation": "none"
+                              },
+                              "libraryRef": ""
+                            },
+                            "children": [],
+                            "composition": {
+                              "mixins": [],
+                              "globalVariantStyles": [],
+                              "queryBindings": {},
+                              "contextBindings": {}
+                            }
                           }
-                        ]
+                        ],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       }
-                    ]
+                    ],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   }
-                ]
+                ],
+                "composition": {
+                  "mixins": [],
+                  "globalVariantStyles": [],
+                  "queryBindings": {},
+                  "contextBindings": {}
+                }
               }
-            ]
+            ],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           },
           {
-            "id": "componentInstance-t8srmqf-1i",
+            "id": "componentInstance-tg29bz8-1m",
             "type": "componentInstance",
             "name": "InfoPanelInstance",
             "props": {
@@ -2389,17 +3403,17 @@
               },
               "tracks": [
                 {
-                  "id": "track-t8srmqf-1m",
+                  "id": "track-tg29bz9-1q",
                   "property": "opacity",
                   "keyframes": [
                     {
-                      "id": "kf-t8srmqf-1k",
+                      "id": "kf-tg29bz9-1o",
                       "at": 0,
                       "value": "0",
                       "easing": ""
                     },
                     {
-                      "id": "kf-t8srmqf-1l",
+                      "id": "kf-tg29bz9-1p",
                       "at": 1,
                       "value": "1",
                       "easing": ""
@@ -2407,17 +3421,17 @@
                   ]
                 },
                 {
-                  "id": "track-t8srmqf-1p",
+                  "id": "track-tg29bz9-1t",
                   "property": "transform",
                   "keyframes": [
                     {
-                      "id": "kf-t8srmqf-1n",
+                      "id": "kf-tg29bz9-1r",
                       "at": 0,
                       "value": "translateY(24px)",
                       "easing": ""
                     },
                     {
-                      "id": "kf-t8srmqf-1o",
+                      "id": "kf-tg29bz9-1s",
                       "at": 1,
                       "value": "translateY(0px)",
                       "easing": ""
@@ -2428,11 +3442,35 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
             "children": [
               {
-                "id": "text-t8srmqf-1j",
+                "id": "text-tg29bz8-1n",
                 "type": "text",
-                "name": "Text56",
+                "name": "Text60",
                 "props": {
                   "text": "This content is passed through the default Astro slot."
                 },
@@ -2489,12 +3527,48 @@
                 },
                 "visibilityCondition": "",
                 "dataContext": {},
-                "children": []
+                "design": {
+                  "constraints": {
+                    "horizontal": "left",
+                    "vertical": "top"
+                  },
+                  "effects": {
+                    "fills": [],
+                    "strokes": [],
+                    "shadows": [],
+                    "blurs": [],
+                    "blendMode": "normal"
+                  },
+                  "exportPresets": [],
+                  "interactions": [],
+                  "fixedOnScroll": false,
+                  "clipContent": false,
+                  "aspectLocked": false,
+                  "vector": {
+                    "kind": "none",
+                    "path": "",
+                    "booleanOperation": "none"
+                  },
+                  "libraryRef": ""
+                },
+                "children": [],
+                "composition": {
+                  "mixins": [],
+                  "globalVariantStyles": [],
+                  "queryBindings": {},
+                  "contextBindings": {}
+                }
               }
-            ]
+            ],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           },
           {
-            "id": "button-t8srmqf-1q",
+            "id": "button-tg29bz9-1u",
             "type": "button",
             "name": "WaapiDemoButton",
             "props": {
@@ -2563,17 +3637,17 @@
               },
               "tracks": [
                 {
-                  "id": "track-t8srmqf-1t",
+                  "id": "track-tg29bz9-1x",
                   "property": "opacity",
                   "keyframes": [
                     {
-                      "id": "kf-t8srmqf-1r",
+                      "id": "kf-tg29bz9-1v",
                       "at": 0,
                       "value": "0",
                       "easing": ""
                     },
                     {
-                      "id": "kf-t8srmqf-1s",
+                      "id": "kf-tg29bz9-1w",
                       "at": 1,
                       "value": "1",
                       "easing": ""
@@ -2581,17 +3655,17 @@
                   ]
                 },
                 {
-                  "id": "track-t8srmqf-1w",
+                  "id": "track-tg29bz9-20",
                   "property": "transform",
                   "keyframes": [
                     {
-                      "id": "kf-t8srmqf-1u",
+                      "id": "kf-tg29bz9-1y",
                       "at": 0,
                       "value": "scale(.92)",
                       "easing": ""
                     },
                     {
-                      "id": "kf-t8srmqf-1v",
+                      "id": "kf-tg29bz9-1z",
                       "at": 1,
                       "value": "scale(1)",
                       "easing": ""
@@ -2602,13 +3676,49 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
-            "children": []
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
+            "children": [],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           }
-        ]
+        ],
+        "composition": {
+          "mixins": [],
+          "globalVariantStyles": [],
+          "queryBindings": {},
+          "contextBindings": {}
+        }
       }
     },
     {
-      "id": "page-doc-t8srmqf-1e",
+      "id": "page-doc-tg29bz8-1e",
       "route": "/contact",
       "filename": "contact.astro",
       "name": "Contact",
@@ -2619,7 +3729,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-t8srmqe-14",
+        "id": "page-tg29bz7-14",
         "type": "page",
         "name": "ContactPage",
         "props": {
@@ -2680,9 +3790,33 @@
         },
         "visibilityCondition": "",
         "dataContext": {},
+        "design": {
+          "constraints": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "effects": {
+            "fills": [],
+            "strokes": [],
+            "shadows": [],
+            "blurs": [],
+            "blendMode": "normal"
+          },
+          "exportPresets": [],
+          "interactions": [],
+          "fixedOnScroll": false,
+          "clipContent": false,
+          "aspectLocked": false,
+          "vector": {
+            "kind": "none",
+            "path": "",
+            "booleanOperation": "none"
+          },
+          "libraryRef": ""
+        },
         "children": [
           {
-            "id": "section-t8srmqe-15",
+            "id": "section-tg29bz7-15",
             "type": "section",
             "name": "Section42",
             "props": {
@@ -2746,9 +3880,33 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
             "children": [
               {
-                "id": "container-t8srmqe-16",
+                "id": "container-tg29bz7-16",
                 "type": "container",
                 "name": "Container43",
                 "props": {},
@@ -2805,9 +3963,33 @@
                 },
                 "visibilityCondition": "",
                 "dataContext": {},
+                "design": {
+                  "constraints": {
+                    "horizontal": "left",
+                    "vertical": "top"
+                  },
+                  "effects": {
+                    "fills": [],
+                    "strokes": [],
+                    "shadows": [],
+                    "blurs": [],
+                    "blendMode": "normal"
+                  },
+                  "exportPresets": [],
+                  "interactions": [],
+                  "fixedOnScroll": false,
+                  "clipContent": false,
+                  "aspectLocked": false,
+                  "vector": {
+                    "kind": "none",
+                    "path": "",
+                    "booleanOperation": "none"
+                  },
+                  "libraryRef": ""
+                },
                 "children": [
                   {
-                    "id": "form-t8srmqf-17",
+                    "id": "form-tg29bz8-17",
                     "type": "form",
                     "name": "ContactForm",
                     "props": {
@@ -2868,9 +4050,33 @@
                     },
                     "visibilityCondition": "",
                     "dataContext": {},
+                    "design": {
+                      "constraints": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                      },
+                      "effects": {
+                        "fills": [],
+                        "strokes": [],
+                        "shadows": [],
+                        "blurs": [],
+                        "blendMode": "normal"
+                      },
+                      "exportPresets": [],
+                      "interactions": [],
+                      "fixedOnScroll": false,
+                      "clipContent": false,
+                      "aspectLocked": false,
+                      "vector": {
+                        "kind": "none",
+                        "path": "",
+                        "booleanOperation": "none"
+                      },
+                      "libraryRef": ""
+                    },
                     "children": [
                       {
-                        "id": "heading-t8srmqf-18",
+                        "id": "heading-tg29bz8-18",
                         "type": "heading",
                         "name": "Heading45",
                         "props": {
@@ -2937,10 +4143,40 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "label-t8srmqf-19",
+                        "id": "label-tg29bz8-19",
                         "type": "label",
                         "name": "Label46",
                         "props": {
@@ -3000,10 +4236,40 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "input-t8srmqf-1a",
+                        "id": "input-tg29bz8-1a",
                         "type": "input",
                         "name": "Input47",
                         "props": {
@@ -3076,10 +4342,40 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "label-t8srmqf-1b",
+                        "id": "label-tg29bz8-1b",
                         "type": "label",
                         "name": "Label48",
                         "props": {
@@ -3139,10 +4435,40 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "textarea-t8srmqf-1c",
+                        "id": "textarea-tg29bz8-1c",
                         "type": "textarea",
                         "name": "Textarea49",
                         "props": {
@@ -3209,10 +4535,40 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       },
                       {
-                        "id": "button-t8srmqf-1d",
+                        "id": "button-tg29bz8-1d",
                         "type": "button",
                         "name": "Button50",
                         "props": {
@@ -3283,15 +4639,69 @@
                         },
                         "visibilityCondition": "",
                         "dataContext": {},
-                        "children": []
+                        "design": {
+                          "constraints": {
+                            "horizontal": "left",
+                            "vertical": "top"
+                          },
+                          "effects": {
+                            "fills": [],
+                            "strokes": [],
+                            "shadows": [],
+                            "blurs": [],
+                            "blendMode": "normal"
+                          },
+                          "exportPresets": [],
+                          "interactions": [],
+                          "fixedOnScroll": false,
+                          "clipContent": false,
+                          "aspectLocked": false,
+                          "vector": {
+                            "kind": "none",
+                            "path": "",
+                            "booleanOperation": "none"
+                          },
+                          "libraryRef": ""
+                        },
+                        "children": [],
+                        "composition": {
+                          "mixins": [],
+                          "globalVariantStyles": [],
+                          "queryBindings": {},
+                          "contextBindings": {}
+                        }
                       }
-                    ]
+                    ],
+                    "composition": {
+                      "mixins": [],
+                      "globalVariantStyles": [],
+                      "queryBindings": {},
+                      "contextBindings": {}
+                    }
                   }
-                ]
+                ],
+                "composition": {
+                  "mixins": [],
+                  "globalVariantStyles": [],
+                  "queryBindings": {},
+                  "contextBindings": {}
+                }
               }
-            ]
+            ],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           }
-        ]
+        ],
+        "composition": {
+          "mixins": [],
+          "globalVariantStyles": [],
+          "queryBindings": {},
+          "contextBindings": {}
+        }
       }
     }
   ],
@@ -3309,7 +4719,7 @@
         }
       ],
       "root": {
-        "id": "card-t8srmqf-1f",
+        "id": "card-tg29bz8-1f",
         "type": "card",
         "name": "InfoPanelRoot",
         "props": {},
@@ -3371,9 +4781,33 @@
         },
         "visibilityCondition": "",
         "dataContext": {},
+        "design": {
+          "constraints": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "effects": {
+            "fills": [],
+            "strokes": [],
+            "shadows": [],
+            "blurs": [],
+            "blendMode": "normal"
+          },
+          "exportPresets": [],
+          "interactions": [],
+          "fixedOnScroll": false,
+          "clipContent": false,
+          "aspectLocked": false,
+          "vector": {
+            "kind": "none",
+            "path": "",
+            "booleanOperation": "none"
+          },
+          "libraryRef": ""
+        },
         "children": [
           {
-            "id": "heading-t8srmqf-1g",
+            "id": "heading-tg29bz8-1g",
             "type": "heading",
             "name": "Heading53",
             "props": {
@@ -3442,10 +4876,40 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
-            "children": []
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
+            "children": [],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           },
           {
-            "id": "slot-t8srmqf-1h",
+            "id": "slot-tg29bz8-1h",
             "type": "slot",
             "name": "Slot54",
             "props": {
@@ -3504,22 +4968,154 @@
             },
             "visibilityCondition": "",
             "dataContext": {},
-            "children": []
+            "design": {
+              "constraints": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "effects": {
+                "fills": [],
+                "strokes": [],
+                "shadows": [],
+                "blurs": [],
+                "blendMode": "normal"
+              },
+              "exportPresets": [],
+              "interactions": [],
+              "fixedOnScroll": false,
+              "clipContent": false,
+              "aspectLocked": false,
+              "vector": {
+                "kind": "none",
+                "path": "",
+                "booleanOperation": "none"
+              },
+              "libraryRef": ""
+            },
+            "children": [],
+            "composition": {
+              "mixins": [],
+              "globalVariantStyles": [],
+              "queryBindings": {},
+              "contextBindings": {}
+            }
           }
-        ]
+        ],
+        "composition": {
+          "mixins": [],
+          "globalVariantStyles": [],
+          "queryBindings": {},
+          "contextBindings": {}
+        }
+      },
+      "stories": [
+        {
+          "id": "story-tg29bz8-1i",
+          "name": "Primary",
+          "args": {
+            "title": "Information"
+          },
+          "tags": [
+            "stable"
+          ],
+          "steps": [
+            {
+              "id": "story-step-tg29bz8-1j",
+              "type": "wait",
+              "target": "",
+              "value": 1,
+              "selector": "",
+              "delay": 0
+            }
+          ],
+          "assertions": [
+            {
+              "id": "story-assert-tg29bz8-1k",
+              "type": "visible",
+              "target": "card-tg29bz8-1f",
+              "value": true,
+              "attribute": ""
+            }
+          ],
+          "argTypes": {},
+          "viewport": "desktop",
+          "theme": "default",
+          "locale": "en",
+          "background": "light",
+          "direction": "ltr",
+          "state": "default",
+          "globals": {},
+          "parameters": {
+            "layout": "centered",
+            "docs": {
+              "description": ""
+            },
+            "a11y": {
+              "mode": "error"
+            },
+            "visual": {
+              "threshold": 0
+            }
+          },
+          "notes": "",
+          "status": "ready"
+        },
+        {
+          "id": "story-tg29bz8-1l",
+          "name": "Long title",
+          "args": {
+            "title": "A deliberately longer component title"
+          },
+          "tags": [],
+          "steps": [],
+          "assertions": [],
+          "argTypes": {},
+          "viewport": "mobile",
+          "theme": "default",
+          "locale": "en",
+          "background": "light",
+          "direction": "ltr",
+          "state": "default",
+          "globals": {},
+          "parameters": {
+            "layout": "centered",
+            "docs": {
+              "description": ""
+            },
+            "a11y": {
+              "mode": "todo"
+            },
+            "visual": {
+              "threshold": 0
+            }
+          },
+          "notes": "",
+          "status": "ready"
+        }
+      ],
+      "storyMeta": {
+        "title": "Components/InfoPanel",
+        "tags": [
+          "dev",
+          "test",
+          "autodocs"
+        ],
+        "description": "Demo reusable component",
+        "owner": "",
+        "status": "stable"
       }
     }
   ],
   "assets": [],
   "variables": [
     {
-      "id": "state-t8srmqd-4",
+      "id": "state-tg29bz7-4",
       "name": "menuOpen",
       "type": "boolean",
       "initial": false
     },
     {
-      "id": "state-t8srmqd-5",
+      "id": "state-tg29bz7-5",
       "name": "message",
       "type": "string",
       "initial": "Hello from state"
@@ -3561,5 +5157,97 @@
   "tokenFormat": {
     "type": "dtcg",
     "version": "2025.10"
+  },
+  "design": {
+    "guides": [],
+    "comments": [],
+    "flows": [],
+    "libraries": [],
+    "review": {
+      "showResolved": false
+    },
+    "inspect": {
+      "showMeasurements": true,
+      "showCode": true
+    },
+    "interchange": {
+      "lastImport": null,
+      "lastExport": null
+    }
+  },
+  "composition": {
+    "version": 1,
+    "globalVariants": [],
+    "activeGlobalVariants": {},
+    "mixins": [],
+    "globalContexts": [],
+    "queries": [],
+    "templates": [],
+    "refactors": {
+      "history": []
+    }
+  },
+  "storybook": {
+    "version": 1,
+    "settings": {
+      "defaultViewport": "desktop",
+      "defaultBackground": "light",
+      "direction": "ltr",
+      "grid": false,
+      "outline": false,
+      "measure": false,
+      "watch": false,
+      "coverage": false,
+      "testSelection": {
+        "render": true,
+        "interaction": true,
+        "a11y": true,
+        "visual": true,
+        "coverage": false
+      }
+    },
+    "tags": [
+      {
+        "id": "dev",
+        "label": "Dev",
+        "color": "#579bd3"
+      },
+      {
+        "id": "manifest",
+        "label": "Manifest",
+        "color": "#4fbf75"
+      },
+      {
+        "id": "test",
+        "label": "Test",
+        "color": "#8f79d6"
+      },
+      {
+        "id": "autodocs",
+        "label": "Autodocs",
+        "color": "#579bd3"
+      },
+      {
+        "id": "stable",
+        "label": "Stable",
+        "color": "#4fbf75"
+      },
+      {
+        "id": "experimental",
+        "label": "Experimental",
+        "color": "#d8a94c"
+      },
+      {
+        "id": "deprecated",
+        "label": "Deprecated",
+        "color": "#de6b70"
+      }
+    ],
+    "results": {},
+    "visualBaselines": {},
+    "docs": {
+      "title": "astro-ui-project Component Library",
+      "description": "Generated component documentation."
+    }
   }
 }

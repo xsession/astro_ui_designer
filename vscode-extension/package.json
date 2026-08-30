@@ -1,0 +1,250 @@
+{
+  "name": "astro-ui-designer-vscode",
+  "displayName": "Astro UI Designer",
+  "description": "Qt Creator-style visual Astro UI designer, Component Lab, live preview and cross-platform design tools inside VS Code.",
+  "version": "2.7.0",
+  "publisher": "astro-ui-designer",
+  "license": "SEE LICENSE-NOTICE.md",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Visualization",
+    "Testing",
+    "Other"
+  ],
+  "keywords": [
+    "astro",
+    "visual editor",
+    "ui designer",
+    "component lab",
+    "storybook",
+    "web design"
+  ],
+  "main": "./extension.js",
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "The extension can write project files, run npm scripts, start Astro dev servers and execute Git commands."
+    }
+  },
+  "activationEvents": [
+    "onCommand:astroUIDesigner.openDesigner",
+    "onCommand:astroUIDesigner.openActiveFile",
+    "onView:astroUIDesigner.workspaceView",
+    "onCustomEditor:astroUIDesigner.visualEditor",
+    "workspaceContains:**/astro.config.*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "astroUIDesigner.openDesigner",
+        "title": "Astro UI Designer: Open Designer",
+        "category": "Astro UI Designer",
+        "icon": "$(layout)"
+      },
+      {
+        "command": "astroUIDesigner.openDesignerToSide",
+        "title": "Astro UI Designer: Open Designer to Side",
+        "category": "Astro UI Designer",
+        "icon": "$(split-horizontal)"
+      },
+      {
+        "command": "astroUIDesigner.openActiveFile",
+        "title": "Astro UI Designer: Open Active Astro File Visually",
+        "category": "Astro UI Designer",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "astroUIDesigner.openComponentLab",
+        "title": "Astro UI Designer: Open Component Lab",
+        "category": "Astro UI Designer",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "astroUIDesigner.openPreview",
+        "title": "Astro UI Designer: Start Live Preview",
+        "category": "Astro UI Designer",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "astroUIDesigner.startDevServer",
+        "title": "Astro UI Designer: Start Astro Dev Server",
+        "category": "Astro UI Designer",
+        "icon": "$(server-process)"
+      },
+      {
+        "command": "astroUIDesigner.stopDevServer",
+        "title": "Astro UI Designer: Stop Astro Dev Server",
+        "category": "Astro UI Designer",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "astroUIDesigner.openAnimation",
+        "title": "Astro UI Designer: Open Animation Editor",
+        "category": "Astro UI Designer",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "astroUIDesigner.openInterchange",
+        "title": "Astro UI Designer: Open Platform Interchange",
+        "category": "Astro UI Designer",
+        "icon": "$(arrow-swap)"
+      },
+      {
+        "command": "astroUIDesigner.validate",
+        "title": "Astro UI Designer: Validate Project",
+        "category": "Astro UI Designer",
+        "icon": "$(check-all)"
+      },
+      {
+        "command": "astroUIDesigner.runTests",
+        "title": "Astro UI Designer: Run UI Tests",
+        "category": "Astro UI Designer",
+        "icon": "$(run-all)"
+      },
+      {
+        "command": "astroUIDesigner.exportProject",
+        "title": "Astro UI Designer: Export Astro Project",
+        "category": "Astro UI Designer",
+        "icon": "$(export)"
+      },
+      {
+        "command": "astroUIDesigner.refreshExplorer",
+        "title": "Astro UI Designer: Refresh Workspace Explorer",
+        "category": "Astro UI Designer",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "astroUIDesigner.showOutput",
+        "title": "Astro UI Designer: Show Output",
+        "category": "Astro UI Designer",
+        "icon": "$(output)"
+      },
+      {
+        "command": "astroUIDesigner.openSource",
+        "title": "Open in Astro UI Designer",
+        "category": "Astro UI Designer"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "astroUIDesigner.visualEditor",
+        "displayName": "Astro UI Designer",
+        "selector": [
+          {
+            "filenamePattern": "*.astro"
+          },
+          {
+            "filenamePattern": "*.astro-ui.json"
+          },
+          {
+            "filenamePattern": "designer-project.json"
+          }
+        ],
+        "priority": "option"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "astroUIDesigner",
+          "title": "Astro UI Designer",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "astroUIDesigner": [
+        {
+          "id": "astroUIDesigner.workspaceView",
+          "name": "Astro Workspace"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "astroUIDesigner.workspaceView",
+        "contents": "Open an Astro workspace to discover pages and components.\n[Open Designer](command:astroUIDesigner.openDesigner)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "astroUIDesigner.openActiveFile",
+          "when": "resourceExtname == .astro",
+          "group": "navigation@8"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "astroUIDesigner.openActiveFile",
+          "when": "resourceExtname == .astro",
+          "group": "navigation@8"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "astroUIDesigner.refreshExplorer",
+          "when": "view == astroUIDesigner.workspaceView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Astro UI Designer",
+      "properties": {
+        "astroUIDesigner.autoOpenWorkspace": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically connect the designer webview to the active Astro workspace."
+        },
+        "astroUIDesigner.autoLoadDesignerProject": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically load designer-project.json or .astro-ui/designer-project.json when present in the workspace."
+        },
+        "astroUIDesigner.syncActiveAstro": {
+          "type": "boolean",
+          "default": true,
+          "description": "Keep an open designer synchronized with the active .astro editor."
+        },
+        "astroUIDesigner.diagnosticsOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Refresh Astro UI Designer validation diagnostics when source files are saved."
+        },
+        "astroUIDesigner.previewCommand": {
+          "type": "string",
+          "default": "",
+          "description": "Optional custom command used to launch the live preview. Empty uses npm run dev."
+        }
+      }
+    },
+    "taskDefinitions": [
+      {
+        "type": "astro-ui-designer",
+        "required": [
+          "script"
+        ],
+        "properties": {
+          "script": {
+            "type": "string",
+            "description": "package.json script to run"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node test/run-tests.mjs",
+    "package:vsix": "node scripts/package-vsix.mjs"
+  },
+  "devDependencies": {
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0"
+  }
+}

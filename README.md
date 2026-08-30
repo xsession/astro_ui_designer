@@ -1,8 +1,8 @@
-# Astro UI Designer Pro — Research + Animation + UX Edition
+# Astro UI Designer Pro — Codebase Composition Clean-Room Edition
 
 A clean-room, **Qt Creator / Qt Designer-style visual IDE for real Astro projects**. The editor combines a dense engineering workbench with source-aware editing, live Astro/Vite preview, reusable code components, responsive CSS authoring, structured content/data, design tokens, Git, visual tests, a CSS/WAAPI animation timeline, and normal readable Astro output.
 
-The `2.3.0-ux` build also refines the shell around a canvas-first hierarchy: collapsible docks, a tabs-only default workbench, focus mode, explicit hidden-tab menus, contextual toolbar actions, first-use layout guidance, and compact-safe animation controls.
+The `2.7.0-hermes` build keeps the Penpot-derived design/interchange layer, Storybook-inspired Component Lab, animation workbench and VS Code integration, and adds an independent **codebase composition layer** informed by current public Plasmic workflows: rich code-component contracts, app-local queries, global variants, reusable style mixins, global contexts/actions, insertable templates and project-wide usage/refactor tools.
 
 The project is intentionally **not** a proprietary page-builder runtime. The generated project remains an ordinary Astro source tree, and existing project code can stay code-owned or hybrid-owned when the visual editor cannot safely restructure it.
 
@@ -30,6 +30,40 @@ npm start
 
 The launcher serves the IDE at `http://127.0.0.1:8766` and exposes local-only workspace/Git/dev-server APIs. The editor UI itself remains zero-runtime-dependency HTML/CSS/ES modules.
 
+## VS Code extension
+
+The repository now includes a first-class extension under [`vscode-extension/`](vscode-extension/) and a prebuilt VSIX in `vscode-extension/dist/`. It embeds the same full designer rather than maintaining a second UI implementation.
+
+Install the packaged extension from VS Code with **Extensions → … → Install from VSIX…**, or from a shell with:
+
+```bash
+code --install-extension vscode-extension/dist/astro-ui-designer-vscode-2.7.0.vsix
+```
+
+The extension adds:
+
+- an **Astro UI Designer** Activity Bar workspace explorer;
+- optional **Reopen With → Astro UI Designer** support for `.astro`, `.astro-ui.json`, and `designer-project.json`;
+- commands for Design, Component Lab, Animation, Interchange, Live Preview, validation, tests, and export;
+- VS Code filesystem/edit integration, Git bridge, Astro dev-server lifecycle, diagnostics, Test Explorer discovery, and task contribution;
+- active `.astro` source synchronization between the code editor and visual designer.
+
+See [docs/VSCODE_EXTENSION.md](docs/VSCODE_EXTENSION.md) for architecture, commands, security boundaries, and development instructions.
+
+## Hermes Agent integration
+
+The repository now ships a **project-scoped MCP server** plus a validated **Astro UI Designer skill** for Hermes Agent under [`integrations/hermes/`](integrations/hermes/). Hermes can inspect the semantic design graph, search nodes, validate/audit, find usages, create pages/nodes/actions/animations/stories/queries, apply templates, inspect generated source, and export Astro/interchange output without receiving a generic shell or unrestricted filesystem tool.
+
+Quick setup:
+
+```bash
+node integrations/hermes/install.mjs --project /absolute/path/to/designer-project.json
+```
+
+Add `--apply` when the `hermes` CLI is installed and you want the installer to run `hermes mcp add` + `hermes mcp test` automatically. Add `--read-only` to the MCP server arguments for inspection-only operation.
+
+The server supports current MCP 2026-07-28 discovery and the 2025 initialize handshake for compatibility. Mutations are atomic and accept `expectedRevision` for optimistic concurrency. See [docs/HERMES_AGENT.md](docs/HERMES_AGENT.md).
+
 ## The primary workflow
 
 ```text
@@ -54,6 +88,16 @@ Existing Astro repository
 ```
 
 Use **Workspace** to open an existing Astro project. Source-aware files appear in Sources, reusable code components are discovered into the palette, Git status/diff becomes available, and **Live** can launch the target project's own development server when its dependencies are already installed.
+
+## Component Lab
+
+Open **Lab** to work on reusable components in isolation. The editor temporarily dedicates the left side to story hierarchy, the center to the live component scenario and globals, the addon area to Controls/Interactions/A11y/Visual/Docs, the right inspector to Story metadata, and the bottom workbench to consolidated Story Results. Leaving Lab restores the previous workspace.
+
+The Lab supports inferred Controls from typed props, named stories/tags, viewport/theme/locale/background/direction/layout globals, story matrices, interaction steps/assertions, per-story accessibility policy, local geometry/style visual baselines, render/interaction/a11y/visual test selection, Watch mode, foundation coverage, Markdown Autodocs, portable-story JSON, React/Vue/Svelte CSF bridge generation and an agent-readable component manifest. The compact 1366 px layout wraps globals so none are hidden behind horizontal scrolling. See [docs/COMPONENT_LAB.md](docs/COMPONENT_LAB.md) and [docs/STORYBOOK_CLEANROOM_RESEARCH.md](docs/STORYBOOK_CLEANROOM_RESEARCH.md).
+
+## Composition workbench
+
+Open **Composition** for rich framework-neutral code-component contracts, reusable style mixins, global variants, contexts/actions and node data bindings. The bottom **Queries**, **Templates**, and **Usages** workbenches support app-local server/client query descriptors, insertable project patterns, project-wide reference search and component replacement while preserving prop values. Astro export emits normal source modules under `src/data/` and `src/composition/`; the generated application owns query execution rather than proxying data through the editor. See [docs/COMPOSITION_WORKBENCH.md](docs/COMPOSITION_WORKBENCH.md) and [docs/PLASMIC_CLEANROOM_RESEARCH.md](docs/PLASMIC_CLEANROOM_RESEARCH.md).
 
 ## Animation workbench
 
@@ -162,7 +206,7 @@ Controlled synchronization uses stable `data-ui-id` mappings. This build deliber
 - SEO audit.
 - Asset/performance audit.
 - Problems navigation.
-- Rendered Chromium regression suite, a dedicated UX regression suite and nine visual checkpoints.
+- Rendered Chromium regression suite, dedicated UX/composition regression suites and fourteen visual checkpoints.
 
 ### Integrations
 
@@ -232,7 +276,7 @@ Regenerate the reference Astro output:
 npm run generate:example
 ```
 
-The current Research + Animation + UX Edition has **18 automated suites**. They cover schema/migration, validation, Astro export, research features, workspace/source scanning, plugin contributions, every registered GUI element/property/action class, shell/panel workflows, compact/focus-mode UX regressions, freeform interaction parity, rendered browser behavior, the full animation workbench, and nine visual checkpoints.
+The current Codebase Composition Clean-Room Edition has **25 automated designer suites** plus **8 VS Code extension tests**. They cover schema/migration, composition contracts, validation, Astro export, Storybook/Penpot clean-room features, workspace/source scanning, platform interchange, plugin contributions, every registered GUI element/property/action class, shell/panel workflows, compact/focus-mode UX regressions, freeform interaction parity, rendered browser behavior, the animation workbench, Composition/Queries/Templates/Usages, and fourteen visual checkpoints.
 
 See:
 
@@ -240,6 +284,10 @@ See:
 - `docs/WEB_RESEARCH_AND_IMPLEMENTATION.md`
 - `docs/ANIMATION_EDITOR.md`
 - `docs/UI_UX_AUDIT_AND_FIXES.md`
+- `docs/PENPOT_CLEANROOM_RESEARCH.md`
+- `docs/PLATFORM_INTERCHANGE.md`
+- `docs/STORYBOOK_CLEANROOM_RESEARCH.md`
+- `docs/COMPONENT_LAB.md`
 - `docs/FULL_FEATURE_MATRIX.md`
 - `docs/ARCHITECTURE.md`
 - `docs/PLUGIN_SDK.md`
@@ -248,7 +296,7 @@ See:
 
 - The core avoids destructive guesses for arbitrary handwritten Astro/TypeScript.
 - Live target preview requires the target project's dependencies and usable `dev` command.
-- Full Figma/Penpot document import, vendor deployment and remote AI are provider integrations; the core includes their extension points but no external credentials.
+- Penpot v3 ZIP/JSON import/export and a Figma REST-style JSON bridge are implemented; native closed Figma `.fig`, exact Penpot server collaboration, and vendor credentials are intentionally not fabricated.
 - Browser-only mode cannot provide local process/Git/filesystem capabilities without the desktop launcher.
 
 These boundaries are intentional: preserving source ownership is more important than pretending unsupported transformations are safe.

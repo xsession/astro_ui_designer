@@ -1,5 +1,98 @@
 # Changelog
 
+## 2.7.0-hermes — 2026-08-30
+
+### Hermes Agent / MCP
+
+- Added a dependency-free, project-scoped Astro UI Designer MCP stdio server.
+- Added MCP 2026-07-28 `server/discover` support plus 2025 initialize compatibility.
+- Added semantic read/search/validate/audit/find-usage tools and guarded mutation/export tools.
+- Added atomic project writes, optimistic `expectedRevision` conflicts, read-only mode, and workspace export path containment.
+- Added MCP resources and prompts for project summary, validation, component registry, platform adapters, page building, UI review and component quality.
+- Added a validated `astro-ui-designer` Hermes/agent skill with setup and workflow references.
+- Added a cross-platform Hermes installer helper and example `config.yaml` entry.
+- Added dedicated protocol and skill regression suites.
+
+## 2.6.0-plasmic-cleanroom — 2026-08-30
+
+### Codebase composition layer
+
+- Added framework-neutral rich code-component contracts with typed props, slots, states, events, provided data, global actions and style-scope metadata.
+- Added project-level global variants and node-specific global-variant style overrides.
+- Added reusable style mixins integrated into live rendering and generated CSS.
+- Added global context/action descriptors plus node context/query bindings and an `Invoke global action` action type.
+- Added app-local query descriptors for collection/static/HTTP/GraphQL/expression workflows and generated `src/data/ui-queries.ts`.
+- Added insertable subtree templates with fresh-ID cloning.
+- Added project-wide Usages search for components/assets/mixins/tokens/global variants/queries/contexts.
+- Added global component replacement preserving instance prop values and refactor history.
+- Added dedicated Composition inspector plus Queries, Templates and Usages workbenches.
+- Added composition validation and normal Astro export artifacts under `src/composition/`.
+
+### Clean-room / verification
+
+- Added `PLASMIC_CLEANROOM_RESEARCH.md` and `COMPOSITION_WORKBENCH.md`.
+- Added dedicated model/browser regression suites and a new rendered visual checkpoint.
+- Updated the VS Code embedded designer to the same 2.6.0 core.
+- Legacy Plasmic server-proxied query/auth behavior is intentionally not reproduced.
+
+## 2.5.1-vscode
+
+- Added a first-class VS Code extension that embeds the complete Astro UI Designer.
+- Added optional `.astro` custom editor, Activity Bar project explorer, status-bar entry and command-palette workflow.
+- Added VS Code-native workspace read/write integration, preserving open-document edit/save semantics.
+- Added Git, Astro dev-server, diagnostics, Test Explorer and Task Provider integration.
+- Added VSIX packaging and offline extension tests.
+- Added source synchronization and direct Component Lab / Animation / Interchange commands.
+
+## 2.5.0-storybook-cleanroom — 2026-08-30
+
+### Component Lab
+
+- Added a dedicated isolated component-development workspace with story hierarchy, search, tags, status and focused workspace restoration.
+- Added typed Args/Controls inferred from visual component props.
+- Added viewport, theme, locale, background, direction and centered/padded/fullscreen layout globals plus grid/outline/measure overlays.
+- Added story matrices across theme/viewport/locale combinations.
+- Added recorded interaction steps and assertions with rendered-browser execution.
+- Added per-story accessibility policy (`off`, `todo`, `error`) and deterministic local structural checks.
+- Added local visual baselines based on relative DOM geometry and computed styles; baseline capture now samples the settled preview at click time.
+- Added render/interaction/a11y/visual/coverage test selection, Watch mode, warning status and consolidated Story Results.
+- Added Markdown Autodocs, portable stories, component manifest and React/Vue/Svelte CSF bridge generation with `play`/`userEvent`/`expect` output.
+- Added compact-width two-row global controls so every Lab global remains discoverable at 1366x768.
+
+### Verification
+
+- Added `storybook-cleanroom.test.mjs` and `storybook-browser.test.mjs`.
+- Expanded visual regression to 13 checkpoints including desktop and compact Component Lab views.
+- Added clean-room Storybook research and Component Lab user documentation.
+
+
+## 2.4.0-penpot-cleanroom — 2026-08-30
+
+### Penpot 2.17 clean-room design layer
+
+- Added structured fills, strokes, shadows, layer/background blur and blend modes.
+- Added dashed-stroke dash/gap controls inspired by observable Penpot 2.17 behavior.
+- Added horizontal/vertical constraints, fixed-on-scroll, clip-content and selection size feedback.
+- Added rectangle, ellipse, SVG path, raw SVG, group and mask visual primitives.
+- Added design guides, prototype flows, searchable destinations, overlays, previous-screen and URL interactions.
+- Added anchored comments/replies/resolution, Inspect handoff, export-preset metadata and local shared-library snapshots.
+- Preserved DTCG design-token interoperability and existing component/variant/state systems.
+
+### Multi-platform interchange
+
+- Added Penpot v3 `.penpot` ZIP/JSON clean-room import/export adapter.
+- Added Figma REST-style JSON bridge import/export; native closed `.fig` is explicitly not fabricated.
+- Added neutral Designer JSON, HTML and SVG import/export.
+- Added readable React/JSX, Vue SFC and Svelte exporters.
+- Added portable `.aui-library.json` design-library import/export.
+- Added a visual Interchange workbench showing supported platform capabilities and fidelity notes.
+
+### Verification
+
+- Added dedicated Penpot design-model, platform-interchange and rendered-browser suites.
+- Added visual checkpoints for the Penpot-derived Effects/Prototype workflow and Interchange matrix.
+- Added `docs/PENPOT_CLEANROOM_RESEARCH.md` and `docs/PLATFORM_INTERCHANGE.md`.
+
 ## 2.3.0-ux — 2026-08-25
 
 ### Canvas-first shell refinement

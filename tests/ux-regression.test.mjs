@@ -16,7 +16,7 @@ try {
   assert.ok(workspace.height / 768 > 0.78, 'workspace retains most of the compact viewport');
 
   // Overflow affordances make every dock destination discoverable.
-  for (const [button, expected] of [['#left-tabs-more', 5], ['#right-tabs-more', 7], ['#bottom-tabs-more', 13]]) {
+  for (const [button, expected] of [['#left-tabs-more', 5], ['#right-tabs-more', 10], ['#bottom-tabs-more', 22]]) {
     await browser.click(button);
     assert.equal(await browser.evaluate(`document.querySelectorAll('.tab-overflow-menu button').length`), expected, `${button} exposes all destinations`);
     await browser.evaluate(`document.querySelector('#popover-layer').innerHTML=''`);

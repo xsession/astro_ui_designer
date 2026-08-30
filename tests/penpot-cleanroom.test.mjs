@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import { createProject, createNode } from '../standalone/js/model.js';
+import { ensureDesignProject, ensureDesignNode, addGuide, addComment, replyComment, toggleCommentResolved, addFlow, addInteraction, addExportPreset, addFill, addStroke, addShadow, addBlur, applyEffectsToStyle, inspectNode, prototypeSummary, publishLibrarySnapshot, applyLibrarySnapshot, exportLibrarySnapshot, importLibrarySnapshot } from '../standalone/js/penpot-cleanroom.js';
+
+const p=createProject();
+const d=ensureDesignProject(p);
+assert.ok(Array.isArray(d.guides)&&Array.isArray(d.comments)&&Array.isArray(d.flows));
+const n=createNode('card',{name:'PenpotCard'});p.pages[0].root.children.push(n);ensureDesignNode(n);
+addFill(n,{color:'#123456'});addStroke(n,{color:'#ffffff',width:2,style:'dashed',dash:4,gap:2});addShadow(n,{x:2,y:4,blur:10,color:'#00000044'});addBlur(n,{type:'background',value:6});n.design.effects.blendMode='multiply';applyEffectsToStyle(n);
+assert.equal(n.style.base.background,'#123456');
+assert.match(n.style.base.border,/2px dashed/);assert.match(n.style.base.boxShadow,/2px 4px 10px/);assert.equal(n.style.base.backdropFilter,'blur(6px)');assert.equal(n.style.base.mixBlendMode,'multiply');
+const g=addGuide(p,'x',144,'Column');assert.equal(g.position,144);
+const c=addComment(p,n.id,'Needs review','Alice');replyComment(p,c.id,'Fixed','Bob');assert.equal(c.replies.length,1);toggleCommentResolved(p,c.id);assert.equal(c.resolved,true);
+const f=addFlow(p,'Checkout',p.pages[0].id);assert.equal(f.name,'Checkout');
+const i=addInteraction(n,{trigger:'mouseenter',action:'openOverlay',destination:'overlay-id'});assert.equal(i.action,'openOverlay');
+const e=addExportPreset(n,{format:'webp',scale:2,suffix:'@2x'});assert.equal(e.format,'webp');
+const inspected=inspectNode(n);assert.match(inspected.css,/background: #123456/);assert.equal(inspected.constraints.horizontal,'left');
+const lib=publishLibrarySnapshot(p,'Shared UI');assert.equal(lib.name,'Shared UI');const payload=exportLibrarySnapshot(p,lib.id);const imported=importLibrarySnapshot(p,payload);assert.equal(imported.name,'Shared UI');assert.equal(applyLibrarySnapshot(p,imported.id),true);
+const summary=prototypeSummary(p);assert.equal(summary.guides,1);assert.equal(summary.comments,1);assert.equal(summary.flows,1);assert.equal(summary.interactions,1);
+console.log('penpot-cleanroom.test: OK');

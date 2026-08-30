@@ -1,0 +1,63 @@
+{
+  "format": "astro-ui-component-manifest",
+  "version": 1,
+  "generatedAt": "2026-08-30T17:05:51.341Z",
+  "project": "astro-ui-project",
+  "components": [
+    {
+      "id": "demo-info-panel",
+      "name": "InfoPanel",
+      "title": "Components/InfoPanel",
+      "description": "Demo reusable component",
+      "owner": "",
+      "status": "stable",
+      "tags": [
+        "dev",
+        "test",
+        "autodocs"
+      ],
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Information"
+        }
+      ],
+      "slots": [
+        {
+          "id": "slot-tg29bz8-1h",
+          "name": "Slot54"
+        }
+      ],
+      "stories": [
+        {
+          "id": "story-tg29bz8-1i",
+          "name": "Primary",
+          "tags": [
+            "stable"
+          ],
+          "args": {
+            "title": "Information"
+          },
+          "viewport": "desktop",
+          "theme": "default",
+          "locale": "en",
+          "testStatus": "idle"
+        },
+        {
+          "id": "story-tg29bz8-1l",
+          "name": "Long title",
+          "tags": [],
+          "args": {
+            "title": "A deliberately longer component title"
+          },
+          "viewport": "mobile",
+          "theme": "default",
+          "locale": "en",
+          "testStatus": "idle"
+        }
+      ],
+      "documentation": "# InfoPanel\n\nDemo reusable component\n\n## Props\n\n| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `title` | string | Information |  |\n\n## Stories\n\n- **Primary** — stable\n- **Long title** — untagged\n\n## Usage\n\n```astro\n---\nimport InfoPanel from '../components/InfoPanel.astro';\n---\n<InfoPanel />\n```\n"
+    }
+  ]
+}

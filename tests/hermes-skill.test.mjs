@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const skill=path.join(root,'integrations/hermes/skill-src/astro-ui-designer');
+const md=fs.readFileSync(path.join(skill,'SKILL.md'),'utf8');
+assert.match(md,/^---\nname: astro-ui-designer\ndescription:/);
+assert.doesNotMatch(md,/TODO/i);
+assert.match(md,/project_summary/);
+assert.match(md,/expectedRevision/);
+assert.match(md,/validate_project/);
+assert.match(md,/export_project/);
+for(const f of ['references/mcp-tools.md','references/workflows.md','references/hermes-setup.md','agents/openai.yaml'])assert.ok(fs.existsSync(path.join(skill,f)),f);
+const setup=fs.readFileSync(path.join(skill,'references/hermes-setup.md'),'utf8');
+assert.match(setup,/hermes mcp add astro-ui-designer/);
+assert.match(setup,/--args/);
+console.log('hermes-skill.test: OK');

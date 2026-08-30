@@ -1,0 +1,595 @@
+{
+  "name": "astro-ui-project",
+  "document": {
+    "id": "0:0",
+    "name": "astro-ui-project",
+    "type": "DOCUMENT",
+    "children": [
+      {
+        "id": "page:0",
+        "name": "Home",
+        "type": "CANVAS",
+        "children": [
+          {
+            "id": "header-tfdd2t8-6",
+            "name": "SiteHeader",
+            "type": "FRAME",
+            "absoluteBoundingBox": {
+              "x": 0,
+              "y": 0,
+              "width": 100,
+              "height": 80
+            },
+            "children": [
+              {
+                "id": "nav-tfdd2t8-7",
+                "name": "MainNav",
+                "type": "FRAME",
+                "absoluteBoundingBox": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 240,
+                  "height": 80
+                },
+                "children": [
+                  {
+                    "id": "heading-tfdd2t8-8",
+                    "name": "Brand",
+                    "type": "TEXT",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 240,
+                      "height": 80
+                    },
+                    "children": [],
+                    "characters": "Astro UI Designer"
+                  },
+                  {
+                    "id": "row-tfdd2t8-9",
+                    "name": "NavLinks",
+                    "type": "FRAME",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 240,
+                      "height": 80
+                    },
+                    "children": [
+                      {
+                        "id": "link-tfdd2t9-a",
+                        "name": "Link11",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": "link-tfdd2t9-b",
+                        "name": "Link12",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "section-tfdd2t9-c",
+            "name": "Hero",
+            "type": "FRAME",
+            "absoluteBoundingBox": {
+              "x": 0,
+              "y": 0,
+              "width": 100,
+              "height": 80
+            },
+            "children": [
+              {
+                "id": "container-tfdd2t9-d",
+                "name": "Container14",
+                "type": "FRAME",
+                "absoluteBoundingBox": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 100,
+                  "height": 80
+                },
+                "children": [
+                  {
+                    "id": "row-tfdd2t9-e",
+                    "name": "Row15",
+                    "type": "FRAME",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 240,
+                      "height": 80
+                    },
+                    "children": [
+                      {
+                        "id": "column-tfdd2t9-f",
+                        "name": "Column16",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": [
+                          {
+                            "id": "badge-tfdd2t9-g",
+                            "name": "Badge17",
+                            "type": "FRAME",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": []
+                          },
+                          {
+                            "id": "heading-tfdd2t9-h",
+                            "name": "Heading18",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Build responsive Astro interfaces visually."
+                          },
+                          {
+                            "id": "text-tfdd2t9-i",
+                            "name": "Text19",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Qt Creator-style workflow, web-native layout rules, reusable components, responsive states, actions, assets and clean Astro output."
+                          },
+                          {
+                            "id": "row-tfdd2t9-j",
+                            "name": "Row20",
+                            "type": "FRAME",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [
+                              {
+                                "id": "button-tfdd2t9-l",
+                                "name": "DocsButton",
+                                "type": "FRAME",
+                                "absoluteBoundingBox": {
+                                  "x": 0,
+                                  "y": 0,
+                                  "width": 240,
+                                  "height": 80
+                                },
+                                "children": []
+                              },
+                              {
+                                "id": "link-tfdd2t9-m",
+                                "name": "Link23",
+                                "type": "FRAME",
+                                "absoluteBoundingBox": {
+                                  "x": 0,
+                                  "y": 0,
+                                  "width": 240,
+                                  "height": 80
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "card-tfdd2t9-n",
+                        "name": "PreviewCard",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": [
+                          {
+                            "id": "heading-tfdd2t9-o",
+                            "name": "Heading25",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Source-first output"
+                          },
+                          {
+                            "id": "text-tfdd2t9-p",
+                            "name": "Text26",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Generated pages, components, layouts, CSS, assets and client actions stay readable and editable."
+                          }
+                        ],
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.09019607843137255,
+                              "g": 0.12549019607843137,
+                              "b": 0.16470588235294117
+                            },
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "section-tfdd2t9-q",
+            "name": "Features",
+            "type": "FRAME",
+            "absoluteBoundingBox": {
+              "x": 0,
+              "y": 0,
+              "width": 100,
+              "height": 80
+            },
+            "children": [
+              {
+                "id": "container-tfdd2t9-r",
+                "name": "Container28",
+                "type": "FRAME",
+                "absoluteBoundingBox": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 100,
+                  "height": 80
+                },
+                "children": [
+                  {
+                    "id": "heading-tfdd2t9-s",
+                    "name": "Heading29",
+                    "type": "TEXT",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 240,
+                      "height": 80
+                    },
+                    "children": [],
+                    "characters": "A full visual frontend IDE"
+                  },
+                  {
+                    "id": "spacer-tfdd2ta-13",
+                    "name": "Spacer40",
+                    "type": "FRAME",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 24
+                    },
+                    "children": []
+                  },
+                  {
+                    "id": "grid-tfdd2t9-t",
+                    "name": "FeatureGrid",
+                    "type": "FRAME",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 240,
+                      "height": 80
+                    },
+                    "children": [
+                      {
+                        "id": "card-tfdd2t9-u",
+                        "name": "Card31",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": [
+                          {
+                            "id": "heading-tfdd2t9-v",
+                            "name": "Heading32",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Responsive layout"
+                          },
+                          {
+                            "id": "text-tfdd2t9-w",
+                            "name": "Text33",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Flex, Grid, breakpoints and freeform HMI layers."
+                          }
+                        ]
+                      },
+                      {
+                        "id": "card-tfdd2t9-x",
+                        "name": "Card34",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": [
+                          {
+                            "id": "heading-tfdd2t9-y",
+                            "name": "Heading35",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Reusable components"
+                          },
+                          {
+                            "id": "text-tfdd2ta-z",
+                            "name": "Text36",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Create project components with slots and instance overrides."
+                          }
+                        ]
+                      },
+                      {
+                        "id": "card-tfdd2ta-10",
+                        "name": "Card37",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": [
+                          {
+                            "id": "heading-tfdd2ta-11",
+                            "name": "Heading38",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "Behavior"
+                          },
+                          {
+                            "id": "text-tfdd2ta-12",
+                            "name": "Text39",
+                            "type": "TEXT",
+                            "absoluteBoundingBox": {
+                              "x": 0,
+                              "y": 0,
+                              "width": 240,
+                              "height": 80
+                            },
+                            "children": [],
+                            "characters": "State variables, bindings and web-native signal/action connections."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "card-tfdd2tb-1f",
+            "name": "InterchangeCard",
+            "type": "FRAME",
+            "absoluteBoundingBox": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 180
+            },
+            "children": [],
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "opacity": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "page:1",
+        "name": "Contact",
+        "type": "CANVAS",
+        "children": [
+          {
+            "id": "section-tfdd2tb-15",
+            "name": "Section42",
+            "type": "FRAME",
+            "absoluteBoundingBox": {
+              "x": 0,
+              "y": 0,
+              "width": 100,
+              "height": 80
+            },
+            "children": [
+              {
+                "id": "container-tfdd2tb-16",
+                "name": "Container43",
+                "type": "FRAME",
+                "absoluteBoundingBox": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 100,
+                  "height": 80
+                },
+                "children": [
+                  {
+                    "id": "form-tfdd2tb-17",
+                    "name": "ContactForm",
+                    "type": "FRAME",
+                    "absoluteBoundingBox": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 240,
+                      "height": 80
+                    },
+                    "children": [
+                      {
+                        "id": "heading-tfdd2tb-18",
+                        "name": "Heading45",
+                        "type": "TEXT",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": [],
+                        "characters": "Contact"
+                      },
+                      {
+                        "id": "label-tfdd2tb-19",
+                        "name": "Label46",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": "input-tfdd2tb-1a",
+                        "name": "Input47",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 100,
+                          "height": 80
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": "label-tfdd2tb-1b",
+                        "name": "Label48",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": "textarea-tfdd2tb-1c",
+                        "name": "Textarea49",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 100,
+                          "height": 80
+                        },
+                        "children": []
+                      },
+                      {
+                        "id": "button-tfdd2tb-1d",
+                        "name": "Button50",
+                        "type": "FRAME",
+                        "absoluteBoundingBox": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 240,
+                          "height": 80
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "schemaVersion": 0,
+  "generator": "astro-ui-designer-figma-bridge"
+}

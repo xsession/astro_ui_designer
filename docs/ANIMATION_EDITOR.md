@@ -1,6 +1,6 @@
 # Animation Editor — CSS and JavaScript Motion Authoring
 
-**Current build:** 2.3.0-ux (animation workbench introduced in 2.2.0-animation)
+**Current build:** 2.6.0-plasmic-cleanroom (animation workbench introduced in 2.2.0-animation)
 
 The Animation workbench is a Qt-style timeline editor for web motion. It edits the same visual node model used by the Astro exporter and can emit either native CSS animations or JavaScript using the Web Animations API (WAAPI).
 

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Astro UI Designer"
+  short_description: "Operate Astro UI Designer projects through MCP"

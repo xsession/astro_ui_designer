@@ -1,4 +1,4 @@
-# Architecture — Astro UI Designer Research + Animation + UX Edition
+# Architecture — Astro UI Designer Storybook + Penpot Clean-Room Edition
 
 ## 1. Objective
 
@@ -20,7 +20,7 @@ This makes the UI useful both for generated projects and existing repositories w
 │ Editor Services                                               │
 │ Commands · Selection · Validation · Stories · Audit · Data    │
 ├───────────────────────────────────────────────────────────────┤
-│ Visual Semantic Model (schema v4)                             │
+│ Visual Semantic Model (schema v6)                             │
 │ Pages · Nodes · Components · State · Content · Locales        │
 │ Workspace · Source Ownership · Tests · Tokens                 │
 ├───────────────┬────────────────┬──────────────────────────────┤
@@ -31,7 +31,7 @@ This makes the UI useful both for generated projects and existing repositories w
 └───────────────────────────────────────────────────────────────┘
 ```
 
-## 3. Schema v4 domains
+## 3. Schema v6 domains
 
 The project model now includes:
 
@@ -280,3 +280,188 @@ A bottom destination expands the workbench transactionally; selecting the active
 All compact tab strips provide an explicit destination menu. Horizontal scrolling is an enhancement, not the only way to reach hidden tabs. Toolbar visibility is derived from selection/mode capability, so invalid layout and alignment operations are not presented as continuously active commands.
 
 The corresponding geometry and behavior contracts are enforced by `tests/ux-regression.test.mjs` and `tests/visual-smoke.mjs`.
+
+
+## 15. Clean-room design/interchange layer (2.4)
+
+Penpot-derived capabilities live behind an independent semantic design layer rather than being mixed into the renderer or Astro exporter.
+
+```text
+Canvas / Inspectors / Prototype / Comments
+                │
+                ▼
+      Clean-room Design Semantics
+ effects · constraints · guides · flows
+ comments · vectors · export presets
+                │
+       ┌────────┼────────┐
+       ▼        ▼        ▼
+      CSS      SVG    Prototype runtime
+       │        │        │
+       └────────┴────────┘
+                │
+                ▼
+        Platform Adapter Layer
+ Astro · Penpot v3 · Figma bridge
+ HTML · SVG · Neutral JSON
+ React · Vue · Svelte
+```
+
+`penpot-cleanroom.js` contains the independent design semantics. `platform-io.js` is the interchange boundary. Neither module is the project persistence format and neither is allowed to make Penpot-specific identifiers/classes the primary domain model.
+
+Penpot v3 is handled as the publicly documented ZIP+JSON interchange format. The adapter is version-aware and loss-aware; unsupported future migrations/features must be surfaced rather than guessed. Figma interoperability is deliberately REST-style JSON rather than the closed native `.fig` format.
+
+Shared design libraries are portable local snapshots of components, themes and token metadata. They do not implement Penpot's remote team/library synchronization protocol.
+
+See `docs/PENPOT_CLEANROOM_RESEARCH.md` and `docs/PLATFORM_INTERCHANGE.md`.
+
+
+## 16. Component Lab / Storybook clean-room layer (2.5)
+
+The Component Lab is a first-class editor service, not an embedded Storybook manager. It uses the same reusable-component definitions that Astro export and multi-platform interchange use.
+
+```text
+Reusable component definition
+           │
+           ├── typed props/slots/states
+           │
+           ▼
+        Stories
+ args · globals · tags · steps · assertions · parameters
+           │
+     ┌─────┼──────────────┐
+     ▼     ▼              ▼
+ Controls Preview       Docs
+     │     │              │
+     └─────┴──────┬───────┘
+                  ▼
+           Test Result Store
+ render · interaction · a11y · visual · coverage
+                  │
+        ┌─────────┼──────────┐
+        ▼         ▼          ▼
+ Portable JSON  CSF bridge  Agent manifest
+```
+
+`storybook-cleanroom.js` owns story semantics, control inference, portable output and test-result helpers. `app.js` owns the Component Lab UI and browser execution. The Lab does not make Storybook source/runtime classes part of the project model.
+
+Component Lab mode is transactional with respect to workspace layout: entering records the previous left/right/bottom dock state, switches the right dock to Story and the bottom destination to Story Results, then restores the previous workspace exactly on exit. This gives isolated-component work sufficient canvas width without permanently changing the user's main design layout.
+
+The built-in accessibility and visual checks are deliberately offline and deterministic. axe-core, Playwright, Vitest/V8/Istanbul, hosted pixel-diff services and MCP are provider/integration boundaries rather than mandatory editor dependencies. See `docs/STORYBOOK_CLEANROOM_RESEARCH.md` and `docs/COMPONENT_LAB.md`.
+
+## VS Code extension architecture (2.5.1)
+
+The VS Code extension is an adapter around the same browser/desktop designer, not a fork of the editor.
+
+```text
+VS Code workbench
+├── Activity Bar Astro workspace tree
+├── commands / status bar
+├── optional CustomTextEditorProvider
+├── TaskProvider
+├── DiagnosticCollection
+├── Testing API controller
+└── webview host
+      │ request/response bridge
+      ▼
+standalone designer
+├── app/model/validator
+├── Astro exporter
+├── Component Lab
+├── animation editor
+├── Penpot/interchange
+└── workspace-client
+```
+
+`workspace-client.js` first checks for the VS Code request bridge. If it is absent, it falls back to the standalone launcher's local HTTP workspace API. This keeps all editor/domain modules host-independent.
+
+The VS Code host owns privileged operations: filesystem access, Git, npm/Astro process execution and native VS Code diagnostics/tasks/testing. The webview owns visual state and calls these operations through structured messages.
+
+Writes to files that already have a VS Code `TextDocument` use `WorkspaceEdit` plus `document.save()`; unopened files use `workspace.fs.writeFile`. This avoids bypassing VS Code's normal buffer lifecycle.
+
+See [VSCODE_EXTENSION.md](VSCODE_EXTENSION.md).
+
+
+## Codebase composition layer (2.6.0)
+
+The composition layer is framework- and vendor-neutral and sits above the core document model:
+
+```text
+Astro/React/Vue/Svelte discovery
+             │
+             ▼
+    Code Component Contract
+             │
+      ┌──────┼────────┐
+      ▼      ▼        ▼
+   Mixins  Global   Queries/Contexts
+           Variants
+      └──────┼────────┘
+             ▼
+     Effective UI model
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+    Canvas      Astro exporter
+```
+
+`standalone/js/plasmic-cleanroom.js` contains the independent composition services. The filename records the clean-room research lineage; the persisted schema itself is `project.composition` and is not a Plasmic data model.
+
+### Source-first data execution
+
+Query descriptors are authored visually, but generated requests execute in the target application. `generateQueryModule()` emits `src/data/ui-queries.ts`. The editor only evaluates deterministic local previews and mock network results. This prevents production credentials and request traffic from becoming coupled to a builder service.
+
+### Style order
+
+Effective visual style is resolved in this order:
+
+```text
+base node style
+→ breakpoint overrides
+→ component state overrides
+→ applied mixins
+→ active global-variant overrides
+```
+
+The exporter follows the same semantic pipeline and emits normal CSS. Global variant values are represented using `data-ui-global-*` attributes on the document root.
+
+### Refactorability
+
+References are stable IDs. `findUsages()` can locate component, asset, mixin, token, global-variant, query and context references. Component replacement preserves instance prop values by name and records a refactor event rather than silently discarding configuration.
+
+## Hermes Agent / MCP integration (2.7.0)
+
+The Hermes integration is a host-side automation layer and does not become part of the browser renderer or project schema.
+
+```text
+Hermes Agent
+    │
+    ├── progressive skill instructions
+    │
+    └── native MCP client
+            │ stdio JSON-RPC
+            ▼
+integrations/hermes/mcp/server.mjs
+            │
+            ▼
+      ProjectService
+            │
+      ┌─────┼──────────┐
+      ▼     ▼          ▼
+   model  validator   exporters/audits
+      │
+      ▼
+designer-project.json
+```
+
+Important boundaries:
+
+- one project file per server process;
+- no generic shell tool;
+- no unrestricted filesystem tools;
+- atomic writes and optional optimistic revision checks;
+- read-only mode for review-only agents;
+- export output constrained to the project workspace;
+- model/validator/exporter modules are reused directly instead of reimplementing designer semantics for Hermes.
+
+See `docs/HERMES_AGENT.md` for setup and tool details.

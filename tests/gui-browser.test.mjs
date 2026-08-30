@@ -22,7 +22,7 @@ try {
     errors:window.__designerErrors
   })`));
   assert.equal(boot.title, 'Astro UI Designer Pro');
-  assert.equal(boot.api, '2.3.0-ux');
+  assert.equal(boot.api, '2.7.0-hermes');
   assert.ok(boot.palette.length >= 30);
   assert.deepEqual(boot.errors, []);
 

@@ -1,13 +1,18 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.3.0-ux",
+  "version": "2.7.0",
   "private": true,
   "type": "module",
-  "description": "Astro-native Qt Creator-style visual IDE with source-aware workspace and CSS/WAAPI animation editor",
+  "description": "Astro-native visual IDE with Qt-style design, Penpot/Storybook/Plasmic-inspired clean-room workflows, multi-platform interchange, VS Code integration, and a project-scoped Hermes Agent MCP + skill integration",
   "scripts": {
     "start": "node launch-designer.mjs",
     "test": "node tests/run-all.mjs",
     "test:visual": "node tests/visual-smoke.mjs",
-    "generate:example": "node tests/generate-example.mjs"
+    "generate:example": "node tests/generate-example.mjs",
+    "test:vscode": "node vscode-extension/test/run-tests.mjs",
+    "package:vscode": "node vscode-extension/scripts/package-vsix.mjs",
+    "mcp": "node integrations/hermes/mcp/server.mjs",
+    "test:hermes": "node tests/hermes-mcp.test.mjs && node tests/hermes-skill.test.mjs",
+    "hermes:install": "node integrations/hermes/install.mjs"
   }
 }

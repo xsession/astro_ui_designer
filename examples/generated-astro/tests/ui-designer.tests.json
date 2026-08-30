@@ -1,4 +1,93 @@
 {
-  "stories": [],
-  "tests": []
+  "stories": [
+    {
+      "id": "story-tg29bz8-1i",
+      "name": "Primary",
+      "args": {
+        "title": "Information"
+      },
+      "tags": [
+        "stable"
+      ],
+      "steps": [
+        {
+          "id": "story-step-tg29bz8-1j",
+          "type": "wait",
+          "target": "",
+          "value": 1,
+          "selector": "",
+          "delay": 0
+        }
+      ],
+      "assertions": [
+        {
+          "id": "story-assert-tg29bz8-1k",
+          "type": "visible",
+          "target": "card-tg29bz8-1f",
+          "value": true,
+          "attribute": ""
+        }
+      ],
+      "argTypes": {},
+      "viewport": "desktop",
+      "theme": "default",
+      "locale": "en",
+      "background": "light",
+      "direction": "ltr",
+      "state": "default",
+      "globals": {},
+      "parameters": {
+        "layout": "centered",
+        "docs": {
+          "description": ""
+        },
+        "a11y": {
+          "mode": "error"
+        },
+        "visual": {
+          "threshold": 0
+        }
+      },
+      "notes": "",
+      "status": "ready",
+      "componentId": "demo-info-panel",
+      "componentName": "InfoPanel"
+    },
+    {
+      "id": "story-tg29bz8-1l",
+      "name": "Long title",
+      "args": {
+        "title": "A deliberately longer component title"
+      },
+      "tags": [],
+      "steps": [],
+      "assertions": [],
+      "argTypes": {},
+      "viewport": "mobile",
+      "theme": "default",
+      "locale": "en",
+      "background": "light",
+      "direction": "ltr",
+      "state": "default",
+      "globals": {},
+      "parameters": {
+        "layout": "centered",
+        "docs": {
+          "description": ""
+        },
+        "a11y": {
+          "mode": "todo"
+        },
+        "visual": {
+          "threshold": 0
+        }
+      },
+      "notes": "",
+      "status": "ready",
+      "componentId": "demo-info-panel",
+      "componentName": "InfoPanel"
+    }
+  ],
+  "tests": [],
+  "storyResults": {}
 }

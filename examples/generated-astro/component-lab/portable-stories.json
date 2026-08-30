@@ -1,0 +1,165 @@
+{
+  "format": "astro-ui-portable-stories",
+  "version": 1,
+  "generatedAt": "2026-08-30T17:05:51.340Z",
+  "project": "astro-ui-project",
+  "components": [
+    {
+      "id": "demo-info-panel",
+      "name": "InfoPanel",
+      "title": "Components/InfoPanel",
+      "description": "Demo reusable component",
+      "tags": [
+        "dev",
+        "test",
+        "autodocs"
+      ],
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Information"
+        }
+      ],
+      "stories": [
+        {
+          "id": "story-tg29bz8-1i",
+          "name": "Primary",
+          "args": {
+            "title": "Information"
+          },
+          "tags": [
+            "stable"
+          ],
+          "steps": [
+            {
+              "id": "story-step-tg29bz8-1j",
+              "type": "wait",
+              "target": "",
+              "value": 1,
+              "selector": "",
+              "delay": 0
+            }
+          ],
+          "assertions": [
+            {
+              "id": "story-assert-tg29bz8-1k",
+              "type": "visible",
+              "target": "card-tg29bz8-1f",
+              "value": true,
+              "attribute": ""
+            }
+          ],
+          "argTypes": {},
+          "viewport": "desktop",
+          "theme": "default",
+          "locale": "en",
+          "background": "light",
+          "direction": "ltr",
+          "state": "default",
+          "globals": {},
+          "parameters": {
+            "layout": "centered",
+            "docs": {
+              "description": ""
+            },
+            "a11y": {
+              "mode": "error"
+            },
+            "visual": {
+              "threshold": 0
+            }
+          },
+          "notes": "",
+          "status": "ready"
+        },
+        {
+          "id": "story-tg29bz8-1l",
+          "name": "Long title",
+          "args": {
+            "title": "A deliberately longer component title"
+          },
+          "tags": [],
+          "steps": [],
+          "assertions": [],
+          "argTypes": {},
+          "viewport": "mobile",
+          "theme": "default",
+          "locale": "en",
+          "background": "light",
+          "direction": "ltr",
+          "state": "default",
+          "globals": {},
+          "parameters": {
+            "layout": "centered",
+            "docs": {
+              "description": ""
+            },
+            "a11y": {
+              "mode": "todo"
+            },
+            "visual": {
+              "threshold": 0
+            }
+          },
+          "notes": "",
+          "status": "ready"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "defaultViewport": "desktop",
+    "defaultBackground": "light",
+    "direction": "ltr",
+    "grid": false,
+    "outline": false,
+    "measure": false,
+    "watch": false,
+    "coverage": false,
+    "testSelection": {
+      "render": true,
+      "interaction": true,
+      "a11y": true,
+      "visual": true,
+      "coverage": false
+    }
+  },
+  "tags": [
+    {
+      "id": "dev",
+      "label": "Dev",
+      "color": "#579bd3"
+    },
+    {
+      "id": "manifest",
+      "label": "Manifest",
+      "color": "#4fbf75"
+    },
+    {
+      "id": "test",
+      "label": "Test",
+      "color": "#8f79d6"
+    },
+    {
+      "id": "autodocs",
+      "label": "Autodocs",
+      "color": "#579bd3"
+    },
+    {
+      "id": "stable",
+      "label": "Stable",
+      "color": "#4fbf75"
+    },
+    {
+      "id": "experimental",
+      "label": "Experimental",
+      "color": "#d8a94c"
+    },
+    {
+      "id": "deprecated",
+      "label": "Deprecated",
+      "color": "#de6b70"
+    }
+  ]
+}

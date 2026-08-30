@@ -1,0 +1,7 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Test VS Code Extension", "type": "process", "command": "node", "args": ["test/run-tests.mjs"], "group": "test" },
+    { "label": "Package VSIX", "type": "process", "command": "node", "args": ["scripts/package-vsix.mjs"], "group": "build" }
+  ]
+}

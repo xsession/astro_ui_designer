@@ -106,7 +106,64 @@ try {
   assert.deepEqual(focus.errors,[],'focus: runtime errors');
   await browser.screenshot(path.join(out,'09-focus-mode-1366x768.png'));
 
-  console.log('visual-smoke: OK (9 rendered checkpoints)');
+  await setViewport(1600,900);
+  await browser.click('#focus-mode-btn');
+  await browser.evaluate(`AstroUIDesigner.reset();AstroUIDesigner.insert('card')`);
+  await browser.click('[data-right-tab="effects"]');
+  await browser.click('#add-fill');
+  await browser.click('#add-shadow');
+  await browser.change('#background-blur','6');
+  await browser.click('[data-bottom-tab="prototype"]');
+  await browser.click('#add-flow');
+  await browser.click('#add-interaction');
+  await browser.click('#add-vguide');
+  await assertShell('penpot-cleanroom');
+  assert.equal(await browser.evaluate(`Boolean(document.querySelector('#blend-mode')&&document.querySelector('.prototype-grid')&&document.querySelector('.guide-line'))`),true,'penpot clean-room: effects/prototype/guides visible');
+  await browser.screenshot(path.join(out,'10-penpot-cleanroom-1600x900.png'));
+
+  await browser.click('[data-bottom-tab="interchange"]');
+  await assertShell('platform-interchange');
+  const interchange=await browser.evaluate(`(()=>{const cards=[...document.querySelectorAll('.platform-card')];return {cards:cards.length,imports:cards.filter(x=>/Import/.test(x.textContent||'')).length,exports:document.querySelectorAll('[data-export-platform]').length,text:document.querySelector('.bottom-content')?.textContent||''}})()`);
+  assert.ok(interchange.cards>=8,'interchange: expected platform cards');
+  assert.ok(interchange.imports>=5,'interchange: expected multiple importers');
+  assert.ok(interchange.exports>=8,'interchange: expected multiple exporters');
+  assert.match(interchange.text,/Penpot v3/);
+  assert.match(interchange.text,/Figma REST-style JSON bridge/);
+  await browser.screenshot(path.join(out,'11-platform-interchange-1600x900.png'));
+
+  // Storybook-inspired Component Lab: story hierarchy, controls, globals, test addons and preview must coexist cleanly.
+  await browser.evaluate(`AstroUIDesigner.reset()`);
+  const labComponent=await browser.evaluate(`AstroUIDesigner.createReusableComponent('StatusCard')`);
+  await browser.evaluate(`AstroUIDesigner.addComponentProp(${JSON.stringify(labComponent)},{name:'title',type:'string',default:'System Status'});true`);
+  const labStory=await browser.evaluate(`AstroUIDesigner.createStory(${JSON.stringify(labComponent)},'Healthy')`);
+  await browser.evaluate(`AstroUIDesigner.openStory(${JSON.stringify(labComponent)},${JSON.stringify(labStory)})`);
+  await assertShell('component-lab');
+  assert.equal(await browser.evaluate(`document.querySelector('.canvas-area').classList.contains('view-lab')`),true,'component lab: dedicated canvas mode active');
+  assert.equal(await browser.evaluate(`Boolean(document.querySelector('#lab-story-list .lab-story-item')&&document.querySelector('[data-lab-arg="title"]')&&document.querySelector('#lab-preview-frame'))`),true,'component lab: stories, controls and preview visible');
+  await browser.screenshot(path.join(out,'12-component-lab-1600x900.png'));
+  await setViewport(1366,768);
+  await assertShell('component-lab-compact');
+  assert.equal(await browser.evaluate(`document.querySelector('.canvas-area').classList.contains('view-lab')`),true,'component lab compact: active');
+  const compactGlobals=await browser.evaluate(`(()=>{const g=document.querySelector('.lab-globals');const labels=[...g.querySelectorAll('label')];const r=g.getBoundingClientRect();return {scrollWidth:g.scrollWidth,clientWidth:g.clientWidth,labels:labels.map(x=>{const q=x.getBoundingClientRect();return {text:(x.textContent||'').trim(),left:q.left,right:q.right,top:q.top,bottom:q.bottom,visible:q.right<=r.right+1&&q.left>=r.left-1&&q.bottom<=r.bottom+1&&q.top>=r.top-1}})}})()`);
+  assert.ok(compactGlobals.scrollWidth<=compactGlobals.clientWidth+1,'component lab compact: globals must wrap instead of horizontal scrolling');
+  assert.equal(compactGlobals.labels.every(x=>x.visible),true,'component lab compact: every global control must remain discoverable');
+  await browser.screenshot(path.join(out,'13-component-lab-compact-1366x768.png'));
+
+
+  // Plasmic-inspired clean-room composition workspace: contracts, mixins, global variants, queries and usages.
+  await setViewport(1600,900);
+  await browser.evaluate(`AstroUIDesigner.reset()`);
+  const compositionCard=await browser.evaluate(`AstroUIDesigner.insert('card')`);
+  await browser.evaluate(`AstroUIDesigner.addMixin('Card Surface',{background:'#fff',borderRadius:'14px'});AstroUIDesigner.addGlobalVariant('Brand',['default','contrast']);AstroUIDesigner.addQuery('products','static');AstroUIDesigner.select(${JSON.stringify(compositionCard)});true`);
+  await browser.click('[data-right-tab="composition"]');
+  await browser.click('[data-node-mixin]');
+  await browser.click('[data-bottom-tab="usages"]');
+  await assertShell('plasmic-composition');
+  assert.equal(await browser.evaluate(`Boolean(document.querySelector('#new-mixin')&&document.querySelector('#new-global-variant')&&document.querySelector('#usage-ref'))`),true,'plasmic composition: inspector and usage workbench visible');
+  assert.match(await browser.evaluate(`document.querySelector('#bottom-content')?.textContent||''`),/1 usage/,'plasmic composition: applied mixin is discoverable through project-wide usage search');
+  await browser.screenshot(path.join(out,'14-plasmic-composition-1600x900.png'));
+
+  console.log('visual-smoke: OK (14 rendered checkpoints)');
 } finally {
   await browser.close();
 }

@@ -1,0 +1,12 @@
+# Merge this entry into ~/.hermes/config.yaml.
+# Replace the two absolute paths before use.
+mcp_servers:
+  astro-ui-designer:
+    command: "node"
+    args:
+      - "/ABS/PATH/TO/astro-ui-designer/integrations/hermes/mcp/server.mjs"
+      - "--project"
+      - "/ABS/PATH/TO/your-astro-project/designer-project.json"
+    timeout: 120
+    connect_timeout: 30
+    supports_parallel_tool_calls: false
