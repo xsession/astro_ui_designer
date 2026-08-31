@@ -2,7 +2,7 @@
 import readline from 'node:readline';
 import { ProjectService, resolveProjectArg } from './project-service.mjs';
 
-const SERVER = { name: 'astro-ui-designer', version: '2.7.0' };
+const SERVER = { name: 'astro-ui-designer', version: '2.8.0' };
 const MODERN_PROTOCOL = '2026-07-28';
 const LEGACY_PROTOCOLS = ['2025-11-25', '2025-06-18', '2025-03-26'];
 const { projectPath, readOnly } = resolveProjectArg();
@@ -23,7 +23,7 @@ const tools = [
   tool('generated_source','Read generated Astro/project source without writing it.',{file:str('Optional generated project path, e.g. src/pages/index.astro')}),
   tool('create_page','Create a new Astro page document and save the designer project.',{name:str('Page name'),route:str('Route such as /settings'),title:str('SEO title'),description:str('SEO description'),expectedRevision:rev()},['name']),
   tool('add_node','Insert a visual node below a parent node and save the project.',{parentId:str('Parent node ID'),type:str('Component type from list_component_types'),name:str('Optional instance name'),props:obj('Prop overrides'),style:obj('Breakpoint style object, e.g. {base:{padding:"16px"}}'),meta:obj('Safe metadata overrides'),index:num('Optional insertion index'),expectedRevision:rev()},['parentId','type']),
-  tool('update_node','Patch node name, props, style, metadata, variant/state or visibility condition.',{nodeId:str('Node ID'),patch:obj('Patch: name, props, style, meta, variant, componentState, visibilityCondition'),expectedRevision:rev()},['nodeId','patch']),
+  tool('update_node','Patch node name, props, responsive style, pseudo-state CSS, local CSS variables, design/manual-layout metadata, variant/state or visibility condition.',{nodeId:str('Node ID'),patch:obj('Patch: name, props, style, cssStates, cssVariables, design, meta, variant, componentState, visibilityCondition'),expectedRevision:rev()},['nodeId','patch']),
   tool('delete_node','Delete a non-root design node.',{nodeId:str('Node ID'),expectedRevision:rev()},['nodeId']),
   tool('add_action','Attach a web action to a node.',{nodeId:str('Node ID'),event:str('Event such as click/input/change'),type:str('Action type such as navigate/show/hide/toggleClass/setState/playAnimation'),target:str('Target node/state/action target'),value:{},condition:str('Optional expression condition'),expectedRevision:rev()},['nodeId','event','type']),
   tool('add_animation','Create or apply an animation to a node. Supports preset or property/from/to with CSS/WAAPI controls.',{nodeId:str('Node ID'),preset:enm(['fadeIn','fadeUp','scaleIn','slideLeft','pulse','spin'],'Optional preset'),property:str('CSS/animation property'),from:str('Start value'),to:str('End value'),duration:num('Duration milliseconds'),engine:enm(['auto','css','waapi'],'Export backend'),trigger:enm(['manual','load','hover','focus','click','inView','scroll'],'Animation trigger'),expectedRevision:rev()},['nodeId']),

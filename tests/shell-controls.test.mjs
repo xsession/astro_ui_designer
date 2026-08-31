@@ -10,7 +10,7 @@ try {
   const staticIds = [
     'new-btn','open-btn','save-btn','undo-btn','redo-btn','toggle-left-btn','focus-mode-btn','toggle-right-btn','cut-btn','copy-btn','paste-btn','duplicate-btn','delete-btn',
     'wrap-row-btn','wrap-col-btn','move-up-btn','move-down-btn','align-left-btn','align-hcenter-btn','align-right-btn','align-top-btn','align-vcenter-btn','align-bottom-btn','dist-h-btn','dist-v-btn',
-    'breakpoint-select','breakpoints-btn','left-tabs-more','right-tabs-more','bottom-tabs-more','bottom-toggle-btn','design-mode-btn','split-mode-btn','code-mode-btn','preview-mode-btn','component-lab-mode-btn','zoom-out-btn','fit-btn','zoom-in-btn','workspace-btn','live-preview-btn','command-btn','export-btn','file-open','asset-open','platform-import-open','library-import-open'
+    'breakpoint-select','breakpoints-btn','left-tabs-more','right-tabs-more','bottom-tabs-more','bottom-toggle-btn','design-mode-btn','split-mode-btn','code-mode-btn','preview-mode-btn','component-lab-mode-btn','zoom-out-btn','fit-btn','zoom-in-btn','workspace-btn','live-preview-btn','command-btn','export-btn','manual-rulers-btn','manual-snap-btn','manual-spacing-btn','manual-tools-btn','file-open','asset-open','platform-import-open','library-import-open'
   ];
   for (const id of staticIds) assert.equal(await browser.evaluate(`Boolean(document.getElementById(${JSON.stringify(id)}))`), true, `static control #${id}`);
   const handlerIds = staticIds.filter(x=>!['file-open','asset-open','platform-import-open','library-import-open'].includes(x));
@@ -43,7 +43,7 @@ try {
   }
 
   // Bottom dock tabs.
-  for (const tab of ['problems','objects','state','animation','tokens','libraries','actions','content','locales','tests','storybook','audit','git','prototype','comments','inspect','interchange','integrations','queries','templates','usages','console']) {
+  for (const tab of ['problems','objects','manual','css','state','animation','tokens','libraries','actions','content','locales','tests','storybook','audit','git','prototype','comments','inspect','interchange','integrations','queries','templates','usages','console']) {
     await browser.click(`[data-bottom-tab="${tab}"]`);
     assert.equal(await browser.evaluate(`document.querySelector('[data-bottom-tab="${tab}"]').classList.contains('active')`),true,`bottom tab ${tab}`);
   }
@@ -87,7 +87,7 @@ try {
   assert.notEqual(await browser.evaluate(`AstroUIDesigner.getProject().name`),nameBefore,'project replaced');
 
   assert.deepEqual(await browser.runtimeErrors(),[],'shell runtime errors');
-  console.log(`shell-controls.test: OK (${staticIds.length} static controls, 8 menus, 5 left tabs, 10 right tabs, 22 bottom tabs)`);
+  console.log(`shell-controls.test: OK (${staticIds.length} static controls, 8 menus, 5 left tabs, 10 right tabs, 24 bottom tabs)`);
 } finally {
   await browser.close();
 }

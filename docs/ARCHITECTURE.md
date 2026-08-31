@@ -429,7 +429,7 @@ The exporter follows the same semantic pipeline and emits normal CSS. Global var
 
 References are stable IDs. `findUsages()` can locate component, asset, mixin, token, global-variant, query and context references. Component replacement preserves instance prop values by name and records a refactor event rather than silently discarding configuration.
 
-## Hermes Agent / MCP integration (2.7.0)
+## Hermes Agent / MCP integration (2.8.0)
 
 The Hermes integration is a host-side automation layer and does not become part of the browser renderer or project schema.
 
@@ -465,3 +465,45 @@ Important boundaries:
 - model/validator/exporter modules are reused directly instead of reimplementing designer semantics for Hermes.
 
 See `docs/HERMES_AGENT.md` for setup and tool details.
+
+## Manual canvas/layout editing (2.8.0)
+
+The manual editor is deliberately separated into **semantic style/layout state** and **transient canvas interaction state**.
+
+```text
+Pointer / keyboard gesture
+        │
+        ▼
+manual-layout.js geometry helpers
+        │
+        ├── parent-local persisted geometry
+        ├── canvas-global snapping/measurement geometry
+        └── editor-only guides/rulers/feedback
+        │
+        ▼
+normal node style/design state
+        │
+        ├── CSS position / width / height / transform
+        ├── Flex/Grid properties
+        ├── sizing intent (fixed/fill/hug)
+        └── constraints
+        │
+        ▼
+Astro/CSS exporter
+```
+
+Important invariants:
+
+- nested freeform coordinates are stored relative to the positioned parent;
+- snap/measure/ruler overlays use canvas-global coordinates;
+- guides and transient snap lines are not emitted into application output;
+- direct Flex/Grid edits modify real CSS semantics;
+- ordinary flow nodes are not silently converted to absolute positioning;
+- freeform parent resize applies child constraint rules without rewriting unrelated descendants;
+- pointer gestures defensively stop if button state indicates a lost pointer-up.
+
+The detailed behavioral research, user workflow and regression rules are in `docs/MANUAL_LAYOUT_CLEANROOM_RESEARCH.md`.
+
+## Structured CSS editing layer
+
+`standalone/js/css-tools.js` contains deterministic CSS composition helpers used by the CSS Tools workbench. Nodes keep normal breakpoint styles in `style`, pseudo-selector overrides in `cssStates`, and element-scoped custom properties in `cssVariables`. The Astro exporter converts those maps directly to standard CSS selectors/properties; editor workbench state is never emitted. The layer remains independent from the renderer, animation engine, Penpot effects metadata and design tokens.

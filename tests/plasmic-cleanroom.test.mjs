@@ -3,7 +3,7 @@ import { createProject, createNode } from '../standalone/js/model.js';
 import { ensureCompositionModel, registerCodeComponentContract, addGlobalVariantGroup, setGlobalVariant, addNodeGlobalVariantStyle, addMixin, applyMixin, effectiveCompositionStyle, addGlobalContext, addGlobalAction, addQuery, evaluateQuery, bindNodeQuery, createTemplate, instantiateTemplate, findUsages, replaceComponentUsages, exportCompositionManifest, generateQueryModule } from '../standalone/js/plasmic-cleanroom.js';
 
 const p=createProject();ensureCompositionModel(p);
-assert.equal(p.schemaVersion,7);
+assert.equal(p.schemaVersion,8);
 const ext=registerCodeComponentContract(p,{name:'DataCard',symbol:'DataCard',importPath:'src/components/DataCard.tsx',framework:'react',contract:{description:'Rich code component',props:[{name:'title',type:'richText',default:'Hello'},{name:'items',type:'list',default:[]}],slots:['default'],states:[{name:'selected',type:'writable'}],globalActions:[{name:'refresh',parameters:[]}],providesData:['record']}});
 assert.equal(ext.contract.props[1].type,'list');assert.equal(ext.contract.globalActions[0].name,'refresh');
 const g=addGlobalVariantGroup(p,'Theme',['light','dark']);assert.equal(setGlobalVariant(p,g.id,'dark'),true);

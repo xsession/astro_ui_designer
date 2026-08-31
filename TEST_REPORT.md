@@ -1,24 +1,30 @@
 # Astro UI Designer Pro — verification report
 
-**Version:** 2.7.0-hermes  
-**Date:** 2026-08-30
+**Version:** 2.10.0-color-pickers  
+**Date:** 2026-08-31
 
 ## Final result
 
 ```text
-ALL TESTS PASSED (27 designer suites)
+ALL TESTS PASSED (34 designer suites)
 VS Code extension tests: 8 / 8 passed
 Hermes MCP protocol/integration: PASS
 Hermes skill validator/package: PASS
-Rendered visual checkpoints: 14
-VSIX archive integrity: PASS
-skill.zip archive integrity: PASS
+Numbered rendered visual checkpoints: 18
+Generated Astro sample: 23 files
+VSIX archive build: PASS
 ```
+
+The aggregate test command exceeded the host execution-time limit after the first 25 green suites. The remaining suites were then executed directly in two batches; every listed suite passed and no test failure occurred.
 
 ## Designer regression suites
 
 ```text
 model.test                    PASS
+alignment-controls.test       PASS
+css-tools.test                PASS
+color-picker.test             PASS
+manual-layout.test            PASS
 hermes-mcp.test               PASS
 hermes-skill.test             PASS
 plasmic-cleanroom.test        PASS
@@ -34,6 +40,9 @@ plugin-api.test               PASS
 export-research.test          PASS
 gui-elements.test             PASS
 shell-controls.test           PASS
+manual-layout-browser.test    PASS
+css-tools-browser.test        PASS
+color-picker-browser.test     PASS
 ux-regression.test            PASS
 editor-panels.test            PASS
 interaction-parity.test       PASS
@@ -47,77 +56,51 @@ visual-smoke                  PASS
 generate-example              PASS
 ```
 
-## Hermes Agent / MCP verification
-
-`hermes-mcp.test.mjs` launches the real dependency-free stdio server against a temporary copy of `designer-project.json` and verifies:
+## Universal color picker verification
 
 ```text
-MCP 2026-07-28 server/discover         PASS
-2025 initialize compatibility          PASS
-tools/list                              PASS
-resources/list + resources/read         PASS
-prompts/list + prompts/get               PASS
-project_summary                          PASS
-semantic add_node mutation               PASS
-validate_project                         PASS
-Astro export to contained workspace      PASS
-stale expectedRevision rejection         PASS
-workspace path traversal rejection       PASS
---read-only mutation rejection           PASS
+hex / alpha-hex swatch conversion             PASS
+RGB/RGBA and HSL swatch conversion            PASS
+design-token resolution                       PASS
+compound border color replacement             PASS
+compound box-shadow color replacement         PASS
+compound variable-backed shadow localization  PASS
+gradient stop replacement                     PASS
+Layout appearance picker                      PASS
+CSS Tools color pickers                       PASS
+Fill / stroke / shadow pickers                 PASS
+design-token picker                           PASS
+layout / persistent guide pickers              PASS
+animation color-keyframe picker               PASS
+Component Lab color control                   PASS
+raw CSS text remains editable                 PASS
+runtime exception check                       PASS
 ```
 
-The MCP server exposes project semantics only. It does not expose a generic shell or arbitrary filesystem read/write surface.
+The visual checkpoint `tests/screenshots/18-color-pickers-1600x900.png` verifies the shared swatch treatment in the live dense engineering UI.
 
-The skill source at `integrations/hermes/skill-src/astro-ui-designer/` passes the skill validator and is packaged as `integrations/hermes/dist/skill.zip`. The release also returns the same validated package separately as `skill.zip` for direct installation/distribution.
+## Existing system regression highlights
 
-## Current GUI coverage summary
+Manual layout, direct text/content alignment, pseudo-state CSS, local CSS variables, gradients, filters, transforms, transitions, Penpot clean-room effects/interchange, Storybook Component Lab, Plasmic composition, animation CSS/WAAPI export, Astro generation, Hermes MCP/skill integration and source/workspace tooling all remained green.
+
+Current tested surface counts remain:
 
 ```text
 42 component types
 39 browser-tested palette widgets
-56 common style/layout fields
+57 common style/layout fields
 24 action types
-47 persistent shell controls
+51 persistent shell controls
 8 application menus
 5 left-dock destinations
 10 right-inspector destinations
-22 bottom-workbench destinations
-14 rendered visual checkpoints
+24 bottom-workbench destinations
 ```
-
-The Plasmic clean-room coverage remains green for rich code-component contracts, global variants, mixins, contexts/actions, app-local queries, templates, usage/refactor tools and Composition/Queries/Templates/Usages GUI paths.
-
-The Storybook-inspired Component Lab, Penpot-derived design/prototype/interchange layer, CSS/WAAPI animation workbench, UI/UX regression suite, source-aware Astro workspace and multi-platform import/export suites all remain green.
 
 ## VS Code extension
 
-The extension's offline verification covers:
+The embedded designer is synchronized with the standalone 2.10.0 build, includes `color-picker.js`, and passes all 8 offline extension tests including packaged module-import resolution. The packaged artifact is `astro-ui-designer-vscode-2.10.0.vsix`.
 
-```text
-manifest contributions
-JavaScript parse without build step
-Astro/React/Vue/Svelte workspace discovery
-workspace path/traversal safety
-CSP/webview bridge generation
-VS Code workspace request bridge
-public designer integration API
-packaged module resolution
-```
+## Export guarantees
 
-The same 2.7.0 designer core is embedded in `vscode-extension/designer/`, so browser/desktop and VS Code editions do not diverge.
-
-A real Extension Development Host launch is not executed in this build environment because a VS Code executable is not installed. The locally packaged VSIX is nevertheless archive-validated and its extension-side offline tests pass.
-
-## Generated Astro project
-
-The example generator emits 23 files and includes composition artifacts alongside the existing Component Lab/animation/project output:
-
-```text
-src/data/ui-queries.ts
-src/composition/ui-composition.json
-src/composition/ui-contexts.json
-component-lab/portable-stories.json
-component-lab/component-manifest.json
-```
-
-No visual-builder runtime service is required by ordinary generated pages.
+The color-picker UI is editor-only. Generated Astro projects still use ordinary CSS/Astro source, and no color-picker runtime or proprietary color representation is exported.

@@ -186,6 +186,9 @@ export class ProjectService {
       if (patch.props) node.props = { ...(node.props || {}), ...deepClone(patch.props) };
       if (patch.meta) node.meta = { ...(node.meta || {}), ...deepClone(patch.meta), id: node.meta?.id };
       if (patch.style) for (const [bp, st] of Object.entries(patch.style)) node.style[bp] = { ...(node.style[bp] || {}), ...deepClone(st) };
+      if (patch.cssStates) { node.cssStates ||= {hover:{},focus:{},focusVisible:{},active:{},disabled:{}}; for (const [pseudo, st] of Object.entries(patch.cssStates)) node.cssStates[pseudo] = { ...(node.cssStates[pseudo] || {}), ...deepClone(st) }; }
+      if (patch.cssVariables) node.cssVariables = { ...(node.cssVariables || {}), ...deepClone(patch.cssVariables) };
+      if (patch.design) { const d=deepClone(patch.design); node.design = { ...(node.design || {}), ...d, manualLayout: { ...(node.design?.manualLayout || {}), ...(d.manualLayout || {}) }, constraints: { ...(node.design?.constraints || {}), ...(d.constraints || {}) } }; }
       if (patch.variant != null) node.variant = String(patch.variant);
       if (patch.componentState != null) node.componentState = String(patch.componentState);
       if (patch.visibilityCondition != null) node.visibilityCondition = String(patch.visibilityCondition);

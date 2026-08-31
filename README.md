@@ -1,8 +1,8 @@
-# Astro UI Designer Pro — Codebase Composition Clean-Room Edition
+# Astro UI Designer Pro — Color Picker Edition
 
 A clean-room, **Qt Creator / Qt Designer-style visual IDE for real Astro projects**. The editor combines a dense engineering workbench with source-aware editing, live Astro/Vite preview, reusable code components, responsive CSS authoring, structured content/data, design tokens, Git, visual tests, a CSS/WAAPI animation timeline, and normal readable Astro output.
 
-The `2.7.0-hermes` build keeps the Penpot-derived design/interchange layer, Storybook-inspired Component Lab, animation workbench and VS Code integration, and adds an independent **codebase composition layer** informed by current public Plasmic workflows: rich code-component contracts, app-local queries, global variants, reusable style mixins, global contexts/actions, insertable templates and project-wide usage/refactor tools.
+The `2.10.0-color-pickers` build keeps the complete CSS Tools/manual-layout system and adds paired visual color pickers everywhere the GUI edits color-bearing values. Raw CSS text stays editable, including variables, gradients, borders, shadows and modern color functions.
 
 The project is intentionally **not** a proprietary page-builder runtime. The generated project remains an ordinary Astro source tree, and existing project code can stay code-owned or hybrid-owned when the visual editor cannot safely restructure it.
 
@@ -37,7 +37,7 @@ The repository now includes a first-class extension under [`vscode-extension/`](
 Install the packaged extension from VS Code with **Extensions → … → Install from VSIX…**, or from a shell with:
 
 ```bash
-code --install-extension vscode-extension/dist/astro-ui-designer-vscode-2.7.0.vsix
+code --install-extension vscode-extension/dist/astro-ui-designer-vscode-2.10.0.vsix
 ```
 
 The extension adds:
@@ -63,6 +63,28 @@ node integrations/hermes/install.mjs --project /absolute/path/to/designer-projec
 Add `--apply` when the `hermes` CLI is installed and you want the installer to run `hermes mcp add` + `hermes mcp test` automatically. Add `--read-only` to the MCP server arguments for inspection-only operation.
 
 The server supports current MCP 2026-07-28 discovery and the 2025 initialize handshake for compatibility. Mutations are atomic and accept `expectedRevision` for optimistic concurrency. See [docs/HERMES_AGENT.md](docs/HERMES_AGENT.md).
+
+## Direct text and content alignment
+
+Open the **Layout** inspector for the selected object. The alignment block provides:
+
+- **Text:** Left, Center, Right, Justify.
+- **Content X:** Start, Center, End.
+- **Content Y:** Start, Center, End.
+
+For Flex containers, X/Y are mapped to the correct `justify-content` / `align-items` axis according to `flex-direction`, so a column still aligns horizontally with **Content X**. For Grid containers, X uses `justify-items` and Y uses `align-items`. Content controls disable themselves for non-Flex/Grid objects rather than silently changing the object's display mode. Multi-selection applies text alignment to every selected object in one undoable operation.
+
+## Universal color pickers
+
+Every structured field that edits a color-bearing value now shows the raw CSS value and a visual swatch side by side. The shared control is used by Layout appearance, CSS Tools, fills/strokes/shadows, design tokens, manual/prototype guides, animation color keyframes, component/code-component props, Component Lab controls and color-valued local CSS variables.
+
+The text value stays authoritative: `var(...)`, `rgba(...)`, `hsl(...)`, gradients, borders and shadows remain directly editable. Picking a color changes only the color token inside a compound value where possible; it does not discard border widths, gradient structure or shadow geometry.
+
+## Structured CSS Tools
+
+Open **CSS Tools** from the bottom workbench or from **Layout → CSS tools…**. The workbench includes box-model side controls, border/radius, gradients, shadows, filters, typography, transforms, transitions, behavior utilities, local CSS custom properties, generated CSS preview, and Base/Hover/Focus/Focus-visible/Active/Disabled style layers.
+
+See [docs/CSS_EDITING_UTILITIES.md](docs/CSS_EDITING_UTILITIES.md) for the full workflow and export rules.
 
 ## The primary workflow
 
@@ -98,6 +120,10 @@ The Lab supports inferred Controls from typed props, named stories/tags, viewpor
 ## Composition workbench
 
 Open **Composition** for rich framework-neutral code-component contracts, reusable style mixins, global variants, contexts/actions and node data bindings. The bottom **Queries**, **Templates**, and **Usages** workbenches support app-local server/client query descriptors, insertable project patterns, project-wide reference search and component replacement while preserving prop values. Astro export emits normal source modules under `src/data/` and `src/composition/`; the generated application owns query execution rather than proxying data through the editor. See [docs/COMPOSITION_WORKBENCH.md](docs/COMPOSITION_WORKBENCH.md) and [docs/PLASMIC_CLEANROOM_RESEARCH.md](docs/PLASMIC_CLEANROOM_RESEARCH.md).
+
+## Manual canvas & layout editing
+
+Open **Layout Tools** for precision/manual geometry work. The canvas supports eight-direction resize, rotation, nested freeform dragging, smart snapping, persistent rulers/guides, Alt distance measurement, spacing/x-ray overlays, smart spacing handles, Tidy, proportional selection scaling, direct Flex-gap dragging, click-to-place Grid cells, fixed/fill/hug sizing, flow/relative/absolute/fixed/sticky positioning, constraints and layout apply/break/inference commands. Editor-only guides and measurements never become Astro runtime dependencies. See [docs/MANUAL_LAYOUT_CLEANROOM_RESEARCH.md](docs/MANUAL_LAYOUT_CLEANROOM_RESEARCH.md).
 
 ## Animation workbench
 

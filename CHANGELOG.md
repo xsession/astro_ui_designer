@@ -1,3 +1,49 @@
+## 2.10.0-color-pickers — 2026-08-31
+
+- Added one shared paired text + visual color picker control across all structured color-bearing GUI surfaces.
+- Added compound-safe color replacement for borders, backgrounds/gradients, outlines and shadows.
+- Added design-token-aware swatch resolution and safe localization of compound variable-backed values when a literal swatch is chosen.
+- Added color pickers to Layout appearance, CSS Tools, Penpot-style effects, design tokens, manual/prototype guides, animation color keyframes, reusable/code-component props and Component Lab controls.
+- Preserved raw CSS editing for hex, RGB/RGBA, HSL/HSLA, variables, gradients and shadow/border expressions.
+- Added dedicated unit/browser regression coverage and the `18-color-pickers-1600x900.png` visual checkpoint.
+- Synced and rebuilt the VS Code extension as 2.10.0.
+
+## 2.9.0-css-tools — 2026-08-31
+
+- Added a dedicated structured CSS Tools workbench.
+- Added box-model side editors, border/radius utilities, gradient builder, shadow/filter builders, typography helpers, transform and transition builders.
+- Added behavior controls for overflow, cursor, pointer-events, user-select and object-fit.
+- Added Base/Hover/Focus/Focus-visible/Active/Disabled CSS layers that export as native pseudo selectors.
+- Added element-scoped CSS custom properties with normal `--variable` export.
+- Added public API and Hermes MCP support for pseudo-state CSS and local variables.
+- Added CSS utility unit, rendered-browser and visual regression coverage.
+- Synced and rebuilt the VS Code extension as 2.9.0.
+
+## 2.8.1-alignment-controls — 2026-08-31
+
+- Added direct Left / Center / Right / Justify text-alignment buttons to the Layout inspector.
+- Added direct Content X and Content Y Start / Center / End alignment buttons for Flex and Grid containers.
+- Added flex-direction-aware X/Y mapping so column layouts keep canvas-horizontal/canvas-vertical semantics.
+- Added Grid `justify-items` support to the style model and Astro CSS exporter path.
+- Added multi-selection text alignment as one undoable edit.
+- Added disabled-state guidance when content alignment is not applicable to a non-Flex/Grid element.
+- Added browser, exporter and visual regression coverage plus a dedicated alignment-controls screenshot.
+- Synced and rebuilt the VS Code extension as 2.8.1.
+
+## 2.8.0-manual-layout — 2026-08-31
+
+- Added clean-room manual canvas/layout editing research against current Figma, Penpot, Webflow, Framer and Qt Designer interaction patterns.
+- Added eight-direction resize handles, rotation, aspect-lock and center-resize modifiers.
+- Added nested-coordinate-aware drag/resize with independent canvas-global snapping/measurement overlays.
+- Added rulers, persistent draggable/lockable guides, smart geometry/grid/guide snapping and responsive column guides.
+- Added Alt distance measurement, margin/padding visualization and X-ray layout debugging.
+- Added smart freeform spacing handles, Tidy/exact-gap commands and proportional multi-selection scaling.
+- Added direct Flex/Stack gap dragging and direct CSS Grid cell placement.
+- Added fixed/fill/hug width/height sizing and flow/relative/absolute/fixed/sticky positioning.
+- Added Ignore-flow / Return-to-flow, responsive constraints, Row/Column/Grid application, Break layout and layout inference.
+- Added Layout Tools workbench, keyboard precision controls and defensive pointer-gesture termination.
+- Added manual-layout unit, rendered-browser and visual regression coverage.
+
 # Changelog
 
 ## 2.7.0-hermes — 2026-08-30

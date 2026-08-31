@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 7,
-  "id": "project-tg29bz7-2",
+  "schemaVersion": 8,
+  "id": "project-th4ru1y-2",
   "name": "astro-ui-project",
   "settings": {
     "astroVersion": "^7.2.0",
@@ -57,7 +57,7 @@
   },
   "pages": [
     {
-      "id": "page-doc-tg29bz7-3",
+      "id": "page-doc-th4ru1y-3",
       "route": "/",
       "filename": "index.astro",
       "name": "Home",
@@ -68,7 +68,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-tg29bz6-1",
+        "id": "page-th4ru1x-1",
         "type": "page",
         "name": "HomePage",
         "props": {
@@ -151,11 +151,20 @@
             "path": "",
             "booleanOperation": "none"
           },
-          "libraryRef": ""
+          "libraryRef": "",
+          "manualLayout": {
+            "sizingX": "fixed",
+            "sizingY": "fixed",
+            "rotation": 0,
+            "minWidth": "",
+            "maxWidth": "",
+            "minHeight": "",
+            "maxHeight": ""
+          }
         },
         "children": [
           {
-            "id": "header-tg29bz7-6",
+            "id": "header-th4ru1y-6",
             "type": "header",
             "name": "SiteHeader",
             "props": {},
@@ -235,11 +244,20 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [
               {
-                "id": "nav-tg29bz7-7",
+                "id": "nav-th4ru1y-7",
                 "type": "nav",
                 "name": "MainNav",
                 "props": {
@@ -323,11 +341,20 @@
                     "path": "",
                     "booleanOperation": "none"
                   },
-                  "libraryRef": ""
+                  "libraryRef": "",
+                  "manualLayout": {
+                    "sizingX": "fixed",
+                    "sizingY": "fixed",
+                    "rotation": 0,
+                    "minWidth": "",
+                    "maxWidth": "",
+                    "minHeight": "",
+                    "maxHeight": ""
+                  }
                 },
                 "children": [
                   {
-                    "id": "heading-tg29bz7-8",
+                    "id": "heading-th4ru1y-8",
                     "type": "heading",
                     "name": "Brand",
                     "props": {
@@ -416,7 +443,16 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [],
                     "composition": {
@@ -427,7 +463,7 @@
                     }
                   },
                   {
-                    "id": "row-tg29bz7-9",
+                    "id": "row-th4ru1y-9",
                     "type": "row",
                     "name": "NavLinks",
                     "props": {},
@@ -514,11 +550,20 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [
                       {
-                        "id": "link-tg29bz7-a",
+                        "id": "link-th4ru1y-a",
                         "type": "link",
                         "name": "Link11",
                         "props": {
@@ -601,7 +646,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -612,7 +666,7 @@
                         }
                       },
                       {
-                        "id": "link-tg29bz7-b",
+                        "id": "link-th4ru1y-b",
                         "type": "link",
                         "name": "Link12",
                         "props": {
@@ -695,7 +749,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -730,7 +793,7 @@
             }
           },
           {
-            "id": "section-tg29bz7-c",
+            "id": "section-th4ru1y-c",
             "type": "section",
             "name": "Hero",
             "props": {
@@ -817,11 +880,20 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [
               {
-                "id": "container-tg29bz7-d",
+                "id": "container-th4ru1y-d",
                 "type": "container",
                 "name": "Container14",
                 "props": {},
@@ -900,11 +972,20 @@
                     "path": "",
                     "booleanOperation": "none"
                   },
-                  "libraryRef": ""
+                  "libraryRef": "",
+                  "manualLayout": {
+                    "sizingX": "fixed",
+                    "sizingY": "fixed",
+                    "rotation": 0,
+                    "minWidth": "",
+                    "maxWidth": "",
+                    "minHeight": "",
+                    "maxHeight": ""
+                  }
                 },
                 "children": [
                   {
-                    "id": "row-tg29bz7-e",
+                    "id": "row-th4ru1z-e",
                     "type": "row",
                     "name": "Row15",
                     "props": {},
@@ -990,11 +1071,20 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [
                       {
-                        "id": "column-tg29bz7-f",
+                        "id": "column-th4ru1z-f",
                         "type": "column",
                         "name": "Column16",
                         "props": {},
@@ -1075,11 +1165,20 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [
                           {
-                            "id": "badge-tg29bz7-g",
+                            "id": "badge-th4ru1z-g",
                             "type": "badge",
                             "name": "Badge17",
                             "props": {
@@ -1163,7 +1262,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -1174,7 +1282,7 @@
                             }
                           },
                           {
-                            "id": "heading-tg29bz7-h",
+                            "id": "heading-th4ru1z-h",
                             "type": "heading",
                             "name": "Heading18",
                             "props": {
@@ -1264,7 +1372,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -1275,7 +1392,7 @@
                             }
                           },
                           {
-                            "id": "text-tg29bz7-i",
+                            "id": "text-th4ru1z-i",
                             "type": "text",
                             "name": "Text19",
                             "props": {
@@ -1358,7 +1475,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -1369,7 +1495,7 @@
                             }
                           },
                           {
-                            "id": "row-tg29bz7-j",
+                            "id": "row-th4ru1z-j",
                             "type": "row",
                             "name": "Row20",
                             "props": {},
@@ -1455,11 +1581,20 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [
                               {
-                                "id": "button-tg29bz7-l",
+                                "id": "button-th4ru1z-l",
                                 "type": "button",
                                 "name": "DocsButton",
                                 "props": {
@@ -1486,7 +1621,7 @@
                                 },
                                 "actions": [
                                   {
-                                    "id": "act-tg29bz7-k",
+                                    "id": "act-th4ru1z-k",
                                     "event": "click",
                                     "type": "navigate",
                                     "value": "/docs",
@@ -1561,7 +1696,16 @@
                                     "path": "",
                                     "booleanOperation": "none"
                                   },
-                                  "libraryRef": ""
+                                  "libraryRef": "",
+                                  "manualLayout": {
+                                    "sizingX": "fixed",
+                                    "sizingY": "fixed",
+                                    "rotation": 0,
+                                    "minWidth": "",
+                                    "maxWidth": "",
+                                    "minHeight": "",
+                                    "maxHeight": ""
+                                  }
                                 },
                                 "children": [],
                                 "composition": {
@@ -1572,7 +1716,7 @@
                                 }
                               },
                               {
-                                "id": "link-tg29bz7-m",
+                                "id": "link-th4ru1z-m",
                                 "type": "link",
                                 "name": "Link23",
                                 "props": {
@@ -1656,7 +1800,16 @@
                                     "path": "",
                                     "booleanOperation": "none"
                                   },
-                                  "libraryRef": ""
+                                  "libraryRef": "",
+                                  "manualLayout": {
+                                    "sizingX": "fixed",
+                                    "sizingY": "fixed",
+                                    "rotation": 0,
+                                    "minWidth": "",
+                                    "maxWidth": "",
+                                    "minHeight": "",
+                                    "maxHeight": ""
+                                  }
                                 },
                                 "children": [],
                                 "composition": {
@@ -1683,7 +1836,7 @@
                         }
                       },
                       {
-                        "id": "card-tg29bz7-n",
+                        "id": "card-th4ru1z-n",
                         "type": "card",
                         "name": "PreviewCard",
                         "props": {},
@@ -1774,11 +1927,20 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [
                           {
-                            "id": "heading-tg29bz7-o",
+                            "id": "heading-th4ru1z-o",
                             "type": "heading",
                             "name": "Heading25",
                             "props": {
@@ -1867,7 +2029,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -1878,7 +2049,7 @@
                             }
                           },
                           {
-                            "id": "text-tg29bz7-p",
+                            "id": "text-th4ru1z-p",
                             "type": "text",
                             "name": "Text26",
                             "props": {
@@ -1960,7 +2131,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -2003,7 +2183,7 @@
             }
           },
           {
-            "id": "section-tg29bz7-q",
+            "id": "section-th4ru1z-q",
             "type": "section",
             "name": "Features",
             "props": {
@@ -2089,11 +2269,20 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [
               {
-                "id": "container-tg29bz7-r",
+                "id": "container-th4ru1z-r",
                 "type": "container",
                 "name": "Container28",
                 "props": {},
@@ -2172,11 +2361,20 @@
                     "path": "",
                     "booleanOperation": "none"
                   },
-                  "libraryRef": ""
+                  "libraryRef": "",
+                  "manualLayout": {
+                    "sizingX": "fixed",
+                    "sizingY": "fixed",
+                    "rotation": 0,
+                    "minWidth": "",
+                    "maxWidth": "",
+                    "minHeight": "",
+                    "maxHeight": ""
+                  }
                 },
                 "children": [
                   {
-                    "id": "heading-tg29bz7-s",
+                    "id": "heading-th4ru1z-s",
                     "type": "heading",
                     "name": "Heading29",
                     "props": {
@@ -2265,7 +2463,16 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [],
                     "composition": {
@@ -2276,7 +2483,7 @@
                     }
                   },
                   {
-                    "id": "spacer-tg29bz7-13",
+                    "id": "spacer-th4ru20-13",
                     "type": "spacer",
                     "name": "Spacer40",
                     "props": {},
@@ -2357,7 +2564,16 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [],
                     "composition": {
@@ -2368,7 +2584,7 @@
                     }
                   },
                   {
-                    "id": "grid-tg29bz7-t",
+                    "id": "grid-th4ru1z-t",
                     "type": "grid",
                     "name": "FeatureGrid",
                     "props": {},
@@ -2453,11 +2669,20 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [
                       {
-                        "id": "card-tg29bz7-u",
+                        "id": "card-th4ru20-u",
                         "type": "card",
                         "name": "Card31",
                         "props": {},
@@ -2541,11 +2766,20 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [
                           {
-                            "id": "heading-tg29bz7-v",
+                            "id": "heading-th4ru20-v",
                             "type": "heading",
                             "name": "Heading32",
                             "props": {
@@ -2634,7 +2868,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -2645,7 +2888,7 @@
                             }
                           },
                           {
-                            "id": "text-tg29bz7-w",
+                            "id": "text-th4ru20-w",
                             "type": "text",
                             "name": "Text33",
                             "props": {
@@ -2726,7 +2969,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -2745,7 +2997,7 @@
                         }
                       },
                       {
-                        "id": "card-tg29bz7-x",
+                        "id": "card-th4ru20-x",
                         "type": "card",
                         "name": "Card34",
                         "props": {},
@@ -2829,11 +3081,20 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [
                           {
-                            "id": "heading-tg29bz7-y",
+                            "id": "heading-th4ru20-y",
                             "type": "heading",
                             "name": "Heading35",
                             "props": {
@@ -2922,7 +3183,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -2933,7 +3203,7 @@
                             }
                           },
                           {
-                            "id": "text-tg29bz7-z",
+                            "id": "text-th4ru20-z",
                             "type": "text",
                             "name": "Text36",
                             "props": {
@@ -3014,7 +3284,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -3033,7 +3312,7 @@
                         }
                       },
                       {
-                        "id": "card-tg29bz7-10",
+                        "id": "card-th4ru20-10",
                         "type": "card",
                         "name": "Card37",
                         "props": {},
@@ -3117,11 +3396,20 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [
                           {
-                            "id": "heading-tg29bz7-11",
+                            "id": "heading-th4ru20-11",
                             "type": "heading",
                             "name": "Heading38",
                             "props": {
@@ -3210,7 +3498,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -3221,7 +3518,7 @@
                             }
                           },
                           {
-                            "id": "text-tg29bz7-12",
+                            "id": "text-th4ru20-12",
                             "type": "text",
                             "name": "Text39",
                             "props": {
@@ -3302,7 +3599,16 @@
                                 "path": "",
                                 "booleanOperation": "none"
                               },
-                              "libraryRef": ""
+                              "libraryRef": "",
+                              "manualLayout": {
+                                "sizingX": "fixed",
+                                "sizingY": "fixed",
+                                "rotation": 0,
+                                "minWidth": "",
+                                "maxWidth": "",
+                                "minHeight": "",
+                                "maxHeight": ""
+                              }
                             },
                             "children": [],
                             "composition": {
@@ -3345,7 +3651,7 @@
             }
           },
           {
-            "id": "componentInstance-tg29bz8-1m",
+            "id": "componentInstance-th4ru22-1m",
             "type": "componentInstance",
             "name": "InfoPanelInstance",
             "props": {
@@ -3403,17 +3709,17 @@
               },
               "tracks": [
                 {
-                  "id": "track-tg29bz9-1q",
+                  "id": "track-th4ru22-1q",
                   "property": "opacity",
                   "keyframes": [
                     {
-                      "id": "kf-tg29bz9-1o",
+                      "id": "kf-th4ru22-1o",
                       "at": 0,
                       "value": "0",
                       "easing": ""
                     },
                     {
-                      "id": "kf-tg29bz9-1p",
+                      "id": "kf-th4ru22-1p",
                       "at": 1,
                       "value": "1",
                       "easing": ""
@@ -3421,17 +3727,17 @@
                   ]
                 },
                 {
-                  "id": "track-tg29bz9-1t",
+                  "id": "track-th4ru22-1t",
                   "property": "transform",
                   "keyframes": [
                     {
-                      "id": "kf-tg29bz9-1r",
+                      "id": "kf-th4ru22-1r",
                       "at": 0,
                       "value": "translateY(24px)",
                       "easing": ""
                     },
                     {
-                      "id": "kf-tg29bz9-1s",
+                      "id": "kf-th4ru22-1s",
                       "at": 1,
                       "value": "translateY(0px)",
                       "easing": ""
@@ -3464,11 +3770,20 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [
               {
-                "id": "text-tg29bz8-1n",
+                "id": "text-th4ru22-1n",
                 "type": "text",
                 "name": "Text60",
                 "props": {
@@ -3549,7 +3864,16 @@
                     "path": "",
                     "booleanOperation": "none"
                   },
-                  "libraryRef": ""
+                  "libraryRef": "",
+                  "manualLayout": {
+                    "sizingX": "fixed",
+                    "sizingY": "fixed",
+                    "rotation": 0,
+                    "minWidth": "",
+                    "maxWidth": "",
+                    "minHeight": "",
+                    "maxHeight": ""
+                  }
                 },
                 "children": [],
                 "composition": {
@@ -3568,7 +3892,7 @@
             }
           },
           {
-            "id": "button-tg29bz9-1u",
+            "id": "button-th4ru22-1u",
             "type": "button",
             "name": "WaapiDemoButton",
             "props": {
@@ -3637,17 +3961,17 @@
               },
               "tracks": [
                 {
-                  "id": "track-tg29bz9-1x",
+                  "id": "track-th4ru23-1x",
                   "property": "opacity",
                   "keyframes": [
                     {
-                      "id": "kf-tg29bz9-1v",
+                      "id": "kf-th4ru23-1v",
                       "at": 0,
                       "value": "0",
                       "easing": ""
                     },
                     {
-                      "id": "kf-tg29bz9-1w",
+                      "id": "kf-th4ru23-1w",
                       "at": 1,
                       "value": "1",
                       "easing": ""
@@ -3655,17 +3979,17 @@
                   ]
                 },
                 {
-                  "id": "track-tg29bz9-20",
+                  "id": "track-th4ru23-20",
                   "property": "transform",
                   "keyframes": [
                     {
-                      "id": "kf-tg29bz9-1y",
+                      "id": "kf-th4ru23-1y",
                       "at": 0,
                       "value": "scale(.92)",
                       "easing": ""
                     },
                     {
-                      "id": "kf-tg29bz9-1z",
+                      "id": "kf-th4ru23-1z",
                       "at": 1,
                       "value": "scale(1)",
                       "easing": ""
@@ -3698,7 +4022,16 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [],
             "composition": {
@@ -3718,7 +4051,7 @@
       }
     },
     {
-      "id": "page-doc-tg29bz8-1e",
+      "id": "page-doc-th4ru21-1e",
       "route": "/contact",
       "filename": "contact.astro",
       "name": "Contact",
@@ -3729,7 +4062,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-tg29bz7-14",
+        "id": "page-th4ru20-14",
         "type": "page",
         "name": "ContactPage",
         "props": {
@@ -3812,11 +4145,20 @@
             "path": "",
             "booleanOperation": "none"
           },
-          "libraryRef": ""
+          "libraryRef": "",
+          "manualLayout": {
+            "sizingX": "fixed",
+            "sizingY": "fixed",
+            "rotation": 0,
+            "minWidth": "",
+            "maxWidth": "",
+            "minHeight": "",
+            "maxHeight": ""
+          }
         },
         "children": [
           {
-            "id": "section-tg29bz7-15",
+            "id": "section-th4ru20-15",
             "type": "section",
             "name": "Section42",
             "props": {
@@ -3902,11 +4244,20 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [
               {
-                "id": "container-tg29bz7-16",
+                "id": "container-th4ru20-16",
                 "type": "container",
                 "name": "Container43",
                 "props": {},
@@ -3985,11 +4336,20 @@
                     "path": "",
                     "booleanOperation": "none"
                   },
-                  "libraryRef": ""
+                  "libraryRef": "",
+                  "manualLayout": {
+                    "sizingX": "fixed",
+                    "sizingY": "fixed",
+                    "rotation": 0,
+                    "minWidth": "",
+                    "maxWidth": "",
+                    "minHeight": "",
+                    "maxHeight": ""
+                  }
                 },
                 "children": [
                   {
-                    "id": "form-tg29bz8-17",
+                    "id": "form-th4ru20-17",
                     "type": "form",
                     "name": "ContactForm",
                     "props": {
@@ -4072,11 +4432,20 @@
                         "path": "",
                         "booleanOperation": "none"
                       },
-                      "libraryRef": ""
+                      "libraryRef": "",
+                      "manualLayout": {
+                        "sizingX": "fixed",
+                        "sizingY": "fixed",
+                        "rotation": 0,
+                        "minWidth": "",
+                        "maxWidth": "",
+                        "minHeight": "",
+                        "maxHeight": ""
+                      }
                     },
                     "children": [
                       {
-                        "id": "heading-tg29bz8-18",
+                        "id": "heading-th4ru20-18",
                         "type": "heading",
                         "name": "Heading45",
                         "props": {
@@ -4165,7 +4534,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -4176,7 +4554,7 @@
                         }
                       },
                       {
-                        "id": "label-tg29bz8-19",
+                        "id": "label-th4ru20-19",
                         "type": "label",
                         "name": "Label46",
                         "props": {
@@ -4258,7 +4636,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -4269,7 +4656,7 @@
                         }
                       },
                       {
-                        "id": "input-tg29bz8-1a",
+                        "id": "input-th4ru20-1a",
                         "type": "input",
                         "name": "Input47",
                         "props": {
@@ -4364,7 +4751,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -4375,7 +4771,7 @@
                         }
                       },
                       {
-                        "id": "label-tg29bz8-1b",
+                        "id": "label-th4ru21-1b",
                         "type": "label",
                         "name": "Label48",
                         "props": {
@@ -4457,7 +4853,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -4468,7 +4873,7 @@
                         }
                       },
                       {
-                        "id": "textarea-tg29bz8-1c",
+                        "id": "textarea-th4ru21-1c",
                         "type": "textarea",
                         "name": "Textarea49",
                         "props": {
@@ -4557,7 +4962,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -4568,7 +4982,7 @@
                         }
                       },
                       {
-                        "id": "button-tg29bz8-1d",
+                        "id": "button-th4ru21-1d",
                         "type": "button",
                         "name": "Button50",
                         "props": {
@@ -4661,7 +5075,16 @@
                             "path": "",
                             "booleanOperation": "none"
                           },
-                          "libraryRef": ""
+                          "libraryRef": "",
+                          "manualLayout": {
+                            "sizingX": "fixed",
+                            "sizingY": "fixed",
+                            "rotation": 0,
+                            "minWidth": "",
+                            "maxWidth": "",
+                            "minHeight": "",
+                            "maxHeight": ""
+                          }
                         },
                         "children": [],
                         "composition": {
@@ -4719,7 +5142,7 @@
         }
       ],
       "root": {
-        "id": "card-tg29bz8-1f",
+        "id": "card-th4ru21-1f",
         "type": "card",
         "name": "InfoPanelRoot",
         "props": {},
@@ -4803,11 +5226,20 @@
             "path": "",
             "booleanOperation": "none"
           },
-          "libraryRef": ""
+          "libraryRef": "",
+          "manualLayout": {
+            "sizingX": "fixed",
+            "sizingY": "fixed",
+            "rotation": 0,
+            "minWidth": "",
+            "maxWidth": "",
+            "minHeight": "",
+            "maxHeight": ""
+          }
         },
         "children": [
           {
-            "id": "heading-tg29bz8-1g",
+            "id": "heading-th4ru21-1g",
             "type": "heading",
             "name": "Heading53",
             "props": {
@@ -4898,7 +5330,16 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [],
             "composition": {
@@ -4909,7 +5350,7 @@
             }
           },
           {
-            "id": "slot-tg29bz8-1h",
+            "id": "slot-th4ru21-1h",
             "type": "slot",
             "name": "Slot54",
             "props": {
@@ -4990,7 +5431,16 @@
                 "path": "",
                 "booleanOperation": "none"
               },
-              "libraryRef": ""
+              "libraryRef": "",
+              "manualLayout": {
+                "sizingX": "fixed",
+                "sizingY": "fixed",
+                "rotation": 0,
+                "minWidth": "",
+                "maxWidth": "",
+                "minHeight": "",
+                "maxHeight": ""
+              }
             },
             "children": [],
             "composition": {
@@ -5010,7 +5460,7 @@
       },
       "stories": [
         {
-          "id": "story-tg29bz8-1i",
+          "id": "story-th4ru21-1i",
           "name": "Primary",
           "args": {
             "title": "Information"
@@ -5020,7 +5470,7 @@
           ],
           "steps": [
             {
-              "id": "story-step-tg29bz8-1j",
+              "id": "story-step-th4ru22-1j",
               "type": "wait",
               "target": "",
               "value": 1,
@@ -5030,9 +5480,9 @@
           ],
           "assertions": [
             {
-              "id": "story-assert-tg29bz8-1k",
+              "id": "story-assert-th4ru22-1k",
               "type": "visible",
-              "target": "card-tg29bz8-1f",
+              "target": "card-th4ru21-1f",
               "value": true,
               "attribute": ""
             }
@@ -5061,7 +5511,7 @@
           "status": "ready"
         },
         {
-          "id": "story-tg29bz8-1l",
+          "id": "story-th4ru22-1l",
           "name": "Long title",
           "args": {
             "title": "A deliberately longer component title"
@@ -5109,13 +5559,13 @@
   "assets": [],
   "variables": [
     {
-      "id": "state-tg29bz7-4",
+      "id": "state-th4ru1y-4",
       "name": "menuOpen",
       "type": "boolean",
       "initial": false
     },
     {
-      "id": "state-tg29bz7-5",
+      "id": "state-th4ru1y-5",
       "name": "message",
       "type": "string",
       "initial": "Hello from state"
@@ -5185,6 +5635,27 @@
     "templates": [],
     "refactors": {
       "history": []
+    }
+  },
+  "manualLayout": {
+    "version": 1,
+    "settings": {
+      "rulers": true,
+      "snapEnabled": true,
+      "snapGrid": true,
+      "snapGuides": true,
+      "snapGeometry": true,
+      "snapDistance": 6,
+      "showSmartGuides": true,
+      "measureOnAlt": true,
+      "showSpacing": false,
+      "xray": false,
+      "bigNudge": 8,
+      "fineNudge": 1
+    },
+    "layoutGuides": {},
+    "gridEdit": {
+      "visible": true
     }
   },
   "storybook": {

@@ -1,6 +1,6 @@
 # Hermes Agent integration
 
-Astro UI Designer 2.7.0 includes a local MCP server and a reusable `astro-ui-designer` skill for Hermes Agent.
+Astro UI Designer 2.8.0 includes a local MCP server and a reusable `astro-ui-designer` skill for Hermes Agent.
 
 ## Goals
 
@@ -186,3 +186,7 @@ integrations/hermes/skill-src/astro-ui-designer/
 ```
 
 The release process validates and packages this directory as `skill.zip`.
+
+## CSS editing through MCP
+
+`update_node` can patch normal responsive `style`, pseudo-state maps through `cssStates`, and node-scoped custom properties through `cssVariables`. This keeps Hermes on the semantic project model without exposing arbitrary stylesheet or filesystem mutation.

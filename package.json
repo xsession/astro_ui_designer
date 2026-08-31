@@ -1,6 +1,6 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.7.0",
+  "version": "2.10.0",
   "private": true,
   "type": "module",
   "description": "Astro-native visual IDE with Qt-style design, Penpot/Storybook/Plasmic-inspired clean-room workflows, multi-platform interchange, VS Code integration, and a project-scoped Hermes Agent MCP + skill integration",

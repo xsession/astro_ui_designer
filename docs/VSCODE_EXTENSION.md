@@ -100,6 +100,7 @@ The extension contributes commands for:
 - live preview;
 - Astro dev-server start/stop;
 - Animation editor;
+- Manual Layout Tools;
 - Platform Interchange;
 - validation;
 - UI tests;
@@ -202,3 +203,7 @@ vscode-extension/dist/
 ```
 
 The repository's local packager exists so the extension can still be packaged in offline environments. For marketplace publication, using the official `@vscode/vsce` packaging/publishing tool is recommended.
+
+## CSS Tools command
+
+Version 2.9 adds **Astro UI Designer: Open CSS Tools**, which opens the same structured CSS workbench embedded in the standalone designer. Pseudo states and local CSS variables remain part of the normal designer project model and generated Astro CSS.

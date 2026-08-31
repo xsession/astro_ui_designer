@@ -215,7 +215,7 @@ export const STYLE_GROUPS = [
   ]},
   { name: 'Flex / Grid', fields: [
     select('flexDirection','Flex direction',['','row','column','row-reverse','column-reverse']), select('flexWrap','Wrap',['','nowrap','wrap','wrap-reverse']), text('flex','Flex'), text('gap','Gap'), text('rowGap','Row gap'), text('columnGap','Column gap'),
-    select('alignItems','Align items',['','stretch','flex-start','center','flex-end','baseline']), select('alignSelf','Align self',['','auto','stretch','flex-start','center','flex-end','baseline']), select('justifyContent','Justify',['','flex-start','center','flex-end','space-between','space-around','space-evenly']),
+    select('alignItems','Align items',['','stretch','flex-start','center','flex-end','baseline','start','end']), select('alignSelf','Align self',['','auto','stretch','flex-start','center','flex-end','baseline','start','end']), select('justifyContent','Justify',['','flex-start','center','flex-end','space-between','space-around','space-evenly','start','end']), select('justifyItems','Justify items',['','stretch','start','center','end','left','right']),
     text('gridTemplateColumns','Grid columns'), text('gridTemplateRows','Grid rows'), text('gridColumn','Grid column'), text('gridRow','Grid row'), text('placeItems','Place items'),
   ]},
   { name: 'Appearance', fields: [

@@ -163,7 +163,48 @@ try {
   assert.match(await browser.evaluate(`document.querySelector('#bottom-content')?.textContent||''`),/1 usage/,'plasmic composition: applied mixin is discoverable through project-wide usage search');
   await browser.screenshot(path.join(out,'14-plasmic-composition-1600x900.png'));
 
-  console.log('visual-smoke: OK (14 rendered checkpoints)');
+  // Manual layout clean-room workbench: rulers, guide, multi-selection, spacing and direct geometry controls.
+  await setViewport(1600,900);
+  await browser.evaluate(`AstroUIDesigner.reset()`);
+  const manualFreeform=await browser.evaluate(`AstroUIDesigner.insert('freeform')`);
+  const manualA=await browser.evaluate(`AstroUIDesigner.insert('card',${JSON.stringify(manualFreeform)})`);
+  const manualB=await browser.evaluate(`AstroUIDesigner.insert('card',${JSON.stringify(manualFreeform)})`);
+  const manualC=await browser.evaluate(`AstroUIDesigner.insert('card',${JSON.stringify(manualFreeform)})`);
+  for(const [id,x,y] of [[manualA,60,90],[manualB,280,90],[manualC,500,90]]) await browser.evaluate(`AstroUIDesigner.setStyle(${JSON.stringify(id)},'position','absolute');AstroUIDesigner.setStyle(${JSON.stringify(id)},'left','${x}px');AstroUIDesigner.setStyle(${JSON.stringify(id)},'top','${y}px');AstroUIDesigner.setStyle(${JSON.stringify(id)},'width','150px');AstroUIDesigner.setStyle(${JSON.stringify(id)},'height','88px');true`);
+  await browser.evaluate(`AstroUIDesigner.select(${JSON.stringify(manualA)});AstroUIDesigner.select(${JSON.stringify(manualB)},{add:true});AstroUIDesigner.select(${JSON.stringify(manualC)},{add:true});true`);
+  await browser.click('#manual-tools-btn');
+  await browser.click('#ml-add-v-guide');
+  await browser.click('#manual-spacing-btn');
+  await browser.click('#ml-layout-guide');
+  await browser.click('[data-right-tab="layout"]');
+  await assertShell('manual-layout');
+  assert.equal(await browser.evaluate(`Boolean(document.querySelector('.canvas-ruler')&&document.querySelector('.guide-line')&&document.querySelector('.smart-spacing-handle')&&document.querySelector('#manual-tidy'))`),true,'manual layout: rulers, guide, smart spacing and workbench visible');
+  await browser.screenshot(path.join(out,'15-manual-layout-1600x900.png'));
+
+  // Compact direct text/content alignment controls in the Layout inspector.
+  await browser.evaluate(`AstroUIDesigner.reset()`);
+  const alignRow=await browser.evaluate(`AstroUIDesigner.insert('row')`);
+  await browser.evaluate(`AstroUIDesigner.insert('heading',${JSON.stringify(alignRow)});AstroUIDesigner.insert('button',${JSON.stringify(alignRow)});AstroUIDesigner.select(${JSON.stringify(alignRow)});AstroUIDesigner.openResearchPanel('right','layout');true`);
+  await browser.click('[data-text-align="center"]');
+  await browser.click('[data-content-align="x:center"]');
+  await browser.click('[data-content-align="y:center"]');
+  await assertShell('alignment-controls');
+  assert.equal(await browser.evaluate(`document.querySelectorAll('[data-text-align]').length`),4,'alignment controls: text buttons visible');
+  assert.equal(await browser.evaluate(`document.querySelectorAll('[data-content-align]').length`),6,'alignment controls: content buttons visible');
+  await browser.screenshot(path.join(out,'16-alignment-controls-1600x900.png'));
+
+  // Structured CSS editing workbench: pseudo states, box model and compound editors.
+  await browser.evaluate(`AstroUIDesigner.reset()`);
+  const cssCard=await browser.evaluate(`AstroUIDesigner.insert('card')`);
+  await browser.evaluate(`AstroUIDesigner.select(${JSON.stringify(cssCard)});AstroUIDesigner.openResearchPanel('right','layout');true`);
+  await browser.click('[data-manual-quick="css"]');
+  await browser.click('[data-css-pseudo="hover"]');
+  await assertShell('css-tools');
+  assert.ok(await browser.evaluate(`document.querySelectorAll('.css-tool-card').length`)>=10,'css tools: compound editors visible');
+  assert.equal(await browser.evaluate(`document.querySelectorAll('[data-css-pseudo]').length`),6,'css tools: pseudo state tabs visible');
+  await browser.screenshot(path.join(out,'17-css-tools-1600x900.png'));
+
+  console.log('visual-smoke: OK (17 rendered checkpoints)');
 } finally {
   await browser.close();
 }

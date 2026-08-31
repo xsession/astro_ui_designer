@@ -24,7 +24,7 @@ test('extension manifest exposes visual editor, view, tasks and commands', () =>
   assert.ok(pkg.contributes.views.astroUIDesigner.some((x) => x.id === 'astroUIDesigner.workspaceView'));
   assert.ok(pkg.contributes.taskDefinitions.some((x) => x.type === 'astro-ui-designer'));
   const ids = new Set(pkg.contributes.commands.map((x) => x.command));
-  for (const id of ['astroUIDesigner.openDesigner','astroUIDesigner.openActiveFile','astroUIDesigner.openComponentLab','astroUIDesigner.openAnimation','astroUIDesigner.openInterchange','astroUIDesigner.validate','astroUIDesigner.runTests','astroUIDesigner.exportProject']) assert.ok(ids.has(id), id);
+  for (const id of ['astroUIDesigner.openDesigner','astroUIDesigner.openActiveFile','astroUIDesigner.openComponentLab','astroUIDesigner.openAnimation','astroUIDesigner.openLayoutTools','astroUIDesigner.openInterchange','astroUIDesigner.validate','astroUIDesigner.runTests','astroUIDesigner.exportProject']) assert.ok(ids.has(id), id);
   assert.equal(pkg.capabilities.untrustedWorkspaces.supported, false);
 });
 

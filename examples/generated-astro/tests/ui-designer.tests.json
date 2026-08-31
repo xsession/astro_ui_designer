@@ -1,7 +1,7 @@
 {
   "stories": [
     {
-      "id": "story-tg29bz8-1i",
+      "id": "story-th4ru21-1i",
       "name": "Primary",
       "args": {
         "title": "Information"
@@ -11,7 +11,7 @@
       ],
       "steps": [
         {
-          "id": "story-step-tg29bz8-1j",
+          "id": "story-step-th4ru22-1j",
           "type": "wait",
           "target": "",
           "value": 1,
@@ -21,9 +21,9 @@
       ],
       "assertions": [
         {
-          "id": "story-assert-tg29bz8-1k",
+          "id": "story-assert-th4ru22-1k",
           "type": "visible",
-          "target": "card-tg29bz8-1f",
+          "target": "card-th4ru21-1f",
           "value": true,
           "attribute": ""
         }
@@ -54,7 +54,7 @@
       "componentName": "InfoPanel"
     },
     {
-      "id": "story-tg29bz8-1l",
+      "id": "story-th4ru22-1l",
       "name": "Long title",
       "args": {
         "title": "A deliberately longer component title"

@@ -129,6 +129,9 @@ export class DesignerBrowser {
     const workspaceClient = await this.blobModule(this.source('standalone/js/workspace-client.js'));
     const storybookCleanroom = await this.blobModule(this.source('standalone/js/storybook-cleanroom.js').replace("'./model.js'", JSON.stringify(model)));
     const plasmicCleanroom = await this.blobModule(this.source('standalone/js/plasmic-cleanroom.js').replace("'./model.js'", JSON.stringify(model)));
+    const manualLayout = await this.blobModule(this.source('standalone/js/manual-layout.js').replace("'./model.js'", JSON.stringify(model)));
+    const cssTools = await this.blobModule(this.source('standalone/js/css-tools.js'));
+    const colorPicker = await this.blobModule(this.source('standalone/js/color-picker.js'));
     const astro = await this.blobModule(
       this.source('standalone/js/astro-exporter.js')
         .replace("'./registry.js'", JSON.stringify(registry))
@@ -149,7 +152,7 @@ export class DesignerBrowser {
     let app = this.source('standalone/js/app.js');
     const replacements = [
       ["'../plugins/bootstrap.js'", bootstrap], ["'./registry.js'", registry], ["'./model.js'", model],
-      ["'./astro-exporter.js'", astro], ["'./zip.js'", zip], ["'./validator.js'", validator], ["'./plugin-api.js'", pluginApi], ["'./research-features.js'", research], ["'./workspace-client.js'", workspaceClient], ["'./animation.js'", animation], ["'./penpot-cleanroom.js'", penpotCleanroom], ["'./platform-io.js'", platformIo], ["'./storybook-cleanroom.js'", storybookCleanroom], ["'./plasmic-cleanroom.js'", plasmicCleanroom],
+      ["'./astro-exporter.js'", astro], ["'./zip.js'", zip], ["'./validator.js'", validator], ["'./plugin-api.js'", pluginApi], ["'./research-features.js'", research], ["'./workspace-client.js'", workspaceClient], ["'./animation.js'", animation], ["'./penpot-cleanroom.js'", penpotCleanroom], ["'./platform-io.js'", platformIo], ["'./storybook-cleanroom.js'", storybookCleanroom], ["'./plasmic-cleanroom.js'", plasmicCleanroom], ["'./manual-layout.js'", manualLayout], ["'./css-tools.js'", cssTools], ["'./color-picker.js'", colorPicker],
     ];
     for (const [from, url] of replacements) app = app.replace(from, JSON.stringify(url));
     const appUrl = await this.blobModule(app);

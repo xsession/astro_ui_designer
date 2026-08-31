@@ -9,7 +9,7 @@ import {
 } from '../standalone/js/research-features.js';
 
 const p=createProject(); ensureResearchModel(p);
-assert.equal(p.schemaVersion,7);
+assert.equal(p.schemaVersion,8);
 assert.ok(p.workspace && p.content && p.locales && p.editor);
 const src=`---\ninterface Props { title: string; count?: number; active?: boolean; tone?: 'info' | 'warn'; }\nimport X from './X.astro';\n---\n<section data-ui-id="hero"><slot /><slot name="actions" /></section>`;
 const scanned=scanAstroSource(src,'src/components/Hero.astro');

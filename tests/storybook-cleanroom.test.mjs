@@ -25,7 +25,7 @@ const component={
 };
 project.components.push(component);
 const sb=ensureStorybookProject(project);
-assert.equal(project.schemaVersion,7);
+assert.equal(project.schemaVersion,8);
 assert.equal(sb.settings.defaultViewport,'desktop');
 assert.ok(STORY_VIEWPORTS.some(v=>v.id==='mobile'));
 assert.ok(STORY_BACKGROUNDS.some(v=>v.id==='dark'));

@@ -23,8 +23,8 @@ Legend: **Implemented** = usable in this build. **Controlled** = intentionally g
 | Multi-page Astro routes | Implemented | Nested route filenames supported |
 | Responsive breakpoints | Implemented | Editable viewport breakpoints + per-breakpoint styles |
 | CSS container queries | Implemented | `container-name/type` and generated `@container` rules |
-| Flexbox editor | Implemented | Direct CSS-native property controls + quick layout actions |
-| CSS Grid editor | Implemented | Grid template/placement fields |
+| Flexbox editor | Implemented | Direct CSS-native property controls + quick layout actions + X/Y content alignment buttons |
+| CSS Grid editor | Implemented | Grid template/placement fields + direct `justify-items`/`align-items` content alignment |
 | Freeform/HMI layer | Implemented | Scoped absolute positioning, multi-select/align/distribute/resize |
 | Freeform → responsive inference | Implemented | Deterministic Row/Grid/layout advisor |
 | Design tokens | Implemented | CSS variables + token picker |
@@ -173,3 +173,71 @@ Legend: **Implemented** = usable in this build. **Controlled** = intentionally g
 | Skill validator/package (`skill.zip`) | Implemented |
 | Cross-platform Hermes setup helper | Implemented |
 | Generic shell/filesystem tool exposure | Intentionally not implemented |
+
+## Manual canvas / layout editing clean-room additions
+
+| Capability | Status | Notes |
+|---|---|---|
+| Eight-direction resize | Implemented | N/NE/E/SE/S/SW/W/NW handles |
+| Rotation handle | Implemented | Shift quantizes to 15° |
+| Aspect-ratio resize | Implemented | Shift modifier / persisted option |
+| Center resize | Implemented | Alt modifier |
+| Nested freeform coordinates | Implemented | parent-local persistence, canvas-global overlays |
+| Smart grid/guide/geometry snapping | Implemented | configurable independently |
+| Rulers | Implemented | top/left canvas rulers |
+| Persistent guides | Implemented | add/drag/lock/delete, breakpoint-aware |
+| Responsive column guides | Implemented | columns/gap/margin/max-width per breakpoint |
+| Alt distance measurement | Implemented | selected-to-hovered geometry overlay |
+| Margin/padding overlay | Implemented | box-model visualization |
+| X-ray layout view | Implemented | layout geometry outlines |
+| Smart freeform spacing handles | Implemented | recognizable row/column selections |
+| Tidy / exact gap | Implemented | horizontal/vertical normalization |
+| Proportional freeform scaling | Implemented | multi-selection percentage scaling |
+| Direct Flex/Stack gap drag | Implemented | edits real CSS `gap` |
+| Direct Grid cell placement | Implemented | clickable cell targets for selected child |
+| Direct text alignment buttons | Implemented | Left / Center / Right / Justify, breakpoint + multi-selection aware |
+| Direct content X/Y alignment | Implemented | Start / Center / End with Flex direction-aware mapping and Grid item alignment |
+| Grid row/column track controls | Implemented | +/- direct controls |
+| Fixed/fill/hug sizing | Implemented | width/height independently |
+| Flow/relative/absolute/fixed/sticky | Implemented | web-native position modes |
+| Ignore flow / Return to flow | Implemented | absolute escape and re-entry |
+| Parent-resize constraints | Implemented | pin/center/scale semantics |
+| Apply Row/Column/Grid | Implemented | CSS-native layout |
+| Break layout | Implemented | preserves visible child geometry |
+| Infer layout | Implemented | converts recognizable manual arrangements |
+| Keyboard precision workflow | Implemented | arrows, Alt+Arrow, Shift+Arrow, shortcuts |
+| Lost-pointer gesture recovery | Implemented | defensive end when pointer buttons become zero |
+| Manual-layout browser regression | Implemented | direct drag/resize/rotate/guides/measure/gap/grid |
+| Dedicated visual checkpoint | Implemented | manual-layout workspace at 1600×900 |
+
+## Structured CSS editing utilities (2.9.0)
+
+| Capability | Status |
+| --- | --- |
+| Box-model four-side editor | Implemented |
+| Border width/style/color editor | Implemented |
+| Independent corner-radius editor | Implemented |
+| Linear/radial/conic gradient builder | Implemented |
+| Structured box-shadow builder + presets | Implemented |
+| Filter builder | Implemented |
+| Typography utility group | Implemented |
+| Transform builder | Implemented |
+| Transition builder + presets | Implemented |
+| Overflow/cursor/pointer/user-select/object-fit utilities | Implemented |
+| Base/Hover/Focus/Focus-visible/Active/Disabled layers | Implemented |
+| Element-scoped CSS custom properties | Implemented |
+| Generated CSS preview/copy | Implemented |
+| Native pseudo-selector Astro export | Implemented |
+| Public API CSS-state/local-variable editing | Implemented |
+| Hermes `update_node` CSS-state/local-variable editing | Implemented |
+| Chromium rendered regression | Implemented |
+| Dedicated visual checkpoint | Implemented |
+
+## Universal color-code picker coverage (2.10.0)
+
+- Paired editable CSS value + visual picker in every structured color-bearing GUI surface.
+- Compound-safe replacement for borders, backgrounds/gradients, outlines, box shadows and text shadows.
+- Design-token-aware swatch resolution, including compound shadow tokens.
+- Penpot-style fill/stroke/shadow colors, design-token values and ruler/layout-guide colors.
+- Color-aware animation keyframe values, Component Lab/Storybook controls, reusable component props and code-component props.
+- Raw CSS values remain editable; no proprietary color representation is introduced.

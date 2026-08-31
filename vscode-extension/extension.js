@@ -515,6 +515,8 @@ function registerCommands(context) {
   });
   reg('astroUIDesigner.stopDevServer', () => { const root = workspaceRootForUri(); if (root) previewManager.stop(root); });
   reg('astroUIDesigner.openAnimation', async () => { await designerHost.open({ mode: 'design' }); await designerHost.call('openBottomTab', ['animation']); });
+  reg('astroUIDesigner.openLayoutTools', async () => { await designerHost.open({ mode: 'design' }); await designerHost.call('openBottomTab', ['manual']); });
+  reg('astroUIDesigner.openCssTools', async () => { await designerHost.open({ mode: 'design' }); await designerHost.call('openBottomTab', ['css']); });
   reg('astroUIDesigner.openInterchange', async () => { await designerHost.open({ mode: 'design' }); await designerHost.call('openBottomTab', ['interchange']); });
   reg('astroUIDesigner.validate', async () => {
     try {

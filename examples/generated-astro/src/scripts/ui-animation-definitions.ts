@@ -1,5 +1,5 @@
 export const uiAnimationDefinitions = {
-  "button-tg29bz9-1u": {
+  "button-th4ru22-1u": {
     "engine": "waapi",
     "trigger": "click",
     "keyframes": [

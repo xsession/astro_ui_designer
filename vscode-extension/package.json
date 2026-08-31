@@ -2,7 +2,7 @@
   "name": "astro-ui-designer-vscode",
   "displayName": "Astro UI Designer",
   "description": "Qt Creator-style visual Astro UI designer, Component Lab, live preview and cross-platform design tools inside VS Code.",
-  "version": "2.7.0",
+  "version": "2.10.0",
   "publisher": "astro-ui-designer",
   "license": "SEE LICENSE-NOTICE.md",
   "engines": {
@@ -87,6 +87,18 @@
         "title": "Astro UI Designer: Open Animation Editor",
         "category": "Astro UI Designer",
         "icon": "$(pulse)"
+      },
+      {
+        "command": "astroUIDesigner.openLayoutTools",
+        "title": "Astro UI Designer: Open Layout Tools",
+        "category": "Astro UI Designer",
+        "icon": "$(layout-panel)"
+      },
+      {
+        "command": "astroUIDesigner.openCssTools",
+        "title": "Astro UI Designer: Open CSS Tools",
+        "category": "Astro UI Designer",
+        "icon": "$(symbol-color)"
       },
       {
         "command": "astroUIDesigner.openInterchange",
