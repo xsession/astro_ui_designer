@@ -32,15 +32,12 @@ export function isColorEditableProperty(property=''){
   const key=String(property||'').trim();
   return COLOR_ONLY_PROPERTIES.has(key)||COMPOUND_COLOR_PROPERTIES.has(key)||/Color$/.test(key);
 }
-
 export function containsColorCode(value=''){return COLOR_TOKEN_RE.test(String(value||''))}
-
 export function resolveCssVariable(value='',tokens={},depth=0){
   const s=String(value||'').trim();if(depth>6)return s;
   const m=s.match(/^var\(\s*--([A-Za-z0-9_-]+)\s*(?:,\s*([^)]*))?\)$/);if(!m)return s;
   const next=tokens?.[m[1]]??m[2];return next==null?s:resolveCssVariable(next,tokens,depth+1);
 }
-
 export function colorPickerHex(value='',tokens={},fallback='#000000'){
   let s=resolveCssVariable(value,tokens).trim().toLowerCase();
   const hex=expandHex(s);if(hex)return hex;
@@ -52,7 +49,6 @@ export function colorPickerHex(value='',tokens={},fallback='#000000'){
   const token=s.match(COLOR_TOKEN_RE)?.[0];if(token&&token!==s)return colorPickerHex(token,tokens,fallback);
   return fallback;
 }
-
 export function replaceColorInCssValue(value='',picked='#000000',property='color',tokens={}){
   const current=String(value??'').trim(),color=colorPickerHex(picked,{},'#000000');
   if(COLOR_ONLY_PROPERTIES.has(property)||(/Color$/.test(property)&&!COMPOUND_COLOR_PROPERTIES.has(property)))return color;
@@ -64,7 +60,6 @@ export function replaceColorInCssValue(value='',picked='#000000',property='color
   if(['border','borderTop','borderRight','borderBottom','borderLeft','outline','boxShadow','textShadow'].includes(property))return `${working} ${color}`.trim();
   return color;
 }
-
 export function shouldOfferColorPicker(property='',value='',name=''){
   return isColorEditableProperty(property)||containsColorCode(value)||/(?:^|[-_\s])(color|colour|fill|stroke|tint|accent|background|foreground)(?:$|[-_\s])/i.test(String(name||''));
 }

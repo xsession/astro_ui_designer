@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import '../standalone/plugins/bootstrap.js';
+import { getDesignerPlugins,getDesignerContributions } from '../standalone/js/plugin-api.js';
+assert.ok(getDesignerPlugins().some(x=>x.id==='core.roundtrip-workspace'));const adapters=getDesignerContributions('sourceAdapters');for(const id of ['roundtrip-astro','roundtrip-react','roundtrip-vue','roundtrip-svelte','roundtrip-tkinter','roundtrip-nicegui','roundtrip-lvgl'])assert.ok(adapters.some(x=>x.id===id),`missing ${id}`);assert.ok(getDesignerContributions('assistants').some(x=>x.id==='roundtrip-workspace-audit'));assert.ok(getDesignerContributions('assistants').some(x=>x.id==='roundtrip-open-studio'));const backends=getDesignerContributions('backendAdapters');assert.ok(backends.some(x=>x.backend==='astro'));assert.ok(backends.some(x=>x.backend==='lvgl'));console.log('roundtrip-plugin.test.mjs passed');

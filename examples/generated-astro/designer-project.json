@@ -1,6 +1,6 @@
 {
   "schemaVersion": 8,
-  "id": "project-th4ru1y-2",
+  "id": "project-ts0jhkj-2",
   "name": "astro-ui-project",
   "settings": {
     "astroVersion": "^7.2.0",
@@ -57,7 +57,7 @@
   },
   "pages": [
     {
-      "id": "page-doc-th4ru1y-3",
+      "id": "page-doc-ts0jhkk-3",
       "route": "/",
       "filename": "index.astro",
       "name": "Home",
@@ -68,7 +68,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-th4ru1x-1",
+        "id": "page-ts0jhkj-1",
         "type": "page",
         "name": "HomePage",
         "props": {
@@ -164,7 +164,7 @@
         },
         "children": [
           {
-            "id": "header-th4ru1y-6",
+            "id": "header-ts0jhkk-6",
             "type": "header",
             "name": "SiteHeader",
             "props": {},
@@ -257,7 +257,7 @@
             },
             "children": [
               {
-                "id": "nav-th4ru1y-7",
+                "id": "nav-ts0jhkk-7",
                 "type": "nav",
                 "name": "MainNav",
                 "props": {
@@ -354,7 +354,7 @@
                 },
                 "children": [
                   {
-                    "id": "heading-th4ru1y-8",
+                    "id": "heading-ts0jhkk-8",
                     "type": "heading",
                     "name": "Brand",
                     "props": {
@@ -454,16 +454,10 @@
                         "maxHeight": ""
                       }
                     },
-                    "children": [],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    "children": []
                   },
                   {
-                    "id": "row-th4ru1y-9",
+                    "id": "row-ts0jhkk-9",
                     "type": "row",
                     "name": "NavLinks",
                     "props": {},
@@ -563,7 +557,7 @@
                     },
                     "children": [
                       {
-                        "id": "link-th4ru1y-a",
+                        "id": "link-ts0jhkk-a",
                         "type": "link",
                         "name": "Link11",
                         "props": {
@@ -657,16 +651,10 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       },
                       {
-                        "id": "link-th4ru1y-b",
+                        "id": "link-ts0jhkk-b",
                         "type": "link",
                         "name": "Link12",
                         "props": {
@@ -760,40 +748,16 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       }
-                    ],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    ]
                   }
-                ],
-                "composition": {
-                  "mixins": [],
-                  "globalVariantStyles": [],
-                  "queryBindings": {},
-                  "contextBindings": {}
-                }
+                ]
               }
-            ],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
+            ]
           },
           {
-            "id": "section-th4ru1y-c",
+            "id": "section-ts0jhkk-c",
             "type": "section",
             "name": "Hero",
             "props": {
@@ -893,7 +857,7 @@
             },
             "children": [
               {
-                "id": "container-th4ru1y-d",
+                "id": "container-ts0jhkk-d",
                 "type": "container",
                 "name": "Container14",
                 "props": {},
@@ -985,7 +949,7 @@
                 },
                 "children": [
                   {
-                    "id": "row-th4ru1z-e",
+                    "id": "row-ts0jhkk-e",
                     "type": "row",
                     "name": "Row15",
                     "props": {},
@@ -1084,7 +1048,7 @@
                     },
                     "children": [
                       {
-                        "id": "column-th4ru1z-f",
+                        "id": "column-ts0jhkk-f",
                         "type": "column",
                         "name": "Column16",
                         "props": {},
@@ -1178,7 +1142,7 @@
                         },
                         "children": [
                           {
-                            "id": "badge-th4ru1z-g",
+                            "id": "badge-ts0jhkk-g",
                             "type": "badge",
                             "name": "Badge17",
                             "props": {
@@ -1273,16 +1237,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "heading-th4ru1z-h",
+                            "id": "heading-ts0jhkk-h",
                             "type": "heading",
                             "name": "Heading18",
                             "props": {
@@ -1383,16 +1341,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "text-th4ru1z-i",
+                            "id": "text-ts0jhkk-i",
                             "type": "text",
                             "name": "Text19",
                             "props": {
@@ -1486,16 +1438,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "row-th4ru1z-j",
+                            "id": "row-ts0jhkk-j",
                             "type": "row",
                             "name": "Row20",
                             "props": {},
@@ -1594,7 +1540,7 @@
                             },
                             "children": [
                               {
-                                "id": "button-th4ru1z-l",
+                                "id": "button-ts0jhkk-l",
                                 "type": "button",
                                 "name": "DocsButton",
                                 "props": {
@@ -1621,7 +1567,7 @@
                                 },
                                 "actions": [
                                   {
-                                    "id": "act-th4ru1z-k",
+                                    "id": "act-ts0jhkk-k",
                                     "event": "click",
                                     "type": "navigate",
                                     "value": "/docs",
@@ -1707,16 +1653,10 @@
                                     "maxHeight": ""
                                   }
                                 },
-                                "children": [],
-                                "composition": {
-                                  "mixins": [],
-                                  "globalVariantStyles": [],
-                                  "queryBindings": {},
-                                  "contextBindings": {}
-                                }
+                                "children": []
                               },
                               {
-                                "id": "link-th4ru1z-m",
+                                "id": "link-ts0jhkk-m",
                                 "type": "link",
                                 "name": "Link23",
                                 "props": {
@@ -1811,32 +1751,14 @@
                                     "maxHeight": ""
                                   }
                                 },
-                                "children": [],
-                                "composition": {
-                                  "mixins": [],
-                                  "globalVariantStyles": [],
-                                  "queryBindings": {},
-                                  "contextBindings": {}
-                                }
+                                "children": []
                               }
-                            ],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            ]
                           }
-                        ],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        ]
                       },
                       {
-                        "id": "card-th4ru1z-n",
+                        "id": "card-ts0jhkk-n",
                         "type": "card",
                         "name": "PreviewCard",
                         "props": {},
@@ -1940,7 +1862,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-th4ru1z-o",
+                            "id": "heading-ts0jhkk-o",
                             "type": "heading",
                             "name": "Heading25",
                             "props": {
@@ -2040,16 +1962,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "text-th4ru1z-p",
+                            "id": "text-ts0jhkk-p",
                             "type": "text",
                             "name": "Text26",
                             "props": {
@@ -2142,48 +2058,18 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           }
-                        ],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        ]
                       }
-                    ],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    ]
                   }
-                ],
-                "composition": {
-                  "mixins": [],
-                  "globalVariantStyles": [],
-                  "queryBindings": {},
-                  "contextBindings": {}
-                }
+                ]
               }
-            ],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
+            ]
           },
           {
-            "id": "section-th4ru1z-q",
+            "id": "section-ts0jhkk-q",
             "type": "section",
             "name": "Features",
             "props": {
@@ -2282,7 +2168,7 @@
             },
             "children": [
               {
-                "id": "container-th4ru1z-r",
+                "id": "container-ts0jhkk-r",
                 "type": "container",
                 "name": "Container28",
                 "props": {},
@@ -2374,7 +2260,7 @@
                 },
                 "children": [
                   {
-                    "id": "heading-th4ru1z-s",
+                    "id": "heading-ts0jhkk-s",
                     "type": "heading",
                     "name": "Heading29",
                     "props": {
@@ -2474,16 +2360,10 @@
                         "maxHeight": ""
                       }
                     },
-                    "children": [],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    "children": []
                   },
                   {
-                    "id": "spacer-th4ru20-13",
+                    "id": "spacer-ts0jhkk-13",
                     "type": "spacer",
                     "name": "Spacer40",
                     "props": {},
@@ -2575,16 +2455,10 @@
                         "maxHeight": ""
                       }
                     },
-                    "children": [],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    "children": []
                   },
                   {
-                    "id": "grid-th4ru1z-t",
+                    "id": "grid-ts0jhkk-t",
                     "type": "grid",
                     "name": "FeatureGrid",
                     "props": {},
@@ -2682,7 +2556,7 @@
                     },
                     "children": [
                       {
-                        "id": "card-th4ru20-u",
+                        "id": "card-ts0jhkk-u",
                         "type": "card",
                         "name": "Card31",
                         "props": {},
@@ -2779,7 +2653,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-th4ru20-v",
+                            "id": "heading-ts0jhkk-v",
                             "type": "heading",
                             "name": "Heading32",
                             "props": {
@@ -2879,16 +2753,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "text-th4ru20-w",
+                            "id": "text-ts0jhkk-w",
                             "type": "text",
                             "name": "Text33",
                             "props": {
@@ -2980,24 +2848,12 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           }
-                        ],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        ]
                       },
                       {
-                        "id": "card-th4ru20-x",
+                        "id": "card-ts0jhkk-x",
                         "type": "card",
                         "name": "Card34",
                         "props": {},
@@ -3094,7 +2950,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-th4ru20-y",
+                            "id": "heading-ts0jhkk-y",
                             "type": "heading",
                             "name": "Heading35",
                             "props": {
@@ -3194,16 +3050,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "text-th4ru20-z",
+                            "id": "text-ts0jhkk-z",
                             "type": "text",
                             "name": "Text36",
                             "props": {
@@ -3295,24 +3145,12 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           }
-                        ],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        ]
                       },
                       {
-                        "id": "card-th4ru20-10",
+                        "id": "card-ts0jhkk-10",
                         "type": "card",
                         "name": "Card37",
                         "props": {},
@@ -3409,7 +3247,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-th4ru20-11",
+                            "id": "heading-ts0jhkk-11",
                             "type": "heading",
                             "name": "Heading38",
                             "props": {
@@ -3509,16 +3347,10 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           },
                           {
-                            "id": "text-th4ru20-12",
+                            "id": "text-ts0jhkk-12",
                             "type": "text",
                             "name": "Text39",
                             "props": {
@@ -3610,448 +3442,21 @@
                                 "maxHeight": ""
                               }
                             },
-                            "children": [],
-                            "composition": {
-                              "mixins": [],
-                              "globalVariantStyles": [],
-                              "queryBindings": {},
-                              "contextBindings": {}
-                            }
+                            "children": []
                           }
-                        ],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        ]
                       }
-                    ],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    ]
                   }
-                ],
-                "composition": {
-                  "mixins": [],
-                  "globalVariantStyles": [],
-                  "queryBindings": {},
-                  "contextBindings": {}
-                }
+                ]
               }
-            ],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
-          },
-          {
-            "id": "componentInstance-th4ru22-1m",
-            "type": "componentInstance",
-            "name": "InfoPanelInstance",
-            "props": {
-              "definitionId": "demo-info-panel",
-              "propValues": {
-                "title": "Reusable component"
-              }
-            },
-            "style": {
-              "base": {
-                "display": "contents"
-              }
-            },
-            "actions": [],
-            "bindings": {},
-            "meta": {
-              "domId": "",
-              "className": "",
-              "slot": "",
-              "role": "",
-              "ariaLabel": "",
-              "title": "",
-              "tabIndex": "",
-              "locked": false,
-              "hidden": false,
-              "sourceOwnership": "designer",
-              "exposed": {
-                "content": true,
-                "style": false,
-                "structure": false,
-                "actions": false
-              }
-            },
-            "variant": "",
-            "componentState": "default",
-            "states": [],
-            "containerRules": [],
-            "timeline": {
-              "engine": "css",
-              "trigger": "hover",
-              "duration": 520,
-              "delay": 0,
-              "easing": "cubic-bezier(.2,.8,.2,1)",
-              "iterations": 1,
-              "direction": "normal",
-              "fill": "both",
-              "playbackRate": 1,
-              "reducedMotion": "disable",
-              "scroll": {
-                "timeline": "view",
-                "source": "nearest",
-                "axis": "block",
-                "rangeStart": "entry 0%",
-                "rangeEnd": "cover 100%"
-              },
-              "tracks": [
-                {
-                  "id": "track-th4ru22-1q",
-                  "property": "opacity",
-                  "keyframes": [
-                    {
-                      "id": "kf-th4ru22-1o",
-                      "at": 0,
-                      "value": "0",
-                      "easing": ""
-                    },
-                    {
-                      "id": "kf-th4ru22-1p",
-                      "at": 1,
-                      "value": "1",
-                      "easing": ""
-                    }
-                  ]
-                },
-                {
-                  "id": "track-th4ru22-1t",
-                  "property": "transform",
-                  "keyframes": [
-                    {
-                      "id": "kf-th4ru22-1r",
-                      "at": 0,
-                      "value": "translateY(24px)",
-                      "easing": ""
-                    },
-                    {
-                      "id": "kf-th4ru22-1s",
-                      "at": 1,
-                      "value": "translateY(0px)",
-                      "easing": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "visibilityCondition": "",
-            "dataContext": {},
-            "design": {
-              "constraints": {
-                "horizontal": "left",
-                "vertical": "top"
-              },
-              "effects": {
-                "fills": [],
-                "strokes": [],
-                "shadows": [],
-                "blurs": [],
-                "blendMode": "normal"
-              },
-              "exportPresets": [],
-              "interactions": [],
-              "fixedOnScroll": false,
-              "clipContent": false,
-              "aspectLocked": false,
-              "vector": {
-                "kind": "none",
-                "path": "",
-                "booleanOperation": "none"
-              },
-              "libraryRef": "",
-              "manualLayout": {
-                "sizingX": "fixed",
-                "sizingY": "fixed",
-                "rotation": 0,
-                "minWidth": "",
-                "maxWidth": "",
-                "minHeight": "",
-                "maxHeight": ""
-              }
-            },
-            "children": [
-              {
-                "id": "text-th4ru22-1n",
-                "type": "text",
-                "name": "Text60",
-                "props": {
-                  "text": "This content is passed through the default Astro slot."
-                },
-                "style": {
-                  "base": {
-                    "margin": "0",
-                    "fontSize": "16px",
-                    "lineHeight": "1.55"
-                  }
-                },
-                "actions": [],
-                "bindings": {},
-                "meta": {
-                  "domId": "",
-                  "className": "",
-                  "slot": "",
-                  "role": "",
-                  "ariaLabel": "",
-                  "title": "",
-                  "tabIndex": "",
-                  "locked": false,
-                  "hidden": false,
-                  "sourceOwnership": "designer",
-                  "exposed": {
-                    "content": true,
-                    "style": false,
-                    "structure": false,
-                    "actions": false
-                  }
-                },
-                "variant": "",
-                "componentState": "default",
-                "states": [],
-                "containerRules": [],
-                "timeline": {
-                  "duration": 500,
-                  "delay": 0,
-                  "easing": "ease",
-                  "iterations": 1,
-                  "direction": "normal",
-                  "fill": "both",
-                  "playbackRate": 1,
-                  "reducedMotion": "disable",
-                  "engine": "auto",
-                  "trigger": "manual",
-                  "scroll": {
-                    "timeline": "view",
-                    "source": "nearest",
-                    "axis": "block",
-                    "rangeStart": "entry 0%",
-                    "rangeEnd": "cover 100%"
-                  },
-                  "tracks": []
-                },
-                "visibilityCondition": "",
-                "dataContext": {},
-                "design": {
-                  "constraints": {
-                    "horizontal": "left",
-                    "vertical": "top"
-                  },
-                  "effects": {
-                    "fills": [],
-                    "strokes": [],
-                    "shadows": [],
-                    "blurs": [],
-                    "blendMode": "normal"
-                  },
-                  "exportPresets": [],
-                  "interactions": [],
-                  "fixedOnScroll": false,
-                  "clipContent": false,
-                  "aspectLocked": false,
-                  "vector": {
-                    "kind": "none",
-                    "path": "",
-                    "booleanOperation": "none"
-                  },
-                  "libraryRef": "",
-                  "manualLayout": {
-                    "sizingX": "fixed",
-                    "sizingY": "fixed",
-                    "rotation": 0,
-                    "minWidth": "",
-                    "maxWidth": "",
-                    "minHeight": "",
-                    "maxHeight": ""
-                  }
-                },
-                "children": [],
-                "composition": {
-                  "mixins": [],
-                  "globalVariantStyles": [],
-                  "queryBindings": {},
-                  "contextBindings": {}
-                }
-              }
-            ],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
-          },
-          {
-            "id": "button-th4ru22-1u",
-            "type": "button",
-            "name": "WaapiDemoButton",
-            "props": {
-              "text": "Animate with JavaScript",
-              "buttonType": "button",
-              "disabled": false
-            },
-            "style": {
-              "base": {
-                "display": "inline-flex",
-                "alignItems": "center",
-                "justifyContent": "center",
-                "padding": "10px 16px",
-                "border": "1px solid var(--color-primary)",
-                "borderRadius": "var(--radius-sm)",
-                "background": "var(--color-primary)",
-                "color": "#fff",
-                "fontWeight": "600",
-                "cursor": "pointer"
-              },
-              "mobile": {
-                "width": "100%"
-              }
-            },
-            "actions": [],
-            "bindings": {},
-            "meta": {
-              "domId": "",
-              "className": "",
-              "slot": "",
-              "role": "",
-              "ariaLabel": "",
-              "title": "",
-              "tabIndex": "",
-              "locked": false,
-              "hidden": false,
-              "sourceOwnership": "designer",
-              "exposed": {
-                "content": true,
-                "style": false,
-                "structure": false,
-                "actions": false
-              }
-            },
-            "variant": "",
-            "componentState": "default",
-            "states": [],
-            "containerRules": [],
-            "timeline": {
-              "engine": "waapi",
-              "trigger": "click",
-              "duration": 420,
-              "delay": 0,
-              "easing": "cubic-bezier(.2,.8,.2,1)",
-              "iterations": 1,
-              "direction": "normal",
-              "fill": "both",
-              "playbackRate": 1,
-              "reducedMotion": "shorten",
-              "scroll": {
-                "timeline": "view",
-                "source": "nearest",
-                "axis": "block",
-                "rangeStart": "entry 0%",
-                "rangeEnd": "cover 100%"
-              },
-              "tracks": [
-                {
-                  "id": "track-th4ru23-1x",
-                  "property": "opacity",
-                  "keyframes": [
-                    {
-                      "id": "kf-th4ru23-1v",
-                      "at": 0,
-                      "value": "0",
-                      "easing": ""
-                    },
-                    {
-                      "id": "kf-th4ru23-1w",
-                      "at": 1,
-                      "value": "1",
-                      "easing": ""
-                    }
-                  ]
-                },
-                {
-                  "id": "track-th4ru23-20",
-                  "property": "transform",
-                  "keyframes": [
-                    {
-                      "id": "kf-th4ru23-1y",
-                      "at": 0,
-                      "value": "scale(.92)",
-                      "easing": ""
-                    },
-                    {
-                      "id": "kf-th4ru23-1z",
-                      "at": 1,
-                      "value": "scale(1)",
-                      "easing": ""
-                    }
-                  ]
-                }
-              ]
-            },
-            "visibilityCondition": "",
-            "dataContext": {},
-            "design": {
-              "constraints": {
-                "horizontal": "left",
-                "vertical": "top"
-              },
-              "effects": {
-                "fills": [],
-                "strokes": [],
-                "shadows": [],
-                "blurs": [],
-                "blendMode": "normal"
-              },
-              "exportPresets": [],
-              "interactions": [],
-              "fixedOnScroll": false,
-              "clipContent": false,
-              "aspectLocked": false,
-              "vector": {
-                "kind": "none",
-                "path": "",
-                "booleanOperation": "none"
-              },
-              "libraryRef": "",
-              "manualLayout": {
-                "sizingX": "fixed",
-                "sizingY": "fixed",
-                "rotation": 0,
-                "minWidth": "",
-                "maxWidth": "",
-                "minHeight": "",
-                "maxHeight": ""
-              }
-            },
-            "children": [],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
+            ]
           }
-        ],
-        "composition": {
-          "mixins": [],
-          "globalVariantStyles": [],
-          "queryBindings": {},
-          "contextBindings": {}
-        }
+        ]
       }
     },
     {
-      "id": "page-doc-th4ru21-1e",
+      "id": "page-doc-ts0jhkl-1e",
       "route": "/contact",
       "filename": "contact.astro",
       "name": "Contact",
@@ -4062,7 +3467,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-th4ru20-14",
+        "id": "page-ts0jhkk-14",
         "type": "page",
         "name": "ContactPage",
         "props": {
@@ -4158,7 +3563,7 @@
         },
         "children": [
           {
-            "id": "section-th4ru20-15",
+            "id": "section-ts0jhkk-15",
             "type": "section",
             "name": "Section42",
             "props": {
@@ -4257,7 +3662,7 @@
             },
             "children": [
               {
-                "id": "container-th4ru20-16",
+                "id": "container-ts0jhkk-16",
                 "type": "container",
                 "name": "Container43",
                 "props": {},
@@ -4349,7 +3754,7 @@
                 },
                 "children": [
                   {
-                    "id": "form-th4ru20-17",
+                    "id": "form-ts0jhkk-17",
                     "type": "form",
                     "name": "ContactForm",
                     "props": {
@@ -4445,7 +3850,7 @@
                     },
                     "children": [
                       {
-                        "id": "heading-th4ru20-18",
+                        "id": "heading-ts0jhkl-18",
                         "type": "heading",
                         "name": "Heading45",
                         "props": {
@@ -4545,16 +3950,10 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       },
                       {
-                        "id": "label-th4ru20-19",
+                        "id": "label-ts0jhkl-19",
                         "type": "label",
                         "name": "Label46",
                         "props": {
@@ -4647,16 +4046,10 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       },
                       {
-                        "id": "input-th4ru20-1a",
+                        "id": "input-ts0jhkl-1a",
                         "type": "input",
                         "name": "Input47",
                         "props": {
@@ -4762,16 +4155,10 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       },
                       {
-                        "id": "label-th4ru21-1b",
+                        "id": "label-ts0jhkl-1b",
                         "type": "label",
                         "name": "Label48",
                         "props": {
@@ -4864,16 +4251,10 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       },
                       {
-                        "id": "textarea-th4ru21-1c",
+                        "id": "textarea-ts0jhkl-1c",
                         "type": "textarea",
                         "name": "Textarea49",
                         "props": {
@@ -4973,16 +4354,10 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       },
                       {
-                        "id": "button-th4ru21-1d",
+                        "id": "button-ts0jhkl-1d",
                         "type": "button",
                         "name": "Button50",
                         "props": {
@@ -5086,486 +4461,29 @@
                             "maxHeight": ""
                           }
                         },
-                        "children": [],
-                        "composition": {
-                          "mixins": [],
-                          "globalVariantStyles": [],
-                          "queryBindings": {},
-                          "contextBindings": {}
-                        }
+                        "children": []
                       }
-                    ],
-                    "composition": {
-                      "mixins": [],
-                      "globalVariantStyles": [],
-                      "queryBindings": {},
-                      "contextBindings": {}
-                    }
+                    ]
                   }
-                ],
-                "composition": {
-                  "mixins": [],
-                  "globalVariantStyles": [],
-                  "queryBindings": {},
-                  "contextBindings": {}
-                }
+                ]
               }
-            ],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
+            ]
           }
-        ],
-        "composition": {
-          "mixins": [],
-          "globalVariantStyles": [],
-          "queryBindings": {},
-          "contextBindings": {}
-        }
+        ]
       }
     }
   ],
-  "components": [
-    {
-      "id": "demo-info-panel",
-      "name": "InfoPanel",
-      "filename": "InfoPanel.astro",
-      "description": "Demo reusable component",
-      "props": [
-        {
-          "name": "title",
-          "type": "string",
-          "default": "Information"
-        }
-      ],
-      "root": {
-        "id": "card-th4ru21-1f",
-        "type": "card",
-        "name": "InfoPanelRoot",
-        "props": {},
-        "style": {
-          "base": {
-            "padding": "24px",
-            "border": "1px solid var(--color-border)",
-            "borderRadius": "var(--radius-md)",
-            "background": "var(--color-surface)",
-            "boxShadow": "var(--shadow-sm)"
-          },
-          "mobile": {
-            "padding": "18px"
-          }
-        },
-        "actions": [],
-        "bindings": {},
-        "meta": {
-          "domId": "",
-          "className": "",
-          "slot": "",
-          "role": "",
-          "ariaLabel": "",
-          "title": "",
-          "tabIndex": "",
-          "locked": false,
-          "hidden": false,
-          "sourceOwnership": "designer",
-          "exposed": {
-            "content": true,
-            "style": false,
-            "structure": false,
-            "actions": false
-          }
-        },
-        "variant": "",
-        "componentState": "default",
-        "states": [],
-        "containerRules": [],
-        "timeline": {
-          "duration": 500,
-          "delay": 0,
-          "easing": "ease",
-          "iterations": 1,
-          "direction": "normal",
-          "fill": "both",
-          "playbackRate": 1,
-          "reducedMotion": "disable",
-          "engine": "auto",
-          "trigger": "manual",
-          "scroll": {
-            "timeline": "view",
-            "source": "nearest",
-            "axis": "block",
-            "rangeStart": "entry 0%",
-            "rangeEnd": "cover 100%"
-          },
-          "tracks": []
-        },
-        "visibilityCondition": "",
-        "dataContext": {},
-        "design": {
-          "constraints": {
-            "horizontal": "left",
-            "vertical": "top"
-          },
-          "effects": {
-            "fills": [],
-            "strokes": [],
-            "shadows": [],
-            "blurs": [],
-            "blendMode": "normal"
-          },
-          "exportPresets": [],
-          "interactions": [],
-          "fixedOnScroll": false,
-          "clipContent": false,
-          "aspectLocked": false,
-          "vector": {
-            "kind": "none",
-            "path": "",
-            "booleanOperation": "none"
-          },
-          "libraryRef": "",
-          "manualLayout": {
-            "sizingX": "fixed",
-            "sizingY": "fixed",
-            "rotation": 0,
-            "minWidth": "",
-            "maxWidth": "",
-            "minHeight": "",
-            "maxHeight": ""
-          }
-        },
-        "children": [
-          {
-            "id": "heading-th4ru21-1g",
-            "type": "heading",
-            "name": "Heading53",
-            "props": {
-              "text": "Title",
-              "level": "3"
-            },
-            "style": {
-              "base": {
-                "margin": "0",
-                "fontSize": "32px",
-                "lineHeight": "1.15",
-                "fontWeight": "700"
-              },
-              "tablet": {
-                "fontSize": "28px"
-              },
-              "mobile": {
-                "fontSize": "24px"
-              }
-            },
-            "actions": [],
-            "bindings": {
-              "text": "props.title"
-            },
-            "meta": {
-              "domId": "",
-              "className": "",
-              "slot": "",
-              "role": "",
-              "ariaLabel": "",
-              "title": "",
-              "tabIndex": "",
-              "locked": false,
-              "hidden": false,
-              "sourceOwnership": "designer",
-              "exposed": {
-                "content": true,
-                "style": false,
-                "structure": false,
-                "actions": false
-              }
-            },
-            "variant": "",
-            "componentState": "default",
-            "states": [],
-            "containerRules": [],
-            "timeline": {
-              "duration": 500,
-              "delay": 0,
-              "easing": "ease",
-              "iterations": 1,
-              "direction": "normal",
-              "fill": "both",
-              "playbackRate": 1,
-              "reducedMotion": "disable",
-              "engine": "auto",
-              "trigger": "manual",
-              "scroll": {
-                "timeline": "view",
-                "source": "nearest",
-                "axis": "block",
-                "rangeStart": "entry 0%",
-                "rangeEnd": "cover 100%"
-              },
-              "tracks": []
-            },
-            "visibilityCondition": "",
-            "dataContext": {},
-            "design": {
-              "constraints": {
-                "horizontal": "left",
-                "vertical": "top"
-              },
-              "effects": {
-                "fills": [],
-                "strokes": [],
-                "shadows": [],
-                "blurs": [],
-                "blendMode": "normal"
-              },
-              "exportPresets": [],
-              "interactions": [],
-              "fixedOnScroll": false,
-              "clipContent": false,
-              "aspectLocked": false,
-              "vector": {
-                "kind": "none",
-                "path": "",
-                "booleanOperation": "none"
-              },
-              "libraryRef": "",
-              "manualLayout": {
-                "sizingX": "fixed",
-                "sizingY": "fixed",
-                "rotation": 0,
-                "minWidth": "",
-                "maxWidth": "",
-                "minHeight": "",
-                "maxHeight": ""
-              }
-            },
-            "children": [],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
-          },
-          {
-            "id": "slot-th4ru21-1h",
-            "type": "slot",
-            "name": "Slot54",
-            "props": {
-              "name": ""
-            },
-            "style": {
-              "base": {
-                "minHeight": "36px",
-                "border": "1px dashed #94a3b8",
-                "padding": "8px"
-              }
-            },
-            "actions": [],
-            "bindings": {},
-            "meta": {
-              "domId": "",
-              "className": "",
-              "slot": "",
-              "role": "",
-              "ariaLabel": "",
-              "title": "",
-              "tabIndex": "",
-              "locked": false,
-              "hidden": false,
-              "sourceOwnership": "designer",
-              "exposed": {
-                "content": true,
-                "style": false,
-                "structure": false,
-                "actions": false
-              }
-            },
-            "variant": "",
-            "componentState": "default",
-            "states": [],
-            "containerRules": [],
-            "timeline": {
-              "duration": 500,
-              "delay": 0,
-              "easing": "ease",
-              "iterations": 1,
-              "direction": "normal",
-              "fill": "both",
-              "playbackRate": 1,
-              "reducedMotion": "disable",
-              "engine": "auto",
-              "trigger": "manual",
-              "scroll": {
-                "timeline": "view",
-                "source": "nearest",
-                "axis": "block",
-                "rangeStart": "entry 0%",
-                "rangeEnd": "cover 100%"
-              },
-              "tracks": []
-            },
-            "visibilityCondition": "",
-            "dataContext": {},
-            "design": {
-              "constraints": {
-                "horizontal": "left",
-                "vertical": "top"
-              },
-              "effects": {
-                "fills": [],
-                "strokes": [],
-                "shadows": [],
-                "blurs": [],
-                "blendMode": "normal"
-              },
-              "exportPresets": [],
-              "interactions": [],
-              "fixedOnScroll": false,
-              "clipContent": false,
-              "aspectLocked": false,
-              "vector": {
-                "kind": "none",
-                "path": "",
-                "booleanOperation": "none"
-              },
-              "libraryRef": "",
-              "manualLayout": {
-                "sizingX": "fixed",
-                "sizingY": "fixed",
-                "rotation": 0,
-                "minWidth": "",
-                "maxWidth": "",
-                "minHeight": "",
-                "maxHeight": ""
-              }
-            },
-            "children": [],
-            "composition": {
-              "mixins": [],
-              "globalVariantStyles": [],
-              "queryBindings": {},
-              "contextBindings": {}
-            }
-          }
-        ],
-        "composition": {
-          "mixins": [],
-          "globalVariantStyles": [],
-          "queryBindings": {},
-          "contextBindings": {}
-        }
-      },
-      "stories": [
-        {
-          "id": "story-th4ru21-1i",
-          "name": "Primary",
-          "args": {
-            "title": "Information"
-          },
-          "tags": [
-            "stable"
-          ],
-          "steps": [
-            {
-              "id": "story-step-th4ru22-1j",
-              "type": "wait",
-              "target": "",
-              "value": 1,
-              "selector": "",
-              "delay": 0
-            }
-          ],
-          "assertions": [
-            {
-              "id": "story-assert-th4ru22-1k",
-              "type": "visible",
-              "target": "card-th4ru21-1f",
-              "value": true,
-              "attribute": ""
-            }
-          ],
-          "argTypes": {},
-          "viewport": "desktop",
-          "theme": "default",
-          "locale": "en",
-          "background": "light",
-          "direction": "ltr",
-          "state": "default",
-          "globals": {},
-          "parameters": {
-            "layout": "centered",
-            "docs": {
-              "description": ""
-            },
-            "a11y": {
-              "mode": "error"
-            },
-            "visual": {
-              "threshold": 0
-            }
-          },
-          "notes": "",
-          "status": "ready"
-        },
-        {
-          "id": "story-th4ru22-1l",
-          "name": "Long title",
-          "args": {
-            "title": "A deliberately longer component title"
-          },
-          "tags": [],
-          "steps": [],
-          "assertions": [],
-          "argTypes": {},
-          "viewport": "mobile",
-          "theme": "default",
-          "locale": "en",
-          "background": "light",
-          "direction": "ltr",
-          "state": "default",
-          "globals": {},
-          "parameters": {
-            "layout": "centered",
-            "docs": {
-              "description": ""
-            },
-            "a11y": {
-              "mode": "todo"
-            },
-            "visual": {
-              "threshold": 0
-            }
-          },
-          "notes": "",
-          "status": "ready"
-        }
-      ],
-      "storyMeta": {
-        "title": "Components/InfoPanel",
-        "tags": [
-          "dev",
-          "test",
-          "autodocs"
-        ],
-        "description": "Demo reusable component",
-        "owner": "",
-        "status": "stable"
-      }
-    }
-  ],
+  "components": [],
   "assets": [],
   "variables": [
     {
-      "id": "state-th4ru1y-4",
+      "id": "state-ts0jhkk-4",
       "name": "menuOpen",
       "type": "boolean",
       "initial": false
     },
     {
-      "id": "state-th4ru1y-5",
+      "id": "state-ts0jhkk-5",
       "name": "message",
       "type": "string",
       "initial": "Hello from state"
@@ -5656,69 +4574,6 @@
     "layoutGuides": {},
     "gridEdit": {
       "visible": true
-    }
-  },
-  "storybook": {
-    "version": 1,
-    "settings": {
-      "defaultViewport": "desktop",
-      "defaultBackground": "light",
-      "direction": "ltr",
-      "grid": false,
-      "outline": false,
-      "measure": false,
-      "watch": false,
-      "coverage": false,
-      "testSelection": {
-        "render": true,
-        "interaction": true,
-        "a11y": true,
-        "visual": true,
-        "coverage": false
-      }
-    },
-    "tags": [
-      {
-        "id": "dev",
-        "label": "Dev",
-        "color": "#579bd3"
-      },
-      {
-        "id": "manifest",
-        "label": "Manifest",
-        "color": "#4fbf75"
-      },
-      {
-        "id": "test",
-        "label": "Test",
-        "color": "#8f79d6"
-      },
-      {
-        "id": "autodocs",
-        "label": "Autodocs",
-        "color": "#579bd3"
-      },
-      {
-        "id": "stable",
-        "label": "Stable",
-        "color": "#4fbf75"
-      },
-      {
-        "id": "experimental",
-        "label": "Experimental",
-        "color": "#d8a94c"
-      },
-      {
-        "id": "deprecated",
-        "label": "Deprecated",
-        "color": "#de6b70"
-      }
-    ],
-    "results": {},
-    "visualBaselines": {},
-    "docs": {
-      "title": "astro-ui-project Component Library",
-      "description": "Generated component documentation."
     }
   }
 }

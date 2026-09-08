@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { clearRoundTripAdapters,registerRoundTripAdapter,getRoundTripAdapter,resolveRoundTripAdapter,roundTripAdapterManifest } from '../standalone/js/roundtrip-adapter-sdk.js';
+clearRoundTripAdapters();
+registerRoundTripAdapter({id:'x',label:'X',extensions:['.x'],detect:files=>files.some(f=>f.filename?.endsWith('.x'))?1:0,importNeutral:()=>({ok:true}),generate:()=>({}),buildPatch:()=>({ok:true})});
+assert.equal(getRoundTripAdapter('x').label,'X');
+assert.equal(resolveRoundTripAdapter([{filename:'a.x'}]).id,'x');
+assert.equal(roundTripAdapterManifest()[0].operations.patch,true);
+assert.throws(()=>registerRoundTripAdapter({id:'x',importNeutral:()=>({})}));
+clearRoundTripAdapters();
+await import('../standalone/js/roundtrip-builtins.js?test='+Date.now());
+const manifest=roundTripAdapterManifest();
+for(const id of ['astro','react','vue','svelte','tkinter','nicegui','lvgl'])assert.ok(manifest.some(x=>x.id===id),`missing ${id}`);
+console.log('roundtrip-adapter-sdk.test.mjs passed');

@@ -4,6 +4,7 @@ import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { safeRoot, safeJoin, scanWorkspace, readFile, writeFile, git } from './workspace-tools.mjs';
+import { createRoundTripNodeRuntime } from './roundtrip-node.mjs';
 
 const here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.join(here,'standalone');
@@ -12,6 +13,7 @@ const host=process.env.ASTRO_UI_DESIGNER_HOST||'127.0.0.1';
 const url=`http://${host}:${port}`;
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon'};
 let workspaceRoot=''; let previewProc=null; let previewPort=4321;
+const roundTripRuntime=createRoundTripNodeRuntime();
 
 function resolveStatic(raw){let pathname='/';try{pathname=decodeURIComponent(new URL(raw,url).pathname)}catch{}if(pathname==='/')pathname='/index.html';const fp=path.resolve(root,'.'+pathname);return fp.startsWith(path.resolve(root)+path.sep)||fp===path.resolve(root)?fp:null;}
 function json(res,status,data){const body=JSON.stringify(data);res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Content-Length':Buffer.byteLength(body),'Cache-Control':'no-store'});res.end(body)}
@@ -28,7 +30,9 @@ async function handleApi(req,res,pathname){
     if(pathname==='/api/workspace/info')return json(res,200,{available:true,rootPath:workspaceRoot,preview:{running:Boolean(previewProc),url:previewProc?`http://127.0.0.1:${previewPort}`:''}});
     if(req.method!=='POST')return json(res,405,{error:'POST required'});const data=await body(req);
     if(pathname==='/api/workspace/open'){workspaceRoot=safeRoot(data.rootPath);const scan=await scanWorkspace(workspaceRoot);return json(res,200,scan)}
+    if(pathname==='/api/roundtrip/health')return json(res,200,await roundTripRuntime.handle(pathname,data,workspaceRoot));
     const wr=requireWorkspace();
+    if(pathname.startsWith('/api/roundtrip/'))return json(res,200,await roundTripRuntime.handle(pathname,data,wr));
     if(pathname==='/api/workspace/read')return json(res,200,{relativePath:data.relativePath,content:readFile(wr,data.relativePath)});
     if(pathname==='/api/workspace/write')return json(res,200,writeFile(wr,data.relativePath,data.content));
     if(pathname==='/api/workspace/rescan')return json(res,200,await scanWorkspace(wr));
@@ -51,5 +55,5 @@ const server=http.createServer(async(req,res)=>{
 });
 
 function openWindow(){if(process.argv.includes('--no-browser'))return;try{if(process.platform==='win32'){spawn('cmd',['/c','start','',url],{detached:true,stdio:'ignore'}).unref();return}if(process.platform==='darwin'){spawn('open',[url],{detached:true,stdio:'ignore'}).unref();return}for(const cmd of ['chromium','chromium-browser','google-chrome','google-chrome-stable'])if(commandExists(cmd)){spawn(cmd,[`--app=${url}`,'--new-window'],{detached:true,stdio:'ignore'}).unref();return}if(commandExists('xdg-open'))spawn('xdg-open',[url],{detached:true,stdio:'ignore'}).unref();}catch(e){console.warn(`Could not open browser automatically: ${e.message}`)}}
-server.listen(port,host,()=>{console.log(`Astro UI Designer Research Edition is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
-for(const sig of ['SIGINT','SIGTERM'])process.on(sig,()=>{stopPreview();server.close(()=>process.exit(0))});
+server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.12 Round-trip Full is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
+for(const sig of ['SIGINT','SIGTERM'])process.on(sig,()=>{stopPreview();roundTripRuntime.dispose();server.close(()=>process.exit(0))});

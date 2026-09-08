@@ -1,4 +1,2 @@
-#!/usr/bin/env sh
-set -eu
-cd "$(dirname "$0")"
-exec node launch-designer.mjs
+#!/bin/sh
+exec node "$(dirname "$0")/launch-designer.mjs" "$@"

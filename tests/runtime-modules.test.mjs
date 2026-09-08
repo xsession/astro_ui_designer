@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { createSampleProject } from '../standalone/js/model.js';
+import { validateProject } from '../standalone/js/validator.js';
+import { generateAstroProject } from '../standalone/js/astro-exporter.js';
+import { listPlatformAdapters, exportReact, exportVue, exportSvelte } from '../standalone/js/platform-io.js';
+import { ensureResearchModel } from '../standalone/js/research-features.js';
+import { ensureDesignProject } from '../standalone/js/penpot-cleanroom.js';
+import { ensureCompositionModel } from '../standalone/js/plasmic-cleanroom.js';
+import { ensureStorybookProject } from '../standalone/js/storybook-cleanroom.js';
+const p=createSampleProject();ensureResearchModel(p);ensureDesignProject(p);ensureCompositionModel(p);ensureStorybookProject(p);assert.ok(Array.isArray(validateProject(p)));const out=generateAstroProject(p);assert.ok(out['src/pages/index.astro']);assert.ok(listPlatformAdapters().length>=8);assert.match(exportReact(p),/function DesignerPage/);assert.match(exportVue(p),/<template>/);assert.match(exportSvelte(p),/<script>/);console.log('runtime-modules.test.mjs passed');

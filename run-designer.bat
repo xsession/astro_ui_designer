@@ -1,3 +1,2 @@
 @echo off
-cd /d "%~dp0"
-node launch-designer.mjs
+node "%~dp0launch-designer.mjs" %*

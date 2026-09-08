@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { parseMarkupNeutral } from '../standalone/js/roundtrip-neutral-ir.js';
+import { neutralToDesignerProject,designerProjectToNeutral } from '../standalone/js/roundtrip-conversion.js';
+const doc=parseMarkupNeutral('<section data-ui-id="s"><h1>Hello</h1><button>Go</button></section>',{backend:'react',filename:'App.tsx'});const project=neutralToDesignerProject(doc,{name:'Imported',sourceFiles:[{filename:'App.tsx',content:'<section data-ui-id="s"><h1>Hello</h1></section>'}]});assert.equal(project.pages.length,1);assert.ok(project.pages[0].root.children.length);assert.equal(project.workspace.roundTrip.backend,'react');const back=designerProjectToNeutral(project);assert.ok(back.root.children.length);console.log('roundtrip-conversion.test.mjs passed');

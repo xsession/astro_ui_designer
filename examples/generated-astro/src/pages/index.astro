@@ -1,65 +1,521 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/global.css';
-import InfoPanel from '../components/InfoPanel.astro';
+const title="Home";
 ---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{title}</title><style is:global>
+[data-ui-id="page-ts0jhkj-1"] {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
 
-<BaseLayout title="Home" description="Generated with Astro UI Designer Pro" canonical="" ogImage="">
-  <main class="ui-page-th4ru1x-1" data-ui-id="page-th4ru1x-1">
-    <header class="ui-header-th4ru1y-6" data-ui-id="header-th4ru1y-6" data-ui-state="default">
-      <nav class="ui-nav-th4ru1y-7" data-ui-id="nav-th4ru1y-7" data-ui-state="default" aria-label="Main navigation">
-        <h3 class="ui-heading-th4ru1y-8" data-ui-id="heading-th4ru1y-8" data-ui-state="default">Astro UI Designer</h3>
-        <div class="ui-row-th4ru1y-9" data-ui-id="row-th4ru1y-9" data-ui-state="default">
-          <a class="ui-link-th4ru1y-a" data-ui-id="link-th4ru1y-a" data-ui-state="default" href="#features">Features</a>
-          <a class="ui-link-th4ru1y-b" data-ui-id="link-th4ru1y-b" data-ui-state="default" href="/contact">Contact</a>
+[data-ui-id="header-ts0jhkk-6"] {
+  width: 100%;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+[data-ui-id="nav-ts0jhkk-7"] {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+[data-ui-id="heading-ts0jhkk-8"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-8"] {
+  font-size: 28px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-8"] {
+  font-size: 24px;
+}
+}
+
+[data-ui-id="row-ts0jhkk-9"] {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+[data-ui-id="row-ts0jhkk-9"] {
+  flex-direction: column;
+  align-items: stretch;
+  display: none;
+}
+}
+
+[data-ui-id="link-ts0jhkk-a"] {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+[data-ui-id="link-ts0jhkk-b"] {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+[data-ui-id="section-ts0jhkk-c"] {
+  width: 100%;
+  padding: 48px 24px;
+  background: linear-gradient(135deg,#eef5fb 0%,#fff 68%);
+}
+
+@media (max-width: 960px) {
+[data-ui-id="section-ts0jhkk-c"] {
+  padding: 36px 20px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="section-ts0jhkk-c"] {
+  padding: 28px 16px;
+}
+}
+
+[data-ui-id="container-ts0jhkk-d"] {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+[data-ui-id="row-ts0jhkk-e"] {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 640px) {
+[data-ui-id="row-ts0jhkk-e"] {
+  flex-direction: column;
+  align-items: stretch;
+}
+}
+
+[data-ui-id="column-ts0jhkk-f"] {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+  flex: 1 1 560px;
+}
+
+[data-ui-id="badge-ts0jhkk-g"] {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+[data-ui-id="heading-ts0jhkk-h"] {
+  margin: 0;
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 700;
+  max-width: 780px;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-h"] {
+  font-size: 42px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-h"] {
+  font-size: 34px;
+}
+}
+
+[data-ui-id="text-ts0jhkk-i"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 720px;
+  color: #4b5563;
+}
+
+[data-ui-id="row-ts0jhkk-j"] {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+[data-ui-id="row-ts0jhkk-j"] {
+  flex-direction: column;
+  align-items: stretch;
+}
+}
+
+[data-ui-id="button-ts0jhkk-l"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+[data-ui-id="button-ts0jhkk-l"] {
+  width: 100%;
+}
+}
+
+[data-ui-id="link-ts0jhkk-m"] {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 12px;
+}
+
+[data-ui-id="card-ts0jhkk-n"] {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #17202a;
+  box-shadow: var(--shadow-sm);
+  flex: 1 1 360px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+[data-ui-id="card-ts0jhkk-n"] {
+  padding: 18px;
+}
+}
+
+[data-ui-id="heading-ts0jhkk-o"] {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-o"] {
+  font-size: 28px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-o"] {
+  font-size: 24px;
+}
+}
+
+[data-ui-id="text-ts0jhkk-p"] {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #cfd8e3;
+}
+
+[data-ui-id="section-ts0jhkk-q"] {
+  width: 100%;
+  padding: 48px 24px;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="section-ts0jhkk-q"] {
+  padding: 36px 20px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="section-ts0jhkk-q"] {
+  padding: 28px 16px;
+}
+}
+
+[data-ui-id="container-ts0jhkk-r"] {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+[data-ui-id="heading-ts0jhkk-s"] {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-s"] {
+  font-size: 28px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-s"] {
+  font-size: 24px;
+}
+}
+
+[data-ui-id="spacer-ts0jhkk-13"] {
+  height: 24px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+[data-ui-id="spacer-ts0jhkk-13"] {
+  height: 16px;
+}
+}
+
+[data-ui-id="grid-ts0jhkk-t"] {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="grid-ts0jhkk-t"] {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="grid-ts0jhkk-t"] {
+  grid-template-columns: 1fr;
+}
+}
+
+[data-ui-id="card-ts0jhkk-u"] {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+[data-ui-id="card-ts0jhkk-u"] {
+  padding: 18px;
+}
+}
+
+[data-ui-id="heading-ts0jhkk-v"] {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-v"] {
+  font-size: 28px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-v"] {
+  font-size: 24px;
+}
+}
+
+[data-ui-id="text-ts0jhkk-w"] {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+[data-ui-id="card-ts0jhkk-x"] {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+[data-ui-id="card-ts0jhkk-x"] {
+  padding: 18px;
+}
+}
+
+[data-ui-id="heading-ts0jhkk-y"] {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-y"] {
+  font-size: 28px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-y"] {
+  font-size: 24px;
+}
+}
+
+[data-ui-id="text-ts0jhkk-z"] {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+[data-ui-id="card-ts0jhkk-10"] {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+[data-ui-id="card-ts0jhkk-10"] {
+  padding: 18px;
+}
+}
+
+[data-ui-id="heading-ts0jhkk-11"] {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+[data-ui-id="heading-ts0jhkk-11"] {
+  font-size: 28px;
+}
+}
+
+@media (max-width: 640px) {
+[data-ui-id="heading-ts0jhkk-11"] {
+  font-size: 24px;
+}
+}
+
+[data-ui-id="text-ts0jhkk-12"] {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+</style></head><body>
+  <main data-ui-id="page-ts0jhkj-1">
+    <header data-ui-id="header-ts0jhkk-6">
+      <nav data-ui-id="nav-ts0jhkk-7">
+        <h3 data-ui-id="heading-ts0jhkk-8">
+Astro UI Designer
+        </h3>
+        <div data-ui-id="row-ts0jhkk-9">
+          <a data-ui-id="link-ts0jhkk-a" href="#features">
+Features
+          </a>
+          <a data-ui-id="link-ts0jhkk-b" href="/contact">
+Contact
+          </a>
         </div>
       </nav>
     </header>
-    <section class="ui-section-th4ru1y-c" data-ui-id="section-th4ru1y-c" data-ui-state="default">
-      <div class="ui-container-th4ru1y-d" data-ui-id="container-th4ru1y-d" data-ui-state="default">
-        <div class="ui-row-th4ru1z-e" data-ui-id="row-th4ru1z-e" data-ui-state="default">
-          <div class="ui-column-th4ru1z-f" data-ui-id="column-th4ru1z-f" data-ui-state="default">
-            <span class="ui-badge-th4ru1z-g" data-ui-id="badge-th4ru1z-g" data-ui-state="default">Visual Astro IDE</span>
-            <h1 class="ui-heading-th4ru1z-h" data-ui-id="heading-th4ru1z-h" data-ui-state="default">Build responsive Astro interfaces visually.</h1>
-            <p class="ui-text-th4ru1z-i" data-ui-id="text-th4ru1z-i" data-ui-state="default">Qt Creator-style workflow, web-native layout rules, reusable components, responsive states, actions, assets and clean Astro output.</p>
-            <div class="ui-row-th4ru1z-j" data-ui-id="row-th4ru1z-j" data-ui-state="default">
-              <button class="ui-button-th4ru1z-l" data-ui-id="button-th4ru1z-l" data-ui-state="default" data-ui-actions="[{&quot;event&quot;:&quot;click&quot;,&quot;type&quot;:&quot;navigate&quot;,&quot;value&quot;:&quot;/docs&quot;,&quot;target&quot;:&quot;&quot;,&quot;condition&quot;:&quot;&quot;}]" type="button">Open docs</button>
-              <a class="ui-link-th4ru1z-m" data-ui-id="link-th4ru1z-m" data-ui-state="default" href="#features">See features</a>
+    <section data-ui-id="section-ts0jhkk-c">
+      <div data-ui-id="container-ts0jhkk-d">
+        <div data-ui-id="row-ts0jhkk-e">
+          <div data-ui-id="column-ts0jhkk-f">
+            <span data-ui-id="badge-ts0jhkk-g">
+Visual Astro IDE
+            </span>
+            <h1 data-ui-id="heading-ts0jhkk-h">
+Build responsive Astro interfaces visually.
+            </h1>
+            <p data-ui-id="text-ts0jhkk-i">
+Qt Creator-style workflow, web-native layout rules, reusable components, responsive states, actions, assets and clean Astro output.
+            </p>
+            <div data-ui-id="row-ts0jhkk-j">
+              <button data-ui-id="button-ts0jhkk-l" type="button">
+Open docs
+              </button>
+              <a data-ui-id="link-ts0jhkk-m" href="#features">
+See features
+              </a>
             </div>
           </div>
-          <article class="ui-card-th4ru1z-n" data-ui-id="card-th4ru1z-n" data-ui-state="default">
-            <h3 class="ui-heading-th4ru1z-o" data-ui-id="heading-th4ru1z-o" data-ui-state="default">Source-first output</h3>
-            <p class="ui-text-th4ru1z-p" data-ui-id="text-th4ru1z-p" data-ui-state="default">Generated pages, components, layouts, CSS, assets and client actions stay readable and editable.</p>
-          </article>
+          <div data-ui-id="card-ts0jhkk-n">
+            <h3 data-ui-id="heading-ts0jhkk-o">
+Source-first output
+            </h3>
+            <p data-ui-id="text-ts0jhkk-p">
+Generated pages, components, layouts, CSS, assets and client actions stay readable and editable.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="ui-section-th4ru1z-q" data-ui-id="section-th4ru1z-q" data-ui-state="default" aria-label="Features">
-      <div class="ui-container-th4ru1z-r" data-ui-id="container-th4ru1z-r" data-ui-state="default">
-        <h2 class="ui-heading-th4ru1z-s" data-ui-id="heading-th4ru1z-s" data-ui-state="default">A full visual frontend IDE</h2>
-        <div class="ui-spacer-th4ru20-13" data-ui-id="spacer-th4ru20-13" data-ui-state="default"></div>
-        <div class="ui-grid-th4ru1z-t" data-ui-id="grid-th4ru1z-t" data-ui-state="default">
-          <article class="ui-card-th4ru20-u" data-ui-id="card-th4ru20-u" data-ui-state="default">
-            <h3 class="ui-heading-th4ru20-v" data-ui-id="heading-th4ru20-v" data-ui-state="default">Responsive layout</h3>
-            <p class="ui-text-th4ru20-w" data-ui-id="text-th4ru20-w" data-ui-state="default">Flex, Grid, breakpoints and freeform HMI layers.</p>
-          </article>
-          <article class="ui-card-th4ru20-x" data-ui-id="card-th4ru20-x" data-ui-state="default">
-            <h3 class="ui-heading-th4ru20-y" data-ui-id="heading-th4ru20-y" data-ui-state="default">Reusable components</h3>
-            <p class="ui-text-th4ru20-z" data-ui-id="text-th4ru20-z" data-ui-state="default">Create project components with slots and instance overrides.</p>
-          </article>
-          <article class="ui-card-th4ru20-10" data-ui-id="card-th4ru20-10" data-ui-state="default">
-            <h3 class="ui-heading-th4ru20-11" data-ui-id="heading-th4ru20-11" data-ui-state="default">Behavior</h3>
-            <p class="ui-text-th4ru20-12" data-ui-id="text-th4ru20-12" data-ui-state="default">State variables, bindings and web-native signal/action connections.</p>
-          </article>
+    <section data-ui-id="section-ts0jhkk-q">
+      <div data-ui-id="container-ts0jhkk-r">
+        <h2 data-ui-id="heading-ts0jhkk-s">
+A full visual frontend IDE
+        </h2>
+        <div data-ui-id="spacer-ts0jhkk-13"></div>
+        <div data-ui-id="grid-ts0jhkk-t">
+          <div data-ui-id="card-ts0jhkk-u">
+            <h3 data-ui-id="heading-ts0jhkk-v">
+Responsive layout
+            </h3>
+            <p data-ui-id="text-ts0jhkk-w">
+Flex, Grid, breakpoints and freeform HMI layers.
+            </p>
+          </div>
+          <div data-ui-id="card-ts0jhkk-x">
+            <h3 data-ui-id="heading-ts0jhkk-y">
+Reusable components
+            </h3>
+            <p data-ui-id="text-ts0jhkk-z">
+Create project components with slots and instance overrides.
+            </p>
+          </div>
+          <div data-ui-id="card-ts0jhkk-10">
+            <h3 data-ui-id="heading-ts0jhkk-11">
+Behavior
+            </h3>
+            <p data-ui-id="text-ts0jhkk-12">
+State variables, bindings and web-native signal/action connections.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-    <div class="ui-componentInstance-th4ru22-1m" data-ui-id="componentInstance-th4ru22-1m" data-ui-state="default" data-ui-timeline="ui-animation-componentInstance-th4ru22-1m" data-ui-timeline-duration="520" data-ui-animation-engine="css" data-ui-animation-trigger="hover">
-      <InfoPanel title={"Reusable component"}>
-      <p class="ui-text-th4ru22-1n" data-ui-id="text-th4ru22-1n" data-ui-state="default">This content is passed through the default Astro slot.</p>
-      </InfoPanel>
-    </div>
-    <button class="ui-button-th4ru22-1u" data-ui-id="button-th4ru22-1u" data-ui-state="default" data-ui-timeline="ui-animation-button-th4ru22-1u" data-ui-timeline-duration="420" data-ui-animation-engine="waapi" data-ui-animation-trigger="click" data-ui-animation-id="button-th4ru22-1u" type="button">Animate with JavaScript</button>
   </main>
-  <script>import '../scripts/ui-runtime.ts';</script>
-</BaseLayout>
+</body></html>
