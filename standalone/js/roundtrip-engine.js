@@ -78,6 +78,13 @@ const BACKEND_MATRIX = Object.freeze({
     partial:['Literal lv_obj/lv_style setter patch adapters'],
     unsupported:['Callback logic rewrites','Complex style-class rewrites'],
     preview:{label:'LVGL simulator',launchMode:'command',command:'',args:[],cwd:'.',url:'',readyPattern:''}
+  },
+  pwtk: {
+    id:'pwtk', label:'pwtk Blocks', family:'python', extensions:['.py','.json','.html'],
+    supported:['Block / GUI-block symbol mappings from App & layout.json','Refresh-timer (timer_vals) review','Pin/mirror state review','App handler (@on) mapping'],
+    partial:['Block container re-arrangement in layout.json','Descriptor field edits'],
+    unsupported:['Blind CANopen/communication logic rewrites','render_custom_html template rewrites'],
+    preview:{label:'pwtk device GUI app',launchMode:'command-url',command:'python',args:['main.py'],cwd:'.',url:'http://127.0.0.1:8080',readyPattern:'localhost|127.0.0.1|eel'}
   }
 });
 
@@ -123,6 +130,7 @@ export function detectRoundTripBackend(files=[]) {
     if(/\b(?:from\s+nicegui\s+import|import\s+nicegui)\b/.test(joined))return 'nicegui';
     if(/\b(?:import\s+tkinter|from\s+tkinter\s+import)\b/.test(joined))return 'tkinter';
   }
+  if(/\bfrom\s+pwtk\s+import\b/.test(joined)||/\bimport\s+pwtk\b/.test(joined)||/set_block_container\s*\(/.test(joined)||/class\s+\w+\s*\(\s*pwtk\.App\s*\)/.test(joined)||/\(\s*pwtk\.(?:Block|BundleBlock)\s*\)/.test(joined))return 'pwtk';
   if([...extensions].some(x=>['.c','.h','.cpp','.hpp'].includes(x))&&/\blv_(?:obj|label|btn|style|screen|display)_/.test(joined))return 'lvgl';
   if(extensions.has('.html')||extensions.has('.htm'))return extensions.has('.ts')?'vanilla-ts':'vanilla-js';
   return null;
@@ -309,6 +317,48 @@ function patchLvglSource(source,identity,changes){
   if('width'in style||'height'in style){const re=new RegExp(`(lv_obj_set_size\\s*\\(\\s*${safe}\\s*,\\s*)-?\\d+\\s*,\\s*-?\\d+`);if(re.test(out)){out=out.replace(re,`$1${parseInt(style.width??100,10)||100}, ${parseInt(style.height??30,10)||30}`);changed=true;}}
   return {ok:changed,source:out,reason:changed?'ok':'setter-not-found'};
 }
+function patchPwtkSource(source,identity,changes){
+  // pwtk layout changes are anchored in layout.json via the "Group, Name" key (symbolPath).
+  const key=identity.symbolPath||identity.nodePath;if(!key)return {ok:false,source,reason:'symbol-missing'};
+  let layout;try{layout=JSON.parse(String(source))}catch{return {ok:false,source:source,reason:'layout-json-not-json'}};
+  if(typeof layout!=='object'||layout===null)return {ok:false,source:source,reason:'layout-json-not-object'};
+  const containers=layout.block_containers||{},pinned=layout.pinned_blocks||{},timers=layout.timer_vals||{};
+  const containerOf=(k)=>{for(const cid of Object.keys(containers))if((containers[cid]||[]).includes(k))return cid;return null;};
+  let changed=false;
+  for(const change of changes){
+    const prop=change.property;
+    if(prop==='timer'||prop==='refreshTime'||prop==='refreshMs'){
+      const cid=containerOf(key)||Object.keys(containers)[0];const value=Number(change.value);
+      if(cid===undefined||!Number.isFinite(value))continue;timers[key]=value;changed=true;continue;
+    }
+    if(prop==='pinned'||prop==='pin'||prop==='mirror'){
+      const on=change.value===true||change.value===1||String(change.value).toLowerCase()==='true';
+      const cid=containerOf(key)||Object.keys(containers)[0];
+      if(cid===undefined)continue;
+      if(on){pinned[key]=cid;changed=changed||!('key'in pinned&&pinned[key]===cid);}else{delete pinned[key];changed=true;}continue;
+    }
+    if(prop==='container'||prop==='target'){
+      const from=containerOf(key);if(!from)continue;const to=String(change.value).startsWith('#')?String(change.value):`#${String(change.value)}`;
+      if(containers[from]){containers[from]=containers[from].filter(x=>x!==key);if(!containers[from].length)delete containers[from];}
+      containers[to]=containers[to]||[];if(!containers[to].includes(key))containers[to].push(key);
+      if(pinned[key])pinned[key]=to;changed=true;continue;
+    }
+    if(prop==='name'||prop==='block'){
+      const to=String(change.value).trim();if(!to||to===key)continue;const [g,n]=String(key).split(',');const toKey=`${g?g+', ':''}${to}`;
+      for(const cid of Object.keys(containers)){containers[cid]=(containers[cid]||[]).map(x=>x===key?toKey:x);if(pinned[key]===cid)pinned[toKey]=cid,delete pinned[key];if(timers[key]!=null){timers[toKey]=timers[key];delete timers[key];}}
+      changed=true;continue;
+    }
+    if(prop==='group'){
+      const to=String(change.value).trim();const [,n]=String(key).split(',');const toKey=`${to?to+', ':''}${n}`;
+      for(const cid of Object.keys(containers)){containers[cid]=(containers[cid]||[]).map(x=>x===key?toKey:x);if(pinned[key]===cid)pinned[toKey]=cid,delete pinned[key];if(timers[key]!=null){timers[toKey]=timers[key];delete timers[key];}}
+      changed=true;continue;
+    }
+  }
+  if(!changed)return {ok:false,source:source,reason:'no-layout-changes'};
+  layout.block_containers=containers;layout.pinned_blocks=pinned;layout.timer_vals=timers;
+  const out=JSON.stringify(layout,null,4);
+  return {ok:out!==source,source:out,reason:out!==source?'ok':'no-layout-changes'};
+}
 
 function normalizeChanges(changes=[]){return (changes||[]).filter(Boolean).map((c,i)=>({id:c.id||`${i}:${c.property||c.domain||'change'}`,domain:c.domain||((c.property==='text'||c.property==='content')?'text':WEB_STYLE_PROPERTIES.includes(c.property)?'style':'attribute'),property:String(c.property||''),previousValue:c.previousValue??null,value:c.value??''}));}
 
@@ -316,7 +366,7 @@ export function buildRoundTripPatchPlan(args={}){
   const files=(args.files||[]).map(f=>({filename:fileName(f),content:fileContent(f)}));
   const identity=createSourceIdentity(args.sourceIdentity||{});const backend=args.backend||detectRoundTripBackend(files)||'astro';const matrix=getRoundTripBackend(backend);
   if(!matrix)return {ok:false,message:`Unsupported source backend: ${backend}`,diagnostics:[],confidence:0};
-  const file=files.find(f=>f.filename===identity.relativeFilePath)||files[0];
+  const file=backend==='pwtk'?(files.find(f=>/layout\.json$/i.test(f.filename))||files[0]):(files.find(f=>f.filename===identity.relativeFilePath)||files[0]);
   if(!file)return {ok:false,message:'No source file is available for the patch.',diagnostics:[],confidence:0};
   const changes=normalizeChanges(args.changes||[]);if(!changes.length)return {ok:false,message:'No changes were requested.',diagnostics:[],confidence:identity.confidence};
   const before=file.content;let out=before;const diagnostics=[];const warnings=[];let strategy='none';let matchedTarget='';
@@ -325,7 +375,7 @@ export function buildRoundTripPatchPlan(args={}){
     if(markupChanges.length){const nodeId=args.nodeId||identity.nodePath;const result=patchUiIdMarkup(out,nodeId,markupChanges);if(result.ok){out=result.source;strategy='exact-data-ui-id';matchedTarget=String(nodeId);}else diagnostics.push(`Markup patch: ${result.reason}`);}
     if(styleChanges.length){const selector=identity.selectorPath||args.selectorPath||'';const result=patchCssSelector(out,selector,styleChanges);if(result.ok){out=result.source;strategy=strategy==='none'?'exact-selector':`${strategy}+exact-selector`;matchedTarget=matchedTarget||selector;}else diagnostics.push(`Style patch: ${result.reason}`);}
   }else{
-    const result=backend==='tkinter'?patchTkinterSource(out,identity,changes):backend==='nicegui'?patchNiceGuiSource(out,identity,changes):backend==='lvgl'?patchLvglSource(out,identity,changes):{ok:false,source:out,reason:'backend-patcher-missing'};
+    const result=backend==='tkinter'?patchTkinterSource(out,identity,changes):backend==='nicegui'?patchNiceGuiSource(out,identity,changes):backend==='lvgl'?patchLvglSource(out,identity,changes):backend==='pwtk'?patchPwtkSource(out,identity,changes):{ok:false,source:out,reason:'backend-patcher-missing'};
     if(result.ok){out=result.source;strategy='exact-symbol';matchedTarget=identity.symbolPath||identity.nodePath;}else diagnostics.push(`${matrix.label} patch: ${result.reason}`);
   }
   if(args.astAnchor?.exact&&out!==before){strategy=`ast-${strategy}`;}
