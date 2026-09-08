@@ -1,6 +1,6 @@
 {
   "schemaVersion": 8,
-  "id": "project-tsaeh0a-2",
+  "id": "project-tsdy9l4-2",
   "name": "astro-ui-project",
   "settings": {
     "astroVersion": "^7.2.0",
@@ -57,7 +57,7 @@
   },
   "pages": [
     {
-      "id": "page-doc-tsaeh0a-3",
+      "id": "page-doc-tsdy9l4-3",
       "route": "/",
       "filename": "index.astro",
       "name": "Home",
@@ -68,7 +68,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-tsaeh0a-1",
+        "id": "page-tsdy9l4-1",
         "type": "page",
         "name": "HomePage",
         "props": {
@@ -164,7 +164,7 @@
         },
         "children": [
           {
-            "id": "header-tsaeh0a-6",
+            "id": "header-tsdy9l4-6",
             "type": "header",
             "name": "SiteHeader",
             "props": {},
@@ -257,7 +257,7 @@
             },
             "children": [
               {
-                "id": "nav-tsaeh0a-7",
+                "id": "nav-tsdy9l4-7",
                 "type": "nav",
                 "name": "MainNav",
                 "props": {
@@ -354,7 +354,7 @@
                 },
                 "children": [
                   {
-                    "id": "heading-tsaeh0a-8",
+                    "id": "heading-tsdy9l4-8",
                     "type": "heading",
                     "name": "Brand",
                     "props": {
@@ -457,7 +457,7 @@
                     "children": []
                   },
                   {
-                    "id": "row-tsaeh0a-9",
+                    "id": "row-tsdy9l4-9",
                     "type": "row",
                     "name": "NavLinks",
                     "props": {},
@@ -557,7 +557,7 @@
                     },
                     "children": [
                       {
-                        "id": "link-tsaeh0a-a",
+                        "id": "link-tsdy9l4-a",
                         "type": "link",
                         "name": "Link11",
                         "props": {
@@ -654,7 +654,7 @@
                         "children": []
                       },
                       {
-                        "id": "link-tsaeh0a-b",
+                        "id": "link-tsdy9l4-b",
                         "type": "link",
                         "name": "Link12",
                         "props": {
@@ -757,7 +757,7 @@
             ]
           },
           {
-            "id": "section-tsaeh0a-c",
+            "id": "section-tsdy9l5-c",
             "type": "section",
             "name": "Hero",
             "props": {
@@ -857,7 +857,7 @@
             },
             "children": [
               {
-                "id": "container-tsaeh0a-d",
+                "id": "container-tsdy9l5-d",
                 "type": "container",
                 "name": "Container14",
                 "props": {},
@@ -949,7 +949,7 @@
                 },
                 "children": [
                   {
-                    "id": "row-tsaeh0a-e",
+                    "id": "row-tsdy9l5-e",
                     "type": "row",
                     "name": "Row15",
                     "props": {},
@@ -1048,7 +1048,7 @@
                     },
                     "children": [
                       {
-                        "id": "column-tsaeh0a-f",
+                        "id": "column-tsdy9l5-f",
                         "type": "column",
                         "name": "Column16",
                         "props": {},
@@ -1142,7 +1142,7 @@
                         },
                         "children": [
                           {
-                            "id": "badge-tsaeh0a-g",
+                            "id": "badge-tsdy9l5-g",
                             "type": "badge",
                             "name": "Badge17",
                             "props": {
@@ -1240,7 +1240,7 @@
                             "children": []
                           },
                           {
-                            "id": "heading-tsaeh0b-h",
+                            "id": "heading-tsdy9l5-h",
                             "type": "heading",
                             "name": "Heading18",
                             "props": {
@@ -1344,7 +1344,7 @@
                             "children": []
                           },
                           {
-                            "id": "text-tsaeh0b-i",
+                            "id": "text-tsdy9l5-i",
                             "type": "text",
                             "name": "Text19",
                             "props": {
@@ -1441,7 +1441,7 @@
                             "children": []
                           },
                           {
-                            "id": "row-tsaeh0b-j",
+                            "id": "row-tsdy9l5-j",
                             "type": "row",
                             "name": "Row20",
                             "props": {},
@@ -1540,7 +1540,7 @@
                             },
                             "children": [
                               {
-                                "id": "button-tsaeh0b-l",
+                                "id": "button-tsdy9l5-l",
                                 "type": "button",
                                 "name": "DocsButton",
                                 "props": {
@@ -1567,7 +1567,7 @@
                                 },
                                 "actions": [
                                   {
-                                    "id": "act-tsaeh0b-k",
+                                    "id": "act-tsdy9l5-k",
                                     "event": "click",
                                     "type": "navigate",
                                     "value": "/docs",
@@ -1656,7 +1656,7 @@
                                 "children": []
                               },
                               {
-                                "id": "link-tsaeh0b-m",
+                                "id": "link-tsdy9l5-m",
                                 "type": "link",
                                 "name": "Link23",
                                 "props": {
@@ -1758,7 +1758,7 @@
                         ]
                       },
                       {
-                        "id": "card-tsaeh0b-n",
+                        "id": "card-tsdy9l5-n",
                         "type": "card",
                         "name": "PreviewCard",
                         "props": {},
@@ -1862,7 +1862,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-tsaeh0b-o",
+                            "id": "heading-tsdy9l5-o",
                             "type": "heading",
                             "name": "Heading25",
                             "props": {
@@ -1965,7 +1965,7 @@
                             "children": []
                           },
                           {
-                            "id": "text-tsaeh0b-p",
+                            "id": "text-tsdy9l5-p",
                             "type": "text",
                             "name": "Text26",
                             "props": {
@@ -2069,7 +2069,7 @@
             ]
           },
           {
-            "id": "section-tsaeh0b-q",
+            "id": "section-tsdy9l5-q",
             "type": "section",
             "name": "Features",
             "props": {
@@ -2168,7 +2168,7 @@
             },
             "children": [
               {
-                "id": "container-tsaeh0b-r",
+                "id": "container-tsdy9l5-r",
                 "type": "container",
                 "name": "Container28",
                 "props": {},
@@ -2260,7 +2260,7 @@
                 },
                 "children": [
                   {
-                    "id": "heading-tsaeh0b-s",
+                    "id": "heading-tsdy9l5-s",
                     "type": "heading",
                     "name": "Heading29",
                     "props": {
@@ -2363,7 +2363,7 @@
                     "children": []
                   },
                   {
-                    "id": "spacer-tsaeh0b-13",
+                    "id": "spacer-tsdy9l5-13",
                     "type": "spacer",
                     "name": "Spacer40",
                     "props": {},
@@ -2458,7 +2458,7 @@
                     "children": []
                   },
                   {
-                    "id": "grid-tsaeh0b-t",
+                    "id": "grid-tsdy9l5-t",
                     "type": "grid",
                     "name": "FeatureGrid",
                     "props": {},
@@ -2556,7 +2556,7 @@
                     },
                     "children": [
                       {
-                        "id": "card-tsaeh0b-u",
+                        "id": "card-tsdy9l5-u",
                         "type": "card",
                         "name": "Card31",
                         "props": {},
@@ -2653,7 +2653,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-tsaeh0b-v",
+                            "id": "heading-tsdy9l5-v",
                             "type": "heading",
                             "name": "Heading32",
                             "props": {
@@ -2756,7 +2756,7 @@
                             "children": []
                           },
                           {
-                            "id": "text-tsaeh0b-w",
+                            "id": "text-tsdy9l5-w",
                             "type": "text",
                             "name": "Text33",
                             "props": {
@@ -2853,7 +2853,7 @@
                         ]
                       },
                       {
-                        "id": "card-tsaeh0b-x",
+                        "id": "card-tsdy9l5-x",
                         "type": "card",
                         "name": "Card34",
                         "props": {},
@@ -2950,7 +2950,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-tsaeh0b-y",
+                            "id": "heading-tsdy9l5-y",
                             "type": "heading",
                             "name": "Heading35",
                             "props": {
@@ -3053,7 +3053,7 @@
                             "children": []
                           },
                           {
-                            "id": "text-tsaeh0b-z",
+                            "id": "text-tsdy9l5-z",
                             "type": "text",
                             "name": "Text36",
                             "props": {
@@ -3150,7 +3150,7 @@
                         ]
                       },
                       {
-                        "id": "card-tsaeh0b-10",
+                        "id": "card-tsdy9l5-10",
                         "type": "card",
                         "name": "Card37",
                         "props": {},
@@ -3247,7 +3247,7 @@
                         },
                         "children": [
                           {
-                            "id": "heading-tsaeh0b-11",
+                            "id": "heading-tsdy9l5-11",
                             "type": "heading",
                             "name": "Heading38",
                             "props": {
@@ -3350,7 +3350,7 @@
                             "children": []
                           },
                           {
-                            "id": "text-tsaeh0b-12",
+                            "id": "text-tsdy9l5-12",
                             "type": "text",
                             "name": "Text39",
                             "props": {
@@ -3456,7 +3456,7 @@
       }
     },
     {
-      "id": "page-doc-tsaeh0c-1e",
+      "id": "page-doc-tsdy9l6-1e",
       "route": "/contact",
       "filename": "contact.astro",
       "name": "Contact",
@@ -3467,7 +3467,7 @@
         "ogImage": ""
       },
       "root": {
-        "id": "page-tsaeh0b-14",
+        "id": "page-tsdy9l5-14",
         "type": "page",
         "name": "ContactPage",
         "props": {
@@ -3563,7 +3563,7 @@
         },
         "children": [
           {
-            "id": "section-tsaeh0b-15",
+            "id": "section-tsdy9l5-15",
             "type": "section",
             "name": "Section42",
             "props": {
@@ -3662,7 +3662,7 @@
             },
             "children": [
               {
-                "id": "container-tsaeh0b-16",
+                "id": "container-tsdy9l5-16",
                 "type": "container",
                 "name": "Container43",
                 "props": {},
@@ -3754,7 +3754,7 @@
                 },
                 "children": [
                   {
-                    "id": "form-tsaeh0b-17",
+                    "id": "form-tsdy9l5-17",
                     "type": "form",
                     "name": "ContactForm",
                     "props": {
@@ -3850,7 +3850,7 @@
                     },
                     "children": [
                       {
-                        "id": "heading-tsaeh0c-18",
+                        "id": "heading-tsdy9l6-18",
                         "type": "heading",
                         "name": "Heading45",
                         "props": {
@@ -3953,7 +3953,7 @@
                         "children": []
                       },
                       {
-                        "id": "label-tsaeh0c-19",
+                        "id": "label-tsdy9l6-19",
                         "type": "label",
                         "name": "Label46",
                         "props": {
@@ -4049,7 +4049,7 @@
                         "children": []
                       },
                       {
-                        "id": "input-tsaeh0c-1a",
+                        "id": "input-tsdy9l6-1a",
                         "type": "input",
                         "name": "Input47",
                         "props": {
@@ -4158,7 +4158,7 @@
                         "children": []
                       },
                       {
-                        "id": "label-tsaeh0c-1b",
+                        "id": "label-tsdy9l6-1b",
                         "type": "label",
                         "name": "Label48",
                         "props": {
@@ -4254,7 +4254,7 @@
                         "children": []
                       },
                       {
-                        "id": "textarea-tsaeh0c-1c",
+                        "id": "textarea-tsdy9l6-1c",
                         "type": "textarea",
                         "name": "Textarea49",
                         "props": {
@@ -4357,7 +4357,7 @@
                         "children": []
                       },
                       {
-                        "id": "button-tsaeh0c-1d",
+                        "id": "button-tsdy9l6-1d",
                         "type": "button",
                         "name": "Button50",
                         "props": {
@@ -4477,13 +4477,13 @@
   "assets": [],
   "variables": [
     {
-      "id": "state-tsaeh0a-4",
+      "id": "state-tsdy9l4-4",
       "name": "menuOpen",
       "type": "boolean",
       "initial": false
     },
     {
-      "id": "state-tsaeh0a-5",
+      "id": "state-tsdy9l4-5",
       "name": "message",
       "type": "string",
       "initial": "Hello from state"

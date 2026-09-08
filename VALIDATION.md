@@ -1,50 +1,105 @@
-# Astro UI Designer 2.16.0 — validation
+# Astro UI Designer 2.17.0 — validation
 
 **Validation date:** 2026-09-08  
-**Integrated version:** `2.16.0-functional-workbenches`  
-**Latest upstream head reviewed:** `b4b0ded9a1ae9e014766a1180d2f238adb81e22a` (`Fix the menu functionality`)
+**Integrated version:** `2.17.0-project-import-qml`  
+**Newest upstream head verified:** `7863da396813093b592dba3c15cedc9dc65cdabf` (`Add pwtk blocks and GUI layout round-trip adapter (2.16.0)`)
 
-## Functional audit
+## Upstream verification
 
-- Built-in relocatable panels registered: **41**.
-- Built-in panels with explicit functional renderer branch: **41/41**.
-- Built-in panel commands available for editable hotkeys: **41/41**.
-- Old generic built-in placeholder sentence: **0 active occurrences**.
-- Component Lab: **functional preview/controls/checks/results/baseline path present**.
-- Active stale `2.15.0` version markers outside historical docs/build metadata: **0**.
+The GitHub connector was checked again immediately before final packaging. No commit newer than `7863da396813093b592dba3c15cedc9dc65cdabf` was present on `main` during this build.
 
-## Automated tests
+Version 2.17 is layered on the previously validated 2.16.1 hardening tree, which already reconciled that upstream commit and fixed its pwtk/workspace integration problems.
 
-- Aggregate project runner: **21/21 suites PASS**.
-- Functional/hotkey/page suites: **3/3 PASS**.
-- Component Lab integration suite: **PASS**.
-- Round-trip suites: **9/9 PASS**.
+## Existing-project import
+
+- Top toolbar **Import Project** entry: **PASS**.
+- File menu **Import Existing Project…**: **PASS**.
+- Project menu **Import Existing Project…**: **PASS**.
+- Round-trip workbench import entry: **PASS**.
+- Command-palette registration: **PASS**.
+- Editable default `Ctrl+Shift+I` hotkey: **PASS**.
+- Native standalone host folder-browse API: **PASS structural/integration test**.
+- Native VS Code folder chooser route: **PASS structural/source test**.
+- Browser `showDirectoryPicker` / `webkitdirectory` fallback: **PASS structural test**.
+- Adapter auto-detection and adapter override review: **PASS**.
+- Entry-file override and live/snapshot mode review: **PASS**.
+- Workspace filename-string normalization: **PASS**.
+- Native browse cancellation avoids second fallback picker: **PASS**.
+
+## Qt Quick / QML backend
+
+- Backend/adapter registration: **PASS**.
+- `.qml` / `.qmlproject` detection: **PASS**.
+- QML structural hierarchy/id/property inspection: **PASS**.
+- Stable source mapping by `id` / structural symbol path: **PASS**.
+- Same-directory QML component discovery: **PASS**.
+- Quoted local import-directory discovery: **PASS**.
+- `qmldir` module component discovery: **PASS**.
+- Common Qt Quick Controls/Layout neutral mapping: **PASS**.
+- Layout/anchor visual approximation: **PASS**.
+- QML type/id preservation through designer conversion/export: **PASS**.
+- Reviewed literal text/checked/placeholder/source/geometry/style patching: **PASS**.
+- Multiline JS handler and property-object/array opaque preservation: **PASS**.
+- Property-owned QML object exclusion from ordinary visual child hierarchy: **PASS**.
+- Generated `Main.qml`: **PASS structural re-parse**.
+- Generated `main.cpp`: **PASS contract regression**.
+- Generated Qt 6 CMake / `qt_add_qml_module`: **PASS contract regression**.
+- Managed preview runtime probing / missing-command error handling: **PASS**.
+
+The build environment has no Qt 6 SDK/runtime. Native QML execution/compilation is therefore recorded as **NOT AVAILABLE IN VALIDATION ENVIRONMENT**, not as a pass. A CMake configure test failed only at `find_package(Qt6 6.5)` because `Qt6Config.cmake` is absent.
+
+## Existing systems regression
+
+- Built-in relocatable panels: **41/41 functional routing PASS**.
+- Editable hotkeys: **PASS**.
+- Safe page create/edit/duplicate/delete lifecycle: **PASS**.
+- Component Lab: **PASS**.
+- pwtk hardened round-trip: **PASS**.
+- Draw.io interchange: **2/2 PASS**.
+- Global tooltips: **2/2 PASS**.
+- Hermes MCP/skill: **2/2 PASS**.
+- Visual structural smoke: **PASS**.
+- VS Code source smoke: **PASS**.
+
+## Automated suite totals
+
+- Aggregate runner: **25/25 suites PASS**.
+- Round-trip script: **12/12 PASS**.
+- Functional suites: **3/3 PASS**.
+- Project import script: **2/2 PASS**.
 - Draw.io suites: **2/2 PASS**.
 - Tooltip suites: **2/2 PASS**.
-- Hermes MCP + skill: **2/2 PASS**.
-- Visual shell structural smoke: **PASS**.
-- VS Code source smoke: **PASS**.
-- VSIX packaging: **PASS** (`astro-ui-designer-vscode-2.16.0.vsix`).
 
 ## Source consistency
 
-- JavaScript/MJS syntax validation: **106 files PASS**.
-- Runtime JS/MJS files included in relative-import audit: **79**.
-- Runtime relative imports checked: **160**.
+- JavaScript/MJS syntax validation: **112 files PASS**.
+- Runtime JS/MJS files in relative-import audit: **111**.
+- Runtime relative imports checked: **240**.
 - Missing runtime relative imports: **0**.
-- Standalone / VS Code parity checked for shell, app, workbenches, hotkeys, page entities, tooltips, Draw.io and dock-layout runtime: **PASS**.
+- Entire `standalone/` vs `vscode-extension/designer/` tree parity: **PASS**.
+- Current VSIX: `astro-ui-designer-vscode-2.17.0.vsix`: **PASS**.
 
-## Runtime smoke
+## Live host smoke
 
-A real local launcher was started on an isolated port with `--no-browser`:
+A real local `launch-designer.mjs --no-browser` process was started and exercised:
 
-- `/` returned the 2.16 designer shell: **PASS**.
-- `/api/workspace/info` returned a valid workspace API response: **PASS**.
-
-Browser-driven CDP visual automation is not part of this validation because the available managed Chromium environment blocks localhost/file navigation by organization policy. Runtime HTTP smoke plus module/unit/integration tests were used instead.
+- `/` served the 2.17 designer with `#import-project-btn`: **PASS**.
+- `/api/workspace/open` scanned a real temporary QML project and returned both `Main.qml` and `CMakeLists.txt`: **PASS**.
+- `/api/roundtrip/inspect` inspected `Main.qml` with `parser=qml-structural` and `astValidated=true`: **PASS**.
+- QML `actionButton` stable symbol was present: **PASS**.
+- `/api/roundtrip/health` returned `qmlStructural=true`: **PASS**.
+- Launcher identified itself as `Astro UI Designer Pro 2.17.0 Project Import + Qt/QML`: **PASS**.
 
 ## Generated outputs
 
 - Astro example regeneration: **PASS**.
-- Draw.io sample version marker updated to 2.16.
-- VS Code package regenerated from the 2.16 mirrored designer source.
+- Qt/QML example generation (`Main.qml`, `main.cpp`, `CMakeLists.txt`): **PASS**.
+- Generated QML structural re-parse: **PASS** (34 nodes).
+- VS Code extension packaging: **PASS**.
+- Final archive and internal SHA-256 manifest are regenerated after this report.
+
+## Deliberate limits
+
+Project import does not silently rewrite source. Source mutation remains reviewed and fingerprint-guarded. Browser-only snapshot imports cannot write back until opened as a live workspace.
+
+The QML adapter is structural and conservative. Arbitrary JavaScript semantics, runtime object factories, complex state-machine semantics and C++ business logic remain source-owned. See `docs/QML_ROUNDTRIP.md`.

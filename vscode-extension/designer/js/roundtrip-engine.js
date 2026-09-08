@@ -1,3 +1,4 @@
+import { patchQmlSource } from './qml-io.js';
 /**
  * Source round-trip workspace primitives for Astro UI Designer.
  *
@@ -79,11 +80,18 @@ const BACKEND_MATRIX = Object.freeze({
     unsupported:['Callback logic rewrites','Complex style-class rewrites'],
     preview:{label:'LVGL simulator',launchMode:'command',command:'',args:[],cwd:'.',url:'',readyPattern:''}
   },
+  qml: {
+    id:'qml', label:'Qt Quick / QML', family:'qt', extensions:['.qml','.qmltypes','.qrc','.qmlproject'],
+    supported:['QML object hierarchy import','id-anchored literal property edits','Qt Quick Controls/Layout mapping','Editable QML project generation'],
+    partial:['Anchored geometry/text/color/property patches','Local QML component graph discovery','Signal-handler preservation as opaque source'],
+    unsupported:['Arbitrary JavaScript handler rewrites','C++ business-logic rewrites','Dynamic Loader/Component factories without stable source structure'],
+    preview:{label:'Qt QML runtime',launchMode:'command',command:'qml',args:['Main.qml'],cwd:'.',url:'',readyPattern:''}
+  },
   pwtk: {
-    id:'pwtk', label:'pwtk Blocks', family:'python', extensions:['.py','.json','.html'],
-    supported:['Block / GUI-block symbol mappings from App & layout.json','Refresh-timer (timer_vals) review','Pin/mirror state review','App handler (@on) mapping'],
-    partial:['Block container re-arrangement in layout.json','Descriptor field edits'],
-    unsupported:['Blind CANopen/communication logic rewrites','render_custom_html template rewrites'],
+    id:'pwtk', label:'pwtk Blocks', family:'python', extensions:['.py','.pyi','.json','.html'],
+    supported:['Block / GUI-block symbol mappings from App & layout.json','Refresh-timer (timer_vals) review','Pin/mirror state review','App handler (@on) mapping','Preservation of untouched Python/HTML sources'],
+    partial:['Block container re-arrangement in layout.json','Block/group key renames','Generated scaffold when original Python sources are absent'],
+    unsupported:['Blind CANopen/communication logic rewrites','render_custom_html template rewrites','Arbitrary Python control-flow rewrites'],
     preview:{label:'pwtk device GUI app',launchMode:'command-url',command:'python',args:['main.py'],cwd:'.',url:'http://127.0.0.1:8080',readyPattern:'localhost|127.0.0.1|eel'}
   }
 });
@@ -126,11 +134,12 @@ export function detectRoundTripBackend(files=[]) {
   if(extensions.has('.vue')||/<template[\s>]/i.test(joined)&&/<script(?:\s+setup)?[\s>]/i.test(joined))return 'vue';
   if(extensions.has('.svelte')||/<svelte:(?:head|window|component)\b/i.test(joined))return 'svelte';
   if(extensions.has('.tsx')||extensions.has('.jsx')||/\bfrom\s+["']react["']|\bimport\s+React\b|\bReact\.createElement\b/.test(joined))return 'react';
+  if(extensions.has('.qml')||extensions.has('.qmlproject')||/\bimport\s+QtQuick(?:\.|\s|$)/m.test(joined)||/\b(?:ApplicationWindow|Window|Item|Rectangle)\s*\{/m.test(joined)&&/\bimport\s+Qt/m.test(joined))return 'qml';
+  if(/\bfrom\s+pwtk\s+import\b/.test(joined)||/\bimport\s+pwtk\b/.test(joined)||/set_block_container\s*\(/.test(joined)||/class\s+\w+\s*\(\s*(?:pwtk\.)?App\s*\)/.test(joined)||/\(\s*pwtk\.(?:Block|BundleBlock)\s*\)/.test(joined))return 'pwtk';
   if(extensions.has('.py')){
     if(/\b(?:from\s+nicegui\s+import|import\s+nicegui)\b/.test(joined))return 'nicegui';
     if(/\b(?:import\s+tkinter|from\s+tkinter\s+import)\b/.test(joined))return 'tkinter';
   }
-  if(/\bfrom\s+pwtk\s+import\b/.test(joined)||/\bimport\s+pwtk\b/.test(joined)||/set_block_container\s*\(/.test(joined)||/class\s+\w+\s*\(\s*pwtk\.App\s*\)/.test(joined)||/\(\s*pwtk\.(?:Block|BundleBlock)\s*\)/.test(joined))return 'pwtk';
   if([...extensions].some(x=>['.c','.h','.cpp','.hpp'].includes(x))&&/\blv_(?:obj|label|btn|style|screen|display)_/.test(joined))return 'lvgl';
   if(extensions.has('.html')||extensions.has('.htm'))return extensions.has('.ts')?'vanilla-ts':'vanilla-js';
   return null;
@@ -146,18 +155,41 @@ function importSpecifiers(source=''){
   for(const re of patterns){let m;while((m=re.exec(source)))out.push(m[1]);}
   return [...new Set(out)];
 }
+function pythonImportSpecifiers(source=''){
+  const out=[];let m;
+  const fromRe=/^\s*from\s+([.A-Za-z_][\w.]*)\s+import\b/gm;
+  const importRe=/^\s*import\s+([A-Za-z_][\w.]*)/gm;
+  while((m=fromRe.exec(source)))out.push(m[1]);
+  while((m=importRe.exec(source)))out.push(m[1]);
+  return [...new Set(out)];
+}
+
+function qmlComponentSpecifiers(source=''){
+  const out=[];let m;const re=/\b([A-Z][A-Za-z0-9_]*)\s*\{/g;while((m=re.exec(source)))out.push(m[1]);return [...new Set(out)];
+}
+function qmlImports(source=''){const directories=[],modules=[];let m;const quoted=/^\s*import\s+["']([^"']+)["'](?:\s+as\s+\w+)?/gm;while((m=quoted.exec(source)))directories.push(m[1]);const module=/^\s*import\s+([A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+)(?:\s+[0-9.]+)?(?:\s+as\s+\w+)?/gm;while((m=module.exec(source)))if(!m[1].startsWith('Qt'))modules.push(m[1]);return {directories:[...new Set(directories)],modules:[...new Set(modules)]};}
+function qmlModuleDirectories(items=[]){const out=new Map();for(const f of items){if(!/(^|\/)qmldir$/i.test(f.filename))continue;const m=String(f.content||'').match(/^\s*module\s+([^\s#]+)/m);if(m)out.set(m[1],dirname(f.filename));}return out;}
+function resolveQmlComponent(from,type,names,imports={directories:[],modules:[]},moduleDirs=new Map()){const base=dirname(from),candidates=[joinPath(base,`${type}.qml`)];for(const dir of imports.directories||[])candidates.push(joinPath(joinPath(base,dir),`${type}.qml`));for(const mod of imports.modules||[]){const dir=moduleDirs.get(mod);if(dir!=null)candidates.push(joinPath(dir,`${type}.qml`));}for(const c of candidates)if(names.has(c))return c;const suffix=`/${type}.qml`,matches=[...names].filter(n=>n.endsWith(suffix)||n===`${type}.qml`);return matches.length===1?matches[0]:null;}
 function dirname(path){const p=normalizeSourcePath(path);const i=p.lastIndexOf('/');return i>=0?p.slice(0,i):'';}
 function joinPath(base,relative){const raw=[base,relative].filter(Boolean).join('/');const parts=[];for(const part of raw.split('/')){if(!part||part==='.')continue;if(part==='..')parts.pop();else parts.push(part);}return parts.join('/');}
 function resolveImport(from,spec,names){
   if(!spec.startsWith('.'))return null;
   const base=joinPath(dirname(from),spec);
-  const candidates=[base,`${base}.astro`,`${base}.tsx`,`${base}.ts`,`${base}.jsx`,`${base}.js`,`${base}.vue`,`${base}.svelte`,`${base}.css`,`${base}.scss`,`${base}/index.astro`,`${base}/index.tsx`,`${base}/index.ts`,`${base}/index.jsx`,`${base}/index.js`];
+  const candidates=[base,`${base}.astro`,`${base}.tsx`,`${base}.ts`,`${base}.jsx`,`${base}.js`,`${base}.vue`,`${base}.svelte`,`${base}.qml`,`${base}.css`,`${base}.scss`,`${base}/index.astro`,`${base}/index.tsx`,`${base}/index.ts`,`${base}/index.jsx`,`${base}/index.js`];
+  return candidates.find(x=>names.has(x))||null;
+}
+function resolvePythonImport(from,spec,names){
+  let raw=String(spec||''),dots=0;while(raw[dots]==='.')dots++;raw=raw.slice(dots).replace(/\./g,'/');
+  const parent=dirname(from);let bases=[];
+  if(dots){let baseDir=parent;for(let i=1;i<dots;i++)baseDir=dirname(baseDir);bases=[joinPath(baseDir,raw)];}
+  else bases=[joinPath(parent,raw),raw];
+  const candidates=[];for(const base of bases)candidates.push(`${base}.py`,`${base}.pyi`,`${base}/__init__.py`);
   return candidates.find(x=>names.has(x))||null;
 }
 function chooseEntry(files,backend,explicit=''){
   const normalized=(files||[]).map(f=>fileName(f)).filter(Boolean);
   if(explicit&&normalized.includes(normalizeSourcePath(explicit)))return normalizeSourcePath(explicit);
-  const patterns=backend==='astro'?[/src\/pages\/index\.astro$/i,/index\.astro$/i]:backend==='react'?[/src\/(?:main|app)\.(?:tsx|jsx)$/i,/(?:main|app)\.(?:tsx|jsx)$/i]:backend==='vue'?[/src\/App\.vue$/i,/App\.vue$/i]:backend==='svelte'?[/src\/routes\/\+page\.svelte$/i,/App\.svelte$/i]:[/index\.html$/i];
+  const patterns=backend==='astro'?[/src\/pages\/index\.astro$/i,/index\.astro$/i]:backend==='react'?[/src\/(?:main|app)\.(?:tsx|jsx)$/i,/(?:main|app)\.(?:tsx|jsx)$/i]:backend==='vue'?[/src\/App\.vue$/i,/App\.vue$/i]:backend==='svelte'?[/src\/routes\/\+page\.svelte$/i,/App\.svelte$/i]:['pwtk','tkinter','nicegui'].includes(backend)?[/(?:^|\/)(?:main|app)\.py$/i,/\.py$/i]:backend==='qml'?[/src\/(?:qml\/)?Main\.qml$/i,/(?:^|\/)Main\.qml$/i,/(?:^|\/)main\.qml$/i,/\.qml$/i]:backend==='lvgl'?[/src\/(?:main|ui)\.(?:c|cpp)$/i,/(?:main|ui)\.(?:c|cpp)$/i]:[/index\.html$/i];
   for(const re of patterns){const hit=normalized.find(x=>re.test(x));if(hit)return hit;}
   return normalized.find(x=>!['.css','.scss','.sass','.less','.json','.md'].includes(ext(x)))||normalized[0]||'';
 }
@@ -167,7 +199,7 @@ export function buildRoundTripGraph(files=[],options={}){
   const names=new Set(items.map(f=>f.filename));
   const backend=options.backend||detectRoundTripBackend(items)||'astro';
   const entryFile=chooseEntry(items,backend,options.entryFile||'');
-  const byName=new Map(items.map(f=>[f.filename,f]));
+  const byName=new Map(items.map(f=>[f.filename,f])),qmlModules=backend==='qml'?qmlModuleDirectories(items):new Map();
   const reachable=new Set();
   const queue=entryFile?[entryFile]:[];
   while(queue.length){
@@ -175,6 +207,10 @@ export function buildRoundTripGraph(files=[],options={}){
     for(const spec of importSpecifiers(byName.get(name).content)){
       const resolved=resolveImport(name,spec,names);if(resolved&&!reachable.has(resolved))queue.push(resolved);
     }
+    if(['pwtk','tkinter','nicegui'].includes(backend)){
+      for(const spec of pythonImportSpecifiers(byName.get(name).content)){const resolved=resolvePythonImport(name,spec,names);if(resolved&&!reachable.has(resolved))queue.push(resolved);}
+    }
+    if(backend==='qml'){const imports=qmlImports(byName.get(name).content);for(const type of qmlComponentSpecifiers(byName.get(name).content)){const resolved=resolveQmlComponent(name,type,names,imports,qmlModules);if(resolved&&!reachable.has(resolved))queue.push(resolved);}}
   }
   if(!reachable.size)items.forEach(f=>reachable.add(f.filename));
   const styleFiles=items.filter(f=>['.css','.scss','.sass','.less'].includes(ext(f.filename))).map(f=>f.filename);
@@ -317,47 +353,31 @@ function patchLvglSource(source,identity,changes){
   if('width'in style||'height'in style){const re=new RegExp(`(lv_obj_set_size\\s*\\(\\s*${safe}\\s*,\\s*)-?\\d+\\s*,\\s*-?\\d+`);if(re.test(out)){out=out.replace(re,`$1${parseInt(style.width??100,10)||100}, ${parseInt(style.height??30,10)||30}`);changed=true;}}
   return {ok:changed,source:out,reason:changed?'ok':'setter-not-found'};
 }
+
+function splitPwtkKey(key=''){const s=String(key||'').trim(),i=s.lastIndexOf(',');return i<0?{group:'',name:s}:{group:s.slice(0,i).trim(),name:s.slice(i+1).trim()};}
+function joinPwtkKey(group,name){const g=String(group||'').trim(),n=String(name||'').trim();return g?`${g}, ${n}`:n;}
+function pwtkLayoutMaps(layout){
+  const containers={};const raw=layout?.block_containers;if(raw&&typeof raw==='object'&&!Array.isArray(raw))for(const [cid,list] of Object.entries(raw))containers[cid]=Array.isArray(list)?list.map(String):[];
+  const pinned=layout?.pinned_blocks&&typeof layout.pinned_blocks==='object'&&!Array.isArray(layout.pinned_blocks)?{...layout.pinned_blocks}:{};
+  const timers=layout?.timer_vals&&typeof layout.timer_vals==='object'&&!Array.isArray(layout.timer_vals)?{...layout.timer_vals}:{};
+  return {containers,pinned,timers};
+}
 function patchPwtkSource(source,identity,changes){
-  // pwtk layout changes are anchored in layout.json via the "Group, Name" key (symbolPath).
-  const key=identity.symbolPath||identity.nodePath;if(!key)return {ok:false,source,reason:'symbol-missing'};
-  let layout;try{layout=JSON.parse(String(source))}catch{return {ok:false,source:source,reason:'layout-json-not-json'}};
-  if(typeof layout!=='object'||layout===null)return {ok:false,source:source,reason:'layout-json-not-object'};
-  const containers=layout.block_containers||{},pinned=layout.pinned_blocks||{},timers=layout.timer_vals||{};
-  const containerOf=(k)=>{for(const cid of Object.keys(containers))if((containers[cid]||[]).includes(k))return cid;return null;};
-  let changed=false;
-  for(const change of changes){
-    const prop=change.property;
-    if(prop==='timer'||prop==='refreshTime'||prop==='refreshMs'){
-      const cid=containerOf(key)||Object.keys(containers)[0];const value=Number(change.value);
-      if(cid===undefined||!Number.isFinite(value))continue;timers[key]=value;changed=true;continue;
-    }
-    if(prop==='pinned'||prop==='pin'||prop==='mirror'){
-      const on=change.value===true||change.value===1||String(change.value).toLowerCase()==='true';
-      const cid=containerOf(key)||Object.keys(containers)[0];
-      if(cid===undefined)continue;
-      if(on){pinned[key]=cid;changed=changed||!('key'in pinned&&pinned[key]===cid);}else{delete pinned[key];changed=true;}continue;
-    }
-    if(prop==='container'||prop==='target'){
-      const from=containerOf(key);if(!from)continue;const to=String(change.value).startsWith('#')?String(change.value):`#${String(change.value)}`;
-      if(containers[from]){containers[from]=containers[from].filter(x=>x!==key);if(!containers[from].length)delete containers[from];}
-      containers[to]=containers[to]||[];if(!containers[to].includes(key))containers[to].push(key);
-      if(pinned[key])pinned[key]=to;changed=true;continue;
-    }
-    if(prop==='name'||prop==='block'){
-      const to=String(change.value).trim();if(!to||to===key)continue;const [g,n]=String(key).split(',');const toKey=`${g?g+', ':''}${to}`;
-      for(const cid of Object.keys(containers)){containers[cid]=(containers[cid]||[]).map(x=>x===key?toKey:x);if(pinned[key]===cid)pinned[toKey]=cid,delete pinned[key];if(timers[key]!=null){timers[toKey]=timers[key];delete timers[key];}}
-      changed=true;continue;
-    }
-    if(prop==='group'){
-      const to=String(change.value).trim();const [,n]=String(key).split(',');const toKey=`${to?to+', ':''}${n}`;
-      for(const cid of Object.keys(containers)){containers[cid]=(containers[cid]||[]).map(x=>x===key?toKey:x);if(pinned[key]===cid)pinned[toKey]=cid,delete pinned[key];if(timers[key]!=null){timers[toKey]=timers[key];delete timers[key];}}
-      changed=true;continue;
-    }
+  const key=String(identity.symbolPath||identity.nodePath||'').trim();if(!key)return {ok:false,source,reason:'symbol-missing'};
+  let layout;try{layout=JSON.parse(String(source))}catch{return {ok:false,source:String(source),reason:'layout-json-not-json'}}
+  if(!layout||typeof layout!=='object'||Array.isArray(layout))return {ok:false,source:String(source),reason:'layout-json-not-object'};
+  const {containers,pinned,timers}=pwtkLayoutMaps(layout),containerOf=k=>Object.keys(containers).find(cid=>containers[cid].includes(k))||null;
+  const keyExists=k=>Object.values(containers).some(list=>list.includes(k))||Object.prototype.hasOwnProperty.call(pinned,k)||Object.prototype.hasOwnProperty.call(timers,k);
+  const replaceKey=(from,to)=>{if(!to||to===from||keyExists(to))return false;let touched=false;for(const cid of Object.keys(containers)){const next=containers[cid].map(x=>x===from?to:x);if(next.some((x,i)=>x!==containers[cid][i])){containers[cid]=next;touched=true;}}if(Object.prototype.hasOwnProperty.call(pinned,from)){pinned[to]=pinned[from];delete pinned[from];touched=true;}if(Object.prototype.hasOwnProperty.call(timers,from)){timers[to]=timers[from];delete timers[from];touched=true;}return touched;};
+  let changed=false,activeKey=key;
+  for(const change of changes){const prop=String(change.property||'');
+    if(['timer','refreshTime','refreshMs'].includes(prop)){const value=Number(change.value);if(Number.isFinite(value)&&timers[activeKey]!==value){timers[activeKey]=value;changed=true;}continue;}
+    if(['pinned','pin','mirror'].includes(prop)){const on=change.value===true||change.value===1||String(change.value).toLowerCase()==='true',cid=containerOf(activeKey)||String(pinned[activeKey]||'')||Object.keys(containers)[0];if(!cid)continue;if(on){if(pinned[activeKey]!==cid){pinned[activeKey]=cid;changed=true;}}else if(Object.prototype.hasOwnProperty.call(pinned,activeKey)){delete pinned[activeKey];changed=true;}continue;}
+    if(prop==='container'||prop==='target'){const from=containerOf(activeKey),raw=String(change.value||'').trim();if(!from||!raw)continue;const to=raw.startsWith('#')?raw:`#${raw}`;if(from===to)continue;containers[from]=containers[from].filter(x=>x!==activeKey);if(!containers[from].length)delete containers[from];containers[to]=containers[to]||[];if(!containers[to].includes(activeKey))containers[to].push(activeKey);if(Object.prototype.hasOwnProperty.call(pinned,activeKey))pinned[activeKey]=to;changed=true;continue;}
+    if(prop==='name'||prop==='block'){const parts=splitPwtkKey(activeKey),name=String(change.value||'').trim(),to=joinPwtkKey(parts.group,name);if(name&&replaceKey(activeKey,to)){activeKey=to;changed=true;}continue;}
+    if(prop==='group'){const parts=splitPwtkKey(activeKey),to=joinPwtkKey(String(change.value||'').trim(),parts.name);if(replaceKey(activeKey,to)){activeKey=to;changed=true;}continue;}
   }
-  if(!changed)return {ok:false,source:source,reason:'no-layout-changes'};
-  layout.block_containers=containers;layout.pinned_blocks=pinned;layout.timer_vals=timers;
-  const out=JSON.stringify(layout,null,4);
-  return {ok:out!==source,source:out,reason:out!==source?'ok':'no-layout-changes'};
+  if(!changed)return {ok:false,source:String(source),reason:'no-layout-changes'};layout.block_containers=containers;layout.pinned_blocks=pinned;layout.timer_vals=timers;const out=JSON.stringify(layout,null,4);return {ok:out!==String(source),source:out,reason:out!==String(source)?'ok':'no-layout-changes'};
 }
 
 function normalizeChanges(changes=[]){return (changes||[]).filter(Boolean).map((c,i)=>({id:c.id||`${i}:${c.property||c.domain||'change'}`,domain:c.domain||((c.property==='text'||c.property==='content')?'text':WEB_STYLE_PROPERTIES.includes(c.property)?'style':'attribute'),property:String(c.property||''),previousValue:c.previousValue??null,value:c.value??''}));}
@@ -366,7 +386,7 @@ export function buildRoundTripPatchPlan(args={}){
   const files=(args.files||[]).map(f=>({filename:fileName(f),content:fileContent(f)}));
   const identity=createSourceIdentity(args.sourceIdentity||{});const backend=args.backend||detectRoundTripBackend(files)||'astro';const matrix=getRoundTripBackend(backend);
   if(!matrix)return {ok:false,message:`Unsupported source backend: ${backend}`,diagnostics:[],confidence:0};
-  const file=backend==='pwtk'?(files.find(f=>/layout\.json$/i.test(f.filename))||files[0]):(files.find(f=>f.filename===identity.relativeFilePath)||files[0]);
+  const file=backend==='pwtk'?(files.find(f=>/(^|\/)layout\.json$/i.test(f.filename))||files.find(f=>f.filename===identity.relativeFilePath)||files[0]):(files.find(f=>f.filename===identity.relativeFilePath)||files[0]);
   if(!file)return {ok:false,message:'No source file is available for the patch.',diagnostics:[],confidence:0};
   const changes=normalizeChanges(args.changes||[]);if(!changes.length)return {ok:false,message:'No changes were requested.',diagnostics:[],confidence:identity.confidence};
   const before=file.content;let out=before;const diagnostics=[];const warnings=[];let strategy='none';let matchedTarget='';
@@ -375,7 +395,7 @@ export function buildRoundTripPatchPlan(args={}){
     if(markupChanges.length){const nodeId=args.nodeId||identity.nodePath;const result=patchUiIdMarkup(out,nodeId,markupChanges);if(result.ok){out=result.source;strategy='exact-data-ui-id';matchedTarget=String(nodeId);}else diagnostics.push(`Markup patch: ${result.reason}`);}
     if(styleChanges.length){const selector=identity.selectorPath||args.selectorPath||'';const result=patchCssSelector(out,selector,styleChanges);if(result.ok){out=result.source;strategy=strategy==='none'?'exact-selector':`${strategy}+exact-selector`;matchedTarget=matchedTarget||selector;}else diagnostics.push(`Style patch: ${result.reason}`);}
   }else{
-    const result=backend==='tkinter'?patchTkinterSource(out,identity,changes):backend==='nicegui'?patchNiceGuiSource(out,identity,changes):backend==='lvgl'?patchLvglSource(out,identity,changes):backend==='pwtk'?patchPwtkSource(out,identity,changes):{ok:false,source:out,reason:'backend-patcher-missing'};
+    const result=backend==='tkinter'?patchTkinterSource(out,identity,changes):backend==='nicegui'?patchNiceGuiSource(out,identity,changes):backend==='lvgl'?patchLvglSource(out,identity,changes):backend==='qml'?patchQmlSource(out,identity,changes):backend==='pwtk'?patchPwtkSource(out,identity,changes):{ok:false,source:out,reason:'backend-patcher-missing'};
     if(result.ok){out=result.source;strategy='exact-symbol';matchedTarget=identity.symbolPath||identity.nodePath;}else diagnostics.push(`${matrix.label} patch: ${result.reason}`);
   }
   if(args.astAnchor?.exact&&out!==before){strategy=`ast-${strategy}`;}
@@ -430,9 +450,9 @@ export function reconcileDesignFromAst(project,{relativePath='',inspection=null,
     const visual=projectNode(project,mapping.nodeId);if(!visual)continue;const src=nodes.find(n=>(mapping.nodePath&&n.dataUiId===mapping.nodePath)||(mapping.symbolPath&&n.symbolPath===mapping.symbolPath)||(mapping.selectorPath&&n.selectorPath===mapping.selectorPath));if(!src)continue;
     if(src.text!=null&&visual.props&&Object.prototype.hasOwnProperty.call(visual.props,'text'))visual.props.text=src.text;
     if(src.style&&typeof src.style==='object'){visual.style??={};visual.style.base??={};Object.assign(visual.style.base,src.style);}
-    if(src.attributes&&visual.props){for(const [k,v] of Object.entries(src.attributes)){if(k in visual.props&&typeof v!=='object')visual.props[k]=v;}}
+    if(src.attributes&&visual.props){const aliases=rt.backend==='qml'?{placeholderText:'placeholder',source:'src',checked:'checked'}:{};for(const [k,v] of Object.entries(src.attributes)){const target=aliases[k]||k;if(target in visual.props&&typeof v!=='object'&&v!==undefined)visual.props[target]=v;}}
     mapping.confidence=Math.max(Number(mapping.confidence||0),Number(src.confidence||.9));mapping.sourceFingerprint=sourceFingerprint(source);mapping.updatedAt=new Date().toISOString();updated.push(mapping.nodeId);
   }
   if(updated.length){clearRoundTripSourceDirty(project,[path]);recordRoundTripAudit(project,'source-to-design',{relativePath:path,nodeIds:updated,parser:inspection?.parser||'portable'});}return {updatedNodeIds:updated,inspection:rt.astIndex[path]};
 }
-export function changesFromDesignAgainstInspection(project,nodeId,inspection){const rt=ensureRoundTripProject(project),mapping=rt.mappings.find(m=>m.nodeId===nodeId),visual=projectNode(project,nodeId);if(!mapping||!visual)return [];const src=(inspection?.nodes||[]).find(n=>(mapping.nodePath&&n.dataUiId===mapping.nodePath)||(mapping.symbolPath&&n.symbolPath===mapping.symbolPath)||(mapping.selectorPath&&n.selectorPath===mapping.selectorPath));if(!src)return [];const changes=[];if(visual.props?.text!=null&&src.text!=null&&String(visual.props.text)!==String(src.text))changes.push({id:`text:${nodeId}`,domain:'text',property:'text',previousValue:src.text,value:visual.props.text});for(const [k,v] of Object.entries(visual.style?.base||{})){const old=src.style?.[k];if(v!=null&&String(v)!==String(old??''))changes.push({id:`style:${k}`,domain:'style',property:k,previousValue:old??null,value:v});}return changes;}
+export function changesFromDesignAgainstInspection(project,nodeId,inspection){const rt=ensureRoundTripProject(project),mapping=rt.mappings.find(m=>m.nodeId===nodeId),visual=projectNode(project,nodeId);if(!mapping||!visual)return [];const src=(inspection?.nodes||[]).find(n=>(mapping.nodePath&&n.dataUiId===mapping.nodePath)||(mapping.symbolPath&&n.symbolPath===mapping.symbolPath)||(mapping.selectorPath&&n.selectorPath===mapping.selectorPath));if(!src)return [];const changes=[];if(visual.props?.text!=null&&src.text!=null&&String(visual.props.text)!==String(src.text))changes.push({id:`text:${nodeId}`,domain:'text',property:'text',previousValue:src.text,value:visual.props.text});for(const [k,v] of Object.entries(visual.style?.base||{})){const old=src.style?.[k];if(v!=null&&String(v)!==String(old??''))changes.push({id:`style:${k}`,domain:'style',property:k,previousValue:old??null,value:v});}if(rt.backend==='qml'&&src.attributes&&visual.props){const attrs=[['checked','checked'],['placeholder','placeholderText'],['src','source']];for(const [prop,sourceProp] of attrs){if(!Object.prototype.hasOwnProperty.call(visual.props,prop))continue;const v=visual.props[prop],old=src.attributes[sourceProp];if(v!=null&&String(v)!==String(old??''))changes.push({id:`attribute:${prop}`,domain:'attribute',property:sourceProp,previousValue:old??null,value:v});}}return changes;}

@@ -24,12 +24,24 @@ function commandExists(cmd){return spawnSync(process.platform==='win32'?'where':
 function packageManager(rootPath){if(fs.existsSync(path.join(rootPath,'pnpm-lock.yaml'))&&commandExists('pnpm'))return'pnpm';if(fs.existsSync(path.join(rootPath,'yarn.lock'))&&commandExists('yarn'))return'yarn';return'npm'}
 function previewCommand(rootPath){const pm=packageManager(rootPath);if(pm==='npm')return{cmd:'npm',args:['run','dev','--','--host','127.0.0.1','--port',String(previewPort)]};return{cmd:pm,args:['run','dev','--host','127.0.0.1','--port',String(previewPort)]};}
 function stopPreview(){if(previewProc){try{previewProc.kill('SIGTERM')}catch{}previewProc=null}}
+function browseFolderNative(initialPath=''){
+  const initial=String(initialPath||'').trim();
+  if(process.platform==='win32'){
+    const psInitial=initial?`$d.SelectedPath='${initial.replace(/'/g,"''")}';`:'';const ps=`Add-Type -AssemblyName System.Windows.Forms; $d=New-Object System.Windows.Forms.FolderBrowserDialog; $d.Description='Select project folder to import'; ${psInitial} if($d.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){[Console]::Out.Write($d.SelectedPath)}`;
+    const r=spawnSync('powershell.exe',['-NoProfile','-STA','-Command',ps],{encoding:'utf8',windowsHide:true});if(r.status===0&&String(r.stdout||'').trim())return String(r.stdout).trim();if(r.status===0)return '';
+  }
+  if(process.platform==='darwin'&&commandExists('osascript')){const r=spawnSync('osascript',['-e','POSIX path of (choose folder with prompt "Select project folder to import")'],{encoding:'utf8'});if(r.status===0)return String(r.stdout||'').trim().replace(/\/$/,'');}
+  if(commandExists('zenity')){const args=['--file-selection','--directory','--title=Select project folder to import'];if(initial)args.push(`--filename=${initial.replace(/\/$/,'')}/`);const r=spawnSync('zenity',args,{encoding:'utf8'});if(r.status===0)return String(r.stdout||'').trim();if(r.status===1)return '';}
+  if(commandExists('kdialog')){const r=spawnSync('kdialog',['--getexistingdirectory',initial||process.cwd()],{encoding:'utf8'});if(r.status===0)return String(r.stdout||'').trim();if(r.status===1)return '';}
+  throw new Error('Native folder picker is unavailable on this system. Use the browser project import picker instead.');
+}
 
 async function handleApi(req,res,pathname){
   try{
     if(pathname==='/api/workspace/info')return json(res,200,{available:true,rootPath:workspaceRoot,preview:{running:Boolean(previewProc),url:previewProc?`http://127.0.0.1:${previewPort}`:''}});
     if(req.method!=='POST')return json(res,405,{error:'POST required'});const data=await body(req);
     if(pathname==='/api/workspace/open'){workspaceRoot=safeRoot(data.rootPath);const scan=await scanWorkspace(workspaceRoot);return json(res,200,scan)}
+    if(pathname==='/api/workspace/browse'){const selected=browseFolderNative(data.initialPath||workspaceRoot||'');if(!selected)return json(res,200,{canceled:true});workspaceRoot=safeRoot(selected);const scan=await scanWorkspace(workspaceRoot);return json(res,200,{...scan,rootPath:workspaceRoot,browsed:true})}
     if(pathname==='/api/roundtrip/health')return json(res,200,await roundTripRuntime.handle(pathname,data,workspaceRoot));
     const wr=requireWorkspace();
     if(pathname.startsWith('/api/roundtrip/'))return json(res,200,await roundTripRuntime.handle(pathname,data,wr));
@@ -55,5 +67,5 @@ const server=http.createServer(async(req,res)=>{
 });
 
 function openWindow(){if(process.argv.includes('--no-browser'))return;try{if(process.platform==='win32'){spawn('cmd',['/c','start','',url],{detached:true,stdio:'ignore'}).unref();return}if(process.platform==='darwin'){spawn('open',[url],{detached:true,stdio:'ignore'}).unref();return}for(const cmd of ['chromium','chromium-browser','google-chrome','google-chrome-stable'])if(commandExists(cmd)){spawn(cmd,[`--app=${url}`,'--new-window'],{detached:true,stdio:'ignore'}).unref();return}if(commandExists('xdg-open'))spawn('xdg-open',[url],{detached:true,stdio:'ignore'}).unref();}catch(e){console.warn(`Could not open browser automatically: ${e.message}`)}}
-server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.16 Functional Workbenches + Editable Hotkeys + Safe Page Entities is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
+server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.17.0 Project Import + Qt/QML is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
 for(const sig of ['SIGINT','SIGTERM'])process.on(sig,()=>{stopPreview();roundTripRuntime.dispose();server.close(()=>process.exit(0))});

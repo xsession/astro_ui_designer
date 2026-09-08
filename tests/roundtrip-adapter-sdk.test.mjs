@@ -9,5 +9,5 @@ assert.throws(()=>registerRoundTripAdapter({id:'x',importNeutral:()=>({})}));
 clearRoundTripAdapters();
 await import('../standalone/js/roundtrip-builtins.js?test='+Date.now());
 const manifest=roundTripAdapterManifest();
-for(const id of ['astro','react','vue','svelte','tkinter','nicegui','lvgl'])assert.ok(manifest.some(x=>x.id===id),`missing ${id}`);
+for(const id of ['astro','react','vue','svelte','tkinter','nicegui','lvgl','pwtk'])assert.ok(manifest.some(x=>x.id===id),`missing ${id}`);
 console.log('roundtrip-adapter-sdk.test.mjs passed');

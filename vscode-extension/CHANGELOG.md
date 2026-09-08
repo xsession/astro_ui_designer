@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.17.0
+
+- Added native VS Code folder browsing for Import Existing Project.
+- Added adapter auto-detection/review and Qt Quick/QML round-trip support.
+- Added QML structural inspection, safe literal patches and Qt 6 generation.
+- Kept the embedded designer synchronized with standalone 2.17.0.
+
+## 2.16.1
+
+- Hardened pwtk/eel round-trip import, source preservation and reviewed layout patching.
+- Fixed workspace discovery for Python, HTML, LVGL C/C++ and Sass/Less sources.
+- Added Python import-graph traversal and expanded pwtk regression coverage.
+- Kept the embedded designer synchronized with standalone 2.16.1.
+
 ## 2.16.0
 
 - Filled built-in placeholder/shallow workbenches with useful editing functionality.

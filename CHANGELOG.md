@@ -1,5 +1,32 @@
 # Changelog
 
+## 2.17.0-project-import-qml — 2026-09-08
+
+- Added a visible **Import Project** toolbar button and **Import Existing Project…** commands in File, Project, Round-trip workbench and command palette.
+- Added editable default hotkey `Ctrl+Shift+I` for existing-project import.
+- Added native folder browsing to the standalone host and VS Code extension, plus browser directory-picker/snapshot fallback.
+- Added adapter auto-detection review with adapter override, entry-file override, capability summary and live-vs-snapshot status.
+- Added Qt Quick/QML as a built-in round-trip backend with QML object hierarchy/id/property inspection, neutral-IR import, common Qt Quick Controls/Layout mapping, reviewed literal source edits and Qt 6 project generation.
+- Added QML workspace graph traversal for local QML component files and scanner support for `.qml`, `.qmltypes`, `.qrc`, `qmldir`, `qtquickcontrols2.conf` and `CMakeLists.txt`.
+- Preserved imported QML type/id metadata through designer conversion and QML export.
+- Added QML property round-trip for text, checked state, placeholder/source, geometry, color, radius, spacing, opacity and font size while leaving JavaScript handlers/C++ logic source-owned.
+- Fixed workspace scan normalization when the standalone scanner returns filename strings.
+- Hardened managed preview startup so missing runtime commands fail cleanly instead of producing an unhandled child-process error.
+- Added `roundtrip-qml.test.mjs` and `project-import-ui.test.mjs`; aggregate suite now covers 25 suites.
+
+## 2.16.1-pwtk-hardening — 2026-09-08
+
+- Reviewed newest upstream `main` at `7863da396813093b592dba3c15cedc9dc65cdabf` (`Add pwtk blocks and GUI layout round-trip adapter (2.16.0)`).
+- Hardened pwtk backend detection, import, generation and reviewed `layout.json` patching.
+- Fixed BundleBlock classification and display-name/class-name mapping so pwtk blocks retain their source metadata and events.
+- Fixed class-body parsing, `pwtk.App` discovery, multi-module block discovery and group names containing commas.
+- Preserved original pwtk Python/HTML sources and the full `layout.json`; unchanged projects now retain exact `layout.json` text rather than being gratuitously reformatted.
+- Added no-op and collision protection for timer, pin, move and rename patch operations.
+- Preserved pin/timer metadata when moving or renaming pwtk blocks.
+- Fixed workspace scanning to include Python, HTML, C/C++, headers and Sass/Less sources so pwtk, LVGL and vanilla adapters are actually reachable through the normal workspace flow.
+- Added Python import graph traversal for pwtk/Tkinter/NiceGUI projects.
+- Expanded pwtk and workspace-source regression coverage and synchronized the VS Code designer mirror.
+
 ## 2.16.0-functional-workbenches — 2026-09-08
 
 - Reviewed current upstream `main` at `b4b0ded9a1ae9e014766a1180d2f238adb81e22a` (`Fix the menu functionality`).

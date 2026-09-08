@@ -477,5 +477,5 @@ export function exportDrawio(project, options = {}) {
   if (!pages.length) throw new Error('The project has no pages to export.');
   const modified = options.modified || new Date().toISOString();
   const diagrams = pages.map(p => `<diagram id="${xmlEscape(p.id)}" name="${xmlEscape(p.name)}">${p.graph}</diagram>`).join('');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<mxfile host="app.diagrams.net" modified="${xmlEscape(modified)}" agent="Astro UI Designer 2.16.0" compressed="false">${diagrams}</mxfile>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<mxfile host="app.diagrams.net" modified="${xmlEscape(modified)}" agent="Astro UI Designer 2.17.0" compressed="false">${diagrams}</mxfile>\n`;
 }

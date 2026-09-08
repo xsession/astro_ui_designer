@@ -46,3 +46,9 @@
 .lab-story-item{width:100%;min-height:40px;display:grid;grid-template-columns:12px 1fr auto;align-items:center;gap:7px;text-align:left;border:0;border-bottom:1px solid #303943;background:transparent;padding:6px 8px}
 .lab-story-item:hover,.lab-story-item.active{background:#244e72}.lab-story-item small{display:block;color:#8fa0b2;margin-top:2px}.story-status{width:8px;height:8px;border-radius:50%;background:#65717d}.story-status.passed{background:#4dc27a}.story-status.failed{background:#e26868}
 .lab-addon-section{padding:8px;border-bottom:1px solid #39434d}.lab-addon-section h4{margin:0 0 7px}.lab-control-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:6px;align-items:center;margin:5px 0}.lab-control-row input,.lab-control-row select{width:100%;min-width:0}
+
+/* Existing-project import workflow --------------------------------------- */
+.project-import-modal{width:min(760px,calc(100vw - 48px))}
+.project-import-hero{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;margin-bottom:10px;border:1px solid #45515d;background:#1d242b}
+.project-import-hero strong{font-size:14px;color:#e7eef6}.project-import-hero span{font-size:11px;color:#9fb0bf}
+.project-import-capabilities{margin-top:10px;padding:9px 11px;border:1px solid #3a4652;background:#181e24}.project-import-capabilities ul{margin:7px 0 0;padding-left:18px}.project-import-capabilities li{margin:3px 0;color:#b7c4d0}

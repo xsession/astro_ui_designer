@@ -1,9 +1,9 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.16.0",
+  "version": "2.17.0",
   "private": true,
   "type": "module",
-  "description": "Astro-native Qt-style visual IDE with functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange, syntax-aware round-trip editing, VS Code integration and Hermes MCP support",
+  "description": "Astro-native Qt-style visual IDE with project-folder adapter detection/import, Qt Quick/QML and hardened multi-framework round-trip editing, functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange, VS Code integration and Hermes MCP support",
   "scripts": {
     "start": "node launch-designer.mjs",
     "test": "node tests/run-all.mjs",
@@ -14,10 +14,11 @@
     "mcp": "node integrations/hermes/mcp/server.mjs",
     "test:hermes": "node tests/hermes-mcp.test.mjs && node tests/hermes-skill.test.mjs",
     "hermes:install": "node integrations/hermes/install.mjs",
-    "test:roundtrip": "node tests/roundtrip-engine.test.mjs && node tests/roundtrip-adapter-sdk.test.mjs && node tests/roundtrip-neutral-ir.test.mjs && node tests/roundtrip-history.test.mjs && node tests/roundtrip-ui.test.mjs && node tests/roundtrip-node.test.mjs && node tests/roundtrip-conversion.test.mjs && node tests/roundtrip-plugin.test.mjs && node tests/roundtrip-app-bridge.test.mjs",
+    "test:roundtrip": "node tests/roundtrip-engine.test.mjs && node tests/roundtrip-adapter-sdk.test.mjs && node tests/roundtrip-neutral-ir.test.mjs && node tests/roundtrip-history.test.mjs && node tests/roundtrip-ui.test.mjs && node tests/roundtrip-node.test.mjs && node tests/roundtrip-conversion.test.mjs && node tests/roundtrip-plugin.test.mjs && node tests/roundtrip-app-bridge.test.mjs && node tests/roundtrip-pwtk.test.mjs && node tests/workspace-roundtrip-files.test.mjs && node tests/roundtrip-qml.test.mjs",
     "test:drawio": "node tests/drawio-io.test.mjs && node tests/drawio-app-integration.test.mjs",
     "test:tooltips": "node tests/tooltips.test.mjs && node tests/tooltips-app-integration.test.mjs",
-    "test:functional": "node tests/hotkeys.test.mjs && node tests/page-entities.test.mjs && node tests/tab-functionality.test.mjs"
+    "test:functional": "node tests/hotkeys.test.mjs && node tests/page-entities.test.mjs && node tests/tab-functionality.test.mjs",
+    "test:import": "node tests/project-import-ui.test.mjs && node tests/workspace-roundtrip-files.test.mjs"
   },
   "optionalDependencies": {
     "@astrojs/compiler-rs": "latest",

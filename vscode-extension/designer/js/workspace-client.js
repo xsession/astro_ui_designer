@@ -1,6 +1,7 @@
 const jsonHeaders={'Content-Type':'application/json'};
 async function api(path, body=null){if(window.__ASTRO_UI_VSCODE__?.request)return window.__ASTRO_UI_VSCODE__.request(path,body);const init=body==null?{}:{method:'POST',headers:jsonHeaders,body:JSON.stringify(body)};const r=await fetch(`/api/${path}`,init);if(!r.ok)throw new Error((await r.text())||`${r.status} ${r.statusText}`);return r.json();}
 export async function openWorkspace(rootPath){return api('workspace/open',{rootPath});}
+export async function browseWorkspace(initialPath=''){return api('workspace/browse',{initialPath});}
 export async function rescanWorkspace(){return api('workspace/rescan',{});}
 export async function readWorkspaceFile(relativePath){return api('workspace/read',{relativePath});}
 export async function writeWorkspaceFile(relativePath,content){return api('workspace/write',{relativePath,content});}

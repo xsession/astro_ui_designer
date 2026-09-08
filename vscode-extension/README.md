@@ -1,11 +1,14 @@
-# Astro UI Designer VS Code 2.16
+# Astro UI Designer VS Code 2.17.0
 
-Embeds the same Astro UI Designer 2.16 runtime used by the standalone application.
+Embeds the same Astro UI Designer 2.17 runtime used by the standalone application.
 
-Highlights: functional relocatable workbenches, editable hotkeys, safe page entity lifecycle, Draw.io interchange, source round-trip editing and workspace integration.
+## Highlights
 
-Build from the repository root with:
+- Native VS Code folder chooser for **Import Existing Project…**.
+- Adapter auto-detection and reviewed project import.
+- Qt Quick/QML round-trip support alongside Astro, React, Vue, Svelte, Vanilla JS/TS, Tkinter, NiceGUI, LVGL and pwtk.
+- Functional relocatable workbenches, editable hotkeys and safe page entity lifecycle.
+- Source-aware round-trip review, file watching, checkpoints and rollback.
+- Draw.io interchange and the existing designer/Component Lab/composition features.
 
-```bash
-npm run package:vscode
-```
+Run **Astro UI Designer: Open Designer** from the command palette. The embedded designer uses VS Code workspace APIs for folder browsing, source reads/writes and other host integration.

@@ -14,7 +14,7 @@ The implementation is split into intentionally small layers:
 - `roundtrip-adapter-sdk.js` — one backend contract for detect / inspect / import / generate / patch / preview / validate.
 - `roundtrip-neutral-ir.js` — framework-neutral UI tree and portable parsers/generators.
 - `roundtrip-conversion.js` — neutral IR ↔ Astro UI Designer project model.
-- `roundtrip-builtins.js` — built-in Astro, React, Vanilla JS/TS, Vue, Svelte, Tkinter, NiceGUI and LVGL adapters.
+- `roundtrip-builtins.js` — built-in Astro, React, Vanilla JS/TS, Vue, Svelte, Tkinter, NiceGUI, LVGL, pwtk and Qt Quick/QML adapters.
 - `roundtrip-ui.js` — visual property review, line diff, history and conversion studio.
 - `roundtrip-app-bridge.js` — live watcher, AST refresh, visual/source reconciliation, history and conversion orchestration.
 - `roundtrip-node.mjs` — official-parser bridge, recursive filesystem watcher, atomic stale-safe apply and managed preview processes.
@@ -31,6 +31,8 @@ The Node bridge attempts the appropriate syntax implementation and falls back co
 | Svelte | `svelte/compiler` | markup scanner |
 | Tkinter / NiceGUI | Python standard-library `ast` | literal/symbol scanner |
 | LVGL C/C++ | `tree-sitter` + `tree-sitter-c` | LVGL symbol/setter scanner |
+| pwtk | Python/layout JSON structural adapter | conservative anchored JSON patches |
+| Qt Quick / QML | structural QML object/property parser | same conservative structural parser |
 | Vanilla HTML/JS | portable markup parser | same parser |
 
 Parser packages are installed as optional dependencies. Missing optional parsers therefore reduce confidence and capability instead of making Astro UI Designer fail to start.
@@ -97,7 +99,7 @@ A versioned neutral UI IR is now the interchange layer for source-backed project
 - opaque/expression metadata where exact conversion is unsafe;
 - child hierarchy.
 
-Built-in importers cover Astro, React/JSX, Vue, Svelte, HTML, Tkinter, NiceGUI and LVGL. Built-in generators cover Astro, React, Vue, Svelte, plain HTML, Tkinter, NiceGUI and LVGL.
+Built-in importers cover Astro, React/JSX, Vue, Svelte, HTML, Tkinter, NiceGUI, LVGL, pwtk and Qt Quick/QML. Built-in generators cover Astro, React, Vue, Svelte, plain HTML, Tkinter, NiceGUI, LVGL, pwtk and Qt Quick/QML.
 
 The conversion layer intentionally preserves unsupported expressions as metadata rather than evaluating them. Complex application logic remains code-owned.
 
@@ -160,7 +162,7 @@ tree-sitter
 tree-sitter-c
 ```
 
-Python uses the interpreter already available on the host. If Python is unavailable, Tkinter/NiceGUI use their conservative source scanner.
+Python uses the interpreter already available on the host. If Python is unavailable, Tkinter/NiceGUI use their conservative source scanner. Qt Quick/QML uses a conservative structural QML parser for object ranges and literal property bindings; the managed preview profile can invoke the `qml` runtime when available.
 
 ## Extension parity
 
@@ -168,4 +170,4 @@ The installer mirrors all browser modules into `vscode-extension/designer/` and 
 
 ## Remaining intentional boundaries
 
-All roadmap phases are implemented, but not every language construct is declared safely editable. Examples that remain intentionally code-owned include arbitrary JSX/Vue/Svelte expressions, Python control flow and callbacks, complex LVGL callback logic, macro-generated C UI structures, and framework-specific runtime state. The adapter SDK is the supported place to add increasingly specialized transforms without weakening the safe default behavior.
+All roadmap phases are implemented, but not every language construct is declared safely editable. Examples that remain intentionally code-owned include arbitrary JSX/Vue/Svelte expressions, Python control flow and callbacks, complex LVGL callback logic, pwtk application logic, arbitrary QML JavaScript/C++ logic, macro-generated C UI structures, and framework-specific runtime state. The adapter SDK is the supported place to add increasingly specialized transforms without weakening the safe default behavior.

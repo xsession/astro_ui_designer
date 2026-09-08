@@ -9,4 +9,4 @@ Plugins receive the active project/node/selection context when invoked by the In
 
 ### backendAdapters
 
-Backend adapters implement one round-trip contract covering detection, syntax inspection, neutral-IR import, code generation, reviewed source patching, managed preview and validation. The bundled adapters cover Astro, React, Vanilla JS/TS, Vue, Svelte, Tkinter, NiceGUI and LVGL. See `LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md`.
+Backend adapters implement one round-trip contract covering detection, syntax inspection, neutral-IR import, code generation, reviewed source patching, managed preview and validation. The bundled adapters cover Astro, React, Vanilla JS/TS, Vue, Svelte, Tkinter, NiceGUI, LVGL, pwtk and Qt Quick/QML. See `LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md`.
