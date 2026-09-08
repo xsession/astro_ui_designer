@@ -1,57 +1,88 @@
-# Astro UI Designer 2.17.0 — test report
+# Astro UI Designer 2.17.2 — test report
 
-Validation completed on 2026-09-08 against the newest verified upstream head `7863da396813093b592dba3c15cedc9dc65cdabf`.
+**Date:** 2026-09-08  
+**Upstream reviewed:** `cef93ad7f5744e45c98876b0932ec4969691f78c` (`Restore manual drag, resize, and nudge geometry interaction (2.17.1)`)
 
-| Area | Result |
+## Automated regression
+
+| Check | Result |
 |---|---|
-| Aggregate suite | **25/25 PASS** |
-| Existing-project import regression | **PASS** |
-| Functional hotkey/page/tab suites | **3/3 PASS** |
-| Built-in relocatable dock routing | **41/41 PASS** |
-| Component Lab integration | **PASS** |
+| Aggregate `npm test` | **26/26 suites PASS** |
+| Manual canvas interaction regression | **PASS** |
 | Round-trip script | **12/12 PASS** |
-| Qt Quick/QML round-trip regression | **PASS** |
-| pwtk round-trip regression | **PASS** |
-| Workspace source-family regression | **PASS** |
-| Draw.io | **2/2 PASS** |
-| Tooltips | **2/2 PASS** |
-| Dock layout | **PASS** |
-| Runtime module loading | **PASS** |
+| Draw.io suites | **2/2 PASS** |
+| Tooltip suites | **2/2 PASS** |
+| Functional/hotkey/page/tab suites | **3/3 PASS** |
+| Project-import suites | **2/2 PASS** |
+| Component Lab integration | **PASS** |
+| pwtk round-trip | **PASS** |
+| Qt/QML round-trip + multiline preservation | **PASS** |
 | Visual structural smoke | **PASS** |
-| VS Code source package | **PASS** |
-| VSIX 2.17.0 package generation | **PASS** |
+| VS Code source smoke | **PASS** |
 | Hermes MCP + skill | **2/2 PASS** |
-| JavaScript/MJS syntax | **112 files PASS** |
-| Runtime relative imports | **240 checked, 0 missing** |
-| Standalone/VS Code embedded designer parity | **PASS** |
-| Local HTTP/workspace API smoke | **PASS** |
-| Live QML workspace inspect smoke | **PASS** |
-| Generated QML structural validation | **PASS** |
+| Astro example regeneration | **PASS** |
+| VSIX 2.17.2 package generation | **PASS** |
 
-## New regression coverage in 2.17
+## Direct-manipulation browser smoke
 
-`tests/project-import-ui.test.mjs` verifies the user-visible **Import Project** toolbar command, File/Project command registration, editable hotkey, browser directory fallback, native standalone browse route, VS Code native browse route, adapter override UI and round-trip bridge import APIs.
+A real headless Chromium instance executed the complete standalone module graph and actual `app.js`/`styles.css`. Because this environment blocks direct browser navigation to loopback/file URLs, the exact local modules were mapped into browser `data:` module URLs and loaded with `page.set_content`; no interaction logic was replaced by a mock.
 
-`tests/roundtrip-qml.test.mjs` covers:
+### Ordinary flow child move + resize
 
-- QML backend discovery and adapter-SDK exposure
-- `Main.qml` entry detection
-- same-directory, quoted-directory and `qmldir` module component graph resolution
-- QML structural object/id/property source ranges
-- Qt Quick Controls/Layout neutral-IR mapping
-- anchors/Layout visual approximations
-- QML type/id preservation through designer conversion
-- checked/text/geometry source review changes
-- generated `Main.qml`, `main.cpp` and modern Qt 6 `CMakeLists.txt`
-- runtime structural inspection and syntax patch planning
-- signal-handler preservation
-- multiline handler/property-object/property-array preservation
-- exclusion of property-owned QML objects from ordinary visual-child hierarchy
+The browser selected the sample project's **Brand** heading whose immediate parent was `nav`, not a Freeform Layer.
 
-`tests/workspace-roundtrip-files.test.mjs` now also verifies `.qml`, `.qmlproject`, `qmldir` and `CMakeLists.txt` discovery in addition to the Python/HTML/LVGL/Sass families added in 2.16.1.
+Initial geometry:
 
-## Qt build-environment note
+- width: ~153.9 px
+- height: ~20.7 px
+- no explicit positioned geometry
 
-The validation container does not have a Qt 6 SDK/runtime installed. `qmlRuntime` correctly reports `false`, and a CMake configure attempt reaches `find_package(Qt6 6.5 ...)` but cannot locate `Qt6Config.cmake`. Therefore this report does **not** claim a native Qt compile/run test. Generated QML was re-parsed by the structural QML adapter successfully (34 nodes in the generated sample), and the generated CMake/main.cpp contracts are covered by regression assertions.
+Pointer-dragging the real **MOVE** overlay handle produced:
 
-See `VALIDATION.md`, `docs/PROJECT_IMPORT.md`, and `docs/QML_ROUNDTRIP.md` for scope and limitations.
+- `position: absolute`
+- `left: 96px`
+- `top: 48px`
+- width: `154px`
+- height: `21px`
+
+Dragging the real south-east resize handle then produced:
+
+- width: `216px`
+- height: `56px`
+
+No browser page/console errors were recorded.
+
+### Ordinary flow child resize without relocating first
+
+A second fresh browser run selected the same kind of ordinary `nav` child and dragged the east resize handle directly, before any move operation.
+
+- initial width: ~153.9 px
+- resulting width: `208px`
+- node remained in normal flow (no `position` property was introduced)
+- hit testing confirmed the pointer target was `.manual-handle.resize-handle.e`
+- no browser page/console errors were recorded
+
+This verifies both requested behaviors independently: a normal component can be resized in flow, and it can be manually relocated when the user chooses to drag it.
+
+## Source consistency
+
+- JavaScript/MJS files syntax-checked: **113 PASS**
+- Runtime files included in relative-import audit: **81**
+- Runtime relative imports checked: **161**
+- Missing runtime relative imports: **0**
+- `standalone/js/app.js` vs VS Code mirror: **byte-identical**
+- `standalone/styles.css` vs VS Code mirror: **byte-identical**
+- `functional-workbenches.js` standalone/VS Code mirror: **byte-identical**
+
+## Live host smoke
+
+A real `launch-designer.mjs --no-browser` process was started on `127.0.0.1:8766`:
+
+- `/` returned HTTP 200
+- `/api/workspace/info` returned `{available:true,...}`
+- served `js/app.js` exposed `2.17.2-direct-manipulation`
+- launcher banner identified `Astro UI Designer Pro 2.17.2 Direct Manipulation + Project Import + Qt/QML`
+
+## Notes
+
+The direct browser smoke is validation-environment-specific and is not part of `npm test`, so users do not need Playwright/Python to use or test the project. The repository regression test `tests/manual-canvas-interaction.test.mjs` covers the interaction integration contract and the pure resize/snap/constraint primitives without extra browser dependencies.

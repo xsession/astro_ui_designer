@@ -1,9 +1,9 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.17.0",
+  "version": "2.17.2",
   "private": true,
   "type": "module",
-  "description": "Astro-native Qt-style visual IDE with project-folder adapter detection/import, Qt Quick/QML and hardened multi-framework round-trip editing, functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange, VS Code integration and Hermes MCP support",
+  "description": "Astro-native Qt-style visual IDE with direct canvas drag/resize/rotate for ordinary and freeform components, project-folder adapter detection/import, Qt Quick/QML and hardened multi-framework round-trip editing, functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange, VS Code integration and Hermes MCP support",
   "scripts": {
     "start": "node launch-designer.mjs",
     "test": "node tests/run-all.mjs",

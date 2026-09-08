@@ -1,7 +1,7 @@
 {
   "name": "astro-ui-designer-vscode",
-  "displayName": "Astro UI Designer 2.17.0",
-  "version": "2.17.0",
+  "displayName": "Astro UI Designer 2.17.2",
+  "version": "2.17.2",
   "publisher": "xsession",
   "engines": {
     "vscode": "^1.90.0"
@@ -34,5 +34,5 @@
   "scripts": {
     "test": "node test/run-tests.mjs"
   },
-  "description": "Visual Astro IDE with native project-folder import, adapter auto-detection, Qt Quick/QML and multi-framework round-trip source editing, functional relocatable workbenches, editable hotkeys, page entity management and Draw.io interchange"
+  "description": "Visual Astro IDE with direct canvas drag/resize/rotate, native project-folder import, adapter auto-detection, Qt Quick/QML and multi-framework round-trip source editing, functional relocatable workbenches, editable hotkeys, page entity management and Draw.io interchange"
 }

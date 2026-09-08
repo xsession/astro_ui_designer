@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.17.2-direct-manipulation — 2026-09-08
+
+- Pulled/reviewed upstream `cef93ad7f5744e45c98876b0932ec4969691f78c` (2.17.1 manual-interaction restoration).
+- Extended direct manipulation from Freeform-only children to every unlocked non-root canvas component.
+- Added artboard-level eight-handle resize overlay, MOVE handle, rotate handle, geometry label and smart snap lines.
+- Added flow-to-positioned conversion on actual move, breakpoint-local geometry writes, zoom-correct coordinates and parent-border correction.
+- Added Shift axis lock/aspect lock, Alt center resize/fine nudge, Ctrl/Cmd snap bypass and keyboard move/resize.
+- Kept component-instance preview clones non-interactive so wrapper selection is stable.
+- Added direct-manipulation regression coverage and documentation.
+
 ## 2.17.0-project-import-qml — 2026-09-08
 
 - Added a visible **Import Project** toolbar button and **Import Existing Project…** commands in File, Project, Round-trip workbench and command palette.

@@ -1,4 +1,4 @@
-# Astro UI Designer Pro 2.17.0 — Project Import + Qt Quick/QML
+# Astro UI Designer Pro 2.17.2 — Direct Manipulation + Project Import + Qt Quick/QML
 
 A dense **Qt Creator / Qt Designer-style visual IDE for Astro and multi-framework UI work**. This release keeps the reviewed 2.16 functional-workbench and hardened pwtk foundation, adds a visible existing-project browser/import workflow, and introduces Qt Quick/QML as a first-class round-trip backend.
 
@@ -45,12 +45,13 @@ npm run test:hermes
 
 The upstream branch was reviewed at:
 
-`xsession/astro_ui_designer` `main` → `7863da396813093b592dba3c15cedc9dc65cdabf` (`Add pwtk blocks and GUI layout round-trip adapter (2.16.0)`, 2026-09-08).
+`xsession/astro_ui_designer` `main` → `cef93ad7f5744e45c98876b0932ec4969691f78c` (`Restore manual drag, resize, and nudge geometry interaction (2.17.1)`, 2026-09-08).
 
-The newest upstream pwtk delta was reviewed line-by-line. The 2.16.1 hardening pass fixes block classification/mapping, multi-file import, source/layout preservation, no-op/collision-safe patching, Python import-graph traversal and workspace scanner gaps. Version 2.17 builds on that baseline with a native/snapshot project import workflow and the Qt Quick/QML adapter. See `PROJECT_BUILD_MANIFEST.md`, `docs/PROJECT_IMPORT.md`, `docs/QML_ROUNDTRIP.md` and `docs/PWTK_ROUNDTRIP_REVIEW.md`.
+The 2.17.1 change restored geometry interaction but limited it to Freeform Layer children. Version 2.17.2 keeps the 2.17 project-import/QML and 2.16.1 pwtk hardening work while extending direct drag/resize/rotate to ordinary flex/grid/section/card/form children. See `PROJECT_BUILD_MANIFEST.md` and `docs/DIRECT_MANIPULATION.md`.
 
 ## Documentation
 
+- `docs/DIRECT_MANIPULATION.md` — canvas drag/resize/rotate, flow detachment, snapping, modifiers and breakpoint behavior.
 - `docs/PROJECT_IMPORT.md` — existing-project browser, detection, review and live/snapshot import flow.
 - `docs/QML_ROUNDTRIP.md` — Qt Quick/QML mapping, source patching, generation and limitations.
 - `docs/FUNCTIONALITY_AUDIT.md` — whole-project tab/workbench review and implemented replacements.
@@ -61,3 +62,8 @@ The newest upstream pwtk delta was reviewed line-by-line. The 2.16.1 hardening p
 - `docs/LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md` — round-trip architecture.
 - `docs/PWTK_ROUNDTRIP_REVIEW.md` — newest-upstream pwtk review, fixes, guarantees and limitations.
 - `docs/TOOLTIPS.md` — global tooltip system.
+
+## Direct manipulation
+
+In Design mode, any unlocked non-root component can be manually moved, resized and rotated directly on the canvas, including ordinary flex/grid/section children. Select a component to show eight resize handles, a rotate handle and an explicit **MOVE** grip. A real move detaches a normal flow child to positioned geometry only when needed; breakpoint-specific edits remain in the active breakpoint override. Shift/Alt/Ctrl modifiers and keyboard nudge/resize are supported. See `docs/DIRECT_MANIPULATION.md`.
+

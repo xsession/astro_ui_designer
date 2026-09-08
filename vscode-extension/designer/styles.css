@@ -53,22 +53,26 @@
 .project-import-hero strong{font-size:14px;color:#e7eef6}.project-import-hero span{font-size:11px;color:#9fb0bf}
 .project-import-capabilities{margin-top:10px;padding:9px 11px;border:1px solid #3a4652;background:#181e24}.project-import-capabilities ul{margin:7px 0 0;padding-left:18px}.project-import-capabilities li{margin:3px 0;color:#b7c4d0}
 
-/* Manual canvas geometry interaction (drag / resize / rotate) -------------- */
-.resize-handle{position:absolute;width:9px;height:9px;background:#f7fbff;border:1px solid #2872ad;z-index:1200;pointer-events:auto}
-.manual-handle{position:absolute;display:block;width:9px;height:9px;background:#f7fbff;border:1px solid #2872ad;border-radius:1px;z-index:1200;pointer-events:auto;box-shadow:0 0 0 1px #fff4}
-.resize-handle.nw{left:-4px;top:-4px;cursor:nwse-resize}
-.resize-handle.n{left:50%;top:-4px;transform:translateX(-50%);cursor:ns-resize}
-.resize-handle.ne{right:-4px;top:-4px;cursor:nesw-resize}
-.resize-handle.e{right:-4px;top:50%;transform:translateY(-50%);cursor:ew-resize}
-.resize-handle.se{right:-4px;bottom:-4px;cursor:nwse-resize}
-.resize-handle.s{left:50%;bottom:-4px;transform:translateX(-50%);cursor:ns-resize}
-.resize-handle.sw{left:-4px;bottom:-4px;cursor:nesw-resize}
-.resize-handle.w{left:-4px;top:50%;transform:translateY(-50%);cursor:ew-resize}
-.rotate-handle{left:50%;top:-28px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;cursor:grab}
-.rotate-handle::after{content:'';position:absolute;left:4px;top:9px;width:1px;height:13px;background:#4b94ca}
-.manual-dragging,.manual-dragging *{cursor:grabbing!important;user-select:none!important}
-.manual-transient-layer{position:absolute;inset:0;pointer-events:none;z-index:1080}
-.smart-snap-line{position:absolute;background:#ef4da8;box-shadow:0 0 0 .5px #fff4;z-index:1090}
-.smart-snap-line.vertical{top:0;bottom:0;width:1px}
-.smart-snap-line.horizontal{left:0;right:0;height:1px}
-.geometry-tooltip{position:absolute;z-index:1120;transform:translateY(-100%);padding:2px 5px;border-radius:3px;background:#142d40;color:#d9efff;border:1px solid #4b94ca;font:9px/1.35 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap;pointer-events:none}
+/* Direct canvas manipulation (2.17.2) ------------------------------------- */
+#editor-stage[data-mode="design"] .designer-node{cursor:grab}
+body.manual-dragging,body.manual-dragging *{cursor:grabbing!important;user-select:none!important}
+.manual-selection-overlay{position:absolute;z-index:1180;pointer-events:none;border:1px solid #4aa7ef;box-shadow:0 0 0 calc(1px / var(--canvas-zoom,1)) rgba(255,255,255,.4);min-width:1px;min-height:1px}
+.manual-selection-overlay.locked{border-color:#d8a24b;border-style:dashed}
+.manual-handle{position:absolute;display:block;width:calc(10px / var(--canvas-zoom,1));height:calc(10px / var(--canvas-zoom,1));background:#f7fbff;border:calc(1px / var(--canvas-zoom,1)) solid #2872ad;border-radius:1px;z-index:1200;pointer-events:auto;box-shadow:0 0 0 calc(1px / var(--canvas-zoom,1)) rgba(255,255,255,.18)}
+.resize-handle.nw{left:calc(-5px / var(--canvas-zoom,1));top:calc(-5px / var(--canvas-zoom,1));cursor:nwse-resize}
+.resize-handle.n{left:50%;top:calc(-5px / var(--canvas-zoom,1));transform:translateX(-50%);cursor:ns-resize}
+.resize-handle.ne{right:calc(-5px / var(--canvas-zoom,1));top:calc(-5px / var(--canvas-zoom,1));cursor:nesw-resize}
+.resize-handle.e{right:calc(-5px / var(--canvas-zoom,1));top:50%;transform:translateY(-50%);cursor:ew-resize}
+.resize-handle.se{right:calc(-5px / var(--canvas-zoom,1));bottom:calc(-5px / var(--canvas-zoom,1));cursor:nwse-resize}
+.resize-handle.s{left:50%;bottom:calc(-5px / var(--canvas-zoom,1));transform:translateX(-50%);cursor:ns-resize}
+.resize-handle.sw{left:calc(-5px / var(--canvas-zoom,1));bottom:calc(-5px / var(--canvas-zoom,1));cursor:nesw-resize}
+.resize-handle.w{left:calc(-5px / var(--canvas-zoom,1));top:50%;transform:translateY(-50%);cursor:ew-resize}
+.rotate-handle{left:50%;top:calc(-30px / var(--canvas-zoom,1));transform:translateX(-50%);border-radius:50%;cursor:grab;background:#d9efff}
+.rotate-handle::after{content:'';position:absolute;left:50%;top:100%;width:calc(1px / var(--canvas-zoom,1));height:calc(18px / var(--canvas-zoom,1));background:#4aa7ef;transform:translateX(-50%);pointer-events:none}
+.manual-move-handle{position:absolute;left:50%;top:calc(-20px / var(--canvas-zoom,1));transform:translateX(-50%);height:calc(14px / var(--canvas-zoom,1));line-height:calc(14px / var(--canvas-zoom,1));padding:0 calc(4px / var(--canvas-zoom,1));font-size:calc(7px / var(--canvas-zoom,1));letter-spacing:.08em;background:#24567e;color:#fff;border-radius:2px;pointer-events:auto;cursor:grab;white-space:nowrap;z-index:1190}
+.manual-geometry-label{position:absolute;right:0;bottom:calc(-17px / var(--canvas-zoom,1));height:calc(14px / var(--canvas-zoom,1));line-height:calc(14px / var(--canvas-zoom,1));padding:0 calc(4px / var(--canvas-zoom,1));font:calc(8px / var(--canvas-zoom,1)) ui-monospace,Consolas,monospace;background:#174569;color:#eaf6ff;border-radius:2px;white-space:nowrap;pointer-events:none}
+.manual-transient-layer{position:absolute;inset:0;z-index:1170;pointer-events:none;overflow:visible}
+.smart-snap-line{position:absolute;background:#e84aa7;pointer-events:none;box-shadow:0 0 calc(2px / var(--canvas-zoom,1)) rgba(232,74,167,.45)}
+.smart-snap-line.vertical{top:0;bottom:0;width:calc(1px / var(--canvas-zoom,1))}
+.smart-snap-line.horizontal{left:0;right:0;height:calc(1px / var(--canvas-zoom,1))}
+.geometry-tooltip{position:absolute;z-index:1210;padding:calc(3px / var(--canvas-zoom,1)) calc(5px / var(--canvas-zoom,1));font:calc(9px / var(--canvas-zoom,1)) ui-monospace,Consolas,monospace;line-height:1.25;background:#111820;color:#eaf6ff;border:calc(1px / var(--canvas-zoom,1)) solid #5b748a;border-radius:2px;white-space:nowrap;pointer-events:none}

@@ -1,105 +1,111 @@
-# Astro UI Designer 2.17.0 — validation
+# Astro UI Designer 2.17.2 — validation
 
 **Validation date:** 2026-09-08  
-**Integrated version:** `2.17.0-project-import-qml`  
-**Newest upstream head verified:** `7863da396813093b592dba3c15cedc9dc65cdabf` (`Add pwtk blocks and GUI layout round-trip adapter (2.16.0)`)
+**Integrated version:** `2.17.2-direct-manipulation`  
+**Newest upstream head verified:** `cef93ad7f5744e45c98876b0932ec4969691f78c` (`Restore manual drag, resize, and nudge geometry interaction (2.17.1)`)
 
 ## Upstream verification
 
-The GitHub connector was checked again immediately before final packaging. No commit newer than `7863da396813093b592dba3c15cedc9dc65cdabf` was present on `main` during this build.
+The connected GitHub API was queried at the start of the task and again immediately before packaging. The newest `main` commit remained `cef93ad7f5744e45c98876b0932ec4969691f78c`.
 
-Version 2.17 is layered on the previously validated 2.16.1 hardening tree, which already reconciled that upstream commit and fixed its pwtk/workspace integration problems.
+The upstream 2.17.1 commit correctly identified that geometry interaction had been lost, but its implementation still gated drag/resize/nudge on an immediate `freeform` parent. The 2.17.2 local fix removes that practical limitation.
 
-## Existing-project import
+## Direct canvas manipulation
 
-- Top toolbar **Import Project** entry: **PASS**.
-- File menu **Import Existing Project…**: **PASS**.
-- Project menu **Import Existing Project…**: **PASS**.
-- Round-trip workbench import entry: **PASS**.
-- Command-palette registration: **PASS**.
-- Editable default `Ctrl+Shift+I` hotkey: **PASS**.
-- Native standalone host folder-browse API: **PASS structural/integration test**.
-- Native VS Code folder chooser route: **PASS structural/source test**.
-- Browser `showDirectoryPicker` / `webkitdirectory` fallback: **PASS structural test**.
-- Adapter auto-detection and adapter override review: **PASS**.
-- Entry-file override and live/snapshot mode review: **PASS**.
-- Workspace filename-string normalization: **PASS**.
-- Native browse cancellation avoids second fallback picker: **PASS**.
+- Any unlocked non-root designer node can expose the selection geometry overlay: **PASS**.
+- Ordinary page/section/nav/row/column/grid/card/form children are no longer excluded by parent type: **PASS**.
+- Freeform children retain direct absolute geometry behavior: **PASS**.
+- Eight artboard-level resize handles: **PASS**.
+- MOVE handle: **PASS**.
+- Rotate handle: **PASS**.
+- Handles are external to target DOM elements, including void/clipped elements: **PASS structural + browser hit test**.
+- Normal flow child can be resized without first becoming absolute: **PASS real Chromium pointer test**.
+- Normal flow child can be dragged and converts to positioned geometry only after real movement begins: **PASS real Chromium pointer test**.
+- Flow move preserves measured width/height and visible starting rectangle: **PASS**.
+- East/south normal-flow resize: **PASS**.
+- West/north resize detaches when origin must move: **PASS structural/regression**.
+- Alt centered resize detaches when origin must move: **PASS structural/regression**.
+- Shift drag axis lock: **PASS integration contract**.
+- Shift resize aspect lock: **PASS**.
+- Ctrl/Cmd snapping bypass: **PASS**.
+- Shift rotate 15-degree snapping: **PASS**.
+- Arrow nudge and Shift+Arrow resize: **PASS**.
+- Alt fine nudge/resize: **PASS**.
+- Smart grid/guide/sibling snapping: **PASS**.
+- Zoom-correct pointer delta conversion: **PASS**.
+- Parent-border offset correction for nested positioned coordinates: **PASS**.
+- Active-breakpoint style writes: **PASS**.
+- Layout Tools x/y/width/height read/write active breakpoint geometry: **PASS**.
+- Locked node manipulation blocked while selection remains visible: **PASS**.
+- Component-instance preview internals do not steal page-instance selection: **PASS**.
+- Undo checkpoint on actual interaction rather than simple selection click: **PASS**.
 
-## Qt Quick / QML backend
+See `docs/DIRECT_MANIPULATION.md` and `TEST_REPORT.md`.
 
-- Backend/adapter registration: **PASS**.
-- `.qml` / `.qmlproject` detection: **PASS**.
-- QML structural hierarchy/id/property inspection: **PASS**.
-- Stable source mapping by `id` / structural symbol path: **PASS**.
-- Same-directory QML component discovery: **PASS**.
-- Quoted local import-directory discovery: **PASS**.
-- `qmldir` module component discovery: **PASS**.
-- Common Qt Quick Controls/Layout neutral mapping: **PASS**.
-- Layout/anchor visual approximation: **PASS**.
-- QML type/id preservation through designer conversion/export: **PASS**.
-- Reviewed literal text/checked/placeholder/source/geometry/style patching: **PASS**.
-- Multiline JS handler and property-object/array opaque preservation: **PASS**.
-- Property-owned QML object exclusion from ordinary visual child hierarchy: **PASS**.
-- Generated `Main.qml`: **PASS structural re-parse**.
-- Generated `main.cpp`: **PASS contract regression**.
-- Generated Qt 6 CMake / `qt_add_qml_module`: **PASS contract regression**.
-- Managed preview runtime probing / missing-command error handling: **PASS**.
+## Existing-project import / adapters
 
-The build environment has no Qt 6 SDK/runtime. Native QML execution/compilation is therefore recorded as **NOT AVAILABLE IN VALIDATION ENVIRONMENT**, not as a pass. A CMake configure test failed only at `find_package(Qt6 6.5)` because `Qt6Config.cmake` is absent.
+The 2.17 import workflow and adapter system remain intact:
 
-## Existing systems regression
+- toolbar/menu/command/hotkey project import entry points: **PASS**
+- project-folder adapter auto-detection/review: **PASS**
+- Qt Quick/QML backend: **PASS regression**
+- pwtk/eel hardening: **PASS regression**
+- Astro/React/Vanilla/Vue/Svelte/Tkinter/NiceGUI/LVGL round-trip: **PASS regression**
+- Draw.io interchange: **PASS**
 
-- Built-in relocatable panels: **41/41 functional routing PASS**.
-- Editable hotkeys: **PASS**.
-- Safe page create/edit/duplicate/delete lifecycle: **PASS**.
-- Component Lab: **PASS**.
-- pwtk hardened round-trip: **PASS**.
-- Draw.io interchange: **2/2 PASS**.
-- Global tooltips: **2/2 PASS**.
-- Hermes MCP/skill: **2/2 PASS**.
-- Visual structural smoke: **PASS**.
-- VS Code source smoke: **PASS**.
+## Existing editor systems
+
+- Built-in relocatable workbenches: **41/41 PASS**
+- Editable hotkeys: **PASS**
+- Safe page create/edit/duplicate/delete lifecycle: **PASS**
+- Component Lab: **PASS**
+- Global tooltips: **PASS**
+- Hermes MCP/skill: **PASS**
+- Visual structural smoke: **PASS**
+- VS Code source smoke: **PASS**
 
 ## Automated suite totals
 
-- Aggregate runner: **25/25 suites PASS**.
-- Round-trip script: **12/12 PASS**.
-- Functional suites: **3/3 PASS**.
-- Project import script: **2/2 PASS**.
-- Draw.io suites: **2/2 PASS**.
-- Tooltip suites: **2/2 PASS**.
+- Aggregate runner: **26/26 suites PASS**
+- Round-trip script: **12/12 PASS**
+- Functional suites: **3/3 PASS**
+- Project-import suites: **2/2 PASS**
+- Draw.io suites: **2/2 PASS**
+- Tooltip suites: **2/2 PASS**
+- Manual canvas regression: **PASS**
 
-## Source consistency
+## Source/build consistency
 
-- JavaScript/MJS syntax validation: **112 files PASS**.
-- Runtime JS/MJS files in relative-import audit: **111**.
-- Runtime relative imports checked: **240**.
-- Missing runtime relative imports: **0**.
-- Entire `standalone/` vs `vscode-extension/designer/` tree parity: **PASS**.
-- Current VSIX: `astro-ui-designer-vscode-2.17.0.vsix`: **PASS**.
+- JavaScript/MJS syntax validation: **113 files PASS**
+- Runtime files in relative-import audit: **81**
+- Runtime relative imports checked: **161**
+- Missing runtime relative imports: **0**
+- Standalone app vs VS Code app mirror: **PASS byte-identical**
+- Standalone CSS vs VS Code CSS mirror: **PASS byte-identical**
+- Functional workbench mirror: **PASS byte-identical**
+- Current VSIX: `astro-ui-designer-vscode-2.17.2.vsix`: **PASS**
 
-## Live host smoke
+## Live host / browser verification
 
-A real local `launch-designer.mjs --no-browser` process was started and exercised:
+Live host:
 
-- `/` served the 2.17 designer with `#import-project-btn`: **PASS**.
-- `/api/workspace/open` scanned a real temporary QML project and returned both `Main.qml` and `CMakeLists.txt`: **PASS**.
-- `/api/roundtrip/inspect` inspected `Main.qml` with `parser=qml-structural` and `astValidated=true`: **PASS**.
-- QML `actionButton` stable symbol was present: **PASS**.
-- `/api/roundtrip/health` returned `qmlStructural=true`: **PASS**.
-- Launcher identified itself as `Astro UI Designer Pro 2.17.0 Project Import + Qt/QML`: **PASS**.
+- standalone root HTTP response: **200 PASS**
+- workspace-info API: **PASS**
+- served app version marker: **PASS**
+- 2.17.2 launcher banner: **PASS**
 
-## Generated outputs
+Actual Chromium direct-manipulation smoke:
 
-- Astro example regeneration: **PASS**.
-- Qt/QML example generation (`Main.qml`, `main.cpp`, `CMakeLists.txt`): **PASS**.
-- Generated QML structural re-parse: **PASS** (34 nodes).
-- VS Code extension packaging: **PASS**.
-- Final archive and internal SHA-256 manifest are regenerated after this report.
+- ordinary `heading` child under `nav`, not Freeform: **PASS**
+- MOVE pointer drag: **PASS**, resulting in `left:96px; top:48px; position:absolute`
+- SE resize after move: **PASS**, ~154×21 → 216×56
+- direct E resize while still in flow: **PASS**, ~153.9 px → 208 px without adding `position`
+- browser errors: **0**
 
-## Deliberate limits
+Direct Chromium navigation to localhost is blocked by this execution environment's browser policy, so the full app/module graph was loaded unchanged as data modules through `page.set_content` for the pointer-event verification. This bypass changes transport only; the tested application modules and interaction functions are the packaged source.
 
-Project import does not silently rewrite source. Source mutation remains reviewed and fingerprint-guarded. Browser-only snapshot imports cannot write back until opened as a live workspace.
+## Deliberate behavior
 
-The QML adapter is structural and conservative. Arbitrary JavaScript semantics, runtime object factories, complex state-machine semantics and C++ business logic remain source-owned. See `docs/QML_ROUNDTRIP.md`.
+Dragging a normal flow-layout item is an explicit request for free positioning. On the first actual move the editor therefore detaches that item into positioned geometry while preserving its current rectangle. A simple selection click does not detach it. Resizing from east/south can stay in normal flow. Users can choose **Position → flow** in Layout/Layout Tools to return a detached item to flex/grid/block flow.
+
+Source write-back still follows each round-trip adapter's reviewed patch capabilities. Direct manipulation does not silently bypass source ownership safeguards.

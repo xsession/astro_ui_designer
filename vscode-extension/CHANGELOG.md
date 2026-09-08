@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.17.2
+
+- Mirrored the direct canvas manipulation layer from the standalone editor.
+- Normal flow, grid, flex and freeform children can now be dragged/resized/rotated.
+- Added artboard-level handles, breakpoint-local geometry writes and keyboard geometry editing.
+
 ## 2.17.0
 
 - Added native VS Code folder browsing for Import Existing Project.
