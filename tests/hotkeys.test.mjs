@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { normalizeHotkey,eventToHotkey,effectiveHotkeys,findHotkeyConflicts,commandForEvent,setHotkeyOverride,clearHotkeyOverride } from '../standalone/js/hotkeys.js';
+assert.equal(normalizeHotkey('shift+ctrl+p'),'Ctrl+Shift+P');
+assert.equal(normalizeHotkey('ctrl+='),'Ctrl+Equal');
+assert.equal(eventToHotkey({ctrlKey:true,altKey:false,shiftKey:true,metaKey:false,key:'p'}),'Ctrl+Shift+P');
+const commands=[{id:'a',defaultBindings:['Ctrl+A']},{id:'b',defaultBindings:['Ctrl+B']}];
+let overrides={};let map=effectiveHotkeys(commands,overrides);assert.deepEqual(map.a,['Ctrl+A']);
+overrides=setHotkeyOverride(overrides,'a',['Alt+1']);map=effectiveHotkeys(commands,overrides);assert.deepEqual(map.a,['Alt+1']);
+overrides=setHotkeyOverride(overrides,'b',['Alt+1']);map=effectiveHotkeys(commands,overrides);assert.equal(findHotkeyConflicts(map).length,1);
+const hit=commandForEvent({ctrlKey:false,altKey:true,shiftKey:false,metaKey:false,key:'1'},commands,overrides);assert.equal(hit.command.id,'a');
+overrides=clearHotkeyOverride(overrides,'a');assert.deepEqual(effectiveHotkeys(commands,overrides).a,['Ctrl+A']);
+console.log('hotkeys.test.mjs passed');

@@ -28,3 +28,16 @@ The renderer remains source-family aware: a panel keeps its original left/right/
 ## Global tooltip layer (2.15)
 
 `standalone/js/tooltips.js` is a shared presentation/accessibility layer installed once by `app.js`. It combines explicit command metadata with semantic inference for generated controls. A MutationObserver annotates newly rendered workbench/menu nodes, so dynamic panels do not need one-off tooltip wiring. The same module and CSS are mirrored into the VS Code embedded designer.
+
+## 2.16 functional workbench layer
+
+The current shell separates domain workbench rendering from application orchestration:
+
+- `functional-workbenches.js` owns the built-in left/right/bottom panel implementations.
+- `hotkeys.js` is a DOM-independent shortcut normalization/matching library.
+- `project-pages.js` is a DOM-independent page lifecycle library.
+- `app.js` owns commands, menus, hotkey capture/persistence, docking, document tabs and the public API.
+
+Every built-in dock tab is resolved through the functional workbench layer. The generic fallback is reserved for plugin-defined/unknown future panel IDs and is not used by the 41 built-in panels.
+
+Page deletion is intentionally a project-model operation. It repairs page-scoped project references but never interprets deletion as permission to remove an arbitrary workspace source file.

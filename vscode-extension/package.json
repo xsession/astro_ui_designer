@@ -1,7 +1,7 @@
 {
   "name": "astro-ui-designer-vscode",
-  "displayName": "Astro UI Designer",
-  "version": "2.15.0",
+  "displayName": "Astro UI Designer 2.16",
+  "version": "2.16.0",
   "publisher": "xsession",
   "engines": {
     "vscode": "^1.90.0"
@@ -33,5 +33,6 @@
   },
   "scripts": {
     "test": "node test/run-tests.mjs"
-  }
+  },
+  "description": "Visual Astro IDE with functional relocatable workbenches, editable hotkeys, page entity management, Draw.io interchange and round-trip source editing"
 }

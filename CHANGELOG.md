@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.16.0-functional-workbenches — 2026-09-08
+
+- Reviewed current upstream `main` at `b4b0ded9a1ae9e014766a1180d2f238adb81e22a` (`Fix the menu functionality`).
+- Replaced built-in generic/shallow dock content with functional inspectors/workbenches across all 41 registered tool panels.
+- Added complete Project panel page lifecycle: create, edit, duplicate and safe delete.
+- Added close/delete controls to page document tabs and repaired page-scoped flow/test references on deletion.
+- Added `project-pages.js` with unique route/name handling, subtree-safe duplication and last-page protection.
+- Added an editable hotkey system with capture, overrides, clear/reset, conflict detection, local/project persistence and command palette/menu integration.
+- Exposed every relocatable panel as a command so users can assign shortcuts to any tab/workbench.
+- Added real workbenches for CSS, layout, state, animation, tokens, libraries, content/locales, tests/story results, queries/templates/usages, audit/Git/prototype/comments/inspect and more.
+- Fixed checkbox field rendering and hardened loading of malformed/legacy projects with no page array.
+- Added dedicated hotkey, page-entity and built-in tab-functionality regression suites.
+- Filled the previously empty Component Lab shell with component/story selection, responsive preview, generated controls, local checks/results and visual baselines.
+- Added alternate hotkey bindings plus hotkey-profile import/export.
+- Extended page deletion repair to prototype destinations, action targets, test targets and review comments tied to removed page nodes.
+- Maintained standalone/VS Code source parity.
+
 ## 2.15.0-global-tooltips — 2026-09-08
 
 - Added a global purpose-aware tooltip system across the full editor shell.

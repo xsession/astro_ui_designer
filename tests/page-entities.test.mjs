@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import { createProject, createNode } from '../standalone/js/model.js';
+import { createPageEntity,updatePageEntity,duplicatePageEntity,deletePageEntity,validatePageEntities } from '../standalone/js/project-pages.js';
+const p=createProject();
+const about=createPageEntity(p,{name:'About',route:'/about'});assert.equal(p.pages.length,2);assert.equal(about.filename,'about/index.astro');
+const about2=createPageEntity(p,{name:'About',route:'/about'});assert.notEqual(about2.name,about.name);assert.notEqual(about2.route,about.route);
+updatePageEntity(p,about.id,{route:'/company',title:'Company'});assert.equal(about.route,'/company');assert.equal(about.filename,'company/index.astro');assert.equal(about.seo.title,'Company');
+const child=createNode('button',{name:'AboutButton'});about.root.children.push(child);
+const dup=duplicatePageEntity(p,about.id);assert.ok(dup);assert.notEqual(dup.id,about.id);assert.notEqual(dup.root.id,about.root.id);assert.notEqual(dup.root.children[0].id,child.id);assert.notEqual(dup.route,about.route);
+p.design.flows.push({id:'flow',name:'Flow',startPageId:about.id});
+p.recordedTests.push({id:'test',name:'t',pageId:about.id,steps:[{id:'step',type:'click',target:child.id}],assertions:[]});
+p.design.comments.push({id:'comment',nodeId:child.id,text:'orphan',replies:[]});
+const surviving=p.pages.find(x=>x.id!==about.id);surviving.root.design??={};surviving.root.design.interactions=[{id:'i',trigger:'click',action:'navigate',destination:about.id}];surviving.root.actions=[{id:'a',event:'click',type:'show',target:child.id}];
+const del=deletePageEntity(p,about.id);assert.equal(del.ok,true);assert.ok(p.design.flows[0].startPageId!==about.id);assert.ok(p.recordedTests[0].pageId!==about.id);assert.equal(p.recordedTests[0].steps[0].target,'');assert.equal(p.recordedTests[0].needsReview,'page-deleted');assert.notEqual(surviving.root.design.interactions[0].destination,about.id);assert.equal(surviving.root.actions[0].target,'');assert.equal(p.design.comments.some(c=>c.nodeId===child.id),false);assert.equal(del.repairs.testTargetsCleared,1);assert.equal(del.repairs.prototypeDestinations,1);assert.equal(del.repairs.actionTargetsCleared,1);assert.equal(del.repairs.commentsRemoved,1);
+const one=createProject();const blocked=deletePageEntity(one,one.pages[0].id);assert.equal(blocked.ok,false);assert.equal(blocked.reason,'last-page');assert.equal(one.pages.length,1);
+assert.deepEqual(validatePageEntities(p),[]);
+console.log('page-entities.test.mjs passed');

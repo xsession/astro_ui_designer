@@ -100,6 +100,7 @@ export const DOCK_PANEL_TOOLTIPS = Object.freeze({
   interchange:'Interchange — import/export Draw.io, Penpot, Figma-style JSON, HTML, SVG and framework formats.',
   integrations:'Integrations — run installed plugin providers and adapters.',
   roundtrip:'Round-trip — source graph, reviewed patching, conversion, history and conflict tools.',
+  hotkeys:'Hotkeys — view, customize, clear and reset keyboard shortcuts with conflict detection.',
   console:'Console — Astro UI Designer runtime log output.'
 });
 

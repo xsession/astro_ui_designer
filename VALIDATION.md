@@ -1,33 +1,50 @@
-# Astro UI Designer 2.15.0 Global Tooltips + Draw.io + Relocatable Docks + Round-trip — validation
+# Astro UI Designer 2.16.0 — validation
 
 **Validation date:** 2026-09-08  
-**Integrated version:** `2.15.0-global-tooltips`
+**Integrated version:** `2.16.0-functional-workbenches`  
+**Latest upstream head reviewed:** `b4b0ded9a1ae9e014766a1180d2f238adb81e22a` (`Fix the menu functionality`)
 
-## Tooltip coverage
+## Functional audit
 
-- Static shell buttons: **92/92 resolve to tooltip text**.
-- Top menus: **8/8 purpose-specific descriptions**.
-- Relocatable dock tabs: **40/40 semantic descriptions**.
-- Component registry: **42 component definitions supported by component-aware palette tooltip generation**.
-- Floating-dock relocation controls, dock context-menu commands, document tabs, splitters and relocatable section handles: **covered**.
-- Dynamically rendered buttons/selects/inputs/textareas: **covered by shared semantic fallback + MutationObserver annotation**.
-- Hover and keyboard-focus activation, viewport clamping, Escape dismissal and disabled-control native fallback: **implemented**.
-- Standalone / VS Code tooltip module and CSS parity: **PASS**.
+- Built-in relocatable panels registered: **41**.
+- Built-in panels with explicit functional renderer branch: **41/41**.
+- Built-in panel commands available for editable hotkeys: **41/41**.
+- Old generic built-in placeholder sentence: **0 active occurrences**.
+- Component Lab: **functional preview/controls/checks/results/baseline path present**.
+- Active stale `2.15.0` version markers outside historical docs/build metadata: **0**.
 
-## Automated validation
+## Automated tests
 
-- Aggregate project test runner: **17/17 suites PASS**.
-- Tooltip regression suites: **2/2 PASS**.
+- Aggregate project runner: **21/21 suites PASS**.
+- Functional/hotkey/page suites: **3/3 PASS**.
+- Component Lab integration suite: **PASS**.
 - Round-trip suites: **9/9 PASS**.
 - Draw.io suites: **2/2 PASS**.
-- Hermes MCP + skill suites: **2/2 PASS**.
-- Visual shell smoke: **PASS**.
+- Tooltip suites: **2/2 PASS**.
+- Hermes MCP + skill: **2/2 PASS**.
+- Visual shell structural smoke: **PASS**.
 - VS Code source smoke: **PASS**.
-- VSIX package build (`2.15.0`): **PASS**.
-- JavaScript/MJS syntax validation: **92 files PASS**.
-- Static relative module imports: **151 checked, 0 missing**.
-- Local launcher HTTP smoke: **PASS**.
+- VSIX packaging: **PASS** (`astro-ui-designer-vscode-2.16.0.vsix`).
 
-## Notes
+## Source consistency
 
-The tooltip layer is centralized in `standalone/js/tooltips.js` and mirrored into the VS Code designer. Explicit metadata is used for compact/ambiguous layout and menu controls, while generic generated controls receive semantic fallback tooltips automatically. This avoids requiring every future workbench renderer to manually wire hover help.
+- JavaScript/MJS syntax validation: **106 files PASS**.
+- Runtime JS/MJS files included in relative-import audit: **79**.
+- Runtime relative imports checked: **160**.
+- Missing runtime relative imports: **0**.
+- Standalone / VS Code parity checked for shell, app, workbenches, hotkeys, page entities, tooltips, Draw.io and dock-layout runtime: **PASS**.
+
+## Runtime smoke
+
+A real local launcher was started on an isolated port with `--no-browser`:
+
+- `/` returned the 2.16 designer shell: **PASS**.
+- `/api/workspace/info` returned a valid workspace API response: **PASS**.
+
+Browser-driven CDP visual automation is not part of this validation because the available managed Chromium environment blocks localhost/file navigation by organization policy. Runtime HTTP smoke plus module/unit/integration tests were used instead.
+
+## Generated outputs
+
+- Astro example regeneration: **PASS**.
+- Draw.io sample version marker updated to 2.16.
+- VS Code package regenerated from the 2.16 mirrored designer source.

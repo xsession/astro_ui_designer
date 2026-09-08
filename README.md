@@ -1,21 +1,19 @@
-# Astro UI Designer Pro — Global Tooltips + Relocatable Docks + Draw.io + Round-trip
+# Astro UI Designer Pro 2.16 — Functional Workbenches + Editable Hotkeys + Safe Pages
 
-A dense **Qt Creator / Qt Designer-style visual IDE for Astro and multi-framework UI work**, packaged as a complete local source project. This build combines the current Astro UI Designer architecture with the completed Layout Synth-inspired clean-room round-trip roadmap.
+A dense **Qt Creator / Qt Designer-style visual IDE for Astro and multi-framework UI work**. This release is based on a review of the current `xsession/astro_ui_designer` `main` branch and replaces the remaining built-in placeholder/shallow tabs with useful editing workbenches.
 
-## Included
+## Highlights
 
+- **41 relocatable tool panels** across left, right and bottom docks; every built-in panel has a concrete renderer and useful actions.
+- **Editable keyboard shortcut system** with capture, clear/reset, conflict detection, per-project persistence, local defaults and command-palette/menu integration. Every relocatable panel is addressable as a command, so any panel can receive a custom shortcut.
+- **Safe page entity lifecycle:** create, edit, duplicate, reorder and delete project pages from the Project panel or document tabs. Deletion protects the last page and repairs page-scoped flow/test references.
 - 42-component visual palette and responsive designer model.
-- **Global tooltip system:** purpose-aware hover/focus help for menus, toolbar icons, dock tabs, palette components, layout controls, source/preview controls, splitters, floating windows and dynamically generated workbench controls.
-- Pages, reusable components, component instances, source ownership and source mappings.
-- Dense canvas, inspectors, CSS/manual layout tools, color controls and animation model.
-- **Qt-style relocatable workbench:** all 40 tool tabs can move between left/right/bottom docks, reorder, float, resize, and persist; document tabs and inspector/workbench sections are reorderable too.
-- Penpot-inspired design/effects/prototype data, Storybook-inspired Component Lab, and Plasmic-inspired composition model.
-- Astro project generation and neutral/multi-platform interchange.
-- **Draw.io / diagrams.net interchange:** editable `.drawio`/`.xml` import and export, including multi-page diagrams, compressed pages, embedded Draw.io SVG, geometry/style mapping, nested groups and preserved connector metadata.
-- Local workspace host with source read/write, Git helpers and preview process management.
-- Plugin SDK with source/token/data/test/assistant/backend adapter contribution points.
-- VS Code embedded designer source and workspace bridge.
-- **Round-trip Studio** with AST-aware source patching, graph-aware watch, dirty/conflict state, source checkpoints/rollback, neutral IR conversion and backend adapters for Astro, React, Vanilla JS/TS, Vue, Svelte, Tkinter, NiceGUI and LVGL.
+- Properties, layout, actions, bindings, states/variants, data, effects, composition and Story inspectors.
+- Layout Tools, CSS Tools, state variables, animation, tokens, libraries, content, locales, tests, story results, queries, templates, usages, audit, Git, prototype, comments and handoff/inspect workbenches.
+- Global tooltips, Qt-style relocatable/floating docks and draggable document/workbench sections.
+- Draw.io / diagrams.net import/export, multi-platform interchange and editable connector metadata.
+- Syntax-aware source round-trip, history/rollback, neutral IR conversion and backend adapters.
+- Local workspace/source editing, Git helpers, Astro preview, VS Code embedded designer and Hermes MCP/skill integration.
 
 ## Run
 
@@ -24,23 +22,35 @@ npm install
 npm start
 ```
 
-Then open `http://127.0.0.1:8766` if the launcher does not open it automatically.
-
-The core editor has no mandatory runtime npm dependencies. Optional parser packages improve structural source understanding; safe fallbacks remain available when they are not installed.
+Then open `http://127.0.0.1:8766` if it is not opened automatically.
 
 ## Test
 
 ```bash
+npm test
+npm run test:functional
 npm run test:roundtrip
 npm run test:drawio
 npm run test:tooltips
-npm test
+npm run test:visual
+npm run test:vscode
+npm run test:hermes
 ```
 
-## Upstream baseline
+## Upstream review baseline
 
-This package is pinned to the public `xsession/astro_ui_designer` `main` baseline at commit:
+The upstream branch was reviewed at:
 
-`3dbd68ae47693268e244e20042c05ee665ffff8a` (`Add colorpicker, css editor`)
+`xsession/astro_ui_designer` `main` → `b4b0ded9a1ae9e014766a1180d2f238adb81e22a` (`Fix the menu functionality`, 2026-09-08).
 
-See `PROJECT_BUILD_MANIFEST.md` for packaging provenance, `docs/LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md` for the round-trip architecture, `docs/RELOCATABLE_DOCKS.md` for docking, `docs/DRAWIO_INTERCHANGE.md` for diagrams.net format mapping and round-trip behavior, and `docs/TOOLTIPS.md` for tooltip coverage and extension rules.
+The existing local 2.15 full-project package was rebased logically against that current commit: the current menu/toolbar fixes were retained or superseded by the command/hotkey implementation, current workspace-tool behavior was verified, and the latest `.vscode/settings.json` was copied. See `PROJECT_BUILD_MANIFEST.md` and `docs/FUNCTIONALITY_AUDIT.md`.
+
+## Documentation
+
+- `docs/FUNCTIONALITY_AUDIT.md` — whole-project tab/workbench review and implemented replacements.
+- `docs/HOTKEYS.md` — editable command/hotkey architecture.
+- `docs/PAGE_ENTITIES.md` — page lifecycle and deletion behavior.
+- `docs/RELOCATABLE_DOCKS.md` — docking/floating behavior.
+- `docs/DRAWIO_INTERCHANGE.md` — diagrams.net import/export mapping.
+- `docs/LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md` — round-trip architecture.
+- `docs/TOOLTIPS.md` — global tooltip system.
