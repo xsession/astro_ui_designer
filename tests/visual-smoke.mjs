@@ -1,1 +1,13 @@
-import assert from 'node:assert/strict';import fs from 'node:fs';const html=fs.readFileSync('standalone/index.html','utf8'),css=fs.readFileSync('standalone/styles.css','utf8'),app=fs.readFileSync('standalone/js/app.js','utf8');for(const id of ['artboard','left-content','right-content','bottom-content','roundtrip-btn'])assert.match(html,new RegExp(`id=["']${id}["']`));assert.match(css,/\.workspace\{/);assert.match(app,/installRoundTripAppBridge/);console.log('visual-smoke.mjs passed');
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const html=fs.readFileSync('standalone/index.html','utf8'),css=fs.readFileSync('standalone/styles.css','utf8'),app=fs.readFileSync('standalone/js/app.js','utf8');
+for(const id of ['artboard','left-content','right-content','bottom-content','roundtrip-btn','dock-layout-btn'])assert.match(html,new RegExp(`id=["']${id}["']`));
+assert.match(css,/\.workspace\{/);
+assert.match(css,/\.floating-dock-window/);
+assert.match(css,/\.dock-drop-active/);
+assert.match(css,/\.relocatable-section/);
+assert.match(app,/installRoundTripAppBridge/);
+assert.match(app,/initDocking\(\)/);
+assert.match(app,/bindDockResizers/);
+assert.match(app,/enableRelocatableSections/);
+console.log('visual-smoke.mjs passed');

@@ -1,9 +1,9 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.12.0",
+  "version": "2.15.0",
   "private": true,
   "type": "module",
-  "description": "Astro-native Qt-style visual IDE with full syntax-aware round-trip source editing, multi-framework conversion, VS Code integration and Hermes MCP support",
+  "description": "Astro-native Qt-style visual IDE with global layout/menu tooltips, relocatable docks, Draw.io/diagrams.net interchange, syntax-aware round-trip editing, multi-framework conversion, VS Code integration and Hermes MCP support",
   "scripts": {
     "start": "node launch-designer.mjs",
     "test": "node tests/run-all.mjs",
@@ -14,7 +14,9 @@
     "mcp": "node integrations/hermes/mcp/server.mjs",
     "test:hermes": "node tests/hermes-mcp.test.mjs && node tests/hermes-skill.test.mjs",
     "hermes:install": "node integrations/hermes/install.mjs",
-    "test:roundtrip": "node tests/roundtrip-engine.test.mjs && node tests/roundtrip-adapter-sdk.test.mjs && node tests/roundtrip-neutral-ir.test.mjs && node tests/roundtrip-history.test.mjs && node tests/roundtrip-ui.test.mjs && node tests/roundtrip-node.test.mjs && node tests/roundtrip-conversion.test.mjs && node tests/roundtrip-plugin.test.mjs && node tests/roundtrip-app-bridge.test.mjs"
+    "test:roundtrip": "node tests/roundtrip-engine.test.mjs && node tests/roundtrip-adapter-sdk.test.mjs && node tests/roundtrip-neutral-ir.test.mjs && node tests/roundtrip-history.test.mjs && node tests/roundtrip-ui.test.mjs && node tests/roundtrip-node.test.mjs && node tests/roundtrip-conversion.test.mjs && node tests/roundtrip-plugin.test.mjs && node tests/roundtrip-app-bridge.test.mjs",
+    "test:drawio": "node tests/drawio-io.test.mjs && node tests/drawio-app-integration.test.mjs",
+    "test:tooltips": "node tests/tooltips.test.mjs && node tests/tooltips-app-integration.test.mjs"
   },
   "optionalDependencies": {
     "@astrojs/compiler-rs": "latest",

@@ -1,7 +1,8 @@
 import { createProject, createNode, makeId, deepClone } from './model.js';
 import { generateAstroProject } from './astro-exporter.js';
+import { exportDrawio, importDrawioText, isDrawioText, DRAWIO_MIME, DRAWIO_EXTENSIONS } from './drawio-io.js';
 export const PLATFORM_ADAPTERS=[
-{id:'astro',label:'Astro',direction:'both'},{id:'html',label:'HTML',direction:'both'},{id:'react',label:'React',direction:'both'},{id:'vue',label:'Vue',direction:'both'},{id:'svelte',label:'Svelte',direction:'both'},{id:'svg',label:'SVG',direction:'both'},{id:'penpot-v3',label:'Penpot v3',direction:'both'},{id:'figma-json',label:'Figma JSON bridge',direction:'both'},{id:'neutral-json',label:'Neutral UI JSON',direction:'both'}];
+{id:'astro',label:'Astro',direction:'both'},{id:'html',label:'HTML',direction:'both'},{id:'react',label:'React',direction:'both'},{id:'vue',label:'Vue',direction:'both'},{id:'svelte',label:'Svelte',direction:'both'},{id:'svg',label:'SVG',direction:'both'},{id:'penpot-v3',label:'Penpot v3',direction:'both'},{id:'figma-json',label:'Figma JSON bridge',direction:'both'},{id:'neutral-json',label:'Neutral UI JSON',direction:'both'},{id:'drawio',label:'Draw.io / diagrams.net',direction:'both',extensions:DRAWIO_EXTENSIONS,mime:DRAWIO_MIME}];
 export const listPlatformAdapters=()=>deepClone(PLATFORM_ADAPTERS);
 const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 function htmlNode(n){const tag=({heading:'h2',text:'p',button:'button',link:'a',image:'img',section:'section',header:'header',footer:'footer',nav:'nav'}[n.type]||'div');const attrs=`data-ui-id="${esc(n.id)}"${n.meta?.className?` class="${esc(n.meta.className)}"`:''}`;if(tag==='img')return `<img ${attrs} src="${esc(n.props?.src||'')}" alt="${esc(n.props?.alt||'')}"/>`;const text=['heading','text','button','link','badge','label'].includes(n.type)?esc(n.props?.text||''):'';return `<${tag} ${attrs}>${text}${(n.children||[]).map(htmlNode).join('')}</${tag}>`}
@@ -20,3 +21,5 @@ export function importSvgText(text){return fromText(text,'SVG import')}
 export function importNeutralJson(text){const x=typeof text==='string'?JSON.parse(text):text;return deepClone(x.project||x)}
 export function importFigmaJson(text){const x=typeof text==='string'?JSON.parse(text):text;return deepClone(x.document?.project||x.project||createProject())}
 export function importPenpotV3(text){const x=typeof text==='string'?JSON.parse(text):text;return deepClone(x.project||createProject())}
+
+export { exportDrawio, importDrawioText, isDrawioText, DRAWIO_MIME, DRAWIO_EXTENSIONS };

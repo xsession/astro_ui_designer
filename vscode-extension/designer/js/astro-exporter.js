@@ -14,5 +14,5 @@ export function generateAstroProject(project){const files={};for(const p of proj
   files['src/data/ui-queries.ts']=generateQueryModule(project);
   files['src/composition/ui-composition.json']=JSON.stringify(exportCompositionManifest(project),null,2)+'\n';
   const js=[];for(const p of project.pages||[])walkNodes(p.root,n=>{if(n.timeline?.tracks?.length&&resolveAnimationEngine(n.timeline)==='waapi')js.push({id:n.id,...animationRuntimePayload(n)})});if(js.length)files['src/scripts/ui-animation-definitions.json']=JSON.stringify(js,null,2)+'\n';
-  files['README.md']='# Generated Astro project\n\nExported by Astro UI Designer Pro 2.12 round-trip full.\n';return files;}
+  files['README.md']='# Generated Astro project\n\nExported by Astro UI Designer Pro 2.15 global tooltips + Draw.io + relocatable docks + round-trip.\n';return files;}
 function walkNodes(n,fn){fn(n);for(const c of n.children||[])walkNodes(c,fn)}
