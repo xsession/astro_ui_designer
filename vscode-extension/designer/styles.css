@@ -52,3 +52,23 @@
 .project-import-hero{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;margin-bottom:10px;border:1px solid #45515d;background:#1d242b}
 .project-import-hero strong{font-size:14px;color:#e7eef6}.project-import-hero span{font-size:11px;color:#9fb0bf}
 .project-import-capabilities{margin-top:10px;padding:9px 11px;border:1px solid #3a4652;background:#181e24}.project-import-capabilities ul{margin:7px 0 0;padding-left:18px}.project-import-capabilities li{margin:3px 0;color:#b7c4d0}
+
+/* Manual canvas geometry interaction (drag / resize / rotate) -------------- */
+.resize-handle{position:absolute;width:9px;height:9px;background:#f7fbff;border:1px solid #2872ad;z-index:1200;pointer-events:auto}
+.manual-handle{position:absolute;display:block;width:9px;height:9px;background:#f7fbff;border:1px solid #2872ad;border-radius:1px;z-index:1200;pointer-events:auto;box-shadow:0 0 0 1px #fff4}
+.resize-handle.nw{left:-4px;top:-4px;cursor:nwse-resize}
+.resize-handle.n{left:50%;top:-4px;transform:translateX(-50%);cursor:ns-resize}
+.resize-handle.ne{right:-4px;top:-4px;cursor:nesw-resize}
+.resize-handle.e{right:-4px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+.resize-handle.se{right:-4px;bottom:-4px;cursor:nwse-resize}
+.resize-handle.s{left:50%;bottom:-4px;transform:translateX(-50%);cursor:ns-resize}
+.resize-handle.sw{left:-4px;bottom:-4px;cursor:nesw-resize}
+.resize-handle.w{left:-4px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+.rotate-handle{left:50%;top:-28px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;cursor:grab}
+.rotate-handle::after{content:'';position:absolute;left:4px;top:9px;width:1px;height:13px;background:#4b94ca}
+.manual-dragging,.manual-dragging *{cursor:grabbing!important;user-select:none!important}
+.manual-transient-layer{position:absolute;inset:0;pointer-events:none;z-index:1080}
+.smart-snap-line{position:absolute;background:#ef4da8;box-shadow:0 0 0 .5px #fff4;z-index:1090}
+.smart-snap-line.vertical{top:0;bottom:0;width:1px}
+.smart-snap-line.horizontal{left:0;right:0;height:1px}
+.geometry-tooltip{position:absolute;z-index:1120;transform:translateY(-100%);padding:2px 5px;border-radius:3px;background:#142d40;color:#d9efff;border:1px solid #4b94ca;font:9px/1.35 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap;pointer-events:none}
