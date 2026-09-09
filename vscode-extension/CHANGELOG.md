@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.19.0
+
+- Dense Clean UI command-bar refactor with Edit/Arrange/Tools progressive-disclosure menus.
+- Quieter dock/document tab hierarchy and flatter workbench visual treatment.
+- Persistent inspector section disclosure state with secondary groups collapsed by default.
+- Standalone/VS Code embedded designer parity retained.
+
 ## 2.18.0
 
 - Synced advanced multi-selection/manual editing from the standalone 2.18 editor.

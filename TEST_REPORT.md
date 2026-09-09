@@ -1,15 +1,15 @@
-# Astro UI Designer 2.18.0 — test report
+# Astro UI Designer 2.19.0 — test report
 
-**Release:** `2.18.0-advanced-simulation-mcp`  
-**Upstream reviewed:** `02b9fcd8b4807ab1de1f4f3fd991b16db5e2bbaa` (`Extend direct manipulation to all canvas components (2.17.2)`)  
+**Release:** `2.19.0-dense-clean-ui`  
+**Upstream reviewed:** `803474319d39937026d254460c21f471e5103d4f` (`Add advanced manual editing, simulation, and MCP integration (2.18.0)`)  
 **Date:** 2026-09-09
 
 ## Aggregate regression
 
-`npm test` passes **29/29 suites**:
+`npm test` passes **30/30 suites**:
 
 - model/schema migration
-- round-trip engine, adapter SDK, neutral IR, history, UI, node runtime, conversion, plugin, app bridge
+- round-trip engine, adapter SDK, neutral IR, history, UI, node runtime, conversion, plugin and app bridge
 - pwtk and Qt/QML round-trip
 - workspace round-trip files and project-import UI
 - Draw.io IO + app integration
@@ -21,14 +21,17 @@
 - page entities
 - 42-tab functionality audit
 - direct canvas interaction
-- advanced manual-editing geometry primitives
+- advanced manual editing
 - deterministic simulation model
 - simulation UI integration
+- **dense-clean UI structure/disclosure/parity regression**
 
 ## Specialized suites
 
 | Command | Result |
 | --- | --- |
+| `npm test` | PASS — 30/30 |
+| `node tests/ui-density.test.mjs` | PASS |
 | `npm run test:advanced` | PASS — 2/2 |
 | `npm run test:simulation` | PASS — 2/2 |
 | `npm run test:hermes` | PASS — MCP + skill |
@@ -37,36 +40,31 @@
 | `npm run test:roundtrip` | PASS — 12/12 |
 | `npm run test:drawio` | PASS — 2/2 |
 | `npm run test:tooltips` | PASS — 2/2 |
-| `npm run package:vscode` | PASS — VSIX 2.18.0 |
+| `npm run package:vscode` | PASS — VSIX 2.19.0 |
 | `npm run generate:example` | PASS — 8 Astro files |
 
-## Advanced-editing regression points
+## Dense-clean UI regression points
 
-- all unlocked non-root components remain directly manipulable
-- top-level selection normalization prevents nested parent/child double transforms
-- multi-object geometry math covers selection bounds, alignment, distribution, tidy spacing, scaling, rotation and layer ordering
-- active-breakpoint geometry and flow-to-absolute behavior remain covered by direct-manipulation tests
-- 42 registered dock/workbench tabs all have functional renderer paths
+- Edit / Arrange / Tools progressive-disclosure menus exist
+- low-frequency command buttons remain in the DOM with their original IDs and handlers
+- Import remains a directly visible top-level action
+- mode switch remains directly available
+- dock/document tabs use a restrained active indicator
+- right/bottom tab strips retain all relocatable tabs and add only visual grouping
+- inspector secondary sections are collapsed by default
+- disclosure state persists under `astro-ui-designer-section-disclosure-v1`
+- standalone and VS Code embedded UI sources remain byte-identical for HTML, CSS, app and workbench renderer
 
-## Simulation regression points
+## Static checks
 
-- project/page scope
-- route navigation and page-scope navigation blocking
-- state bindings and two-way input updates
-- visibility conditions
-- independent delayed interactions by interaction ID
-- navigation history/back
-- plain internal Link route behavior
-- Simulation shell/workbench/command/F7 integration
+- **121** JS/MJS files syntax checked, **0 failures**
+- **84** runtime source files scanned for relative imports
+- **173** runtime relative import references checked, **0 missing**
 
-## MCP regression points
+## Documentation regression
 
-The stdio MCP regression starts a real child process and verifies:
-
-- initialize + version 2.18.0
-- semantic tool inventory
-- project summary and node inspection
-- persisted geometry mutation
-- sibling alignment
-- deterministic simulation start/event/state/reset
-- project JSON remains readable after mutation
+- `npm run test:docs`: PASS
+- `docs/scripts/check-drawio.py`: PASS (14 pages, 0 issues)
+- Aggregate product suite after documentation refactor: PASS (30/30)
+- Hermes MCP/skill: PASS
+- VS Code source smoke/package: PASS

@@ -16,7 +16,7 @@ let buf='';const pending=[];child.stdout.on('data',d=>{buf+=d;let i;while((i=buf
 const req=(id,method,params={})=>new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error(`MCP timeout for ${method}`)),5000);pending.push(v=>{clearTimeout(timer);resolve(v)});child.stdin.write(JSON.stringify({jsonrpc:'2.0',id,method,params})+'\n')});
 const toolJson=resp=>JSON.parse(resp.result.content[0].text);
 try{
-  const init=await req(1,'initialize',{protocolVersion:'2025-11-25'});assert.equal(init.result.serverInfo.name,'astro-ui-designer');assert.equal(init.result.serverInfo.version,'2.18.0');
+  const init=await req(1,'initialize',{protocolVersion:'2025-11-25'});assert.equal(init.result.serverInfo.name,'astro-ui-designer');assert.equal(init.result.serverInfo.version,'2.19.0');
   const list=await req(2,'tools/list');const names=list.result.tools.map(x=>x.name);for(const n of ['project_summary','validate_project','list_pages','inspect_node','set_node_geometry','arrange_nodes','simulation_start','simulation_event','simulation_state','simulation_reset','export_astro'])assert.ok(names.includes(n),`missing MCP tool ${n}`);
   const summary=toolJson(await req(3,'tools/call',{name:'project_summary',arguments:{}}));assert.ok(summary.pages>=2);
   const inspect=toolJson(await req(4,'tools/call',{name:'inspect_node',arguments:{nodeId:a.id}}));assert.equal(inspect.geometry.left,20);assert.equal(inspect.name,'A');

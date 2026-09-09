@@ -67,5 +67,5 @@ const server=http.createServer(async(req,res)=>{
 });
 
 function openWindow(){if(process.argv.includes('--no-browser'))return;try{if(process.platform==='win32'){spawn('cmd',['/c','start','',url],{detached:true,stdio:'ignore'}).unref();return}if(process.platform==='darwin'){spawn('open',[url],{detached:true,stdio:'ignore'}).unref();return}for(const cmd of ['chromium','chromium-browser','google-chrome','google-chrome-stable'])if(commandExists(cmd)){spawn(cmd,[`--app=${url}`,'--new-window'],{detached:true,stdio:'ignore'}).unref();return}if(commandExists('xdg-open'))spawn('xdg-open',[url],{detached:true,stdio:'ignore'}).unref();}catch(e){console.warn(`Could not open browser automatically: ${e.message}`)}}
-server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.18 Advanced Editing + Simulation + MCP is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
+server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.19 Dense Clean UI + Advanced Editing + Simulation + MCP is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
 for(const sig of ['SIGINT','SIGTERM'])process.on(sig,()=>{stopPreview();roundTripRuntime.dispose();server.close(()=>process.exit(0))});

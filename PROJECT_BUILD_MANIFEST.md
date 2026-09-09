@@ -1,16 +1,31 @@
 # Project build manifest
 
 - Upstream repository: `https://github.com/xsession/astro_ui_designer.git`
-- Newest upstream `main` verified during this build: `02b9fcd8b4807ab1de1f4f3fd991b16db5e2bbaa`
-- Upstream commit subject: `Extend direct manipulation to all canvas components (2.17.2)`
-- Integrated target version: `2.18.0-advanced-simulation-mcp`
+- Newest upstream `main` verified during this build: `803474319d39937026d254460c21f471e5103d4f`
+- Upstream commit subject: `Add advanced manual editing, simulation, and MCP integration (2.18.0)`
+- Integrated target version: `2.19.0-dense-clean-ui`
 - Review / packaging date: 2026-09-09
 
 ## Provenance
 
-The newest `main` head was fetched and reviewed through the connected GitHub integration. The 2.18 release tree starts from the complete 2.17.2 direct-manipulation source package corresponding to that upstream head, then applies the changes documented here. The 2.18 source package does not claim that those new local changes have been pushed to GitHub.
+The newest `main` head was fetched and reviewed through the connected GitHub integration. Upstream now contains the 2.18 advanced editing, simulation and MCP integration. The 2.19 release tree uses that complete 2.18 source as its functional baseline and applies the dense-clean UI refactor documented here. The 2.19 source package does not claim that these new local UI changes have been pushed to GitHub.
 
-## Review findings fixed in 2.18
+## Dense-clean UI refactor in 2.19
+
+The UI review found command-bar overload, overly strong tab/card selection states, inspector groups reopening expanded after rerenders, weak visual grouping in long tab strips and canvas chrome competing with the designed content. The 2.19 refactor addresses those without removing features:
+
+- progressive Edit / Arrange / Tools command-bar menus
+- directly visible Import and Export paths
+- quieter active dock/document tabs with accent-line selection
+- subtle right/bottom workflow grouping separators
+- flatter workbench cards and lower-contrast panel chrome
+- persistent inspector open/collapsed state
+- collapsed secondary inspector groups by default
+- slightly tighter dock/chrome dimensions while preserving usable hit targets
+
+See `docs/UI_UX_REFACTOR_2_19.md`.
+
+## 2.18 foundation review findings
 
 During integration of advanced editing and simulation, review/testing exposed several concrete defects and gaps:
 

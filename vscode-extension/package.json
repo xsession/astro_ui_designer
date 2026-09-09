@@ -1,7 +1,7 @@
 {
   "name": "astro-ui-designer-vscode",
-  "displayName": "Astro UI Designer 2.18.0",
-  "version": "2.18.0",
+  "displayName": "Astro UI Designer 2.19.0",
+  "version": "2.19.0",
   "publisher": "xsession",
   "engines": {
     "vscode": "^1.90.0"
@@ -34,5 +34,5 @@
   "scripts": {
     "test": "node test/run-tests.mjs"
   },
-  "description": "Visual Astro IDE with Penpot-like advanced canvas editing, page/project simulation, project-folder import, Qt Quick/QML and multi-framework round-trip source editing, functional relocatable workbenches, editable hotkeys, page entity management and Draw.io interchange"
+  "description": "Dense-clean visual Astro IDE with Penpot-like advanced canvas editing, page/project simulation, project-folder import, Qt Quick/QML and multi-framework round-trip source editing, functional relocatable workbenches, editable hotkeys, page entity management and Draw.io interchange"
 }

@@ -1,4 +1,27 @@
+# Documentation edition — 2026-09-09
+
+- Reconciled documentation structure with latest upstream docs commit `b4e8f4649c6cb34a7dd348b27abce0c39f641e0f`.
+- Added Diátaxis tutorials/how-to/reference/explanation architecture.
+- Added complete arc42 architecture, C4 views, MADR-style ADRs, contributor/operations guides and documentation research.
+- Added source-generated references for components, commands/hotkeys, docks, round-trip backends, MCP tools, workspace API and package scripts.
+- Added a 14-page editable Draw.io master architecture file with rendered Graphviz previews, styled after the supplied documentation reference.
+- Added machine-checkable documentation generation and internal-link validation.
+
 # Changelog
+
+## 2.19.0-dense-clean-ui — 2026-09-09
+
+- Reviewed the 2.18 editor shell for visual overload while preserving the dense Qt/engineering IDE model.
+- Moved low-frequency clipboard/object commands into a compact **Edit** toolbar dropdown.
+- Moved wrap/order/alignment/distribution commands into a compact **Arrange** dropdown.
+- Grouped Workspace, Live Preview and Dock Layout under a **Tools** dropdown while keeping Import directly visible.
+- Reworked editor modes into a segmented control and reduced chrome heights/default dock widths.
+- Replaced strong filled active dock/document tabs with quieter accent-line selection.
+- Added subtle functional grouping separators to right and bottom dock tab strips.
+- Flattened workbench cards and reduced panel/canvas contrast noise.
+- Added persistent per-panel inspector disclosure state (`astro-ui-designer-section-disclosure-v1`).
+- Collapsed secondary inspector sections by default while leaving the primary task section open.
+- Added `ui-density.test.mjs` and maintained byte-parity for standalone and VS Code embedded UI sources.
 
 ## 2.18.0-advanced-simulation-mcp — 2026-09-09
 

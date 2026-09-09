@@ -1,4 +1,4 @@
-# Astro UI Designer VS Code 2.18.0
+# Astro UI Designer VS Code 2.19.0
 
 Embeds the full Astro UI Designer 2.18 experience in a VS Code webview with workspace-aware source access.
 

@@ -10,19 +10,51 @@
 <div class="app bottom-minimized" id="app">
   <div class="menubar">
     <button data-menu="file">File</button><button data-menu="edit">Edit</button><button data-menu="form">Form</button><button data-menu="layout">Layout</button><button data-menu="view">View</button><button data-menu="project">Project</button><button data-menu="build">Build</button><button data-menu="help">Help</button>
-    <span class="menu-spacer"></span><span class="product-title">Astro UI Designer Pro · Functional Workbenches + Editable Hotkeys + Page Entities</span>
+    <span class="menu-spacer"></span><span class="product-title">Astro UI Designer Pro · 2.19 Dense Clean UI</span>
   </div>
-  <div class="toolbar">
-    <div class="tool-group file-tools"><button id="new-btn">New</button><button id="open-btn">Open</button><button id="save-btn">Save</button></div>
-    <div class="tool-group history-tools"><button id="undo-btn">↶</button><button id="redo-btn">↷</button></div>
-    <div class="tool-group edit-tools"><button id="cut-btn">Cut</button><button id="copy-btn">Copy</button><button id="paste-btn">Paste</button><button id="duplicate-btn">Duplicate</button><button id="delete-btn">Delete</button></div>
-    <div class="tool-group layout-tools"><button id="wrap-row-btn">Wrap Row</button><button id="wrap-col-btn">Wrap Column</button><button id="move-up-btn">↑</button><button id="move-down-btn">↓</button></div>
-    <div class="tool-group align-tools"><button id="align-left-btn">L</button><button id="align-hcenter-btn">HC</button><button id="align-right-btn">R</button><button id="align-top-btn">T</button><button id="align-vcenter-btn">VC</button><button id="align-bottom-btn">B</button><button id="dist-h-btn">DH</button><button id="dist-v-btn">DV</button></div>
+  <div class="toolbar" aria-label="Designer command bar">
+    <div class="tool-group file-tools toolbar-core"><button id="new-btn">New</button><button id="open-btn">Open</button><button id="save-btn">Save</button></div>
+    <div class="tool-group history-tools toolbar-icon-group"><button id="undo-btn" aria-label="Undo">↶</button><button id="redo-btn" aria-label="Redo">↷</button></div>
+
+    <details class="toolbar-menu" data-toolbar-menu="edit">
+      <summary title="Editing commands">Edit <span aria-hidden="true">⌄</span></summary>
+      <div class="toolbar-menu-panel">
+        <div class="toolbar-menu-label">Clipboard</div>
+        <button id="cut-btn">Cut</button><button id="copy-btn">Copy</button><button id="paste-btn">Paste</button>
+        <div class="toolbar-menu-label">Object</div>
+        <button id="duplicate-btn">Duplicate</button><button id="delete-btn" class="danger-action">Delete</button>
+      </div>
+    </details>
+
+    <details class="toolbar-menu" data-toolbar-menu="arrange">
+      <summary title="Layout and arrangement commands">Arrange <span aria-hidden="true">⌄</span></summary>
+      <div class="toolbar-menu-panel toolbar-menu-grid">
+        <div class="toolbar-menu-label full">Structure</div>
+        <button id="wrap-row-btn">Wrap Row</button><button id="wrap-col-btn">Wrap Column</button>
+        <button id="move-up-btn">Move Up</button><button id="move-down-btn">Move Down</button>
+        <div class="toolbar-menu-label full">Align</div>
+        <button id="align-left-btn">Left</button><button id="align-hcenter-btn">H Center</button><button id="align-right-btn">Right</button>
+        <button id="align-top-btn">Top</button><button id="align-vcenter-btn">V Center</button><button id="align-bottom-btn">Bottom</button>
+        <div class="toolbar-menu-label full">Distribute</div>
+        <button id="dist-h-btn">Horizontal</button><button id="dist-v-btn">Vertical</button>
+      </div>
+    </details>
+
     <div class="spacer"></div>
-    <select id="breakpoint-select"></select><button id="breakpoints-btn">…</button>
-    <div class="tool-group"><button id="design-mode-btn" class="active">Design</button><button id="split-mode-btn">Split</button><button id="code-mode-btn">Code</button><button id="preview-mode-btn">Preview</button><button id="simulation-mode-btn" title="Run page/project interaction simulation">Simulate</button><button id="component-lab-mode-btn">Lab</button></div>
-    <div class="tool-group"><button id="zoom-out-btn">−</button><button id="fit-btn">Fit</button><button id="zoom-in-btn">+</button></div>
-    <button id="import-project-btn" title="Browse a project folder, detect a supported adapter, and import it">Import Project</button><button id="workspace-btn" title="Open a live source workspace by path">Workspace</button><button id="live-preview-btn">Live</button><button id="dock-layout-btn" title="Relocatable dock layout">Docks</button><button id="roundtrip-btn" class="primary">Round-trip</button><button id="command-btn">⌘</button><button class="primary" id="export-btn">Export Astro ZIP</button>
+    <div class="breakpoint-cluster"><select id="breakpoint-select" title="Responsive breakpoint"></select><button id="breakpoints-btn" aria-label="Manage breakpoints">…</button></div>
+    <div class="tool-group mode-switch" aria-label="Editor mode"><button id="design-mode-btn" class="active">Design</button><button id="split-mode-btn">Split</button><button id="code-mode-btn">Code</button><button id="preview-mode-btn">Preview</button><button id="simulation-mode-btn" title="Run page/project interaction simulation">Simulate</button><button id="component-lab-mode-btn">Lab</button></div>
+    <div class="tool-group zoom-tools toolbar-icon-group"><button id="zoom-out-btn" aria-label="Zoom out">−</button><button id="fit-btn">Fit</button><button id="zoom-in-btn" aria-label="Zoom in">+</button></div>
+
+    <button id="import-project-btn" class="toolbar-emphasis" title="Browse a project folder, detect a supported adapter, and import it">Import</button>
+    <details class="toolbar-menu toolbar-tools-menu" data-toolbar-menu="tools">
+      <summary title="Workspace and layout tools">Tools <span aria-hidden="true">⌄</span></summary>
+      <div class="toolbar-menu-panel toolbar-tools-panel">
+        <button id="workspace-btn" title="Open a live source workspace by path">Workspace</button>
+        <button id="live-preview-btn">Live Preview</button>
+        <button id="dock-layout-btn" title="Relocatable dock layout">Dock Layout</button>
+      </div>
+    </details>
+    <button id="roundtrip-btn">Round-trip</button><button id="command-btn" class="command-launcher" aria-label="Command palette">⌘</button><button class="primary" id="export-btn">Export</button>
     <input class="file-hidden" id="file-open" type="file" accept=".json,.astro-ui.json" />
   </div>
   <div class="workspace">

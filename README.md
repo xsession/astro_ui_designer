@@ -1,8 +1,14 @@
-# Astro UI Designer Pro 2.18.0 — Advanced Editing + Simulation + MCP
+# Astro UI Designer Pro 2.19.0 — Dense Clean UI + Advanced Editing + Simulation + MCP
 
-A dense **Qt Creator / Qt Designer-style visual IDE for Astro and multi-framework UI work** with source round-trip, advanced direct manipulation, deterministic UI simulation, relocatable workbenches, and semantic MCP automation.
+A dense **Qt Creator / Qt Designer-style visual IDE for Astro and multi-framework UI work** with a cleaner progressive-disclosure shell, source round-trip, advanced direct manipulation, deterministic UI simulation, relocatable workbenches, and semantic MCP automation.
 
-## 2.18 highlights
+## 2.19 highlights
+
+- **Dense Clean UI refactor:** lower-frequency toolbar commands are grouped into Edit/Arrange/Tools dropdowns, active tabs use quieter accent indicators, workbench cards are flatter, and panel/canvas contrast is reduced without removing functionality.
+- **Persistent inspector disclosure:** secondary inspector sections default collapsed and each section remembers its open/collapsed state per workbench.
+- **Clearer workflow grouping:** right/bottom dock strips keep all relocatable tabs but use subtle separators to make functional clusters easier to scan.
+
+## 2.18 foundation
 
 - **Penpot-like advanced manual editing:** multi-select, Shift/Ctrl/Cmd toggle selection, marquee selection, multi-object drag/resize/rotate, alignment, distribution, tidy spacing, group/ungroup, layer ordering, flip, lock, rulers, draggable guides, smart snapping and Alt measurement overlays.
 - **Page / Project Simulation:** F7 Simulate mode plus a relocatable Simulation workbench. Run project routes, prototype flows, overlays, state, bindings, visibility conditions, form changes, delays and interaction event logs without executing arbitrary source code.
@@ -42,26 +48,29 @@ npm run test:hermes
 
 The newest `xsession/astro_ui_designer` `main` verified for this release is:
 
-`02b9fcd8b4807ab1de1f4f3fd991b16db5e2bbaa` — `Extend direct manipulation to all canvas components (2.17.2)`.
+`803474319d39937026d254460c21f471e5103d4f` — `Add advanced manual editing, simulation, and MCP integration (2.18.0)`.
 
-2.18 builds on that upstream direct-manipulation foundation and adds the advanced multi-selection editing, simulation and MCP systems described above. See `PROJECT_BUILD_MANIFEST.md` for provenance.
+2.19 builds directly on the newest 2.18 advanced-editing/simulation/MCP upstream foundation and refactors the interaction shell for lower visual load while retaining dense engineering workflows. See `PROJECT_BUILD_MANIFEST.md` for provenance.
 
 ## Documentation
 
-- `docs/ADVANCED_MANUAL_EDITING.md` — multi-selection, transforms, alignment, spacing, grouping, rulers/guides and measurements.
-- `docs/DIRECT_MANIPULATION.md` — single-object drag/resize/rotate and responsive geometry behavior.
-- `docs/SIMULATION.md` — page/project simulation semantics and limitations.
-- `docs/MCP.md` — semantic MCP tools, mutation boundaries and simulation APIs.
-- `docs/PROJECT_IMPORT.md` — existing-project browser and adapter review.
-- `docs/QML_ROUNDTRIP.md` — Qt Quick/QML import/patch/export.
-- `docs/FUNCTIONALITY_AUDIT.md` — built-in workbench audit.
-- `docs/HOTKEYS.md` — editable shortcut architecture.
-- `docs/PAGE_ENTITIES.md` — page lifecycle and deletion repair.
-- `docs/RELOCATABLE_DOCKS.md` — docking/floating behavior.
-- `docs/DRAWIO_INTERCHANGE.md` — diagrams.net interchange.
-- `docs/LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md` — source round-trip architecture.
-- `docs/PWTK_ROUNDTRIP_REVIEW.md` — pwtk adapter review/hardening.
-- `docs/TOOLTIPS.md` — global tooltip system.
+Start with **`docs/README.md`** for the advanced Diátaxis + arc42 documentation portal, or **`docs/ASTRO_UI_DESIGNER_HANDBOOK.md`** for the complete product handbook. Source-derived reference tables can be regenerated with `npm run docs:generate` and checked with `npm run docs:check`.
+
+- `docs/features/UI_UX_REFACTOR_2_19.md` — dense-clean UI review, hierarchy changes and progressive disclosure.
+- `docs/features/ADVANCED_MANUAL_EDITING.md` — multi-selection, transforms, alignment, spacing, grouping, rulers/guides and measurements.
+- `docs/features/DIRECT_MANIPULATION.md` — single-object drag/resize/rotate and responsive geometry behavior.
+- `docs/features/SIMULATION.md` — page/project simulation semantics and limitations.
+- `docs/features/MCP.md` — semantic MCP tools, mutation boundaries and simulation APIs.
+- `docs/features/PROJECT_IMPORT.md` — existing-project browser and adapter review.
+- `docs/features/QML_ROUNDTRIP.md` — Qt Quick/QML import/patch/export.
+- `docs/features/FUNCTIONALITY_AUDIT.md` — built-in workbench audit.
+- `docs/features/HOTKEYS.md` — editable shortcut architecture.
+- `docs/features/PAGE_ENTITIES.md` — page lifecycle and deletion repair.
+- `docs/features/RELOCATABLE_DOCKS.md` — docking/floating behavior.
+- `docs/features/DRAWIO_INTERCHANGE.md` — diagrams.net interchange.
+- `docs/features/LAYOUT_SYNTH_ROUNDTRIP_INTEGRATION.md` — source round-trip architecture.
+- `docs/features/PWTK_ROUNDTRIP_REVIEW.md` — pwtk adapter review/hardening.
+- `docs/features/TOOLTIPS.md` — global tooltip system.
 
 ## Direct manipulation quick reference
 
@@ -81,4 +90,4 @@ The MCP server reads `designer-project.json` or `.astro-ui.json` in that root. S
 
 ## Provenance
 
-This source package is based on the verified upstream `main` head listed above. The GitHub connection was used to fetch/review the newest repository state; the 2.18 changes are applied in the local release tree. This package does not imply the 2.18 changes were pushed to upstream `main`.
+This source package is based on the verified upstream `main` head listed above. The GitHub connection was used to fetch/review the newest repository state; the 2.19 changes are applied in the local release tree. This package does not imply the 2.19 changes were pushed to upstream `main`.

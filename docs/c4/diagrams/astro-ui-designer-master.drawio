@@ -1,0 +1,771 @@
+<mxfile host="Electron" agent="Astro UI Designer Documentation 2.19" version="29.7.1">
+  <diagram id="astro-doc-1" name="Workbench-Map">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Astro UI Designer — dense engineering workbench" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="Developer / Designer / HMI Engineer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="100" y="160" width="700" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="left" value="LEFT DOCKS&amp;#xa;Palette · Project · Components · Assets · Sources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="100" y="650" width="900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="center" value="CENTER DOCUMENT SURFACE&amp;#xa;Design · Split · Code · Preview · Simulate · Lab&amp;#xa;Direct manipulation + multi-selection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="560" width="1500" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="right" value="RIGHT INSPECTORS&amp;#xa;Properties · Layout · Actions · Bindings · Code&amp;#xa;States · Data · Effects · Composition · Story" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3000" y="650" width="1100" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="bottom" value="BOTTOM WORKBENCHES (27)&amp;#xa;Problems · Object Tree · Layout/CSS · State/Animation · Tokens&amp;#xa;Git · Simulation · Prototype · Interchange · Round-trip · MCP-adjacent tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="1450" width="2200" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="output" value="OUTPUT&amp;#xa;Astro / QML / framework source&amp;#xa;Draw.io / neutral interchange" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="2350" width="1500" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="edits" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="user" target="center" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="inserts / opens" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="left" target="center" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="inspects / mutates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="right" target="center" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="specialist workflows" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="bottom" target="center" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="generates / syncs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="center" target="output" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="All 42 major panels are relocatable to left/right/bottom or floating." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="2500" width="1100" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="Dense by design; progressive disclosure reduces visual overload." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="2740" width="1100" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-2" name="C4-C1-System-Context">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 C1 — System Context" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="person" value="UI / HMI Developer&amp;#xa;[Person]&amp;#xa;Designs, verifies and exports interfaces" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="120" y="500" width="760" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="system" value="Astro UI Designer&amp;#xa;[Software System]&amp;#xa;Visual/source IDE, simulation and controlled automation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1350" y="450" width="1450" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="files" value="Local Project + Git&amp;#xa;[External Software/Data System]&amp;#xa;User-owned source and history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3250" y="250" width="1050" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="runtime" value="Target Runtime / Toolchain&amp;#xa;[External Software System]&amp;#xa;Astro/Web · Python · Qt/QML · LVGL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3250" y="750" width="1100" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="vscode" value="VS Code&amp;#xa;[External Software System]&amp;#xa;Extension host and workspace APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3250" y="1250" width="950" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" value="MCP Agent Client&amp;#xa;[External Software System]&amp;#xa;Calls semantic project tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3250" y="1700" width="950" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="interchange" value="Design / Interchange Tools&amp;#xa;[External Software Systems]&amp;#xa;Draw.io · Penpot-like · SVG/HTML/JSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="1600" width="1550" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy" value="Generated Application / Deployment&amp;#xa;[External Runtime]&amp;#xa;Ordinary user-owned source output" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="2350" width="1450" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="designs &amp; verifies" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="person" target="system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="reads / writes via host APIs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="system" target="files" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="generates source / launches preview" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="system" target="runtime" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="embedded as webview via extension" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="system" target="vscode" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="stdio semantic MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="agent" target="system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="imports / exports documents" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="system" target="interchange" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="produces ordinary source" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="system" target="deploy" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="Legend: actor = Person; blue = system in scope; other colors = external systems/artifacts." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="2500" width="1100" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="Relationships are directional and labeled with intent." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="2740" width="1100" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-3" name="C4-C2-Containers">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 C2 — Containers" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="web" value="Designer Web App&amp;#xa;[Container: Browser ES Modules]&amp;#xa;Canvas, model editing, workbenches, simulation UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="250" y="400" width="1150" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="host" value="Standalone Host&amp;#xa;[Container: Node.js]&amp;#xa;Static server + workspace/Git/preview APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1750" y="180" width="1200" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="vsc" value="VS Code Extension Host&amp;#xa;[Container: VS Code Extension]&amp;#xa;Webview bridge + workspace/Git/tasks/tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1750" y="780" width="1200" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp" value="Hermes MCP Server&amp;#xa;[Container: Node.js stdio]&amp;#xa;Semantic project tools + simulation sessions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3300" y="450" width="1100" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="proj" value="Project Workspace&amp;#xa;[Data Store: local filesystem/Git]&amp;#xa;Source + designer-project.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="1650" width="1550" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="target" value="Target Preview / Build Runtime&amp;#xa;[External Container/Process]&amp;#xa;Astro/Vite · Python · Qt · LVGL simulator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="1650" width="1050" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="HTTP JSON on localhost /api/*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="web" target="host" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="VS Code webview message bridge" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="web" target="vsc" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="filesystem read / atomic designer JSON write" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="mcp" target="proj" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="contained filesystem + Git I/O" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="host" target="proj" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="VS Code workspace APIs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="vsc" target="proj" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="explicit preview child process" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="host" target="target" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="framework build/run inputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="proj" target="target" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="C4 container means an application/data store, not a Docker container." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="2500" width="1100" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="Round-trip/model modules are components inside the Designer container and appear at C3." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="2740" width="1100" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-4" name="C4-C3-Components">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 C3 — Designer Components" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="shell" value="Shell + Commands&amp;#xa;documents · modes · hotkeys · docking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="250" y="250" width="900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="Project Model&amp;#xa;pages · nodes · components · migration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="250" width="900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="canvas" value="Canvas Renderer + Direct Manipulation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2650" y="250" width="1050" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="work" value="Functional Workbenches&amp;#xa;inspectors + specialist tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="250" y="900" width="1000" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="style" value="CSS / Color / Effects / Animation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1550" y="900" width="1000" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="sim" value="Simulation + Validation + Component Lab" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2850" y="900" width="1100" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="rt" value="Round-trip / Interchange&amp;#xa;QML · pwtk · Draw.io · neutral IR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1600" width="1400" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="plugin" value="Plugin / Contribution API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2450" y="1600" width="1000" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="host" value="Workspace Client / Host Bridges" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1500" y="2300" width="1300" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="orchestrates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="shell" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="reads/writes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="canvas" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="reads/writes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="work" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="style semantics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="style" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="interprets / validates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="sim" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="imports/maps" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="rt" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="extends" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="plugin" target="shell" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="filesystem/preview" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="host" target="rt" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="workspace actions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="shell" target="host" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-5" name="C4-C4-Source-Modules">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C4 C4 — Source Module Map" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="app" value="app.js&amp;#xa;main UI orchestration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="200" y="250" width="850" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="models" value="model.js + project-pages.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="250" width="950" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="layout" value="manual-layout.js&amp;#xa;advanced-manual-edit.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2500" y="250" width="1050" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="work" value="functional-workbenches.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3650" y="250" width="850" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="style" value="css-tools.js · color-picker.js · animation.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="650" y="900" width="1300" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sim" value="simulation.js · validator.js · storybook-cleanroom.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2350" y="900" width="1400" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="rts" value="roundtrip-*.js · qml-io.js · drawio-io.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="650" y="1500" width="1550" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="plugin" value="plugin-api.js · plugins/*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2650" y="1500" width="1000" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="host" value="launch-designer.mjs · workspace-tools.mjs&amp;#xa;vscode-extension/* · integrations/hermes/*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="2200" width="1900" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="app" target="models" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="app" target="layout" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="app" target="work" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="style" target="models" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="sim" target="models" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="rts" target="models" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="plugin" target="app" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="host" target="rts" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-6" name="Runtime-Project-Import">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Runtime — Import Existing Project" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="150" y="300" width="600" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="Import Project UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="300" width="750" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="host" value="Host folder browser / snapshot picker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2100" y="300" width="1050" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="detect" value="Round-trip detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3450" y="300" width="950" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="review" value="Detection review&amp;#xa;adapter + entry override" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3450" y="1000" width="950" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="adapter" value="Selected adapter importer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2100" y="1000" width="1050" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="Designer project + source mappings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="800" y="1000" width="1200" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="studio" value="Round-trip Studio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="800" y="1800" width="1000" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="Import" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="u" target="ui" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="browse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="ui" target="host" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="files" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="host" target="detect" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="evidence" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="detect" target="review" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="confirmed backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="review" target="adapter" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="neutral IR + identities" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="adapter" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="open" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="model" target="studio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-7" name="Runtime-Visual-to-Source">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Runtime — Reviewed Visual → Source" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edit" value="Visual edit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="200" y="350" width="700" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="Designer model mutation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="350" width="850" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="plan" value="Round-trip plan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2350" y="350" width="850" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="fp" value="Fingerprint / staleness check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3450" y="350" width="950" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="review" value="User review / confidence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3450" y="1050" width="950" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="patch" value="Adapter patch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2350" y="1050" width="850" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="write" value="Contained source write" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="1050" width="850" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="audit" value="Checkpoint + audit history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="200" y="1050" width="750" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="edit" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="model" target="plan" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="plan" target="fp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="fresh" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="fp" target="review" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="approve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="review" target="patch" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="patch" target="write" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="write" target="audit" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="stale → reconcile" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="fp" target="model" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-8" name="Runtime-Simulation">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Runtime — Deterministic Page/Project Simulation" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="Start session&amp;#xa;page / project scope" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="200" y="250" width="900" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="event" value="Dispatch event&amp;#xa;click / input / hover / focus / delay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="250" width="1100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="cond" value="Restricted condition evaluator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2950" y="250" width="1000" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="actions" value="Declarative actions/interactions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2950" y="950" width="1000" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="state" value="Session state&amp;#xa;variables · overlays · history · route" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="950" width="1100" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="render" value="Simulation pane / MCP summary" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="200" y="950" width="900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="runtime" value="NO arbitrary imported app code execution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="1800" width="1900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="start" target="state" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="event" target="cond" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="allowed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="cond" target="actions" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="mutate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="actions" target="state" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="summarize" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="state" target="render" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="next user event" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="render" target="event" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-9" name="Runtime-MCP">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Runtime — Semantic MCP Request" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="client" value="MCP Client / Agent" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="150" y="300" width="750" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="server" value="stdio MCP server" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="300" width="800" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="schema" value="Tool schema + validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2300" y="300" width="900" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="service" value="Semantic project operation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3500" y="300" width="900" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="file" value="designer-project.json&amp;#xa;atomic mutation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3500" y="1000" width="900" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="session" value="In-memory simulation session" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2300" y="1000" width="900" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="export" value="Contained Astro export" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="1000" width="800" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="nogeneric" value="No generic shell/filesystem authority" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="1800" width="2100" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="JSON-RPC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="client" target="server" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="server" target="schema" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="schema" target="service" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="model tools" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="service" target="file" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="simulation tools" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="service" target="session" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="export tool" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="service" target="export" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-10" name="Data-Project-Model">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Data — Designer Project Model" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="project" value="Project" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1800" y="150" width="1000" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pages" value="Pages[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="500" y="700" width="800" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="components" value="Components[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1600" y="700" width="900" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="assets" value="Assets / Tokens / Variables" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2800" y="700" width="1000" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="workspace" value="Workspace / Source mappings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3950" y="700" width="700" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nodes" value="Rooted Node Trees&amp;#xa;id · type · props · style · children" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1350" width="1100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="actions" value="Actions / Bindings / Interactions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2050" y="1350" width="1100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="design" value="Design metadata&amp;#xa;effects · constraints · manual layout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3450" y="1350" width="1050" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="editor" value="Editor state&amp;#xa;docks · hotkeys · tab order" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="900" y="2150" width="1050" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sim" value="Simulation settings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2350" y="2150" width="900" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="story" value="Stories / Tests / Comments / Flows" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3500" y="2150" width="1050" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="pages" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="components" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="assets" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="workspace" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="pages" target="nodes" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="components" target="nodes" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="nodes" target="actions" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="nodes" target="design" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="editor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="sim" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="story" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-11" name="Roundtrip-Adapter-Architecture">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Round-trip Adapter Architecture" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="files" value="Source files" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="100" y="300" width="700" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="detect" value="Backend detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="300" width="800" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="adapter" value="Adapter SDK / built-ins" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2200" y="300" width="950" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ir" value="Neutral IR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3500" y="300" width="750" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="identity" value="Source identities + fingerprints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="900" y="1100" width="1100" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="project" value="Designer project model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2500" y="1100" width="1000" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="plan" value="Reviewed patch plan + history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3800" y="1100" width="750" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="matrix" value="Astro · React · Vanilla JS/TS · Vue · Svelte&amp;#xa;Tkinter · NiceGUI · LVGL · QML · pwtk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="2000" width="2300" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="files" target="detect" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="detect" target="adapter" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="import" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="adapter" target="ir" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="ir" target="project" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="inspect" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="adapter" target="identity" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="identity" target="plan" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="visual changes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="project" target="plan" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="approved patch" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="plan" target="adapter" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-12" name="Deployment-Standalone">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Deployment — Standalone Host" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" value="Browser&amp;#xa;Designer Web App" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="350" y="600" width="900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="node" value="Node localhost host&amp;#xa;launch-designer.mjs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1700" y="600" width="1100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="fs" value="Workspace files / Git" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3300" y="300" width="900" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="preview" value="Target dev/preview process" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3300" y="900" width="1000" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp" value="Optional MCP process" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1700" y="1500" width="1100" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="HTTP /api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="browser" target="node" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="contained I/O" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="node" target="fs" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="explicit start/stop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="node" target="preview" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="project-scoped stdio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="mcp" target="fs" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-13" name="Deployment-VSCode">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Deployment — VS Code" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="Developer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="150" y="450" width="650" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="webview" value="Designer Webview" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="450" width="900" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="ext" value="VS Code Extension Host" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2400" y="450" width="1050" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="workspace" value="Workspace / Git" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3800" y="200" width="800" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="services" value="Tasks · Diagnostics · Tests · Preview" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3650" y="850" width="950" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="user" target="webview" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="message bridge" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="webview" target="ext" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="trusted workspace API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="ext" target="workspace" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="native integrations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="ext" target="services" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-doc-14" name="Quality-Test-Strategy">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Quality — Verification Strategy" style="text;html=1;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="60" width="2500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="unit" value="Pure model/unit tests&amp;#xa;model · layout · simulation · adapters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="300" y="300" width="1050" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="integration" value="Integration tests&amp;#xa;app bridge · workspace · interchange · MCP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1700" y="300" width="1100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" value="Rendered/browser tests&amp;#xa;drag · resize · panels · visual checkpoints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="3200" y="300" width="1100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="target" value="Target runtime validation&amp;#xa;Astro build · Qt · Python · LVGL where installed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1000" y="1200" width="1400" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="docs" value="Documentation checks&amp;#xa;links · generated reference · Draw.io XML" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2850" y="1200" width="1200" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" value="Release evidence&amp;#xa;aggregate suite + specialist suites + fresh ZIP retest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="2100" width="1900" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="unit" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="integration" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="browser" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="target" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=15;" parent="1" source="docs" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

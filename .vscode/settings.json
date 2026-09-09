@@ -1,11 +1,4 @@
 {
     "terminal.integrated.stickyScroll.enabled": false,
-    "iis.configDir": "",
-    "python-envs.pythonProjects": [
-        {
-            "path": ".",
-            "envManager": "ms-python.python:system",
-            "packageManager": "ms-python.python:pip"
-        }
-    ]
+    "iis.configDir": ""
 }
