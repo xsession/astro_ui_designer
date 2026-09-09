@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.18.0
+
+- Synced advanced multi-selection/manual editing from the standalone 2.18 editor.
+- Added Page/Project Simulation mode and Simulation workbench.
+- Added updated tooltips/workbench routing and schema-9 simulation model.
+- Kept project import, QML/multi-framework round-trip, relocatable docks, hotkeys and Draw.io parity.
+
 ## 2.17.2
 
 - Mirrored the direct canvas manipulation layer from the standalone editor.

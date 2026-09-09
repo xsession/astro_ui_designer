@@ -94,6 +94,7 @@ export const DOCK_PANEL_TOOLTIPS = Object.freeze({
   usages:'Usages — find references to components, assets, tokens, queries and contexts.',
   audit:'Audit — accessibility, responsive, SEO and performance checks.',
   git:'Git — inspect and manage workspace source-control changes.',
+  simulation: 'Simulation — run deterministic page/project interactions, navigation, overlays, state and event logs.',
   prototype:'Prototype — flows, overlays, navigation and prototype interactions.',
   comments:'Comments — design review comments and replies.',
   inspect:'Inspect — developer handoff information, CSS and geometry.',

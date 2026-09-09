@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.18.0-advanced-simulation-mcp — 2026-09-09
+
+- Verified newest upstream `main` at `02b9fcd8b4807ab1de1f4f3fd991b16db5e2bbaa` (2.17.2 direct manipulation).
+- Added multi-selection with toggle-click and marquee selection, with top-level selection normalization to prevent parent/descendant double transforms.
+- Added multi-object move, resize and rotate with group bounds, responsive-breakpoint geometry, flow detachment only when required, snap bypass and modifier controls.
+- Added group/ungroup, six-way alignment, horizontal/vertical distribution, tidy spacing, layer ordering, horizontal/vertical flip and lock/unlock commands.
+- Added rulers, draggable guides, smart snap lines and Alt distance measurement overlays.
+- Added F7 Page/Project Simulation mode and a relocatable Simulation workbench with flow/start-page/viewport controls, state inspector, hotspots, overlays, history and event log.
+- Added deterministic simulation for designer actions, prototype interactions, direct state bindings, visibility conditions, independent delay timers and plain internal-link navigation.
+- Fixed delayed interactions so each timer dispatches only its own interaction instead of every delay action on the same node.
+- Fixed simulation event wiring to avoid unnecessary focus/hover rerender loops and reschedule delay timers correctly when re-entering simulation.
+- Expanded Hermes MCP from three basic tools to semantic page/node inspection, geometry mutation, arrangement, simulation sessions/events/state/reset, validation and contained Astro export.
+- Added finite-number validation and atomic project-model writes to MCP mutation paths.
+- Added advanced-manual-edit, simulation, simulation-UI and expanded MCP regression coverage; synchronized standalone and VS Code mirrors.
+
 ## 2.17.2-direct-manipulation — 2026-09-08
 
 - Pulled/reviewed upstream `cef93ad7f5744e45c98876b0932ec4969691f78c` (2.17.1 manual-interaction restoration).

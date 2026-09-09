@@ -1,111 +1,55 @@
-# Astro UI Designer 2.17.2 — validation
+# Astro UI Designer 2.18.0 — validation
 
-**Validation date:** 2026-09-08  
-**Integrated version:** `2.17.2-direct-manipulation`  
-**Newest upstream head verified:** `cef93ad7f5744e45c98876b0932ec4969691f78c` (`Restore manual drag, resize, and nudge geometry interaction (2.17.1)`)
+**Integrated version:** `2.18.0-advanced-simulation-mcp`  
+**Newest upstream head verified:** `02b9fcd8b4807ab1de1f4f3fd991b16db5e2bbaa` (`Extend direct manipulation to all canvas components (2.17.2)`)  
+**Validation date:** 2026-09-09
 
-## Upstream verification
+## Source review
 
-The connected GitHub API was queried at the start of the task and again immediately before packaging. The newest `main` commit remained `cef93ad7f5744e45c98876b0932ec4969691f78c`.
+The connected GitHub integration was queried before continuing the release. The latest `main` head is the 2.17.2 direct-manipulation commit above. No newer remote delta needed merging before the 2.18 work.
 
-The upstream 2.17.1 commit correctly identified that geometry interaction had been lost, but its implementation still gated drag/resize/nudge on an immediate `freeform` parent. The 2.17.2 local fix removes that practical limitation.
+The 2.18 review/fix pass resolved the simulation renderer/tooltip wiring gaps, the interrupted JavaScript syntax defect, delayed-interaction over-dispatch, unnecessary simulation event listeners, stale delay scheduling on mode re-entry, missing native internal-link navigation, nested multi-selection double transforms, and the very limited previous MCP surface.
 
-## Direct canvas manipulation
+## Functional validation
 
-- Any unlocked non-root designer node can expose the selection geometry overlay: **PASS**.
-- Ordinary page/section/nav/row/column/grid/card/form children are no longer excluded by parent type: **PASS**.
-- Freeform children retain direct absolute geometry behavior: **PASS**.
-- Eight artboard-level resize handles: **PASS**.
-- MOVE handle: **PASS**.
-- Rotate handle: **PASS**.
-- Handles are external to target DOM elements, including void/clipped elements: **PASS structural + browser hit test**.
-- Normal flow child can be resized without first becoming absolute: **PASS real Chromium pointer test**.
-- Normal flow child can be dragged and converts to positioned geometry only after real movement begins: **PASS real Chromium pointer test**.
-- Flow move preserves measured width/height and visible starting rectangle: **PASS**.
-- East/south normal-flow resize: **PASS**.
-- West/north resize detaches when origin must move: **PASS structural/regression**.
-- Alt centered resize detaches when origin must move: **PASS structural/regression**.
-- Shift drag axis lock: **PASS integration contract**.
-- Shift resize aspect lock: **PASS**.
-- Ctrl/Cmd snapping bypass: **PASS**.
-- Shift rotate 15-degree snapping: **PASS**.
-- Arrow nudge and Shift+Arrow resize: **PASS**.
-- Alt fine nudge/resize: **PASS**.
-- Smart grid/guide/sibling snapping: **PASS**.
-- Zoom-correct pointer delta conversion: **PASS**.
-- Parent-border offset correction for nested positioned coordinates: **PASS**.
-- Active-breakpoint style writes: **PASS**.
-- Layout Tools x/y/width/height read/write active breakpoint geometry: **PASS**.
-- Locked node manipulation blocked while selection remains visible: **PASS**.
-- Component-instance preview internals do not steal page-instance selection: **PASS**.
-- Undo checkpoint on actual interaction rather than simple selection click: **PASS**.
-
-See `docs/DIRECT_MANIPULATION.md` and `TEST_REPORT.md`.
-
-## Existing-project import / adapters
-
-The 2.17 import workflow and adapter system remain intact:
-
-- toolbar/menu/command/hotkey project import entry points: **PASS**
-- project-folder adapter auto-detection/review: **PASS**
-- Qt Quick/QML backend: **PASS regression**
-- pwtk/eel hardening: **PASS regression**
-- Astro/React/Vanilla/Vue/Svelte/Tkinter/NiceGUI/LVGL round-trip: **PASS regression**
-- Draw.io interchange: **PASS**
-
-## Existing editor systems
-
-- Built-in relocatable workbenches: **41/41 PASS**
-- Editable hotkeys: **PASS**
-- Safe page create/edit/duplicate/delete lifecycle: **PASS**
-- Component Lab: **PASS**
-- Global tooltips: **PASS**
-- Hermes MCP/skill: **PASS**
-- Visual structural smoke: **PASS**
+- aggregate regression: **29/29 PASS**
+- advanced manual editing: **PASS**
+- page/project simulation model/UI: **PASS**
+- Hermes MCP + skill: **PASS**
+- round-trip backends: **12/12 PASS**
+- Draw.io: **2/2 PASS**
+- tooltips: **2/2 PASS**
+- functional workbenches / 42 relocatable tabs: **PASS**
 - VS Code source smoke: **PASS**
+- structural visual smoke: **PASS**
+- VSIX 2.18.0 packaging: **PASS**
+- Astro example generation: **PASS**
 
-## Automated suite totals
+## Static validation
 
-- Aggregate runner: **26/26 suites PASS**
-- Round-trip script: **12/12 PASS**
-- Functional suites: **3/3 PASS**
-- Project-import suites: **2/2 PASS**
-- Draw.io suites: **2/2 PASS**
-- Tooltip suites: **2/2 PASS**
-- Manual canvas regression: **PASS**
+- JavaScript/MJS syntax checked: **120 files, 0 syntax failures**
+- runtime relative import references checked: **215, 0 missing**
+- standalone/VS Code designer source parity: **PASS**
 
-## Source/build consistency
+## Host smoke
 
-- JavaScript/MJS syntax validation: **113 files PASS**
-- Runtime files in relative-import audit: **81**
-- Runtime relative imports checked: **161**
-- Missing runtime relative imports: **0**
-- Standalone app vs VS Code app mirror: **PASS byte-identical**
-- Standalone CSS vs VS Code CSS mirror: **PASS byte-identical**
-- Functional workbench mirror: **PASS byte-identical**
-- Current VSIX: `astro-ui-designer-vscode-2.17.2.vsix`: **PASS**
+The standalone launcher started successfully on a temporary local port and returned:
 
-## Live host / browser verification
+- editor HTML: **HTTP PASS**
+- workspace info API: **PASS**
+- 2.18 launcher banner: **PASS**
 
-Live host:
+The environment's managed Chromium policy blocks navigation to `127.0.0.1` with an organization-policy interstitial, so a fresh headless-browser interaction run could not be used as a release gate in this pass. Browser-level direct-manipulation behavior had already been validated for the 2.17.2 upstream baseline; 2.18's new geometry/simulation behavior is covered by deterministic module and UI integration regressions instead.
 
-- standalone root HTTP response: **200 PASS**
-- workspace-info API: **PASS**
-- served app version marker: **PASS**
-- 2.17.2 launcher banner: **PASS**
+## Security/scope checks
 
-Actual Chromium direct-manipulation smoke:
+- MCP project model mutations are constrained to `designer-project.json` / `.astro-ui.json` in `ASTRO_UI_PROJECT_ROOT`.
+- MCP geometry input rejects non-finite numbers.
+- MCP model writes use a temporary file + rename.
+- MCP Astro export rejects paths that escape the configured root.
+- Simulation does not execute arbitrary project JavaScript, Python, QML/C++, network calls or backend code.
+- Source-backed write-back remains routed through Round-trip Studio review/fingerprint checks.
 
-- ordinary `heading` child under `nav`, not Freeform: **PASS**
-- MOVE pointer drag: **PASS**, resulting in `left:96px; top:48px; position:absolute`
-- SE resize after move: **PASS**, ~154×21 → 216×56
-- direct E resize while still in flow: **PASS**, ~153.9 px → 208 px without adding `position`
-- browser errors: **0**
+## Release gate
 
-Direct Chromium navigation to localhost is blocked by this execution environment's browser policy, so the full app/module graph was loaded unchanged as data modules through `page.set_content` for the pointer-event verification. This bypass changes transport only; the tested application modules and interaction functions are the packaged source.
-
-## Deliberate behavior
-
-Dragging a normal flow-layout item is an explicit request for free positioning. On the first actual move the editor therefore detaches that item into positioned geometry while preserving its current rectangle. A simple selection click does not detach it. Resizing from east/south can stay in normal flow. Users can choose **Position → flow** in Layout/Layout Tools to return a detached item to flex/grid/block flow.
-
-Source write-back still follows each round-trip adapter's reviewed patch capabilities. Direct manipulation does not silently bypass source ownership safeguards.
+**PASS**, subject to the explicit native/browser-runtime limitations above. The release is ready to package as the complete 2.18 source archive.

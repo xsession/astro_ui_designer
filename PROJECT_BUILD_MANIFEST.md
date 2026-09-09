@@ -1,106 +1,77 @@
 # Project build manifest
 
 - Upstream repository: `https://github.com/xsession/astro_ui_designer.git`
-- Newest upstream `main` verified during this build: `cef93ad7f5744e45c98876b0932ec4969691f78c`
-- Upstream commit subject: `Restore manual drag, resize, and nudge geometry interaction (2.17.1)`
-- Previous upstream foundation: `92588079f9652d9919dda275941adcfb84d6b37f` (`Add project import flow and QML round-trip backend (2.17.0)`)
-- Integrated target version: `2.17.2-direct-manipulation`
-- Review / packaging date: 2026-09-08
+- Newest upstream `main` verified during this build: `02b9fcd8b4807ab1de1f4f3fd991b16db5e2bbaa`
+- Upstream commit subject: `Extend direct manipulation to all canvas components (2.17.2)`
+- Integrated target version: `2.18.0-advanced-simulation-mcp`
+- Review / packaging date: 2026-09-09
 
 ## Provenance
 
-The newest `main` head was fetched and reviewed through the connected GitHub API because the build container cannot resolve github.com for a direct `git clone`/`git pull`. The 2.17.0 full-project package already represented the immediately preceding upstream project-import/QML tree. GitHub comparison showed that upstream 2.17.1 changed only the standalone/VS Code `app.js` and `styles.css` interaction surfaces. Those changes were reviewed and superseded locally by the broader 2.17.2 implementation described below.
+The newest `main` head was fetched and reviewed through the connected GitHub integration. The 2.18 release tree starts from the complete 2.17.2 direct-manipulation source package corresponding to that upstream head, then applies the changes documented here. The 2.18 source package does not claim that those new local changes have been pushed to GitHub.
 
-The GitHub head was checked again immediately before final packaging and was still `cef93ad7f5744e45c98876b0932ec4969691f78c`.
+## Review findings fixed in 2.18
 
-This archive is the complete runnable modified source project. It does not claim that the local 2.17.2 changes were pushed back to GitHub.
+During integration of advanced editing and simulation, review/testing exposed several concrete defects and gaps:
 
-## Upstream 2.17.1 review finding
+1. The new Simulation dock was registered in the shell but initially lacked a functional-workbench renderer and tooltip entry.
+2. An interrupted Simulation event-log renderer contained a JavaScript syntax error.
+3. Multiple delayed prototype interactions on one node could all execute when the earliest timer fired because dispatch was filtered only by trigger, not interaction ID.
+4. Simulation attached hover/focus listeners to every node, causing avoidable event/rerender churn; handlers are now attached only when the node models those events.
+5. Leaving/re-entering simulation could leave delay scheduling inactive.
+6. Plain internal Link components did not navigate matching project routes unless a separate explicit action existed.
+7. A marquee selection containing both a parent and descendant could pass both nodes into group transforms, causing double transformations. Multi-object transforms now operate on top-level selected nodes.
+8. The previous Hermes MCP server exposed only summary/validation/export. It now exposes controlled semantic editing and deterministic simulation, with finite-number validation and atomic model writes.
 
-The 2.17.1 commit restored pointer drag/resize/rotate and keyboard nudge after those handlers were lost in earlier editor rewrites. However, its direct manipulation remained limited to children whose immediate model parent was `freeform`:
+## Advanced manual editing
 
-- `manualMovable(node)` returned true only for a Freeform Layer child.
-- resize/rotate handles were rendered only when the selected node's parent was `freeform`.
-- keyboard nudge/resize also returned early for every non-freeform child.
+New `advanced-manual-edit.js` contains framework-neutral geometry primitives for selection normalization, marquee hit testing, selection bounds, alignment, distribution, tidy spacing, group scaling/rotation, equal-spacing hints and layer ordering. `app.js` integrates those primitives with the live artboard:
 
-That left the common page/section/row/column/grid/card/form cases effectively read-only for manual geometry editing even though the editor exposed resize/move semantics.
+- toggle-click and marquee multi-selection
+- multi-object drag/resize/rotate
+- group/ungroup
+- align/distribute/tidy
+- front/back/forward/backward layer ordering
+- flip and lock
+- ruler-created/draggable guides
+- smart snap overlays and Alt measurements
+- command-palette/hotkey integration
 
-## 2.17.2 direct-manipulation fix
+## Page/project simulation
 
-The editor now treats every unlocked non-root designer node as directly manipulable.
+New `simulation.js` is a deterministic interpreter for the designer's declarative model. It supports project/page scope, prototype flows, route navigation, overlays, state/bindings, visibility conditions, show/hide, text/class/component-state mutations, input/change, hover/focus/submit intent, independent delay interactions and event logging. It explicitly does not execute arbitrary framework source code.
 
-### Selection overlay
+The standalone/VS Code shell adds an F7 Simulation mode and a relocatable Simulation workbench.
 
-Geometry handles are rendered in an artboard-level overlay rather than appended as children of the selected HTML element. This makes them reliable for:
+## MCP
 
-- `input`, `img` and other void elements
-- clipped/overflow-hidden containers
-- buttons and interactive controls in Design mode
-- imported nodes with arbitrary rendered tags
-- component instances without leaking selection into cloned preview internals
+`integrations/hermes/mcp/server.mjs` now provides:
 
-The overlay provides eight resize handles, a rotate handle, a MOVE grip and a live geometry label.
+- `project_summary`
+- `validate_project`
+- `list_pages`
+- `inspect_node`
+- `set_node_geometry`
+- `arrange_nodes`
+- `simulation_start`
+- `simulation_event`
+- `simulation_state`
+- `simulation_reset`
+- `export_astro`
 
-### Flow-layout relocation
+Project mutations are restricted to the designer project JSON in `ASTRO_UI_PROJECT_ROOT`. Export paths cannot escape that root.
 
-Normal block/flex/grid children can be dragged. The first actual move—not a simple click—captures the rendered rectangle and converts the node to positioned geometry while preserving its visible position and dimensions. Its containing block is given a positioning context when required. Freeform children retain their existing absolute-position behavior.
+## Main 2.18 modules
 
-### Resize
-
-All unlocked non-root nodes can be resized directly. East/south resizing can remain in normal flow. West/north or Alt/center resizing detaches a flow node when changing the origin is required. Resizing switches affected sizing axes to fixed and neutralizes conflicting flex growth where necessary.
-
-### Breakpoint-local edits
-
-Manual geometry is written to the active breakpoint style object. Base edits update `style.base`; non-base edits update only that breakpoint override. The Layout Tools exact-geometry fields now read/write the active breakpoint for x/y/width/height as well.
-
-### Interaction modifiers
-
-- Shift + drag: axis lock
-- Ctrl/Cmd + drag/resize: bypass snap
-- Shift + resize: aspect ratio lock
-- Alt + resize: resize from center
-- Shift + rotate: 15-degree snap
-- Arrow: nudge
-- Alt + Arrow: 1 px nudge
-- Shift + Arrow: resize
-- Alt + Shift + Arrow: 1 px resize
-
-### Coordinate correctness
-
-- pointer deltas are divided by current canvas zoom
-- handle sizes remain screen-usable across canvas zoom levels
-- nested coordinates account for parent borders before writing CSS positioned offsets
-- selection/snap overlays use artboard world coordinates
-- smart snapping uses current parent, sibling and guide geometry
-
-### Component instances
-
-The internal cloned component preview is now rendered non-interactively in a page instance. Selection and direct manipulation target the instance wrapper rather than cloned definition IDs.
-
-## Existing 2.17 systems retained
-
-- visible existing-project browse/import workflow
-- automatic adapter detection/review and live/snapshot import
-- Qt Quick/QML round-trip backend
-- hardened pwtk/eel backend
-- Astro, React, Vanilla JS/TS, Vue, Svelte, Tkinter, NiceGUI and LVGL round-trip
-- 41 functional relocatable/floating workbenches
-- editable hotkeys and command palette
-- safe page lifecycle
-- Component Lab
-- Draw.io interchange
-- tooltips, Git helpers, source history/rollback and Hermes MCP/skill
-
-## Main 2.17.2 changed modules
-
+- `standalone/js/advanced-manual-edit.js`
+- `standalone/js/simulation.js`
 - `standalone/js/app.js`
-- `standalone/styles.css`
+- `standalone/js/model.js`
 - `standalone/js/functional-workbenches.js`
+- `standalone/js/tooltips.js`
+- `standalone/index.html`
+- `standalone/styles.css`
 - mirrored VS Code designer sources
-- `tests/manual-canvas-interaction.test.mjs`
-- `tests/tooltips-app-integration.test.mjs` version expectation
-- `tests/run-all.mjs`
-- `docs/DIRECT_MANIPULATION.md`
-- release/version/readme/validation metadata
-
-See `docs/DIRECT_MANIPULATION.md`, `docs/PROJECT_IMPORT.md`, `docs/QML_ROUNDTRIP.md`, `docs/PWTK_ROUNDTRIP_REVIEW.md` and `docs/FUNCTIONALITY_AUDIT.md`.
+- `integrations/hermes/mcp/server.mjs`
+- `integrations/hermes/skill-src/astro-ui-designer/skill.md`
+- new/expanded tests and documentation

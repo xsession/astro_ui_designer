@@ -1,9 +1,9 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.17.2",
+  "version": "2.18.0",
   "private": true,
   "type": "module",
-  "description": "Astro-native Qt-style visual IDE with direct canvas drag/resize/rotate for ordinary and freeform components, project-folder adapter detection/import, Qt Quick/QML and hardened multi-framework round-trip editing, functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange, VS Code integration and Hermes MCP support",
+  "description": "Astro-native Qt-style visual IDE with Penpot-like advanced multi-selection/manual editing, deterministic page/project simulation, semantic MCP tools, project-folder adapter detection/import, Qt Quick/QML and hardened multi-framework round-trip editing, functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange and VS Code integration",
   "scripts": {
     "start": "node launch-designer.mjs",
     "test": "node tests/run-all.mjs",
@@ -18,7 +18,9 @@
     "test:drawio": "node tests/drawio-io.test.mjs && node tests/drawio-app-integration.test.mjs",
     "test:tooltips": "node tests/tooltips.test.mjs && node tests/tooltips-app-integration.test.mjs",
     "test:functional": "node tests/hotkeys.test.mjs && node tests/page-entities.test.mjs && node tests/tab-functionality.test.mjs",
-    "test:import": "node tests/project-import-ui.test.mjs && node tests/workspace-roundtrip-files.test.mjs"
+    "test:import": "node tests/project-import-ui.test.mjs && node tests/workspace-roundtrip-files.test.mjs",
+    "test:advanced": "node tests/manual-canvas-interaction.test.mjs && node tests/advanced-manual-edit.test.mjs",
+    "test:simulation": "node tests/simulation.test.mjs && node tests/simulation-ui.test.mjs"
   },
   "optionalDependencies": {
     "@astrojs/compiler-rs": "latest",

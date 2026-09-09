@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {normalizeSelection,rectBounds,marqueeSelection,alignRects,distributeRects,tidyRects,scaleSelectionRects,rotateSelectionRects,reorderChildren,spacingHints} from '../standalone/js/advanced-manual-edit.js';
+assert.deepEqual(normalizeSelection(['b','a','b'],'a'),['a','b']);
+const items=[{id:'a',left:10,top:20,width:20,height:20},{id:'b',left:50,top:40,width:30,height:10},{id:'c',left:100,top:60,width:20,height:20}];
+assert.deepEqual(rectBounds(items),{left:10,top:20,width:110,height:60,right:120,bottom:80,cx:65,cy:50});
+assert.deepEqual(marqueeSelection(items,{left:0,top:0,width:70,height:70}).sort(),['a','b']);
+assert.equal(alignRects(items,'left')[2].left,10);
+const dist=distributeRects(items,'h');assert.equal(dist.length,3);assert.ok(Number.isFinite(dist[1].left));
+const tidy=tidyRects(items,'h',12);assert.equal(tidy[1].left,42);
+const scaled=scaleSelectionRects(items,rectBounds(items),{left:0,top:0,width:220,height:120});assert.equal(Math.round(scaled[0].width),40);assert.equal(Math.round(scaled[2].left),180);
+const rotated=rotateSelectionRects([{id:'x',left:0,top:0,width:10,height:10}],90,{x:0,y:0});assert.equal(Math.round(rotated[0].left),-10);assert.equal(Math.round(rotated[0].top),0);
+const children=[{id:'a'},{id:'b'},{id:'c'},{id:'d'}];assert.deepEqual(reorderChildren(children,['b'],'forward').map(x=>x.id),['a','c','b','d']);assert.deepEqual(reorderChildren(children,['b','c'],'front').map(x=>x.id),['a','d','b','c']);
+const even=[{id:'a',left:0,top:0,width:10,height:10},{id:'b',left:20,top:0,width:10,height:10},{id:'c',left:40,top:0,width:10,height:10}];assert.equal(spacingHints(even).find(x=>x.axis==='h')?.gap,10);
+console.log('advanced-manual-edit.test.mjs passed');

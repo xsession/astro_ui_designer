@@ -18,6 +18,8 @@ assert.match(app,/target\.position='absolute'/);
 assert.match(app,/function geometryStyleTarget\(node\)/);
 assert.match(app,/state\.breakpoint&&state\.breakpoint!=='base'/);
 assert.match(app,/function renderSelectionOverlay\(\)/);
+assert.match(app,/function topLevelSelectionNodes\(\)/);
+assert.match(app,/function nudgeSelected\([^\n]*topLevelSelectionNodes\(\)/); // nested marquee selections transform only top-level nodes.
 assert.match(app,/manual-selection-overlay/);
 assert.match(app,/MANUAL_HANDLES=\['nw','n','ne','e','se','s','sw','w'\]/);
 assert.match(app,/manual-move-handle/);
