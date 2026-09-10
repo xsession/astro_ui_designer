@@ -90,6 +90,13 @@ export function normalizeDockLayout(input, registry) {
   for (const zone of DOCK_ZONES) {
     if (!layout.zones[zone].includes(layout.active[zone])) layout.active[zone] = layout.zones[zone][0] || null;
   }
+  normalizeClosedPinned(layout, registry);
+  // If a zone's active panel is closed, fall back to the first visible one.
+  for (const zone of DOCK_ZONES) {
+    if (layout.active[zone] && dockPanelClosed(layout, layout.active[zone])) {
+      layout.active[zone] = (layout.zones[zone] || []).find(k => !dockPanelClosed(layout, k)) || null;
+    }
+  }
   return layout;
 }
 
@@ -138,6 +145,70 @@ export function floatDockPanel(input, key, rect = {}) {
     layout.active[prior.zone] = layout.zones[prior.zone][Math.min(prior.index, Math.max(0, layout.zones[prior.zone].length - 1))] || layout.zones[prior.zone][0] || null;
   }
   return layout;
+}
+
+function normalizeClosedPinned(layout, registry) {
+  const known = new Set(Object.keys(registry));
+  for (const field of ['closed', 'pinned']) {
+    const next = {};
+    for (const [key, value] of Object.entries(layout[field] || {})) {
+      if (known.has(key) && value) next[key] = true;
+    }
+    layout[field] = next;
+  }
+  // A pinned panel is never allowed to be closed.
+  for (const key of Object.keys(layout.pinned || {})) delete layout.closed[key];
+  return layout;
+}
+
+export function closeDockPanel(input, key) {
+  const layout = clone(input);
+  layout.closed ||= {};
+  layout.closed[key] = true;
+  const loc = locateDockPanel(layout, key);
+  if (loc?.kind === 'zone' && layout.active[loc.zone] === key) {
+    layout.active[loc.zone] = layout.zones[loc.zone].find(x => x !== key) || null;
+  }
+  return layout;
+}
+
+export function openDockPanel(input, key) {
+  const layout = clone(input);
+  layout.closed ||= {};
+  delete layout.closed[key];
+  const loc = locateDockPanel(layout, key);
+  if (loc?.kind === 'floating') return layout;
+  if (loc?.kind === 'zone') layout.active[loc.zone] = key;
+  return layout;
+}
+
+export function setDockPinned(input, key, pinned) {
+  const layout = clone(input);
+  layout.pinned ||= {};
+  if (pinned) layout.pinned[key] = true;
+  else delete layout.pinned[key];
+  return layout;
+}
+
+export function dockPanelClosed(layout, key) {
+  return Boolean(layout?.closed && layout.closed[key]);
+}
+
+export function dockPanelPinned(layout, key) {
+  return Boolean(layout?.pinned && layout.pinned[key]);
+}
+
+export function visibleDockPanelKeys(layout) {
+  return Object.keys(locateAllPanels(layout)).filter(key => !dockPanelClosed(layout, key));
+}
+
+function locateAllPanels(layout) {
+  const found = {};
+  for (const zone of DOCK_ZONES) {
+    for (const key of layout.zones?.[zone] || []) found[key] = true;
+  }
+  for (const key of Object.keys(layout.floating || {})) found[key] = true;
+  return found;
 }
 
 export function updateFloatingRect(input, key, patch = {}) {

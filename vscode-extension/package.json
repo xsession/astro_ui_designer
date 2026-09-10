@@ -1,7 +1,7 @@
 {
   "name": "astro-ui-designer-vscode",
-  "displayName": "Astro UI Designer 2.19.0",
-  "version": "2.19.0",
+  "displayName": "Astro UI Designer 2.20.0",
+  "version": "2.20.0",
   "publisher": "xsession",
   "engines": {
     "vscode": "^1.90.0"

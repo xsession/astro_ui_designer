@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {
   createDockPanelRegistry, defaultDockLayout, normalizeDockLayout, locateDockPanel,
   moveDockPanel, reorderDockPanel, floatDockPanel, updateFloatingRect, activateDockPanel,
+  closeDockPanel, openDockPanel, setDockPinned, dockPanelClosed, dockPanelPinned, visibleDockPanelKeys,
   moveSectionOrder,
 } from '../standalone/js/dock-layout.js';
 
@@ -38,4 +39,28 @@ assert.equal(normalized.zones.left.filter(x=>x==='left:palette').length,1);
 assert.equal(normalized.floating['right:properties'].width,220);
 assert.equal(new Set([...normalized.zones.left,...normalized.zones.right,...normalized.zones.bottom,...Object.keys(normalized.floating)]).size,Object.keys(registry).length);
 assert.deepEqual(moveSectionOrder(['a','b','c'],'c',0),['c','a','b']);
+// --- close / open / pin model ---
+let cl=defaultDockLayout(registry);
+cl=normalizeDockLayout(cl,registry);
+assert.equal(dockPanelClosed(cl,'left:palette'),false);
+cl=closeDockPanel(cl,'left:project');
+assert.equal(dockPanelClosed(cl,'left:project'),true);
+assert.equal(locateDockPanel(cl,'left:project').zone,'left'); // still placed, just hidden
+assert.equal(cl.active.left,'left:palette');
+cl=normalizeDockLayout(cl,registry);
+assert.equal(dockPanelClosed(cl,'left:project'),true);
+assert.deepEqual(visibleDockPanelKeys(cl),['left:palette','right:properties','bottom:objects','bottom:console']);
+cl=openDockPanel(cl,'left:project');
+assert.equal(dockPanelClosed(cl,'left:project'),false);
+assert.equal(cl.active.left,'left:project'); // reopening the zone's tab activates it
+// pin protects against close + persists through normalize
+cl=setDockPinned(cl,'bottom:console',true);
+assert.equal(dockPanelPinned(cl,'bottom:console'),true);
+cl=normalizeDockLayout({zones:{left:['left:palette','left:project'],right:['right:properties'],bottom:['bottom:objects','bottom:console']},active:{left:'left:palette',right:'right:properties',bottom:'bottom:console'},floating:{},closed:{'bottom:console':true},pinned:{'bottom:console':true}},registry);
+assert.equal(dockPanelPinned(cl,'bottom:console'),true);
+assert.equal(dockPanelClosed(cl,'bottom:console'),false); // pinned => not closed
+// unknown keys in closed/pinned are dropped
+cl=normalizeDockLayout({zones:{left:['left:palette'],right:[],bottom:[]},active:{left:'left:palette'},floating:{},closed:{'nope:yes':true},pinned:{'nope:yes':true}},registry);
+assert.equal(cl.closed['nope:yes'],undefined);
+assert.equal(cl.pinned['nope:yes'],undefined);
 console.log('dock-layout.test.mjs passed');

@@ -1,6 +1,6 @@
 {
   "name": "astro-ui-designer-pro",
-  "version": "2.19.0",
+  "version": "2.20.0",
   "private": true,
   "type": "module",
   "description": "Astro-native Qt-style visual IDE with dense clean progressive-disclosure UI, Penpot-like advanced multi-selection/manual editing, deterministic page/project simulation, semantic MCP tools, project-folder adapter detection/import, Qt Quick/QML and hardened multi-framework round-trip editing, functional workbenches, editable hotkeys, safe page entities, relocatable docks, Draw.io interchange and VS Code integration",

@@ -1,6 +1,14 @@
-# Astro UI Designer Pro 2.19.0 — Dense Clean UI + Advanced Editing + Simulation + MCP
+# Astro UI Designer Pro 2.20.0 — Dense Clean UI + Advanced Editing + Simulation + MCP
 
 A dense **Qt Creator / Qt Designer-style visual IDE for Astro and multi-framework UI work** with a cleaner progressive-disclosure shell, source round-trip, advanced direct manipulation, deterministic UI simulation, relocatable workbenches, and semantic MCP automation.
+
+## 2.20 highlights
+
+- **Searchable tabs:** every dock strip (left, right, bottom) now has a live "Find panel" search box that filters its tabs by name in place, so long strips are always navigable without hunting.
+- **Closable tabs:** each dock panel tab has a × close button. Closing hides the tab but remembers its zone, position and order, so you can reopen it exactly where it was.
+- **Panels dialog (reopen from menus):** View ▸ Panels (Ctrl+Shift+L) and the right-click tab menu open a searchable list of all panels grouped by dock, each with Go/Open, Pin/Unpin, and status (Active/Closed/Pinned). Right-clicking a tab also offers Pin, Close, and Open Panels….
+- **Pin to keep a tab:** pin any panel so it can't be accidentally closed.
+- **Document "+":** the document tab strip has a + button to add a new page directly from the canvas chrome.
 
 ## 2.19 highlights
 
