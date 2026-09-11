@@ -158,6 +158,17 @@ export function createFunctionalWorkbenches(ctx){
     if(state.bottomTab==='integrations'){renderIntegrationsPanel(box);return}
     if(state.bottomTab==='roundtrip'){renderRoundtripPanel(box);return}
     if(state.bottomTab==='hotkeys'){renderHotkeysPanel(box);return}
+    if(state.bottomTab==='workspaces'){
+      const ensure=()=>ctx.ensureWorkspaces(state.project);ensure();
+      const list=state.project.workspaces;
+      const cs=getComputedStyle(document.documentElement);
+      const sizes={left:parseFloat(cs.getPropertyValue('--left-dock-width'))||235,right:parseFloat(cs.getPropertyValue('--right-dock-width'))||330,bottom:parseFloat(cs.getPropertyValue('--bottom-dock-height'))||220};
+      box.innerHTML=`<div class="workbench-toolbar"><strong>Workspaces</strong><span>${list.length} saved layout${list.length===1?'':'s'} · dock arrangements you can save, apply and delete (EEZ-style workspaces-as-files)</span><button data-ws-save class="primary">Save Current As…</button></div><div class="workbench-grid"><div class="workbench-card"><strong>Current layout</strong><div class="meta">Left ${Math.round(sizes.left)}px · Right ${Math.round(sizes.right)}px · Bottom ${Math.round(sizes.bottom)}px · Breakpoint ${e(state.breakpoint)} · Panels ${e((ctx.dockLayoutSnapshot?.().zones||{left:[],right:[],bottom:[]}).left.length+(ctx.dockLayoutSnapshot?.().zones||{left:[],right:[],bottom:[]}).right.length+(ctx.dockLayoutSnapshot?.().zones||{left:[],right:[],bottom:[]}).bottom.length)}</div></div></div>${list.length?`<table class="data-table"><tr><th>Name</th><th>Saved</th><th>Breakpoint</th><th></th></tr>${list.map(w=>`<tr><td>${e(w.name)}</td><td>${e((w.savedAt||'').slice(0,16).replace('T',' '))}</td><td>${e(w.breakpoint||'base')}</td><td><button data-ws-apply="${e(w.id)}" class="primary">Apply</button> <button data-ws-delete="${e(w.id)}">Delete</button></td></tr>`).join('')}</table>`:empty('No workspaces saved yet. Arrange your dock panels, then press Save Current As…')}`;
+      box.querySelector('[data-ws-save]').onclick=()=>{const name=prompt('Workspace name','Workspace '+(list.length+1));if(!name)return;ctx.saveWorkspace(state.project,name,{dockLayout:ctx.dockLayoutSnapshot(),dockSizes:sizes,breakpoint:state.breakpoint});ctx.persistWorkspaces?.();ctx.mutate(()=>{},'Saved workspace '+name);renderBottom(box)};
+      box.querySelectorAll('[data-ws-apply]').forEach(b=>b.onclick=()=>{const w=list.find(x=>x.id===b.dataset.wsApply);ctx.applyWorkspace(state.project,w,ctx);ctx.mutate(()=>{},'Applied workspace '+(w?.name||''));renderAll();renderBottom(box)});
+      box.querySelectorAll('[data-ws-delete]').forEach(b=>b.onclick=()=>{ctx.deleteWorkspace(state.project,b.dataset.wsDelete);ctx.persistWorkspaces?.();ctx.mutate(()=>{},'Deleted workspace');renderBottom(box)});
+      return;
+    }
     if(state.bottomTab==='console'){
       box.innerHTML=`<div class="workbench-toolbar"><strong>Console</strong><span>${state.logs.length} messages</span><button data-console-clear>Clear</button><button data-console-copy>Copy</button></div>${state.logs.map(x=>`<div class="log-row"><span class="log-time">${e(x.time)}</span>${e(x.message)}</div>`).join('')||empty('No log messages.')}`;box.querySelector('[data-console-clear]').onclick=()=>{state.logs=[];renderBottom(box)};box.querySelector('[data-console-copy]').onclick=()=>navigator.clipboard?.writeText(state.logs.map(x=>`${x.time} ${x.message}`).join('\n'));return;
     }

@@ -13,8 +13,8 @@ for(const name of ['edit','arrange','tools']) assert.match(html,new RegExp(`data
 for(const id of ['cut-btn','copy-btn','paste-btn','duplicate-btn','delete-btn','wrap-row-btn','wrap-col-btn','align-left-btn','dist-v-btn','workspace-btn','live-preview-btn','dock-layout-btn']) assert.match(html,new RegExp(`id="${id}"`),`${id} must remain reachable after toolbar refactor`);
 assert.match(html,/id="import-project-btn"[^>]*>Import</,'project import stays directly discoverable');
 assert.match(html,/class="tool-group mode-switch"/,'editor modes use a compact segmented switch');
-assert.match(html,/2\.20 Dense Clean UI/,'product title should be concise and release-specific');
-assert.match(css,/\/\* 2\.20 Dense Clean UI/);
+assert.match(html,/2\.21 Editor UX/,'product title should be concise and release-specific');
+assert.match(css,/\/\* 2\.21 Editor UX/);
 assert.match(css,/\.dock-tabs button\.active::after/,'dock tabs use a quiet active indicator');
 assert.match(css,/\.toolbar-menu-panel/,'toolbar menus are styled as compact overlays');
 assert.match(css,/\.property-section>summary::before/,'inspector sections have compact disclosure affordance');

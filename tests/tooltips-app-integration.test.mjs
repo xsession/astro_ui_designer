@@ -6,7 +6,7 @@ const vsApp=fs.readFileSync(new URL('../vscode-extension/designer/js/app.js',imp
 const vsCss=fs.readFileSync(new URL('../vscode-extension/designer/styles.css',import.meta.url),'utf8');
 assert.match(app,/import \{ installTooltipSystem \} from '\.\/tooltips\.js'/);
 assert.match(app,/installTooltipSystem\(\)/);
-assert.match(app,/2\.20\.0-dense-clean-ui/);
+assert.match(app,/2\.21\.0-editor-ux/);
 assert.match(css,/\.designer-tooltip\{/);
 assert.match(css,/z-index:12000/);
 assert.equal(app,vsApp,'VS Code app mirror must match standalone app');

@@ -1,6 +1,7 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import net from 'node:net';
 import { spawn, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { safeRoot, safeJoin, scanWorkspace, readFile, writeFile, git } from './workspace-tools.mjs';
@@ -8,11 +9,18 @@ import { createRoundTripNodeRuntime } from './roundtrip-node.mjs';
 
 const here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.join(here,'standalone');
-const port=Number(process.env.ASTRO_UI_DESIGNER_PORT||8766);
+const cliArgs=process.argv.slice(2);
+const portFlagIdx=cliArgs.indexOf('--port');
+const requestedPort=portFlagIdx>=0?Number(cliArgs[portFlagIdx+1]):Number(process.env.ASTRO_UI_DESIGNER_PORT||'');
+if(requestedPort&&!Number.isInteger(requestedPort)||requestedPort&&(requestedPort<1||requestedPort>65535))throw new Error(`Invalid --port value: ${cliArgs[portFlagIdx+1]||process.env.ASTRO_UI_DESIGNER_PORT}`);
+let port=requestedPort||8766;
 const host=process.env.ASTRO_UI_DESIGNER_HOST||'127.0.0.1';
-const url=`http://${host}:${port}`;
+let url=`http://${host}:${port}`;
+let previewPort=4321;
+function portFree(p){return new Promise(res=>{const s=net.createServer();s.once('error',()=>res(false));s.once('listening',()=>s.close(()=>res(true)));s.listen(p,host)})}
+function anyFreePort(){return new Promise(res=>{const s=net.createServer();s.once('error',()=>res(0));s.once('listening',()=>{const p=s.address().port;s.close(()=>res(p))});s.listen(0,host)})}
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon'};
-let workspaceRoot=''; let previewProc=null; let previewPort=4321;
+let workspaceRoot=''; let previewProc=null;
 const roundTripRuntime=createRoundTripNodeRuntime();
 
 function resolveStatic(raw){let pathname='/';try{pathname=decodeURIComponent(new URL(raw,url).pathname)}catch{}if(pathname==='/')pathname='/index.html';const fp=path.resolve(root,'.'+pathname);return fp.startsWith(path.resolve(root)+path.sep)||fp===path.resolve(root)?fp:null;}
@@ -66,6 +74,21 @@ const server=http.createServer(async(req,res)=>{
   fs.stat(fp,(err,st)=>{if(err||!st.isFile())return void res.writeHead(404).end('Not found');res.writeHead(200,{'Content-Type':mime[path.extname(fp).toLowerCase()]||'application/octet-stream','Cache-Control':'no-store'});fs.createReadStream(fp).pipe(res);});
 });
 
-function openWindow(){if(process.argv.includes('--no-browser'))return;try{if(process.platform==='win32'){spawn('cmd',['/c','start','',url],{detached:true,stdio:'ignore'}).unref();return}if(process.platform==='darwin'){spawn('open',[url],{detached:true,stdio:'ignore'}).unref();return}for(const cmd of ['chromium','chromium-browser','google-chrome','google-chrome-stable'])if(commandExists(cmd)){spawn(cmd,[`--app=${url}`,'--new-window'],{detached:true,stdio:'ignore'}).unref();return}if(commandExists('xdg-open'))spawn('xdg-open',[url],{detached:true,stdio:'ignore'}).unref();}catch(e){console.warn(`Could not open browser automatically: ${e.message}`)}}
-server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.20 Dense Clean UI + Advanced Editing + Simulation + MCP is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
+function openWindow(){if(process.argv.includes('--no-browser'))return;try{if(process.platform==='win32'){spawn('cmd',['/c','start','',url],{detached:true,stdio:'ignore'}).unref();return}if(process.platform==='darwin'){spawn('open',[url],{detached:true,stdio:'ignore'}).unref();return}for(const cmd of ['chromium','chromium-browser','google-chrome','google-chrome-stable'])if(commandExists(cmd)){spawn(cmd,[`--app=${url}`,'--new-window'],{detached:true,stdio:'ignore'}).unref();return}if(commandExists('xdg-open'))spawn('xdg-open',[url],{detached:true,stdio:'ignore'}).unref()}catch(e){console.warn(`Could not open browser automatically: ${e.message}`)}}
+async function startServer(){
+  if(requestedPort){
+    if(!(await portFree(port))){console.error(`Port ${port} is already in use - another Astro UI Designer instance is running there.`);console.error('Run another instance on a different port:  node launch-designer.mjs --port 8767');process.exit(1)}
+  }else if(!(await portFree(8766))){
+    let chosen=0;for(let p=8767;p<8807;p++){if(await portFree(p)){chosen=p;break}}
+    if(!chosen)chosen=await anyFreePort();
+    if(!chosen){console.error('No free port could be allocated.');process.exit(1)}
+    console.log(`Default port 8766 is already used by another instance - this instance starts on ${chosen} (multiple instances are supported).`);
+    port=chosen;
+  }
+  url=`http://${host}:${port}`;
+  for(let p=4321;p<4361;p++){if(await portFree(p)){previewPort=p;break}}
+  server.listen(port,host,()=>{console.log(`Astro UI Designer Pro 2.21 Editor UX: canvas context menu, copy/paste format, wheel zoom, workspaces + MCP is running at ${url}`);console.log('Local workspace API enabled. Press Ctrl+C to stop.');openWindow()});
+  server.on('error',e=>{if(e?.code==='EADDRINUSE'){console.error(`Port ${port} was taken at startup. Try:  node launch-designer.mjs --port ${port+1}`);process.exit(1)}throw e});
+}
+startServer();
 for(const sig of ['SIGINT','SIGTERM'])process.on(sig,()=>{stopPreview();roundTripRuntime.dispose();server.close(()=>process.exit(0))});

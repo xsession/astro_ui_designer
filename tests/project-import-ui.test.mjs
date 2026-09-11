@@ -18,5 +18,8 @@ assert.match(ext,/showOpenDialog/,'VS Code browse uses native folder chooser');
 assert.match(bridge,/async function detectWorkspace/);
 assert.match(bridge,/async function importFiles/);
 assert.match(bridge,/analyzeFiles/);
+assert.match(launcher,/--port/,'launcher must accept an explicit --port for parallel instances');
+assert.match(launcher,/portFree/,'launcher must probe port availability before listen');
+assert.match(launcher,/another instance/,'launcher must auto-allocate a new port when 8766 is busy');
 assert.equal(app,fs.readFileSync(new URL('../vscode-extension/designer/js/app.js',import.meta.url),'utf8'),'VS Code app mirror must match');
 console.log('project-import-ui.test.mjs passed');

@@ -102,6 +102,7 @@ export const DOCK_PANEL_TOOLTIPS = Object.freeze({
   integrations:'Integrations — run installed plugin providers and adapters.',
   roundtrip:'Round-trip — source graph, reviewed patching, conversion, history and conflict tools.',
   hotkeys:'Hotkeys — view, customize, clear and reset keyboard shortcuts with conflict detection.',
+  workspaces:'Workspaces — save, apply and delete named editor layouts (dock arrangement, sizes, breakpoint).',
   console:'Console — Astro UI Designer runtime log output.'
 });
 

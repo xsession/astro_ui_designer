@@ -96,7 +96,7 @@ async function call(name,args={}){
 function reply(id,result,error=null){process.stdout.write(JSON.stringify(error?{jsonrpc:'2.0',id,error:{code:-32000,message:error.message||String(error)}}:{jsonrpc:'2.0',id,result})+'\n')}
 const rl=readline.createInterface({input:process.stdin,crlfDelay:Infinity});
 rl.on('line',async line=>{let m;try{m=JSON.parse(line)}catch{return}try{
-  if(m.method==='initialize')return reply(m.id,{protocolVersion:m.params?.protocolVersion||'2025-11-25',capabilities:{tools:{}},serverInfo:{name:'astro-ui-designer',version:'2.20.0'}});
+  if(m.method==='initialize')return reply(m.id,{protocolVersion:m.params?.protocolVersion||'2025-11-25',capabilities:{tools:{}},serverInfo:{name:'astro-ui-designer',version:'2.21.0'}});
   if(m.method==='tools/list')return reply(m.id,{tools});
   if(m.method==='tools/call')return reply(m.id,{content:[{type:'text',text:JSON.stringify(await call(m.params?.name,m.params?.arguments||{}),null,2)}]});
   if(m.method==='ping')return reply(m.id,{});
